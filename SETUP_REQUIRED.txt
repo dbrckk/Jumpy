@@ -1,69 +1,84 @@
-JUMPY — OPTIONAL PRODUCTION SETUP
-=================================
+JUMPY — EXTERNAL / PRODUCTION SETUP
+==================================
 
-The current game is fully playable WITHOUT any API key or external SDK.
-Only complete the items below when preparing store release or online features.
+The current game is playable WITHOUT any API key or external SDK.
+The repository already contains an Android export preset using package:
+  com.dbrckk.jumpy
 
-1) ANDROID SIGNING — REQUIRED FOR GOOGLE PLAY RELEASE
-- In Godot: Editor > Editor Settings > Export > Android.
-- Install Android SDK/JDK if Godot asks for them.
+Only complete the items below when preparing device builds, store release or online features.
+
+1) ANDROID BUILD ENVIRONMENT — REQUIRED TO EXPORT APK/AAB
+- Use Godot 4.7.2 stable.
+- Install matching Godot 4.7.2 export templates.
+- Install OpenJDK 17 and Android SDK when exporting from desktop/CI.
+- The existing export preset is named: Android
+- Debug command once templates/SDK are installed:
+  godot --headless --path . --export-debug "Android" build/Jumpy.apk
+- Do not place SDK credentials or passwords in this repository.
+
+2) ANDROID RELEASE SIGNING — REQUIRED FOR GOOGLE PLAY
 - Create a release keystore and keep it outside the repository.
-- In the Android export preset, set release keystore path, user and password.
-- NEVER commit keystore files or passwords to GitHub.
+- Configure release keystore path, alias and password locally or through secure CI secrets.
+- NEVER commit keystore files or passwords.
+- For CI, Godot supports these secret environment variables:
+  GODOT_ANDROID_KEYSTORE_RELEASE_PATH
+  GODOT_ANDROID_KEYSTORE_RELEASE_USER
+  GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
 
-2) GOOGLE PLAY GAMES LEADERBOARDS — OPTIONAL BUT RECOMMENDED
+3) GOOGLE PLAY GAMES LEADERBOARDS — OPTIONAL BUT RECOMMENDED
 Purpose: global best score + daily social competition.
-- Create the app in Google Play Console.
+- Create Jumpy in Google Play Console.
 - Enable Play Games Services.
 - Create leaderboard IDs for:
   a) JUMPY_BEST_SCORE
   b) JUMPY_DAILY_SCORE
-- Install a maintained Godot 4 Google Play Games plugin.
+- Install a maintained Godot 4 Play Games plugin.
 - Replace Integrations.leaderboard_submit() in scripts/integrations.gd with the plugin call.
-- Store leaderboard IDs in a local/non-secret config resource; they are not passwords.
+- Leaderboard IDs are identifiers, not passwords; secrets/tokens must stay outside Git.
 
-3) FIREBASE / ANALYTICS — OPTIONAL BUT STRONGLY RECOMMENDED
-Purpose: measure tutorial completion, retry rate, run length, retention and funnel drop-off.
-- Create Firebase project + Android app.
-- Package name recommendation: com.dbrckk.jumpy
-- Download google-services.json through Firebase Console.
-- Install a maintained Godot Firebase/Analytics Android plugin.
-- Do not commit private service-account credentials.
-- Map Integrations.event(name, params) to Firebase Analytics.
-Core events already emitted: game_open, run_start, landing, run_end, share_score, leaderboard_submit_local.
+4) FIREBASE / ANALYTICS — OPTIONAL BUT STRONGLY RECOMMENDED
+Purpose: measure first-run conversion, retry rate, run length, retention and funnel drop-off.
+- Create Firebase project + Android app for com.dbrckk.jumpy.
+- Download the Android Firebase configuration from Firebase Console.
+- Install a maintained Godot 4 analytics integration.
+- Never commit service-account private credentials.
+- Map Integrations.event(name, params) to production analytics.
+Existing events include: game_open, run_start, landing, run_end, share_score, leaderboard_submit_local.
 
-4) ADMOB / REWARDED ADS — OPTIONAL
-Recommended rule: NO forced interstitials in early testing.
+5) ADMOB / REWARDED ADS — OPTIONAL
+Rule: NO forced interstitials during early retention testing.
 Use rewarded ads only for a voluntary revive or bonus reward.
 - Create AdMob app + rewarded placement.
 - Install a maintained Godot 4 AdMob plugin.
 - Implement rewarded_available() and show_rewarded() in scripts/integrations.gd.
 - Use Google test ad IDs until production release.
 
-5) NATIVE SHARE SHEET — OPTIONAL
-Current fallback copies a score challenge to clipboard.
-For a native Android/iOS share sheet, install a maintained share plugin and replace Integrations.share_score().
+6) NATIVE SHARE + DEEP LINKS — OPTIONAL, IMPORTANT FOR VIRAL LOOP
+Current fallback copies the challenge text to clipboard.
+- Add a maintained native Android/iOS share integration.
+- Replace Integrations.share_score().
+- Later add app links/deep links that open the current daily seed.
 Suggested share copy: "JUMPY — <score>. Beat me. #Jumpy"
 
-6) STORE / IAP — LATER PHASE
-Recommended first IAPs only after retention is proven:
-- Remove ads / supporter pack.
+7) STORE / IAP — ONLY AFTER RETENTION IS PROVEN
+Recommended first IAPs:
+- Supporter / no-ads purchase.
 - Cosmetic skin packs.
-- Event pass only after LiveOps exists.
-Do NOT put competitive power behind payment.
+- Event pass only after real LiveOps exists.
+Never sell competitive power.
 
-7) PRIVACY / CONSENT — REQUIRED WHEN ADS OR ANALYTICS GO LIVE
+8) PRIVACY / CONSENT — REQUIRED WHEN ADS OR ANALYTICS GO LIVE
 - Publish a privacy policy URL.
-- Configure consent flow appropriate to target regions (GDPR/EEA etc.).
+- Configure appropriate consent flow for target regions (including EEA/GDPR where applicable).
 - Complete Google Play Data Safety accurately.
 
-8) ART / AUDIO — OPTIONAL AAA POLISH PHASE
-The prototype is intentionally procedural and asset-independent.
-When original production assets are created, place them under:
+9) FINAL ART / AUDIO — PRODUCTION POLISH
+The current build is intentionally procedural and asset-independent, including synthesized feedback tones.
+For original production assets use:
   assets/art/
   assets/audio/
   assets/ui/
-Keep source files under assets/source/ only when redistribution rights permit it.
+Only add assets that are original or have clear redistribution/commercial rights.
 
-RULE FOR FUTURE WORK
-If any new external credential, API, paid service, account action or store-side setup becomes necessary, UPDATE THIS FILE FIRST with exact concise instructions before depending on it in code.
+RULE FOR FUTURE AUTONOMOUS WORK
+If any new external credential, API, paid service, account action or store-side setup becomes necessary, UPDATE THIS FILE FIRST with exact concise instructions before making code depend on it.
