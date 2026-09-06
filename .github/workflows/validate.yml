@@ -1,0 +1,35 @@
+name: Validate Godot Project
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  godot-parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Godot 4.7.2 stable
+        run: |
+          set -euo pipefail
+          curl -fL -o godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          unzip -q godot.zip -d .godot-ci
+          mv .godot-ci/Godot_v4.7.2-stable_linux.x86_64 .godot-ci/godot
+          chmod +x .godot-ci/godot
+      - name: Import and parse project
+        run: |
+          set -o pipefail
+          .godot-ci/godot --headless --path . --editor --quit 2>&1 | tee godot.log
+          if grep -E "SCRIPT ERROR|Parse Error|Cannot parse|Failed loading resource" godot.log; then
+            echo "Godot reported a blocking parse/load error"
+            exit 1
+          fi
+      - name: Verify required production docs
+        run: |
+          test -f SETUP_REQUIRED.txt
+          test -f docs/GAME_DESIGN.md
+          test -f scripts/integrations.gd
