@@ -7,6 +7,20 @@ The repository already contains an Android export preset using package:
 
 Only complete the items below when preparing device builds, store release or online features.
 
+0) AUTONOMOUS 30-MINUTE EVOLUTION — ONE-TIME GITHUB PERMISSION REQUIRED
+Purpose: allow the ai-dev-server workflow to commit Godot-validated autonomous improvements into Jumpy.
+- Open GitHub > Settings > Developer settings > Personal access tokens > Fine-grained tokens.
+- Edit the SAME token currently stored as the ai-dev-server repository secret CODESPACES_PAT.
+- Under Repository access, include BOTH repositories:
+  a) dbrckk/ai-dev-server
+  b) dbrckk/Jumpy
+- Keep the existing Codespaces permissions needed for ai-dev-server.
+- Under Repository permissions, set Contents = Read and write.
+- Save the token permissions.
+- Do NOT paste the token into ChatGPT or commit it anywhere.
+- If GitHub regenerates the token value, update only the ai-dev-server Actions secret named CODESPACES_PAT with the new value.
+- Once this permission is active, .github/workflows/jumpy-autocycle.yml in ai-dev-server runs at minutes 15 and 45 of every hour, proposes one safe improvement, validates it with real Godot 4.7.2, and pushes only validated changes.
+
 1) ANDROID BUILD ENVIRONMENT — REQUIRED TO EXPORT APK/AAB
 - Use Godot 4.7.2 stable.
 - Install matching Godot 4.7.2 export templates.
