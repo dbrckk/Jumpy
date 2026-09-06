@@ -269,6 +269,10 @@ func on_landed(p: Dictionary) -> void:
 	var center: float = float(p.x) + float(p.w) * 0.5
 	var perfect_zone: float = minf(80.0, float(p.w) * 0.22)
 	var perfect: bool = absf(PLAYER_X - center) <= perfect_zone
+	var left_edge: float = float(p.x)
+	var right_edge: float = float(p.x) + float(p.w)
+	var edge_distance: float = minf(absf(PLAYER_X - left_edge), absf(right_edge - PLAYER_X))
+	var clutch: bool = not perfect and edge_distance <= PLAYER_R * 0.72
 	if perfect:
 		combo += 1
 		perfects += 1
@@ -278,11 +282,18 @@ func on_landed(p: Dictionary) -> void:
 		flash = 0.24
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffffff"), 22, 420.0)
 		Integrations.haptic(32)
+	elif clutch:
+		combo += 1
+		flow = minf(5.0, 1.0 + float(combo) * 0.18)
+		score += int(12.0 * flow)
+		camera_kick = 12.0
+		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffe66d"), 18, 360.0)
+		Integrations.haptic(26)
 	else:
 		combo = maxi(0, combo - 1)
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), 6, 180.0)
-	Integrations.event("landing", {"perfect": perfect, "combo": combo, "score": score})
+	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
 func collect_coin() -> void:
 	for p: Dictionary in platforms:
