@@ -157,7 +157,7 @@ func show_menu(value: bool) -> void:
 	ui.share.visible = false
 	if value:
 		var mission_data: Dictionary = Profile.get_mission_progress()
-		ui.mission.text = "MISSIONS  •  RUNS %d/%d  •  PERFECT %d/%d\nTOTAL SCORE %d/%d" % [mission_data.runs, mission_data.runs_goal, mission_data.perfects, mission_data.perfects_goal, mission_data.score, mission_data.score_goal]
+		ui.mission.text = "STREAK %d  •  MISSIONS  •  RUNS %d/%d  •  PERFECT %d/%d\nTOTAL SCORE %d/%d" % [int(Profile.data.streak_days), mission_data.runs, mission_data.runs_goal, mission_data.perfects, mission_data.perfects_goal, mission_data.score, mission_data.score_goal]
 
 func _unhandled_input(event: InputEvent) -> void:
 	var tapped: bool = false
