@@ -1,0 +1,10 @@
+.godot/
+.export/
+build/
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+.env
+.env.*
+!SETUP_REQUIRED.txt

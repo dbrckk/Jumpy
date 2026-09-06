@@ -1,0 +1,69 @@
+JUMPY — OPTIONAL PRODUCTION SETUP
+=================================
+
+The current game is fully playable WITHOUT any API key or external SDK.
+Only complete the items below when preparing store release or online features.
+
+1) ANDROID SIGNING — REQUIRED FOR GOOGLE PLAY RELEASE
+- In Godot: Editor > Editor Settings > Export > Android.
+- Install Android SDK/JDK if Godot asks for them.
+- Create a release keystore and keep it outside the repository.
+- In the Android export preset, set release keystore path, user and password.
+- NEVER commit keystore files or passwords to GitHub.
+
+2) GOOGLE PLAY GAMES LEADERBOARDS — OPTIONAL BUT RECOMMENDED
+Purpose: global best score + daily social competition.
+- Create the app in Google Play Console.
+- Enable Play Games Services.
+- Create leaderboard IDs for:
+  a) JUMPY_BEST_SCORE
+  b) JUMPY_DAILY_SCORE
+- Install a maintained Godot 4 Google Play Games plugin.
+- Replace Integrations.leaderboard_submit() in scripts/integrations.gd with the plugin call.
+- Store leaderboard IDs in a local/non-secret config resource; they are not passwords.
+
+3) FIREBASE / ANALYTICS — OPTIONAL BUT STRONGLY RECOMMENDED
+Purpose: measure tutorial completion, retry rate, run length, retention and funnel drop-off.
+- Create Firebase project + Android app.
+- Package name recommendation: com.dbrckk.jumpy
+- Download google-services.json through Firebase Console.
+- Install a maintained Godot Firebase/Analytics Android plugin.
+- Do not commit private service-account credentials.
+- Map Integrations.event(name, params) to Firebase Analytics.
+Core events already emitted: game_open, run_start, landing, run_end, share_score, leaderboard_submit_local.
+
+4) ADMOB / REWARDED ADS — OPTIONAL
+Recommended rule: NO forced interstitials in early testing.
+Use rewarded ads only for a voluntary revive or bonus reward.
+- Create AdMob app + rewarded placement.
+- Install a maintained Godot 4 AdMob plugin.
+- Implement rewarded_available() and show_rewarded() in scripts/integrations.gd.
+- Use Google test ad IDs until production release.
+
+5) NATIVE SHARE SHEET — OPTIONAL
+Current fallback copies a score challenge to clipboard.
+For a native Android/iOS share sheet, install a maintained share plugin and replace Integrations.share_score().
+Suggested share copy: "JUMPY — <score>. Beat me. #Jumpy"
+
+6) STORE / IAP — LATER PHASE
+Recommended first IAPs only after retention is proven:
+- Remove ads / supporter pack.
+- Cosmetic skin packs.
+- Event pass only after LiveOps exists.
+Do NOT put competitive power behind payment.
+
+7) PRIVACY / CONSENT — REQUIRED WHEN ADS OR ANALYTICS GO LIVE
+- Publish a privacy policy URL.
+- Configure consent flow appropriate to target regions (GDPR/EEA etc.).
+- Complete Google Play Data Safety accurately.
+
+8) ART / AUDIO — OPTIONAL AAA POLISH PHASE
+The prototype is intentionally procedural and asset-independent.
+When original production assets are created, place them under:
+  assets/art/
+  assets/audio/
+  assets/ui/
+Keep source files under assets/source/ only when redistribution rights permit it.
+
+RULE FOR FUTURE WORK
+If any new external credential, API, paid service, account action or store-side setup becomes necessary, UPDATE THIS FILE FIRST with exact concise instructions before depending on it in code.
