@@ -52,8 +52,8 @@ Every cycle must inspect this file, `AUTONOMOUS_TEAM.md`, `PRODUCTION_ROADMAP.md
 
 <!-- AUTO_CYCLE_START -->
 ## Latest autonomous cycle
-- Time: 2026-09-07 09:39 UTC
-- Base: `8766cb64d715`
+- Time: 2026-09-07 09:46 UTC
+- Base: `7e190fa06ef3`
 - Atomic phase: `OPEN_ENDED`
 - Executor: `timeout_105s`
 
@@ -61,10 +61,7 @@ Every cycle must inspect this file, `AUTONOMOUS_TEAM.md`, `PRODUCTION_ROADMAP.md
 Strategic review unavailable; use repository evidence and living state.
 
 ### Execution evidence
-drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 docs -rw-rw-rw-  1 node node 1571 Sep  7 09:37 export_presets.cfg -rw-rw-rw-  1 node node  965 Sep  7 09:37 project.godot drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 scenes drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 scripts [0m [0m→ [0mRead README.md [0m [0m$ [0mfind scripts -type f -name "*.gd" | head -20 scripts/integrations.gd scripts/profile.gd scripts/main.gd [0m [0m→ [0mRead scripts/main.gd [0m [0m$ [0mgrep -r "FLOW BROKEN" . ./scripts/main.gd:	ui.gameover.text = "SCORE %d
-BEST %d
-PERFECT %d  •  COINS %d
-%s" % [score, int(Profile.data.best_score), perfects, run_coins, "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"] [0m
+ func pulse() -> void:  	pulse_available = false  	player_vy = minf(player_vy, PULSE_V) -	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), 14, 320.0) -	flash = 0.18 +	var burst_count = 14 +	var burst_power = 320.0 +	if Profile.data.reduced_motion: +		burst_count = int(burst_count * 0.5) +		burst_power *= 0.5 +	flash = 0.18 * (0.5 if Profile.data.reduced_motion else 1.0) +	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), burst_count, burst_power)  	Integrations.haptic(20)    func _physics_process(delta: float) -> void:  	if state != "PLAYING":  [0m
 
 ### Next-cycle rule
 Re-read current source. Never repeat a failed approach unchanged; reduce scope or choose another route.

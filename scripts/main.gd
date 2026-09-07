@@ -230,8 +230,13 @@ func jump() -> void:
 func pulse() -> void:
 	pulse_available = false
 	player_vy = minf(player_vy, PULSE_V)
-	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), 14, 320.0)
-	flash = 0.18
+	var burst_count = 14
+	var burst_power = 320.0
+	if Profile.data.reduced_motion:
+		burst_count = int(burst_count * 0.5)
+		burst_power *= 0.5
+	flash = 0.18 * (0.5 if Profile.data.reduced_motion else 1.0)
+	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), burst_count, burst_power)
 	Integrations.haptic(20)
 
 func _physics_process(delta: float) -> void:
