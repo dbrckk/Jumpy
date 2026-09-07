@@ -341,7 +341,8 @@ func on_landed(p: Dictionary) -> void:
 	else:
 		combo = maxi(0, combo - 1)
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
-		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), 6, 180.0)
+		var ordinary_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
+		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
 	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
 func collect_coin() -> void:
