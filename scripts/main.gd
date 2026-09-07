@@ -355,7 +355,8 @@ func collect_coin() -> void:
 			p.coin_taken = true
 			run_coins += 1
 			score += int(5.0 * flow)
-			burst(Vector2(cx, cy), Color("ffe66d"), 14, 300.0)
+			var coin_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
+			burst(Vector2(cx, cy), Color("ffe66d"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)
 			Integrations.haptic(10)
 
 func die() -> void:
