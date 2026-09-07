@@ -181,7 +181,12 @@ func jump() -> void:
 	player_vy = JUMP_V
 	on_ground = false
 	pulse_available = true
-	burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), 8, 230.0)
+	var burst_count = 8
+	var burst_power = 230.0
+	if Profile.data.reduced_motion:
+		burst_count = int(burst_count * 0.5)
+		burst_power *= 0.5
+	burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)
 	Integrations.haptic(14)
 
 func pulse() -> void:
