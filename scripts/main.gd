@@ -377,9 +377,10 @@ func die() -> void:
 	ui.skin.visible = false
 	ui.settings.visible = false
 	refresh_settings_ui()
-	camera_kick = 18.0
-	flash = 0.35
-	burst(Vector2(PLAYER_X, player_y), skin_color(), 35, 520.0)
+	var death_feedback_scale: float = 0.3 if bool(Profile.data.reduced_motion) else 1.0
+	camera_kick = 18.0 * death_feedback_scale
+	flash = 0.35 * death_feedback_scale
+	burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)
 	Integrations.haptic(70)
 
 func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:
