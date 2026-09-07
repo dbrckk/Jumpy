@@ -17,7 +17,9 @@ var data: Dictionary = {
 	"streak_days": 0,
 	"last_play_date": "",
 	"sound": true,
-	"haptics": true
+	"haptics": true,
+	"reduced_motion": false,
+	"high_contrast": false
 }
 
 func _ready() -> void:
