@@ -441,12 +441,16 @@ func _draw() -> void:
 		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
 		var star_y: float = 240.0 + fmod(float(i * 127), 1180.0)
 		draw_circle(Vector2(star_x, star_y), 2.5 + float(i % 3), Color(0.42, 0.78, 1.0, 0.22))
+	var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
+	var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
+	var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
+	var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
 	for p: Dictionary in platforms:
 		var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
-		draw_rect(rect, Color("17213d"), true)
-		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), Color("65eaff"), 7.0)
+		draw_rect(rect, platform_fill_color, true)
+		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
 		var perfect_w: float = minf(160.0, float(p.w) * 0.44)
-		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, Color("ffffff"), 3.0)
+		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
 		if bool(p.coin) and not bool(p.coin_taken):
 			var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
 			draw_circle(coin_pos, 25.0, Color("ffe66d"))
@@ -455,7 +459,7 @@ func _draw() -> void:
 	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
 	for i: int in range(4, 0, -1):
 		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
-	draw_circle(player_pos, PLAYER_R + 9.0, Color(player_color.r, player_color.g, player_color.b, 0.18))
+	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
 	draw_circle(player_pos, PLAYER_R, player_color)
 	draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
 	if pulse_available and not on_ground and state == "PLAYING":
