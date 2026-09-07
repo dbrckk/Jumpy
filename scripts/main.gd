@@ -153,7 +153,7 @@ func reset_run(use_daily: bool) -> void:
 
 func set_daily(value: bool) -> void:
 	reset_run(value)
-	ui.subtitle.text = "DAILY SEED • SAME WORLD FOR EVERYONE" if value else "TAP • LAND • FLOW"
+	ui.subtitle.text = "DAILY SEED • DAILY BEST %d" % int(Profile.data.daily_best) if value else "TAP • LAND • FLOW"
 
 func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
