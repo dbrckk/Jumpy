@@ -52,16 +52,19 @@ Every cycle must inspect this file, `AUTONOMOUS_TEAM.md`, `PRODUCTION_ROADMAP.md
 
 <!-- AUTO_CYCLE_START -->
 ## Latest autonomous cycle
-- Time: 2026-09-07 09:04 UTC
-- Base: `39b0473b2593`
-- Atomic phase: `RUN_STATS_GAMEOVER`
-- Executor: `completed`
+- Time: 2026-09-07 09:39 UTC
+- Base: `8766cb64d715`
+- Atomic phase: `OPEN_ENDED`
+- Executor: `timeout_105s`
 
 ### Strategic snapshot
 Strategic review unavailable; use repository evidence and living state.
 
 ### Execution evidence
-Added post-run skill/resource summary.
+drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 docs -rw-rw-rw-  1 node node 1571 Sep  7 09:37 export_presets.cfg -rw-rw-rw-  1 node node  965 Sep  7 09:37 project.godot drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 scenes drwxrwxrwx+ 2 node node 4096 Sep  7 09:37 scripts [0m [0m→ [0mRead README.md [0m [0m$ [0mfind scripts -type f -name "*.gd" | head -20 scripts/integrations.gd scripts/profile.gd scripts/main.gd [0m [0m→ [0mRead scripts/main.gd [0m [0m$ [0mgrep -r "FLOW BROKEN" . ./scripts/main.gd:	ui.gameover.text = "SCORE %d
+BEST %d
+PERFECT %d  •  COINS %d
+%s" % [score, int(Profile.data.best_score), perfects, run_coins, "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"] [0m
 
 ### Next-cycle rule
 Re-read current source. Never repeat a failed approach unchanged; reduce scope or choose another route.
