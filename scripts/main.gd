@@ -36,6 +36,7 @@ var flash: float = 0.0
 var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
+var settings_open: bool = false
 
 func _ready() -> void:
 	fx_rng.randomize()
@@ -61,6 +62,11 @@ func build_ui() -> void:
 	ui.daily = make_button(root, "DAILY", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))
 	ui.normal = make_button(root, "ENDLESS", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))
 	ui.skin = make_button(root, "SKIN", Vector2(375, 1240), Vector2(330, 82), cycle_skin)
+	ui.settings = make_button(root, "SETTINGS", Vector2(375, 1340), Vector2(330, 82), settings_pressed)
+	ui.setting_sound = make_button(root, "", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference("sound"))
+	ui.setting_haptics = make_button(root, "", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference("haptics"))
+	ui.setting_motion = make_button(root, "", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference("reduced_motion"))
+	ui.setting_contrast = make_button(root, "", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference("high_contrast"))
 	ui.gameover = make_label(root, "", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.retry = make_button(root, "RETRY", Vector2(280, 940), Vector2(520, 110), restart_pressed)
 	ui.share = make_button(root, "SHARE", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))
@@ -87,6 +93,33 @@ func make_button(parent: Control, text: String, pos: Vector2, dim: Vector2, pres
 	button.pressed.connect(pressed)
 	parent.add_child(button)
 	return button
+
+func settings_pressed() -> void:
+	if state != "READY":
+		return
+	settings_open = not settings_open
+	show_menu(true)
+
+func toggle_preference(key: String) -> void:
+	if state != "READY":
+		return
+	Profile.set_preference(key, not bool(Profile.data.get(key, false)))
+	refresh_settings_ui()
+	queue_redraw()
+
+func refresh_settings_ui() -> void:
+	if not ui.has("settings"):
+		return
+	ui.settings.text = "BACK" if settings_open else "SETTINGS"
+	var show_settings: bool = state == "READY" and settings_open
+	ui.setting_sound.visible = show_settings
+	ui.setting_haptics.visible = show_settings
+	ui.setting_motion.visible = show_settings
+	ui.setting_contrast.visible = show_settings
+	ui.setting_sound.text = "SOUND  %s" % ("ON" if bool(Profile.data.sound) else "OFF")
+	ui.setting_haptics.text = "HAPTICS  %s" % ("ON" if bool(Profile.data.haptics) else "OFF")
+	ui.setting_motion.text = "REDUCED MOTION  %s" % ("ON" if bool(Profile.data.reduced_motion) else "OFF")
+	ui.setting_contrast.text = "HIGH CONTRAST  %s" % ("ON" if bool(Profile.data.high_contrast) else "OFF")
 
 func reset_run(use_daily: bool) -> void:
 	daily_mode = use_daily
@@ -145,13 +178,18 @@ func start_run() -> void:
 	Integrations.event("run_start", {"daily": daily_mode})
 
 func show_menu(value: bool) -> void:
-	ui.title.visible = value
-	ui.subtitle.visible = value
-	ui.hint.visible = value
-	ui.mission.visible = value
-	ui.daily.visible = value
-	ui.normal.visible = value
-	ui.skin.visible = value
+	if not value:
+		settings_open = false
+	var show_main: bool = value and not settings_open
+	ui.title.visible = show_main
+	ui.subtitle.visible = show_main
+	ui.hint.visible = show_main
+	ui.mission.visible = show_main
+	ui.daily.visible = show_main
+	ui.normal.visible = show_main
+	ui.skin.visible = show_main
+	ui.settings.visible = value
+	refresh_settings_ui()
 	ui.gameover.visible = false
 	ui.retry.visible = false
 	ui.share.visible = false
@@ -331,6 +369,8 @@ func die() -> void:
 	ui.daily.visible = false
 	ui.normal.visible = false
 	ui.skin.visible = false
+	ui.settings.visible = false
+	refresh_settings_ui()
 	camera_kick = 18.0
 	flash = 0.35
 	burst(Vector2(PLAYER_X, player_y), skin_color(), 35, 520.0)
