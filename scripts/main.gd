@@ -459,7 +459,8 @@ func _draw() -> void:
 			draw_circle(coin_pos, 11.0, Color("070814"))
 	var player_color: Color = skin_color()
 	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
-	for i: int in range(4, 0, -1):
+	var trail_steps: int = 1 if bool(Profile.data.reduced_motion) else 4
+	for i: int in range(trail_steps, 0, -1):
 		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
 	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
 	draw_circle(player_pos, PLAYER_R, player_color)
