@@ -358,7 +358,7 @@ func die() -> void:
 	Profile.record_run(score, run_coins, perfects, daily_mode)
 	Integrations.leaderboard_submit(score, daily_mode)
 	Integrations.event("run_end", {"score": score, "coins": run_coins, "perfects": perfects, "daily": daily_mode})
-	ui.gameover.text = "SCORE %d\nBEST %d\n%s" % [score, int(Profile.data.best_score), "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"]
+	ui.gameover.text = "SCORE %d\nBEST %d\nPERFECT %d  •  COINS %d\n%s" % [score, int(Profile.data.best_score), perfects, run_coins, "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"]
 	ui.gameover.visible = true
 	ui.retry.visible = true
 	ui.share.visible = true
