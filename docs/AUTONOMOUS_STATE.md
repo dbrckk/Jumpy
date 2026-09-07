@@ -52,16 +52,16 @@ Every cycle must inspect this file, `AUTONOMOUS_TEAM.md`, `PRODUCTION_ROADMAP.md
 
 <!-- AUTO_CYCLE_START -->
 ## Latest autonomous cycle
-- Time: 2026-09-07 09:46 UTC
-- Base: `7e190fa06ef3`
+- Time: 2026-09-07 11:28 UTC
+- Base: `bd04b7417a32`
 - Atomic phase: `OPEN_ENDED`
-- Executor: `timeout_105s`
+- Executor: `opencode_completed`
 
 ### Strategic snapshot
 Strategic review unavailable; use repository evidence and living state.
 
 ### Execution evidence
- func pulse() -> void:  	pulse_available = false  	player_vy = minf(player_vy, PULSE_V) -	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), 14, 320.0) -	flash = 0.18 +	var burst_count = 14 +	var burst_power = 320.0 +	if Profile.data.reduced_motion: +		burst_count = int(burst_count * 0.5) +		burst_power *= 0.5 +	flash = 0.18 * (0.5 if Profile.data.reduced_motion else 1.0) +	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), burst_count, burst_power)  	Integrations.haptic(20)    func _physics_process(delta: float) -> void:  	if state != "PLAYING":  [0m
+AGENT_ATTEMPT=claude-code There's an issue with the selected model (claude-opus-5[1m]). It may not exist or you may not have access to it. Run --model to pick a different model. AGENT_ATTEMPT=opencode [0m > build · nvidia_nim/nvidia/nemotron-3-super-120b-a12b [0m [91m[1mError: [0mUpstream provider NIM returned HTTP 404. Category: upstream Mapped message: Provider API request failed.  Upstream error: (empty upstream error body)  Request ID: req_e6a6959ed67d408c8e108e8ad7d6c128 AGENT_SELECTED=none
 
 ### Next-cycle rule
 Re-read current source. Never repeat a failed approach unchanged; reduce scope or choose another route.
