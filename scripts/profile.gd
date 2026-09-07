@@ -53,6 +53,13 @@ func save() -> void:
 	if error != OK:
 		push_warning("Jumpy: save write failed with error %s" % error)
 
+func set_preference(key: String, value: bool) -> void:
+	if key not in ["sound", "haptics", "reduced_motion", "high_contrast"]:
+		push_warning("Jumpy: unknown preference %s" % key)
+		return
+	data[key] = value
+	save()
+
 func record_run(score: int, run_coins: int, perfects: int, daily: bool) -> Dictionary:
 	data.runs = int(data.runs) + 1
 	data.coins = int(data.coins) + run_coins
