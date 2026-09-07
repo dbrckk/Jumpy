@@ -11,18 +11,28 @@ permissions:
 jobs:
   godot-parse:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # immutable SHA
+        with:
+          persist-credentials: false
       - name: Install Godot 4.7.2 stable
         run: |
           set -euo pipefail
-          curl -fL -o godot.zip https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          GODOT_URL='https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip'
+          curl --fail --location \
+            --retry 5 --retry-all-errors --retry-delay 3 --connect-timeout 15 --max-time 180 \
+            --output godot.zip "$GODOT_URL"
+          test -s godot.zip
+          unzip -tq godot.zip >/dev/null
+          rm -rf .godot-ci
+          mkdir -p .godot-ci
           unzip -q godot.zip -d .godot-ci
           mv .godot-ci/Godot_v4.7.2-stable_linux.x86_64 .godot-ci/godot
           chmod +x .godot-ci/godot
       - name: Import and parse project
         run: |
-          set -o pipefail
+          set -euo pipefail
           .godot-ci/godot --headless --path . --editor --quit 2>&1 | tee godot.log
           if grep -E "SCRIPT ERROR|Parse Error|Cannot parse|Failed loading resource" godot.log; then
             echo "Godot reported a blocking parse/load error"
@@ -30,6 +40,7 @@ jobs:
           fi
       - name: Verify required production docs
         run: |
+          set -euo pipefail
           test -f SETUP_REQUIRED.txt
           test -f docs/GAME_DESIGN.md
           test -f scripts/integrations.gd
