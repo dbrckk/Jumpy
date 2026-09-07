@@ -52,16 +52,16 @@ Every cycle must inspect this file, `AUTONOMOUS_TEAM.md`, `PRODUCTION_ROADMAP.md
 
 <!-- AUTO_CYCLE_START -->
 ## Latest autonomous cycle
-- Time: 2026-09-07 11:28 UTC
-- Base: `bd04b7417a32`
+- Time: 2026-09-07 11:51 UTC
+- Base: `822b914fe264`
 - Atomic phase: `OPEN_ENDED`
-- Executor: `opencode_completed`
+- Executor: `claude-code_timeout_20s+deterministic_fallback`
 
 ### Strategic snapshot
 Strategic review unavailable; use repository evidence and living state.
 
 ### Execution evidence
-AGENT_ATTEMPT=claude-code There's an issue with the selected model (claude-opus-5[1m]). It may not exist or you may not have access to it. Run --model to pick a different model. AGENT_ATTEMPT=opencode [0m > build · nvidia_nim/nvidia/nemotron-3-super-120b-a12b [0m [91m[1mError: [0mUpstream provider NIM returned HTTP 404. Category: upstream Mapped message: Provider API request failed.  Upstream error: (empty upstream error body)  Request ID: req_e6a6959ed67d408c8e108e8ad7d6c128 AGENT_SELECTED=none
+AGENT_ATTEMPT=opencode [0m > build · nvidia_nim/nvidia/nemotron-3.5-lightning-30b-a3b [0m [0m→ [0mRead . [0m→ [0mRead scripts/main.gd AGENT_ATTEMPT=claude-code AGENT_SELECTED=none
 
 ### Next-cycle rule
 Re-read current source. Never repeat a failed approach unchanged; reduce scope or choose another route.

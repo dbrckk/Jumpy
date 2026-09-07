@@ -321,21 +321,22 @@ func on_landed(p: Dictionary) -> void:
 	var right_edge: float = float(p.x) + float(p.w)
 	var edge_distance: float = minf(absf(PLAYER_X - left_edge), absf(right_edge - PLAYER_X))
 	var clutch: bool = not perfect and edge_distance <= PLAYER_R * 0.72
+	var feedback_scale: float = 0.35 if bool(Profile.data.reduced_motion) else 1.0
 	if perfect:
 		combo += 1
 		perfects += 1
 		flow = minf(5.0, 1.0 + float(combo) * 0.25)
 		score += int(18.0 * flow)
-		camera_kick = 9.0
-		flash = 0.24
-		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffffff"), 22, 420.0)
+		camera_kick = 9.0 * feedback_scale
+		flash = 0.24 * feedback_scale
+		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffffff"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)
 		Integrations.haptic(32)
 	elif clutch:
 		combo += 1
 		flow = minf(5.0, 1.0 + float(combo) * 0.18)
 		score += int(12.0 * flow)
-		camera_kick = 12.0
-		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffe66d"), 18, 360.0)
+		camera_kick = 12.0 * feedback_scale
+		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffe66d"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)
 		Integrations.haptic(26)
 	else:
 		combo = maxi(0, combo - 1)
