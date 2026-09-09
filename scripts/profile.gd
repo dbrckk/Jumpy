@@ -74,7 +74,7 @@ func record_run(score: int, run_coins: int, perfects: int, daily: bool) -> Dicti
 	return get_mission_progress()
 
 func spend_coins(amount: int) -> bool:
-	if int(data.coins) < amount:
+	if amount <= 0 or int(data.coins) < amount:
 		return false
 	data.coins = int(data.coins) - amount
 	save()

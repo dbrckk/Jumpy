@@ -66,3 +66,11 @@ AGENT_ATTEMPT=opencode [0m > build · nvidia_nim/deepseek-ai/deepseek-v4-pro-08
 ### Next-cycle rule
 Re-read current source. Never repeat a failed approach unchanged; reduce scope or choose another route.
 <!-- AUTO_CYCLE_END -->
+
+## Verified spending correction — 2026-09-09
+
+The shared studio reproduced invalid negative and zero spending against baseline `b9a8df120dc5da807f68b610e7bfcd0422f8cff5`, then verified the one-line guard in `spend_coins`. Nonpositive amounts are now rejected without changing the balance; insufficient funds remain rejected and valid spending debits exactly once.
+
+Evidence: https://github.com/dbrckk/ai-dev-server/actions/runs/34317183392 — Godot 4.7.2, eight existing gameplay assertions plus four spending assertions. Before: exactly the negative/zero cases failed. After: all 12 passed. CircleCI also reports the candidate gate successful at server commit `39a1d39a06c7065552d9525d781d03464a9e419a`.
+
+No APK, visual comparison or device test is claimed by this correction. Next: validate malformed saved profile data, then settings input behavior, with targeted regression tests before further changes.
