@@ -74,3 +74,11 @@ The shared studio reproduced invalid negative and zero spending against baseline
 Evidence: https://github.com/dbrckk/ai-dev-server/actions/runs/34317183392 — Godot 4.7.2, eight existing gameplay assertions plus four spending assertions. Before: exactly the negative/zero cases failed. After: all 12 passed. CircleCI also reports the candidate gate successful at server commit `39a1d39a06c7065552d9525d781d03464a9e419a`.
 
 No APK, visual comparison or device test is claimed by this correction. Next: validate malformed saved profile data, then settings input behavior, with targeted regression tests before further changes.
+
+## Verified save normalization — 2026-09-09
+
+The shared studio reproduced five failing save checks, then validated this profile loader with eight save assertions and twelve gameplay/spending assertions. Source: server candidate commit `fef4f255e516a73d2913741f115fa073208f92ed`. Real Godot evidence: https://github.com/dbrckk/ai-dev-server/actions/runs/34318290518 . All 20 assertions passed after the correction.
+
+The loader now starts from independent defaults; accepts finite whole nonnegative counters within 32-bit bounds, boolean preferences and real calendar dates; filters duplicate/out-of-range skin indices; and selects only unlocked skins. Valid progress and preferences survive a save/load roundtrip. Invalid/truncated JSON and non-object data fall back safely. Files above 256 KiB are rejected before parsing (the size guard is not separately covered by the eight assertions).
+
+CircleCI validation failed on the candidate commit; no CircleCI success is claimed for this correction. No new APK, visual comparison or device test is claimed. Next: settings interaction regression coverage and robust file replacement during saving.
