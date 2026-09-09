@@ -3,7 +3,7 @@ extends Node
 const SAVE_PATH: String = "user://jumpy_save.json"
 const SAVE_VERSION: int = 1
 
-var data: Dictionary = {
+const DEFAULT_DATA: Dictionary = {
 	"version": SAVE_VERSION,
 	"best_score": 0,
 	"coins": 0,
@@ -22,25 +22,76 @@ var data: Dictionary = {
 	"high_contrast": false
 }
 
+var data: Dictionary = DEFAULT_DATA.duplicate(true)
+
+func _save_integer(value: Variant, fallback: int = 0, maximum: int = 2147483647) -> int:
+	if typeof(value) != TYPE_INT and typeof(value) != TYPE_FLOAT:
+		return fallback
+	var number: float = float(value)
+	if not is_finite(number) or number < 0.0 or number > maximum or number != floor(number):
+		return fallback
+	return int(number)
+
+func _save_date(value: Variant) -> String:
+	if not value is String or value.length() != 10:
+		return ""
+	var parts: PackedStringArray = value.split("-")
+	if parts.size() != 3 or parts[0].length() != 4 or parts[1].length() != 2 or parts[2].length() != 2:
+		return ""
+	for part in parts:
+		if not part.is_valid_int() or part.begins_with("+") or part.begins_with("-"):
+			return ""
+	var year: int = int(parts[0])
+	var month: int = int(parts[1])
+	var day: int = int(parts[2])
+	if year < 1 or month < 1 or month > 12:
+		return ""
+	var days: Array[int] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+	if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+		days[1] = 29
+	return value if day >= 1 and day <= days[month - 1] else ""
+
+func _validated_save(parsed: Dictionary) -> Dictionary:
+	var clean: Dictionary = DEFAULT_DATA.duplicate(true)
+	for key in ["best_score", "coins", "runs", "perfect_landings", "total_score", "daily_best", "streak_days"]:
+		clean[key] = _save_integer(parsed.get(key, 0))
+	for key in ["sound", "haptics", "reduced_motion", "high_contrast"]:
+		if typeof(parsed.get(key)) == TYPE_BOOL:
+			clean[key] = parsed[key]
+	for key in ["daily_key", "last_play_date"]:
+		clean[key] = _save_date(parsed.get(key))
+	var unlocks: Array = [0]
+	var saved_unlocks: Variant = parsed.get("unlocked_skins")
+	if saved_unlocks is Array:
+		for item in saved_unlocks:
+			var index: int = _save_integer(item, -1, 5)
+			if index >= 0 and not index in unlocks:
+				unlocks.append(index)
+	clean.unlocked_skins = unlocks
+	var selected: int = _save_integer(parsed.get("selected_skin", 0), 0, 5)
+	clean.selected_skin = selected if selected in unlocks else 0
+	return clean
+
 func _ready() -> void:
 	load_data()
 	_refresh_daily()
 
 func load_data() -> void:
+	data = DEFAULT_DATA.duplicate(true)
 	if not FileAccess.file_exists(SAVE_PATH):
 		return
 	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if file == null:
-		push_warning("Jumpy: unable to open save file for reading. Error %s" % FileAccess.get_open_error())
+		push_warning("Jumpy: unable to open save file; defaults preserved.")
 		return
-	var raw: String = file.get_as_text()
-	var parsed: Variant = JSON.parse_string(raw)
-	if parsed is Dictionary:
-		for key: Variant in parsed.keys():
-			if data.has(key):
-				data[key] = parsed[key]
-	else:
+	if file.get_length() > 262144:
+		push_warning("Jumpy: save file too large; defaults preserved.")
+		return
+	var parser: JSON = JSON.new()
+	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary:
 		push_warning("Jumpy: save file is invalid; defaults preserved.")
+		return
+	data = _validated_save(parser.data)
 
 func save() -> void:
 	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
