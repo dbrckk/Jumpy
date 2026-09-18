@@ -18,3 +18,7 @@
 - Use code-graph.json to inspect likely internal import relationships.
 - Use imports.json when a changed file crosses module boundaries.
 - Treat graph edges as static hints; verify source before editing.
+
+## ast-grep enrichment
+- ast-grep outline: unavailable; portable index remains authoritative for routing
+

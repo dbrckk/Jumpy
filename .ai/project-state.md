@@ -22,18 +22,18 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-09-18T10:09:29Z
+Generated: 2026-09-18T11:19:22Z
 
 ### Git
 - Branch: `main`
-- Head: `bbe84ef26fbc`
-- Commit date: 2026-09-18T12:09:11+02:00
-- Commit: chore(ai): route through Repo Brain
-- Tracked files: 35
+- Head: `2af3839dca3c`
+- Commit date: 2026-09-18T13:19:12+02:00
+- Commit: chore: enable portable Repo Brain fallback
+- Tracked files: 41
 
 ### Recently changed files
-- `AGENTS.md`
 - `.repo-standards.yml`
+- `AGENTS.md`
 - `.github/workflows/ai-repo-map.yml`
 
 ### Project signals
