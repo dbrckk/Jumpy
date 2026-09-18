@@ -11,7 +11,11 @@
   "dominant_extensions": [
     {
       "extension": ".md",
-      "count": 13
+      "count": 14
+    },
+    {
+      "extension": ".json",
+      "count": 4
     },
     {
       "extension": ".yml",
@@ -24,10 +28,6 @@
     {
       "extension": ".uid",
       "count": 3
-    },
-    {
-      "extension": ".json",
-      "count": 2
     },
     {
       "extension": ".cfg",
