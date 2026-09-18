@@ -10,12 +10,12 @@
   ],
   "dominant_extensions": [
     {
-      "extension": ".md",
-      "count": 15
+      "extension": ".json",
+      "count": 16
     },
     {
-      "extension": ".json",
-      "count": 13
+      "extension": ".md",
+      "count": 15
     },
     {
       "extension": ".yml",
