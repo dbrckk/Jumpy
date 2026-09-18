@@ -1,0 +1,19 @@
+{
+  "files": {
+    "AGENTS.md": {
+      "sha256": "e07f466d4fc455ed6fb4a9e41212e7f313482ea9e1d21599a4e9aca90ffe85ba",
+      "size": 2646
+    },
+    "project.godot": {
+      "sha256": "1ee5ba332fecf669dd5c45cb7d8dcd3422816c4929c8a0acad99ebb2971dbb12",
+      "size": 965
+    },
+    "scripts/main.gd": {
+      "sha256": "82a219805a8fe8f625ba641192c61056f62cef683f127a6f43c48b8744d73ddb",
+      "size": 19384
+    }
+  },
+  "generated_by": "dbrckk/repo-brain-v6",
+  "schema_version": 1,
+  "scope": "hotset"
+}
