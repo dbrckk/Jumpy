@@ -11,7 +11,7 @@
   "dominant_extensions": [
     {
       "extension": ".json",
-      "count": 18
+      "count": 27
     },
     {
       "extension": ".md",
@@ -19,7 +19,7 @@
     },
     {
       "extension": ".yml",
-      "count": 4
+      "count": 5
     },
     {
       "extension": ".gd",
@@ -35,6 +35,10 @@
     },
     {
       "extension": ".godot",
+      "count": 1
+    },
+    {
+      "extension": ".mmd",
       "count": 1
     },
     {

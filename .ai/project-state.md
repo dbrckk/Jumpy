@@ -22,19 +22,20 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-09-18T19:34:25Z
+Generated: 2026-09-18T20:00:11Z
 
 ### Git
 - Branch: `main`
-- Head: `a3e1052f4e82`
-- Commit date: 2026-09-18T21:32:10+02:00
-- Commit: chore(ai): adopt graph-first agent routing
-- Tracked files: 50
+- Head: `821a73e9b747`
+- Commit date: 2026-09-18T21:57:06+02:00
+- Commit: chore(ai): add precise semantic refresh
+- Tracked files: 61
 
 ### Recently changed files
+- `.github/workflows/semantic-refresh.yml`
+- `.repo-standards.yml`
 - `AGENTS.md`
 - `.github/workflows/ai-repo-map.yml`
-- `.repo-standards.yml`
 
 ### Project signals
 - `project.godot`
