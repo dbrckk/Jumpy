@@ -48,6 +48,7 @@ scripts/
   integrations.gd
   main.gd
   profile.gd
+.repo-standards.yml
 AGENTS.md
 README.md
 ```
@@ -881,6 +882,19 @@ func _unlock_earned_skins() -> void:
 		if int(data.total_score) >= milestones[i] and not i in unlocks:
 			unlocks.append(i)
 	data.unlocked_skins = unlocks
+```
+
+## File: .repo-standards.yml
+```yaml
+source: dbrckk/repo-standards
+ref: main
+adopted: true
+ai_context:
+  repo_map: .ai/repo-map.md
+  repo_health: .ai/repo-health.md
+  project_state: .ai/project-state.md
+workflow:
+  file: .github/workflows/ai-repo-map.yml
 ```
 
 ## File: AGENTS.md
