@@ -1,0 +1,375 @@
+{
+  "symbols": [
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "event",
+      "line": 7
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "haptic",
+      "line": 10
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "play_tone",
+      "line": 28
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "rewarded_available",
+      "line": 50
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "show_rewarded",
+      "line": 53
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "share_score",
+      "line": 58
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "leaderboard_submit",
+      "line": 65
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_ready",
+      "line": 40
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "build_ui",
+      "line": 46
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "make_label",
+      "line": 73
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "make_button",
+      "line": 85
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "settings_pressed",
+      "line": 96
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "toggle_preference",
+      "line": 102
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "refresh_settings_ui",
+      "line": 109
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "reset_run",
+      "line": 123
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "set_daily",
+      "line": 153
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "cycle_skin",
+      "line": 157
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "restart_pressed",
+      "line": 167
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "start_run",
+      "line": 171
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "show_menu",
+      "line": 179
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_unhandled_input",
+      "line": 199
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "jump",
+      "line": 217
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "pulse",
+      "line": 229
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_physics_process",
+      "line": 241
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "move_world",
+      "line": 256
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "update_player",
+      "line": 272
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "try_land",
+      "line": 286
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "has_support",
+      "line": 303
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "on_landed",
+      "line": 312
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "collect_coin",
+      "line": 347
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "die",
+      "line": 361
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "make_platform",
+      "line": 387
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "spawn_platform_after",
+      "line": 394
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "update_ui",
+      "line": 409
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "burst",
+      "line": 417
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "animate_particles",
+      "line": 423
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "skin_color",
+      "line": 432
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_draw",
+      "line": 435
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_save_integer",
+      "line": 26
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_save_date",
+      "line": 34
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_validated_save",
+      "line": 53
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_ready",
+      "line": 74
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "load_data",
+      "line": 78
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "save",
+      "line": 95
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "set_preference",
+      "line": 106
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "record_run",
+      "line": 113
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "spend_coins",
+      "line": 126
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "select_skin",
+      "line": 133
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "get_mission_progress",
+      "line": 138
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "daily_seed",
+      "line": 148
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_refresh_daily",
+      "line": 152
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_update_streak",
+      "line": 160
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_unlock_earned_skins",
+      "line": 174
+    }
+  ]
+}

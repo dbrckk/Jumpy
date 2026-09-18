@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "generated_by": "dbrckk/repo-brain",
+  "files_indexed": 3,
+  "symbol_count": 53,
+  "edge_count": 0,
+  "languages": {
+    "gdscript": 3
+  },
+  "top_symbol_files": [
+    {
+      "file": "scripts/main.gd",
+      "symbols": 31
+    },
+    {
+      "file": "scripts/profile.gd",
+      "symbols": 15
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "symbols": 7
+    }
+  ]
+}
