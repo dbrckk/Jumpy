@@ -892,7 +892,7 @@ func _unlock_earned_skins() -> void:
 ```yaml
 source: dbrckk/repo-standards
 ref: main
-version: 2
+version: 3
 adopted: true
 ai_context:
   repo_map: .ai/repo-map.md
