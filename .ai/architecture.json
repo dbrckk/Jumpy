@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "generated_by": "dbrckk/repo-standards",
+  "project_types": [
+    "gdscript",
+    "godot"
+  ],
+  "descriptors": [
+    "project.godot"
+  ],
+  "dominant_extensions": [
+    {
+      "extension": ".md",
+      "count": 12
+    },
+    {
+      "extension": ".yml",
+      "count": 4
+    },
+    {
+      "extension": ".gd",
+      "count": 3
+    },
+    {
+      "extension": ".uid",
+      "count": 3
+    },
+    {
+      "extension": ".cfg",
+      "count": 1
+    },
+    {
+      "extension": ".godot",
+      "count": 1
+    },
+    {
+      "extension": ".tres",
+      "count": 1
+    },
+    {
+      "extension": ".tscn",
+      "count": 1
+    },
+    {
+      "extension": ".txt",
+      "count": 1
+    }
+  ],
+  "top_level_directories": [
+    ".serena",
+    "assets",
+    "docs",
+    "scenes",
+    "scripts"
+  ],
+  "source_roots": [
+    "scripts"
+  ],
+  "test_roots": [],
+  "entrypoint_candidates": [
+    "project.godot",
+    "scripts/main.gd"
+  ],
+  "context_files": {
+    "project_state": ".ai/project-state.md",
+    "repo_health": ".ai/repo-health.md",
+    "repo_map": ".ai/repo-map.md",
+    "commands": ".ai/commands.json",
+    "change_impact": ".ai/change-impact.md"
+  }
+}

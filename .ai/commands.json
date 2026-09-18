@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "generated_by": "dbrckk/repo-standards",
+  "commands": [
+    {
+      "command": "godot --headless --path . --editor --quit",
+      "purpose": "validate project load",
+      "source": "project.godot",
+      "confidence": "medium"
+    }
+  ]
+}
