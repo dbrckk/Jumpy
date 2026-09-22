@@ -159,8 +159,7 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))
-	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
