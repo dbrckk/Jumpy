@@ -177,7 +177,7 @@ func start_run() -> void:
 	jump()
 	Integrations.event("run_start", {"daily": daily_mode})
 
-func show_menu(value: bool) -> void:
+func show_menu(value: Bool) -> void:
 	if not value:
 		settings_open = false
 	var show_main: bool = value and not settings_open
