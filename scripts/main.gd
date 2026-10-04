@@ -159,8 +159,7 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))
-	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
@@ -343,7 +342,7 @@ func on_landed(p: Dictionary) -> void:
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
 		var ordinary_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
-	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
+		Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
 func collect_coin() -> void:
 	for p: Dictionary in platforms:
