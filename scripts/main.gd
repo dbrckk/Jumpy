@@ -276,7 +276,7 @@ func update_player(delta: float) -> void:
 		player_vy += GRAVITY * delta
 		player_y += player_vy * delta
 		if player_vy > 0.0:
-			try_land(old_y)
+			try_land(old_y)		
 	elif not has_support():
 		on_ground = false
 		player_vy = 40.0
@@ -435,41 +435,85 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
-	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
-	for i: int in range(9):
-		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
-		draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
-	for i: int in range(18):
-		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
-		var star_y: float = 240.0 + fmod(float(i * 127), 1180.0)
-		draw_circle(Vector2(star_x, star_y), 2.5 + float(i % 3), Color(0.42, 0.78, 1.0, 0.22))
-	var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
-	var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
-	var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
-	var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
-	for p: Dictionary in platforms:
-		var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
-		draw_rect(rect, platform_fill_color, true)
-		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
-		var perfect_w: float = minf(160.0, float(p.w) * 0.44)
-		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
-		if bool(p.coin) and not bool(p.coin_taken):
-			var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
-			draw_circle(coin_pos, 25.0, Color("ffe66d"))
-			draw_circle(coin_pos, 11.0, Color("070814"))
-	var player_color: Color = skin_color()
-	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
-	var trail_steps: int = 1 if bool(Profile.data.reduced_motion) else 4
-	for i: int in range(trail_steps, 0, -1):
-		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
-	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
-	draw_circle(player_pos, PLAYER_R, player_color)
-	draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
-	if pulse_available and not on_ground and state == "PLAYING":
-		draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color("ffffff"), 3.0)
-	for item: Dictionary in particles:
-		var alpha: float = clampf(float(item.life) / float(item.max), 0.0, 1.0)
-		var particle_color: Color = Color(item.c)
-		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
-	if flash > 0.0:
-		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+
+	# Background: replace starfield drawing with multiple parallax layers
+	 draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
+	# Dark grid lines
+	 for i in range(9):
+		 var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
+		 draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
+	# Parallax star layers
+	 for layer in range(3):
+		 var speed_factor = 0.05 + float(layer) * 0.03
+		 var star_count = 12 + layer * 6
+		 for i in range(star_count):
+			 var star_x: float = fmod(float(i * 137 + layer * 113) - elapsed * speed * speed_factor, W + 200.0) - 100.0
+			 var star_y: float = 200.0 + fmod(float(i * 97 + layer * 79), 1000.0)
+			 var brightness = 0.15 + float(layer) * 0.15
+			 var size = 1.5 + float(layer) * 0.5
+			 draw_circle(Vector2(star_x, star_y), size, Color(0.4, 0.7, 1.0, brightness))
+
+	# Platforms and coins
+	 var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
+	 var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
+	 var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
+	 var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
+	 for p: Dictionary in platforms:
+		 var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
+		 draw_rect(rect, platform_fill_color, true)
+		 draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
+		 var perfect_w: float = minf(160.0, float(p.w) * 0.44)
+		 var perfect_pulse = 0.0
+		 if Profile.data.reduced_motion:
+			 perfect_pulse = 0.0
+		 else:
+			 perfect_pulse = sin(elapsed * 5.0) * 0.2 + 0.8  # Oscillates between 0.6 and 1.0
+		 var perfect_draw_color = perfect_zone_color
+		 if perfect_pulse < 1.0:
+			 perfect_draw_color = perfect_draw_color.lightened(0.3 * (1.0 - perfect_pulse))
+		 var line_width = 5.0 * perfect_pulse if high_contrast_enabled else 3.0 * perfect_pulse
+		 draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_draw_color, line_width)
+		 if bool(p.coin) and not bool(p.coin_taken):
+			 var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
+			 draw_circle(coin_pos, 25.0, Color("ffe66d"))
+			 draw_circle(coin_pos, 11.0, Color("070814"))
+
+	# Player drawing with enhancements
+	 var player_color: Color = skin_color()
+	 var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
+	 # Outer glow effect based on flow state and skin color
+	 var glow_size = PLAYER_R * 0.3 * flow
+	 var glow_color = player_color.linear_interpolate(Color(1,1,1), 0.3)
+	 if flow > 2.0:
+		 glow_size *= 1.0 + (flow - 2.0) * 0.2
+		 glow_color = glow_color.lightened(0.2)
+	 draw_circle(player_pos, PLAYER_R + 9.0 + glow_size, Color(glow_color.r, glow_color.g, glow_color.b, 0.2))
+	 # Enhanced trail based on velocity
+	 var trail_length = clamp(player_vy.length() / 500.0, 1.0, 4.0)
+	 var trail_steps = max(1, int(trail_length))
+	 for i in range(trail_steps, 0, -1):
+		 var alpha = 0.035 * float(5 - i) * (1.0 - float(i)/trail_steps)
+		 draw_circle(player_pos + Vector2(-float(i) * 18.0, 0), PLAYER_R * (0.5 + float(i) * 0.08), Color(player_color.r, player_color.g, player_color.b, alpha))
+	 # High contrast mode adjustments for player outline
+	 if high_contrast_enabled:
+		 draw_circle(player_pos, PLAYER_R + 11.0, Color("ffffff"))
+	 else:
+		 draw_circle(player_pos, PLAYER_R + 9.0, Color(player_color.r, player_color.g, player_color.b, 0.18))
+	 draw_circle(player_pos, PLAYER_R, player_color)
+	 draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
+	 # Pulse indicator
+	 if pulse_available and not on_ground and state == "PLAYING":
+		 draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color("ffffff"), 3.0)
+
+	# Particles with enhancements
+	 for item: Dictionary in particles:
+		 var alpha: float = clampf(float(item.life) / float(item.max), 0.0, 1.0)
+		 var particle_color: Color = Color(item.c)
+		 var size_base = 5.0 + 6.0 * alpha
+		 var size_variation = sin(item.life * 10.0) * 1.5  # Adds subtle pulsing
+		 var final_size = size_base + size_variation
+		 draw_circle(Vector2(item.p) + shake, final_size, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
+
+	# Flash effect
+	 if flash > 0.0:
+		 draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
