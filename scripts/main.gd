@@ -433,7 +433,11 @@ func skin_color() -> Color:
 	return SKINS[int(Profile.data.selected_skin) % SKINS.size()]
 
 func _draw() -> void:
-	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
+	var shake: Vector2
+	if camera_kick > 0.2:
+		shake = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick))
+	else:
+		shake = Vector2.ZERO
 
 	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
 	for i: int in range(9):
