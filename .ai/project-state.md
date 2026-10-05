@@ -7,7 +7,8 @@ Status: active
 - Repository agent instructions are present.
 
 ## Broken / blockers
-- None documented here yet.
+- The managed Production-OS branch is still a work in progress. Its generated texture files are absent; the game retains its existing procedural renderer until those files are produced and validated.
+- The October 5 worker run stopped after repeated Godot validation failures. The malformed GDScript and generated profile test have been repaired on the managed branch.
 
 ## Current priority
 - Restore task-specific state here when substantial work resumes.

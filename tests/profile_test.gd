@@ -1,4 +1,6 @@
-extends Node
+extends SceneTree
+
+var Profile = preload("res://scripts/profile.gd").new()
 
 const DEFAULT_DATA = {
 	"version": 1,
@@ -19,23 +21,25 @@ const DEFAULT_DATA = {
 	"high_contrast": false
 }
 
-func _ready() -> void:
+func _initialize() -> void:
 	RandomNumberGenerator.new().randomize()
 	var failed := false
-	failed |= !test_defaults()
-	failed |= !test_save_load_valid()
-	failed |= !test_save_load_invalid_json()
-	failed |= !test_save_load_out_of_range()
-	failed |= !test_save_load_negative()
-	failed |= !test_save_load_non_integer()
-	failed |= !test_save_load_invalid_date()
-	failed |= !test_skin_unlock_and_select()
+	failed = not test_defaults() or failed
+	failed = not test_save_load_valid() or failed
+	failed = not test_save_load_invalid_json() or failed
+	failed = not test_save_load_out_of_range() or failed
+	failed = not test_save_load_negative() or failed
+	failed = not test_save_load_non_integer() or failed
+	failed = not test_save_load_invalid_date() or failed
+	failed = not test_skin_unlock_and_select() or failed
 	if failed:
 		push_error("Profile tests FAILED")
-		get_tree().quit(1)
+		Profile.free()
+		quit(1)
 	else:
 		print("All Profile tests PASSED")
-		get_tree().quit(0)
+		Profile.free()
+		quit(0)
 
 func test_defaults() -> bool:
 	Profile.load_data()
@@ -88,7 +92,7 @@ func test_save_load_invalid_json() -> bool:
 	for key in DEFAULT_DATA.keys():
 		if Profile.data.get(key) != DEFAULT_DATA[key]:
 			push_error("Invalid JSON did not restore defaults for %s: expected %s, got %s" % [key, DEFAULT_DATA[key], Profile.data.get(key)])
-		return false
+			return false
 	return true
 
 func test_save_load_out_of_range() -> bool:
@@ -166,7 +170,7 @@ func test_skin_unlock_and_select() -> bool:
 	Profile.save()
 
 	# Simulate a high total score to unlock skins
-	Profile.data.total_score = 6000  # should unlock skins at indices 0,1,2,3,4,5 (milestones: 0,250,900,2200,5000,10000)
+	Profile.data.total_score = 10000  # unlocks all six milestone skins
 	Profile._unlock_earned_skins()
 	if Profile.data.unlocked_skins.size() != 6:
 		push_error("Expected 6 unlocked skins, got %d" % Profile.data.unlocked_skins.size())
@@ -175,7 +179,7 @@ func test_skin_unlock_and_select() -> bool:
 	for i in expected:
 		if i not in Profile.data.unlocked_skins:
 			push_error("Missing skin %d in unlocked_skins" % i)
-		return false
+			return false
 
 	# Select skin 4 (should be allowed)
 	Profile.select_skin(4)
@@ -196,4 +200,3 @@ func test_skin_unlock_and_select() -> bool:
 		return false
 
 	return true
-"}]}, {
