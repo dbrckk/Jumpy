@@ -52,24 +52,43 @@ func build_ui() -> void:
 	layer.add_child(root)
 
 	ui.score = make_label(root, "0", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.score.name = "score"
 	ui.flow = make_label(root, "FLOW x1.0", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.flow.name = "flow"
 	ui.best = make_label(root, "BEST 0", 28, Vector2(42, 44), Vector2(360, 50))
+	ui.best.name = "best"
 	ui.coins = make_label(root, "◇ 0", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)
+	ui.coins.name = "coins"
 	ui.title = make_label(root, "JUMPY", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.title.name = "title"
 	ui.subtitle = make_label(root, "TAP • LAND • FLOW", 34, Vector2(0, 545), Vector2(W, 70), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.subtitle.name = "subtitle"
 	ui.hint = make_button(root, "TAP TO JUMP\nTAP ONCE IN AIR TO PULSE", Vector2(120, 690), Vector2(840, 120), func() -> void: if state == "READY": start_run())
+	ui.hint.name = "hint"
 	ui.mission = make_label(root, "", 25, Vector2(90, 900), Vector2(900, 120), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.mission.name = "mission"
 	ui.daily = make_button(root, "DAILY", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))
+	ui.daily.name = "daily"
 	ui.normal = make_button(root, "ENDLESS", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))
+	ui.normal.name = "normal"
 	ui.skin = make_button(root, "SKIN", Vector2(375, 1240), Vector2(330, 82), cycle_skin)
+	ui.skin.name = "skin"
 	ui.settings = make_button(root, "SETTINGS", Vector2(375, 1340), Vector2(330, 82), settings_pressed)
+	ui.settings.name = "settings"
 	ui.setting_sound = make_button(root, "", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference("sound"))
+	ui.setting_sound.name = "setting_sound"
 	ui.setting_haptics = make_button(root, "", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference("haptics"))
+	ui.setting_haptics.name = "setting_haptics"
 	ui.setting_motion = make_button(root, "", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference("reduced_motion"))
+	ui.setting_motion.name = "setting_motion"
 	ui.setting_contrast = make_button(root, "", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference("high_contrast"))
+	ui.setting_contrast.name = "setting_contrast"
 	ui.gameover = make_label(root, "", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.gameover.name = "gameover"
 	ui.retry = make_button(root, "RETRY", Vector2(280, 940), Vector2(520, 110), restart_pressed)
+	ui.retry.name = "retry"
 	ui.share = make_button(root, "SHARE", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))
+	ui.share.name = "share"
 
 func make_label(parent: Control, text: String, size: int, pos: Vector2, dim: Vector2, align: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT) -> Label:
 	var label: Label = Label.new()
@@ -243,7 +262,6 @@ func _physics_process(delta: float) -> void:
 		animate_particles(delta)
 		queue_redraw()
 		return
-	elapsed += delta
 	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
