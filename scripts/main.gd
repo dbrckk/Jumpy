@@ -354,8 +354,7 @@ func on_landed(p: Dictionary) -> void:
 		combo = maxi(0, combo - 1)
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
 		var ordinary_feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
-		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
-	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
+		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
 func collect_coin() -> void:
 	for p: Dictionary in platforms:
@@ -509,3 +508,4 @@ func _draw() -> void:
 	# Flash
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+"
