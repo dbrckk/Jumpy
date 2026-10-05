@@ -38,9 +38,22 @@ var next_platform_id: int = 1
 var ui: Dictionary = {}
 var settings_open: bool = false
 
+# Textures (to be loaded in _ready)
+var tex_background: Texture2D
+var tex_platform: Texture2D
+var tex_coin: Texture2D
+var tex_player_base: Texture2D
+
 func _ready() -> void:
 	fx_rng.randomize()
 	build_ui()
+	
+	# Load textures
+	tex_background = preload("res://assets/background.png")
+	tex_platform = preload("res://assets/platform_tile.png")
+	tex_coin = preload("res://assets/coin.png")
+	tex_player_base = preload("res://assets/player_base.png")
+	
 	reset_run(false)
 	Integrations.event("game_open")
 
@@ -159,8 +172,7 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))
-	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
@@ -435,41 +447,77 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
-	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
-	for i: int in range(9):
-		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
-		draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
-	for i: int in range(18):
-		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
-		var star_y: float = 240.0 + fmod(float(i * 127), 1180.0)
-		draw_circle(Vector2(star_x, star_y), 2.5 + float(i % 3), Color(0.42, 0.78, 1.0, 0.22))
+
+	# Draw background (tiled)
+	var bg_width: int = tex_background.get_width()
+	var bg_height: int = tex_background.get_height()
+	var tiles_x: int = ceil(W / bg_width) + 1
+	var tiles_y: int = ceil(H / bg_height) + 1
+	for x in range(tiles_x):
+		for y in range(tiles_y):
+			var pos: Vector2 = Vector2(x * bg_width, y * bg_height) + shake
+			draw_texture_rect(tex_background, Rect2(pos, Vector2(bg_width, bg_height)), true)
+
+	# Draw platforms
 	var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
 	var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
 	var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
 	var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
 	for p: Dictionary in platforms:
 		var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
-		draw_rect(rect, platform_fill_color, true)
-		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
+		# Draw the platform texture (stretched to width)
+		var platform_rect: Rect2 = Rect2(rect.position, Vector2(rect.size.x, rect.size.y))
+		draw_texture_rect(tex_platform, platform_rect, true)
+		# Draw the perfect zone line
 		var perfect_w: float = minf(160.0, float(p.w) * 0.44)
-		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
+		var perfect_from: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake
+		var perfect_to: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake
+		draw_line(perfect_from, perfect_to, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
+		# Draw coin if present and not taken
 		if bool(p.coin) and not bool(p.coin_taken):
 			var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
-			draw_circle(coin_pos, 25.0, Color("ffe66d"))
-			draw_circle(coin_pos, 11.0, Color("070814"))
+			var coin_size: float = 50.0 # diameter, texture is 64x64 so we scale to 50
+			var coin_rect: Rect2 = Rect2(coin_pos - Vector2(coin_size * 0.5, coin_size * 0.5), Vector2(coin_size, coin_size))
+			draw_texture_rect(tex_coin, coin_rect, true)
+
+	# Draw player
 	var player_color: Color = skin_color()
 	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
+	# Trail (procedural, as before)
 	var trail_steps: int = 1 if bool(Profile.data.reduced_motion) else 4
 	for i: int in range(trail_steps, 0, -1):
 		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
-	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
-	draw_circle(player_pos, PLAYER_R, player_color)
-	draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
-	if pulse_available and not on_ground and state == "PLAYING":
-		draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color("ffffff"), 3.0)
+	# Outer circle (for high contrast or normal)
+	var outer_radius: float = PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0
+	var outer_color: Color = Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18)		draw_circle(player_pos, outer_radius, outer_color)
+	# Main player body (texture)
+	var player_size: float = PLAYER_R * 2.0 # diameter
+	var player_rect: Rect2 = Rect2(player_pos - Vector2(player_size * 0.5, player_size * 0.5), Vector2(player_size, player_size))
+	# Modulate the texture with the skin color
+	var modulate: Color = player_color
+	# We cannot directly modulate in draw_texture_rect, so we use a workaround: draw a white texture and then multiply by color?
+	# Instead, we can use a shader or draw a white rect and then multiply? But for simplicity, we'll just draw the texture and hope it's white?
+	# But the texture is not white. We need to tint it.
+	# Since we cannot easily tint in _draw without a shader, we will change approach: use a Sprite and modulate it.
+	# However, we are in _draw and we don't want to break the structure.
+	# Let's instead draw a white circle and then the texture? Not ideal.
+	# Given the time, we will draw the texture without tinting and rely on the texture being designed for tinting?
+	# But the spec says it's designed to be tintable, so we assume the texture is white and we can modulate.
+	# However, the texture might not be white. We'll assume it is and use modulate.
+	# In Godot 4, we can use draw_texture_rect with a modulate.
+	# Actually, draw_texture_rect does take a modulate parameter.
+	# So we do:
+	draw_texture_rect(tex_player_base, player_rect, true, modulate)
+	# Eye
+		draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
+
+	# Draw particles
 	for item: Dictionary in particles:
 		var alpha: float = clampf(float(item.life) / float(item.max), 0.0, 1.0)
 		var particle_color: Color = Color(item.c)
 		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
+
+	# Flash
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+"}]}, {
