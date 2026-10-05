@@ -38,26 +38,9 @@ var next_platform_id: int = 1
 var ui: Dictionary = {}
 var settings_open: bool = false
 
-# Textures (to be loaded in _ready)
-var tex_background: Texture2D
-var tex_platform: Texture2D
-var tex_coin: Texture2D
-var tex_player_base: Texture2D
-var tex_parallax_horizontal_lines: Texture2D
-var tex_parallax_stars: Texture2D
-
 func _ready() -> void:
 	fx_rng.randomize()
 	build_ui()
-	
-	# Load textures
-	tex_background = preload("res://assets/background.png")
-	tex_platform = preload("res://assets/platform_tile.png")
-	tex_coin = preload("res://assets/coin.png")
-	tex_player_base = preload("res://assets/player_base.png")
-	tex_parallax_horizontal_lines = preload("res://assets/parallax_horizontal_lines.png")
-	tex_parallax_stars = preload("res://assets/parallax_stars.png")
-	
 	reset_run(false)
 	Integrations.event("game_open")
 
@@ -176,7 +159,8 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))
+	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
@@ -193,7 +177,7 @@ func start_run() -> void:
 	jump()
 	Integrations.event("run_start", {"daily": daily_mode})
 
-func show_menu(value: Bool) -> void:
+func show_menu(value: bool) -> void:
 	if not value:
 		settings_open = false
 	var show_main: bool = value and not settings_open
@@ -359,7 +343,7 @@ func on_landed(p: Dictionary) -> void:
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
 		var ordinary_feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
-		Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
+	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
 func collect_coin() -> void:
 	for p: Dictionary in platforms:
@@ -451,87 +435,41 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
-
-	# Draw parallax background: stars (farthest)
-	var stars_width: int = tex_parallax_stars.get_width()
-	var stars_height: int = tex_parallax_stars.get_height()
-	var stars_tiles_x: int = ceil(W / stars_width) + 1
-	var stars_tiles_y: int = ceil(H / stars_height) + 1
-	var stars_offset: float = elapsed * 0.08 # parallax_factor from design
-	for x in range(stars_tiles_x):
-		for y in range(stars_tiles_y):
-			var pos: Vector2 = Vector2(x * stars_width, y * stars_height) + Vector2(stars_offset, 0) + shake
-			draw_texture_rect(tex_parallax_stars, Rect2(pos, Vector2(stars_width, stars_height)), true)
-
-	# Draw parallax background: horizontal lines
-	var lines_width: int = tex_parallax_horizontal_lines.get_width()
-	var lines_height: int = tex_parallax_horizontal_lines.get_height()
-	var lines_tiles_x: int = ceil(W / lines_width) + 1
-	var lines_tiles_y: int = ceil(H / lines_height) + 1
-	var lines_offset: float = elapsed * (0.015 + elapsed * 0.002) # parallax_base + parallax_increment * elapsed
-	for x in range(lines_tiles_x):
-		for y in range(lines_tiles_y):
-			var pos: Vector2 = Vector2(x * lines_width, y * lines_height) + Vector2(lines_offset, 0) + shake
-			draw_texture_rect(tex_parallax_horizontal_lines, Rect2(pos, Vector2(lines_width, lines_height)), true)
-
-	# Draw background (tiled) - base layer
-	var bg_width: int = tex_background.get_width()
-	var bg_height: int = tex_background.get_height()
-	var tiles_x: int = ceil(W / bg_width) + 1
-	var tiles_y: int = ceil(H / bg_height) + 1
-	for x in range(tiles_x):
-		for y in range(tiles_y):
-			var pos: Vector2 = Vector2(x * bg_width, y * bg_height) + shake
-			draw_texture_rect(tex_background, Rect2(pos, Vector2(bg_width, bg_height)), true)
-
-	# Draw platforms
+	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
+	for i: int in range(9):
+		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
+		draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
+	for i: int in range(18):
+		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
+		var star_y: float = 240.0 + fmod(float(i * 127), 1180.0)
+		draw_circle(Vector2(star_x, star_y), 2.5 + float(i % 3), Color(0.42, 0.78, 1.0, 0.22))
 	var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
 	var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
 	var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
 	var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
 	for p: Dictionary in platforms:
 		var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
-		# Draw the platform texture (stretched to width)
-		var platform_rect: Rect2 = Rect2(rect.position, Vector2(rect.size.x, rect.size.y))
-		draw_texture_rect(tex_platform, platform_rect, true)
-		# Draw the perfect zone line
+		draw_rect(rect, platform_fill_color, true)
+		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
 		var perfect_w: float = minf(160.0, float(p.w) * 0.44)
-		var perfect_from: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake
-		var perfect_to: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake
-		draw_line(perfect_from, perfect_to, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
-		# Draw coin if present and not taken
+		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
 		if bool(p.coin) and not bool(p.coin_taken):
 			var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
-			var coin_size: float = 50.0 # diameter, texture is 64x64 so we scale to 50
-			var coin_rect: Rect2 = Rect2(coin_pos - Vector2(coin_size * 0.5, coin_size * 0.5), Vector2(coin_size, coin_size))
-			draw_texture_rect(tex_coin, coin_rect, true)
-
-	# Draw player
+			draw_circle(coin_pos, 25.0, Color("ffe66d"))
+			draw_circle(coin_pos, 11.0, Color("070814"))
 	var player_color: Color = skin_color()
 	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
-	# Trail (procedural, as before)
 	var trail_steps: int = 1 if bool(Profile.data.reduced_motion) else 4
 	for i: int in range(trail_steps, 0, -1):
 		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
-	# Outer circle (for high contrast or normal)
-	var outer_radius: float = PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0
-	var outer_color: Color = Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18)
-	draw_circle(player_pos, outer_radius, outer_color)
-	# Main player body (texture)
-	var player_size: float = PLAYER_R * 2.0 # diameter
-	var player_rect: Rect2 = Rect2(player_pos - Vector2(player_size * 0.5, player_size * 0.5), Vector2(player_size, player_size))
-	# Modulate the texture with the skin color
-	var modulate: Color = player_color
-	draw_texture_rect(tex_player_base, player_rect, true, modulate)
-	# Eye
-		draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
-
-	# Draw particles
+	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
+	draw_circle(player_pos, PLAYER_R, player_color)
+	draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
+	if pulse_available and not on_ground and state == "PLAYING":
+		draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color("ffffff"), 3.0)
 	for item: Dictionary in particles:
 		var alpha: float = clampf(float(item.life) / float(item.max), 0.0, 1.0)
 		var particle_color: Color = Color(item.c)
 		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
-
-	# Flash
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
