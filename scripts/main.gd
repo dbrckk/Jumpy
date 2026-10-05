@@ -458,7 +458,7 @@ func _draw() -> void:
 
 	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
 	for i: int in range(9):
-		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
+		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float[i] * 0.002), 205.0)
 		draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
 	for i: int in range(18):
 		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
