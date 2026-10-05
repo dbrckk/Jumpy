@@ -176,7 +176,7 @@ func start_run() -> void:
 	jump()
 	Integrations.event("run_start", {"daily": daily_mode})
 
-func show_menu(value: bool) -> void:
+func show_menu(value: Boolean) -> void:
 	if not value:
 		settings_open = false
 	var show_main: bool = value and not settings_open
@@ -434,6 +434,7 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
+
 	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
 	for i: int in range(9):
 		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
