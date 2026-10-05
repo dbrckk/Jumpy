@@ -178,8 +178,7 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))
-	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
@@ -492,3 +491,4 @@ func _draw() -> void:
 		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+"}]}}]}]}]},{
