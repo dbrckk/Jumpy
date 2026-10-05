@@ -213,7 +213,7 @@ func show_menu(value: bool) -> void:
 	ui.share.visible = false
 	if value:
 		var mission_data: Dictionary = Profile.get_mission_progress()
-		ui.mission.text = "STREAK %d  •  MISSIONS  •  RUNS %d/%d  •  PERFECT %d/%d\nTOTAL SCORE %d/%d" % [int(Profile.data.streak_days), mission_data.runs, mission_data.runs_goal, mission_data.perfects, mission_data.perfects_goal, mission_data.score, mission_data.score_goal]
+	ui.mission.text = "STREAK %d  •  MISSIONS  •  RUNS %d/%d  •  PERFECT %d/%d\nTOTAL SCORE %d/%d" % [int(Profile.data.streak_days), mission_data.runs, mission_data.runs_goal, mission_data.perfects, mission_data.perfects_goal, mission_data.score, mission_data.score_goal]
 
 func _unhandled_input(event: InputEvent) -> void:
 	var tapped: bool = false
@@ -453,6 +453,10 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
+	if camera_kick <= 0.2:
+		shake = Vector2.ZERO
+	else:
+		shake = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick))
 	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
 	for i: int in range(9):
 		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
@@ -491,3 +495,4 @@ func _draw() -> void:
 		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+"}]}}]}]}
