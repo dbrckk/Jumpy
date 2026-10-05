@@ -43,6 +43,8 @@ var tex_background: Texture2D
 var tex_platform: Texture2D
 var tex_coin: Texture2D
 var tex_player_base: Texture2D
+var tex_parallax_horizontal_lines: Texture2D
+var tex_parallax_stars: Texture2D
 
 func _ready() -> void:
 	fx_rng.randomize()
@@ -53,6 +55,8 @@ func _ready() -> void:
 	tex_platform = preload("res://assets/platform_tile.png")
 	tex_coin = preload("res://assets/coin.png")
 	tex_player_base = preload("res://assets/player_base.png")
+	tex_parallax_horizontal_lines = preload("res://assets/parallax_horizontal_lines.png")
+	tex_parallax_stars = preload("res://assets/parallax_stars.png")
 	
 	reset_run(false)
 	Integrations.event("game_open")
@@ -447,7 +451,29 @@ func skin_color() -> Color:
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
 
-	# Draw background (tiled)
+	# Draw parallax background: stars (farthest)
+	var stars_width: int = tex_parallax_stars.get_width()
+	var stars_height: int = tex_parallax_stars.get_height()
+	var stars_tiles_x: int = ceil(W / stars_width) + 1
+	var stars_tiles_y: int = ceil(H / stars_height) + 1
+	var stars_offset: float = elapsed * 0.08 # parallax_factor from design
+	for x in range(stars_tiles_x):
+		for y in range(stars_tiles_y):
+			var pos: Vector2 = Vector2(x * stars_width, y * stars_height) + Vector2(stars_offset, 0) + shake
+			draw_texture_rect(tex_parallax_stars, Rect2(pos, Vector2(stars_width, stars_height)), true)
+
+	# Draw parallax background: horizontal lines
+	var lines_width: int = tex_parallax_horizontal_lines.get_width()
+	var lines_height: int = tex_parallax_horizontal_lines.get_height()
+	var lines_tiles_x: int = ceil(W / lines_width) + 1
+	var lines_tiles_y: int = ceil(H / lines_height) + 1
+	var lines_offset: float = elapsed * (0.015 + elapsed * 0.002) # parallax_base + parallax_increment * elapsed
+	for x in range(lines_tiles_x):
+		for y in range(lines_tiles_y):
+			var pos: Vector2 = Vector2(x * lines_width, y * lines_height) + Vector2(lines_offset, 0) + shake
+			draw_texture_rect(tex_parallax_horizontal_lines, Rect2(pos, Vector2(lines_width, lines_height)), true)
+
+	# Draw background (tiled) - base layer
 	var bg_width: int = tex_background.get_width()
 	var bg_height: int = tex_background.get_height()
 	var tiles_x: int = ceil(W / bg_width) + 1

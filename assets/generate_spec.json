@@ -38,5 +38,25 @@
       "width": 64,
       "height": 64
     }
+  },
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "2d illustration",
+      "description": "A seamless horizontal line texture for parallax background, 1080x200 pixels, dark blue with thin cyan lines spaced 205 pixels apart",
+      "target_path": "assets/parallax_horizontal_lines.png",
+      "width": 1080,
+      "height": 200
+    }
+  },
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "2d illustration",
+      "description": "A seamless starfield texture for parallax background, 1080x200 pixels, dark blue with sparse small white stars",
+      "target_path": "assets/parallax_stars.png",
+      "width": 1080,
+      "height": 200
+    }
   }
 ]
