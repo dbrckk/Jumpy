@@ -1,0 +1,29 @@
+{
+  "version": "production-request/v1",
+  "requests": [
+    {
+      "id": "player-skin-0",
+      "type": "2d-illustration",
+      "prompt": "A cute, simple character for a one-touch arcade game, jumping pose, solid bright cyan color, flat design, no background, 256x256 pixels",
+      "target_path": "res://assets/player/skin-0.png"
+    },
+    {
+      "id": "platform-tile",
+      "type": "pixel-art-sprites-and-tilesets",
+      "prompt": "A simple horizontal platform tile for a arcade game, solid dark blue with a bright cyan edge, 64x16 pixels, seamless horizontally",
+      "target_path": "res://assets/platform/tile.png"
+    },
+    {
+      "id": "coin",
+      "type": "2d-illustration",
+      "prompt": "A spinning golden coin, shiny, flat design, no background, 64x64 pixels",
+      "target_path": "res://assets/coin/coin.png"
+    },
+    {
+      "id": "background-stars",
+      "type": "vector-svg-graphics",
+      "prompt": "A dark background with small white stars, subtle nebula, 1080x1920 pixels, seamless tiling",
+      "target_path": "res://assets/background/stars.svg"
+    }
+  ]
+}
