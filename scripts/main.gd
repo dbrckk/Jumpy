@@ -57,7 +57,7 @@ func build_ui() -> void:
 	ui.coins = make_label(root, "◇ 0", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)
 	ui.title = make_label(root, "JUMPY", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.subtitle = make_label(root, "TAP • LAND • FLOW", 34, Vector2(0, 545), Vector2(W, 70), HORIZONTAL_ALIGNMENT_CENTER)
-	ui.hint = make_label(root, "TAP TO JUMP\nTAP ONCE IN AIR TO PULSE", 30, Vector2(120, 690), Vector2(840, 120), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.hint = make_button(root, "TAP TO JUMP\nTAP ONCE IN AIR TO PULSE", Vector2(120, 690), Vector2(840, 120), func() -> void: if state == "READY": start_run())
 	ui.mission = make_label(root, "", 25, Vector2(90, 900), Vector2(900, 120), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.daily = make_button(root, "DAILY", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))
 	ui.normal = make_button(root, "ENDLESS", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))
@@ -159,8 +159,7 @@ func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
 	if unlocked.is_empty():
 		return
-	var current: int = unlocked.find(int(Profile.data.selected_skin))
-	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
+	var current: int = unlocked.find(int(Profile.data.selected_skin))	var next_skin: int = int(unlocked[(current + 1) % unlocked.size()])
 	Profile.select_skin(next_skin)
 	Integrations.haptic(12)
 	queue_redraw()
@@ -409,7 +408,7 @@ func spawn_platform_after(right_edge: float) -> float:
 
 func update_ui() -> void:
 	ui.score.text = str(score)
-	ui.flow.text = "FLOW x%.2f  •  %d" % [flow, combo]
+	ui.flow.text = "FLOW x%.2f" % [flow]
 	ui.best.text = "BEST %d" % int(Profile.data.best_score)
 	ui.coins.text = "◇ %d  +%d" % [int(Profile.data.coins), run_coins]
 	ui.score.visible = state != "READY"
