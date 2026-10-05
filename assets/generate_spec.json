@@ -1,0 +1,42 @@
+[
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "2d illustration",
+      "description": "A starry night background for a mobile game, dark blue with small stars, seamless tiling",
+      "target_path": "assets/background.png",
+      "width": 1080,
+      "height": 1920
+    }
+  },
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "pixel-art sprites and tilesets",
+      "description": "A platform tile for a jumping game, 128x32 pixels, with a neon edge and a dark fill, suitable for repeating horizontally",
+      "target_path": "assets/platform_tile.png",
+      "width": 128,
+      "height": 32
+    }
+  },
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "2d illustration",
+      "description": "A golden coin for a mobile game, 64x64 pixels, with a slight glow and a dark outline",
+      "target_path": "assets/coin.png",
+      "width": 64,
+      "height": 64
+    }
+  },
+  {
+    "request": "production-request/v1",
+    "params": {
+      "type": "2d illustration",
+      "description": "A circular player character for a jumping game, 64x64 pixels, with a trail effect, designed to be tintable for different skins",
+      "target_path": "assets/player_base.png",
+      "width": 64,
+      "height": 64
+    }
+  }
+]
