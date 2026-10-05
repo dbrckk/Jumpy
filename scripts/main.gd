@@ -333,7 +333,7 @@ func on_landed(p: Dictionary) -> void:
 	var right_edge: float = float(p.x) + float(p.w)
 	var edge_distance: float = minf(absf(PLAYER_X - left_edge), absf(right_edge - PLAYER_X))
 	var clutch: bool = not perfect and edge_distance <= PLAYER_R * 0.72
-	var feedback_scale: float = 0.35 if bool(Profile.data.reduced_motion) else 1.0
+	var feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
 	if perfect:
 		combo += 1
 		perfects += 1
@@ -353,7 +353,7 @@ func on_landed(p: Dictionary) -> void:
 	else:
 		combo = maxi(0, combo - 1)
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
-		var ordinary_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
+		var ordinary_feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
 	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
 
@@ -367,7 +367,7 @@ func collect_coin() -> void:
 			p.coin_taken = true
 			run_coins += 1
 			score += int(5.0 * flow)
-			var coin_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
+			var coin_feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
 			burst(Vector2(cx, cy), Color("ffe66d"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)
 			Integrations.haptic(10)
 
@@ -391,7 +391,7 @@ func die() -> void:
 	ui.skin.visible = false
 	ui.settings.visible = false
 	refresh_settings_ui()
-	var death_feedback_scale: float = 0.3 if bool(Profile.data.reduced_motion) else 1.0
+	var death_feedback_scale: float = 0.5 if bool(Profile.data.reduced_motion) else 1.0
 	camera_kick = 18.0 * death_feedback_scale
 	flash = 0.35 * death_feedback_scale
 	burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)
@@ -489,24 +489,13 @@ func _draw() -> void:
 		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
 	# Outer circle (for high contrast or normal)
 	var outer_radius: float = PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0
-	var outer_color: Color = Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18)		draw_circle(player_pos, outer_radius, outer_color)
+	var outer_color: Color = Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18)
+	draw_circle(player_pos, outer_radius, outer_color)
 	# Main player body (texture)
 	var player_size: float = PLAYER_R * 2.0 # diameter
 	var player_rect: Rect2 = Rect2(player_pos - Vector2(player_size * 0.5, player_size * 0.5), Vector2(player_size, player_size))
 	# Modulate the texture with the skin color
 	var modulate: Color = player_color
-	# We cannot directly modulate in draw_texture_rect, so we use a workaround: draw a white texture and then multiply by color?
-	# Instead, we can use a shader or draw a white rect and then multiply? But for simplicity, we'll just draw the texture and hope it's white?
-	# But the texture is not white. We need to tint it.
-	# Since we cannot easily tint in _draw without a shader, we will change approach: use a Sprite and modulate it.
-	# However, we are in _draw and we don't want to break the structure.
-	# Let's instead draw a white circle and then the texture? Not ideal.
-	# Given the time, we will draw the texture without tinting and rely on the texture being designed for tinting?
-	# But the spec says it's designed to be tintable, so we assume the texture is white and we can modulate.
-	# However, the texture might not be white. We'll assume it is and use modulate.
-	# In Godot 4, we can use draw_texture_rect with a modulate.
-	# Actually, draw_texture_rect does take a modulate parameter.
-	# So we do:
 	draw_texture_rect(tex_player_base, player_rect, true, modulate)
 	# Eye
 		draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
@@ -520,4 +509,3 @@ func _draw() -> void:
 	# Flash
 	if flash > 0.0:
 		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
-"}]}, {
