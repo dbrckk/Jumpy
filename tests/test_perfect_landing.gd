@@ -35,4 +35,3 @@ func _ready() -> void:
     
     main_instance.queue_free()
     get_tree().quit()
-
