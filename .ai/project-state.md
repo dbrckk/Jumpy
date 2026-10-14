@@ -1,23 +1,27 @@
 # Project state
 
-Status: active
+Status: source repair prepared; runtime qualification pending
 
 ## Working
-- Central AI repo-map generation is configured through dbrckk/repo-standards.
-- Repository agent instructions are present.
+- Production-OS generated a resumable Godot checkpoint for the existing Jumpy objective.
+- This repair separates joined GDScript declarations in cycle_skin and restores the built-in bool type in show_menu.
 
 ## Broken / blockers
-- None documented here yet.
+- The generated checkpoint failed Godot 4.7.2 import at scripts/main.gd:172.
+- Production-OS live worker 38569417618 is still active on its separate checkpoint branch.
+- Android, device, journey and visual validation have not passed for this checkpoint.
 
 ## Current priority
-- Restore task-specific state here when substantial work resumes.
+- Validate this exact repair through the existing Godot project CI.
+- Integrate only after the active worker stops writing its checkpoint branch.
 
 ## Validation
-- Standards workflow: configured.
-- Tests/build: use this repository's existing validation commands.
+- Local diff/whitespace check: pending.
+- Existing Godot import CI: pending; no local Godot runtime available.
+- No new unit tests.
 
 ## Last verified
-- 2026-09-18
+- 2026-10-14; source parent ffb84561a74cd639d337afca21512b63abbc6f4c.
 
 <!-- AUTO:START -->
 ## Automatic repository state
