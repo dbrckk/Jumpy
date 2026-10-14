@@ -173,7 +173,7 @@ func reset_run(use_daily: bool) -> void:
 func set_daily(value: bool) -> void:
 	reset_run(value)
 	if value:
-		ui.subtitle.text = "DAILY SEED• DAILY BEST"
+		ui.subtitle.text = "DAILY SEED • DAILY BEST"
 	else:
 		ui.subtitle.text = "TAP • LAND • FLOW"
 
@@ -198,7 +198,7 @@ func start_run() -> void:
 	jump()
 	Integrations.event("run_start", {"daily": daily_mode})
 
-func show_menu(value: bool) -> void:
+func show_menu(value: Bool) -> void:
 	if not value:
 		settings_open = false
 	var show_main: bool = value and not settings_open
