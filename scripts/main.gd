@@ -52,13 +52,21 @@ func build_ui() -> void:
 	layer.add_child(root)
 
 	ui.score = make_label(root, "0", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.score.name = "score"
 	ui.flow = make_label(root, "FLOW x1.0", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.flow.name = "flow"
 	ui.best = make_label(root, "BEST 0", 28, Vector2(42, 44), Vector2(360, 50))
+	ui.best.name = "best"
 	ui.coins = make_label(root, "◇ 0", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)
+	ui.coins.name = "coins"
 	ui.title = make_label(root, "JUMPY", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.title.name = "title"
 	ui.subtitle = make_label(root, "TAP • LAND • FLOW", 34, Vector2(0, 545), Vector2(W, 70), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.subtitle.name = "subtitle"
 	ui.hint = make_label(root, "TAP TO JUMP\nTAP ONCE IN AIR TO PULSE", 30, Vector2(120, 690), Vector2(840, 120), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.hint.name = "hint"
 	ui.mission = make_label(root, "", 25, Vector2(90, 900), Vector2(900, 120), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.mission.name = "mission"
 	ui.daily = make_button(root, "DAILY", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))
 	ui.daily.name = "daily"
 	ui.normal = make_button(root, "ENDLESS", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))
@@ -76,6 +84,7 @@ func build_ui() -> void:
 	ui.setting_contrast = make_button(root, "", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference("high_contrast"))
 	ui.setting_contrast.name = "setting_contrast"
 	ui.gameover = make_label(root, "", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.gameover.name = "gameover"
 	ui.retry = make_button(root, "RETRY", Vector2(280, 940), Vector2(520, 110), restart_pressed)
 	ui.retry.name = "retry"
 	ui.share = make_button(root, "SHARE", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))
@@ -163,7 +172,10 @@ func reset_run(use_daily: bool) -> void:
 
 func set_daily(value: bool) -> void:
 	reset_run(value)
-	ui.subtitle.text = "DAILY SEED • DAILY BEST %d" % int(Profile.data.daily_best) if value else "TAP • LAND • FLOW"
+	if value:
+		ui.subtitle.text = "DAILY SEED• DAILY BEST"
+	else:
+		ui.subtitle.text = "TAP • LAND • FLOW"
 
 func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
