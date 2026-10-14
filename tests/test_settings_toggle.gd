@@ -17,7 +17,7 @@ func _ready() -> void:
         main_instance.settings_open = false
         main_instance.show_menu(true)  # This will refresh the UI
     
-    # Find the sound setting button
+    # Find the Sound setting button
     var sound_button = main_instance.ui.get("setting_sound")
     if sound_button == null:
         print("FAILED: test_settings_toggle - could not find setting_sound button")
@@ -51,4 +51,3 @@ func _ready() -> void:
     
     main_instance.queue_free()
     get_tree().quit()
-
