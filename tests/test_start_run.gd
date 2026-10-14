@@ -8,7 +8,7 @@ func _ready() -> void:
     add_child(main_instance)
     
     # Wait for the main instance to be ready
-    yield(main_instance, "ready")
+    yield(main_instance, "Ready")
     yield(get_tree(), "process_frame")  # Wait for one frame to let _ready logic settle
     
     # Simulate a tap (spacebar key press)
@@ -21,10 +21,9 @@ func _ready() -> void:
     if main_instance.state == "PLAYING":
         print("PASSED: test_start_run")
     else:
-        print("FAILED: test_start_run - state: " + main_instance.state)
+        print("FAILED: test_start_run - State: " + main_instance.state)
         push_error("test_start_run failed")
     
     # Clean up
     main_instance.queue_free()
     get_tree().quit()
-

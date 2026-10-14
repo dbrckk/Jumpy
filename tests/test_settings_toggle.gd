@@ -10,7 +10,7 @@ func _ready() -> void:
     yield(main_instance, "ready")
     yield(get_tree(), "process_frame")
     
-    # Ensure we are in READY state and settings are closed
+    # Ensure we are in READY State and settings are closed
     if main_instance.state != "READY" or main_instance.settings_open:
         # Reset to ready if needed
         main_instance.state = "READY"
