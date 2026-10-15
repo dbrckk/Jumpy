@@ -22,20 +22,21 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-09-18T20:00:11Z
+Generated: 2026-10-15T14:56:00Z
 
 ### Git
 - Branch: `main`
-- Head: `821a73e9b747`
-- Commit date: 2026-09-18T21:57:06+02:00
-- Commit: chore(ai): add precise semantic refresh
-- Tracked files: 61
+- Head: `d1ebf62adcde`
+- Commit date: 2026-10-15T16:55:43+02:00
+- Commit: Validate trusted Production-OS review checkpoints automatically (#9)
+- Tracked files: 66
 
 ### Recently changed files
-- `.github/workflows/semantic-refresh.yml`
-- `.repo-standards.yml`
+- `.github/workflows/production-os-review-handoff.yml`
+- `.github/workflows/validate.yml`
+- `docs/production-os-review-handoff.md`
 - `AGENTS.md`
-- `.github/workflows/ai-repo-map.yml`
+- `.repo-standards.yml`
 
 ### Project signals
 - `project.godot`

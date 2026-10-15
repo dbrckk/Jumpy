@@ -1,12 +1,14 @@
 # CI status
 
-Summary: 4 success / 0 failure / 2 active
+Summary: 5 success / 2 failure / 1 active
 
-- Validate Godot Project: queued / pending (821a73e9)
-- Validate Godot Project: queued / pending (0f6c9f31)
-- Validate Godot Project: completed / success (a3e1052f)
-- Validate Godot Project: completed / success (30375649)
-- Validate Godot Project: completed / success (617d6c3f)
-- Validate Godot Project: completed / success (3b861285)
+- Validate Godot Project: in_progress / pending (d1ebf62a)
+- Validate Godot Project: completed / success (1c38a346)
+- Validate Godot Project: completed / action_required (1e9ea527)
+- Trusted Production-OS PR Handoff: completed / success (4831f610)
+- Validate Godot Project: completed / success (4831f610)
+- Validate Godot Project: completed / success (2dac1325)
+- Validate Godot Project: completed / success (7ed79a93)
+- Validate Godot Project: completed / failure (de83d25d)
 
 > Generated summary only; inspect GitHub Actions for full logs when needed.

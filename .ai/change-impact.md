@@ -1,13 +1,16 @@
 # Change impact
 
-Base: 0f6c9f31d1ab39a1716f6bb5f4b5c5cb8dd1ee16
-Head: 821a73e9b74779771d7a2ce76185ac4a50fb743b
+Base: 4831f6109d94dac82525044e3fd074722fed879b
+Head: d1ebf62adcde75c158478c3bdcbba434cfe7a035
 
 ## Changed files
-- A .github/workflows/semantic-refresh.yml
+- M .github/workflows/production-os-review-handoff.yml
+- M .github/workflows/validate.yml
+- M docs/production-os-review-handoff.md
 
 ## Affected areas
 - .github
+- docs
 
 ## Related test candidates
 - No direct filename-based test match detected.

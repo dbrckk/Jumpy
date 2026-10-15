@@ -1,7 +1,21 @@
 {
   "files": [
     {
-      "path": ".github/workflows/semantic-refresh.yml",
+      "path": ".github/workflows/production-os-review-handoff.yml",
+      "reasons": [
+        "changed"
+      ],
+      "score": 100
+    },
+    {
+      "path": ".github/workflows/validate.yml",
+      "reasons": [
+        "changed"
+      ],
+      "score": 100
+    },
+    {
+      "path": "docs/production-os-review-handoff.md",
       "reasons": [
         "changed"
       ],

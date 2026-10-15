@@ -41,6 +41,7 @@ The content is organized as follows:
 .github/
   workflows/
     ai-repo-map.yml
+    production-os-review-handoff.yml
     semantic-refresh.yml
     validate.yml
 .serena/
@@ -80,6 +81,141 @@ jobs:
     uses: dbrckk/repo-standards/.github/workflows/reusable-unified.yml@main
 ```
 
+## File: .github/workflows/production-os-review-handoff.yml
+```yaml
+name: Trusted Production-OS PR Handoff
+
+# Runs from the default branch only. Never checks out or executes Studio code.
+on:
+  repository_dispatch:
+    types: [production_os_review_handoff]
+
+permissions:
+  contents: read
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: production-os-review-handoff
+  cancel-in-progress: false
+
+jobs:
+  create-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      REVIEW_TOKEN: ${{ github.token }}
+    steps:
+      - name: Verify published checkpoint and open a review PR
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+
+          repo = os.environ["GITHUB_REPOSITORY"]
+          if repo != "dbrckk/Jumpy":
+              raise SystemExit("Review handoff must run in the trusted repository")
+          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as source:
+              event = json.load(source)
+          payload = event.get("client_payload")
+          if not isinstance(payload, dict) or set(payload) != {"branch", "commit_sha"}:
+              raise SystemExit("Invalid Production-OS review handoff payload")
+          branch = payload.get("branch")
+          sha = payload.get("commit_sha")
+          if not isinstance(branch, str) or not re.fullmatch(r"studio/mp-[a-f0-9]{24}", branch):
+              raise SystemExit("Handoff branch does not match managed Studio namespace")
+          if not isinstance(sha, str) or not re.fullmatch(r"[a-f0-9]{40}", sha):
+              raise SystemExit("Handoff commit SHA is invalid")
+
+          token = os.environ["REVIEW_TOKEN"]
+          base = "https://api.github.com/repos/" + repo
+          headers = {
+              "Authorization": "Bearer " + token,
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "production-os-review-handoff",
+          }
+
+          def request(method, path, data=None):
+              body = json.dumps(data).encode("utf-8") if data is not None else None
+              action = urllib.request.Request(
+                  base + path, data=body, method=method, headers={
+                      **headers, **({"Content-Type": "application/json"} if body else {}),
+                  }
+              )
+              try:
+                  with urllib.request.urlopen(action, timeout=20) as response:
+                      raw = response.read(1000000)
+                      return json.loads(raw) if raw else {}
+              except urllib.error.HTTPError as exc:
+                  if exc.code in {401, 403}:
+                      raise SystemExit(
+                          "Target GitHub Actions must allow pull-request creation "
+                          "(Pull requests:write and repository setting)"
+                      ) from None
+                  raise SystemExit("Review handoff GitHub API returned HTTP " + str(exc.code)) from None
+
+          ref = request("GET", "/git/ref/heads/" + branch)
+          verified = (ref.get("object") or {}).get("sha")
+          if verified != sha:
+              raise SystemExit("Review handoff rejected a stale or unverified branch tip")
+          delta = request("GET", "/compare/main..." + branch)
+          files = delta.get("files")
+          if (delta.get("status") not in {"ahead", "diverged"}
+                  or not isinstance(files, list) or not 0 < len(files) < 300):
+              raise SystemExit("Review handoff requires a bounded nonempty compare")
+          if any(str(f.get("filename") or "").startswith(".github/") or str(f.get("filename") or "") == ".gitmodules" for f in files):
+              raise SystemExit("Review handoff refuses GitHub automation and submodule configuration changes")
+
+          owner = repo.split("/", 1)[0]
+          query = urllib.parse.urlencode({
+              "state": "open", "head": owner + ":" + branch, "base": "main",
+              "per_page": "20",
+          })
+          existing = request("GET", "/pulls?" + query)
+          if not isinstance(existing, list):
+              raise SystemExit("Pull request list returned an invalid response")
+          for item in existing:
+              if ((item.get("head") or {}).get("ref") == branch
+                      and (item.get("base") or {}).get("ref") == "main"):
+                  print("Reused existing review: " + str(item.get("html_url") or ""))
+                  break
+          else:
+              created = request("POST", "/pulls", {
+                  "title": "Review Production-OS verified Jumpy checkpoint: " + branch,
+                  "head": branch,
+                  "base": "main",
+                  "draft": True,
+                  "body": (
+                      "Production-OS published this checkpoint to a review branch. "
+                      "This PR was opened by the trusted target-repository handoff "
+                      "after independently validating the exact branch tip and diff. "
+                      "Review all changed files and run required CI before any merge. "
+                      "No changes are merged automatically.\n\n"
+                      "Checkpoint: `" + sha + "`"
+                  ),
+              })
+              if not isinstance(created, dict) or not created.get("number"):
+                  raise SystemExit("Review handoff did not receive a real PR number")
+              print("Opened draft review: " + str(created.get("html_url") or ""))
+          # GitHub requires manual approval for pull_request checks created with
+          # GITHUB_TOKEN. An explicit workflow_dispatch instead schedules an
+          # isolated, read-only Godot check against the verified branch tip.
+          # This default-branch handoff never checks out Studio code.
+          request("POST", "/actions/workflows/validate.yml/dispatches", {
+              "ref": branch,
+              "inputs": {"expected_sha": sha},
+          })
+          print("Dispatched Godot validation for exact checkpoint: " + sha)
+          PY
+```
+
 ## File: .github/workflows/semantic-refresh.yml
 ```yaml
 name: Precise semantic refresh
@@ -111,6 +247,12 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "Exact reviewed checkpoint SHA to validate"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -123,6 +265,14 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # immutable SHA
         with:
           persist-credentials: false
+      - name: Verify dispatched checkpoint identity
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "Invalid checkpoint SHA"; exit 1; }
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
       - name: Install Godot 4.7.2 stable
         run: |
           set -euo pipefail
@@ -913,13 +1063,23 @@ func _unlock_earned_skins() -> void:
 ```yaml
 source: dbrckk/repo-standards
 ref: main
-version: 13
+version: 20
 adopted: true
 workflow_mode: unified-single-commit
 repo_brain: dbrckk/repo-brain@main
 repo_brain_fallback: portable-full-rebuild
 hotset_fallback: recent-project-state
 graph_routing: compact-sharded-reverse-deps
+graph_resolver: java-kotlin-tail-v2
+graph_enrichment: unique-type-symbol-references-v1
+context_budget: confidence-dynamic-3-6-12
+routing_learning: deterministic-term-feedback-v1
+auto_routing_learning: source-diff-success-v1
+validation_memory: passed-failed-test-history-v1
+regression_gate: repo-brain-core-tests-v1
+benchmark: routing-benchmark-v1
+stability_profile: stable-v1
+benchmark_guard: avg-files-le-6-cache-required-v1
 ai_context:
   index: .ai/index.md
   project_state: .ai/project-state.md
@@ -944,12 +1104,21 @@ ai_context:
   brain_symbols: .ai/brain/symbols.json
   brain_graph: .ai/brain/code-graph.json
   brain_graph_index: .ai/brain/graph-index.json
+  brain_graph_enrichment: .ai/brain/graph-enrichment.json
   brain_graph_manifest: .ai/brain/graph-manifest.json
   brain_graph_shards: .ai/brain/graph-shards/
   brain_reverse_deps: .ai/brain/reverse-deps.json
   brain_architecture_mermaid: .ai/brain/architecture.mmd
   brain_semantic_plan: .ai/brain/semantic-plan.json
   brain_semantic_index: .ai/brain/semantic-index.json
+  brain_search_manifest: .ai/brain/search-manifest.json
+  brain_search_shards: .ai/brain/search-shards/
+  brain_query_cache: .ai/brain/query-cache.json
+  brain_routing_learning: .ai/brain/routing-learning.json
+  brain_auto_learning: .ai/brain/auto-learning.json
+  brain_validation_memory: .ai/brain/validation-memory.json
+  brain_benchmark: .ai/brain/benchmark.json
+  brain_benchmark_health: .ai/brain/benchmark-health.json
   brain_hotset: .ai/brain/hotset.json
   brain_context_manifest: .ai/brain/context-manifest.json
   brain_context_packets: .ai/brain/context/
@@ -966,6 +1135,15 @@ workflow:
 ## File: AGENTS.md
 ```markdown
 # Repository agent instructions
+
+## Shared development policy — 88 validated rules (2026-10-09)
+
+The project adopts the [88-rule standard](https://github.com/dbrckk/repo-standards/blob/db2f86657ada74a0561e07189f9942d6b66ebb4a/standards/88-rules.md), the [operational agent skill](https://github.com/dbrckk/repo-standards/blob/db2f86657ada74a0561e07189f9942d6b66ebb4a/skills/repo-excellence-88/SKILL.md), and the [educational wiki](https://github.com/dbrckk/repo-standards/blob/db2f86657ada74a0561e07189f9942d6b66ebb4a/docs/WIKI-88.md). Read the relevant parts before substantial work and apply conditional rules only where appropriate.
+
+**Owner preference: do not create new unit tests.** Existing tests may be run for diagnostics; prioritize real functional and integration verification, lint, build, and reproducible checks. Never claim an unexecuted check passed.
+
+Preserve repository-specific constraints and authorized scope. The pinned policy commit above governs the 88 rules; `.repo-standards.yml` continues to configure existing repository intelligence and reusable workflows independently. Do not change workflow refs merely to adopt these rules.
+
 
 This repository adopts shared standards from `dbrckk/repo-standards` at the release recorded in `.repo-standards.yml`.
 
@@ -994,7 +1172,7 @@ Before substantial work:
 Repository-specific rules:
 - Preserve existing architecture and public interfaces unless the task requires a change.
 - Prefer the smallest coherent change.
-- Prefer targeted tests from `.ai/brain/selected-tests.json`; expand validation when impact is ambiguous or targeted tests fail.
+- Prefer targeted functional or integration checks; existing selected tests may be run as diagnostics, but do not create new unit tests. Expand validation when impact is ambiguous.
 - Treat hotset/context packets and graph shards as routing hints, not authoritative source.
 - Verify reference/dependency/impact/AST hits against authoritative source before editing.
 - Treat security signals and static graph edges as heuristics, not proof.
