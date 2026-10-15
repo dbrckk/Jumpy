@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  actions: write
 
 concurrency:
   group: production-os-review-handoff
@@ -118,4 +119,13 @@ jobs:
               if not isinstance(created, dict) or not created.get("number"):
                   raise SystemExit("Review handoff did not receive a real PR number")
               print("Opened draft review: " + str(created.get("html_url") or ""))
+          # GitHub requires manual approval for pull_request checks created with
+          # GITHUB_TOKEN. An explicit workflow_dispatch instead schedules an
+          # isolated, read-only Godot check against the verified branch tip.
+          # This default-branch handoff never checks out Studio code.
+          request("POST", "/actions/workflows/validate.yml/dispatches", {
+              "ref": branch,
+              "inputs": {"expected_sha": sha},
+          })
+          print("Dispatched Godot validation for exact checkpoint: " + sha)
           PY
