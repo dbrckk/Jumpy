@@ -8,6 +8,7 @@ const GRAVITY: float = 2550.0
 const JUMP_V: float = -1080.0
 const PULSE_V: float = -620.0
 const FLOOR_LIMIT: float = 1820.0
+const LANDING_CUE_DURATION: float = 0.72
 
 const SKINS: Array[Color] = [
 	Color("62f7ff"), Color("ff5fd2"), Color("ffe66d"),
@@ -33,6 +34,7 @@ var perfects: int = 0
 var elapsed: float = 0.0
 var camera_kick: float = 0.0
 var flash: float = 0.0
+var landing_cue_remaining: float = 0.0
 var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
@@ -53,6 +55,9 @@ func build_ui() -> void:
 
 	ui.score = make_label(root, "0", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.flow = make_label(root, "FLOW x1.0", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.landing = make_label(root, "", 44, Vector2(100, 265), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.landing.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ui.landing.visible = false
 	ui.best = make_label(root, "BEST 0", 28, Vector2(42, 44), Vector2(360, 50))
 	ui.coins = make_label(root, "◇ 0", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)
 	ui.title = make_label(root, "JUMPY", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)
@@ -135,6 +140,10 @@ func reset_run(use_daily: bool) -> void:
 	player_vy = 0.0
 	on_ground = true
 	pulse_available = true
+	landing_cue_remaining = 0.0
+	camera_kick = 0.0
+	flash = 0.0
+	ui.landing.visible = false
 	last_platform_id = 0
 	next_platform_id = 1
 	particles.clear()
@@ -248,6 +257,12 @@ func _physics_process(delta: float) -> void:
 	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
+	if landing_cue_remaining > 0.0:
+		landing_cue_remaining = maxf(0.0, landing_cue_remaining - delta)
+		ui.landing.visible = landing_cue_remaining > 0.0
+		if ui.landing.visible:
+			var alpha: float = 1.0 if bool(Profile.data.reduced_motion) else clampf(landing_cue_remaining / 0.16, 0.0, 1.0)
+			ui.landing.modulate = Color(1.0, 1.0, 1.0, alpha)
 	animate_particles(delta)
 	camera_kick = move_toward(camera_kick, 0.0, delta * 5.0)
 	flash = move_toward(flash, 0.0, delta * 2.8)
@@ -322,7 +337,12 @@ func on_landed(p: Dictionary) -> void:
 	var edge_distance: float = minf(absf(PLAYER_X - left_edge), absf(right_edge - PLAYER_X))
 	var clutch: bool = not perfect and edge_distance <= PLAYER_R * 0.72
 	var feedback_scale: float = 0.35 if bool(Profile.data.reduced_motion) else 1.0
+	var score_before_landing: int = score
+	var judgement: String = "LANDED"
+	var judgement_color: Color = skin_color()
 	if perfect:
+		judgement = "PERFECT"
+		judgement_color = Color("ffe66d")
 		combo += 1
 		perfects += 1
 		flow = minf(5.0, 1.0 + float(combo) * 0.25)
@@ -332,6 +352,8 @@ func on_landed(p: Dictionary) -> void:
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffffff"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)
 		Integrations.haptic(32)
 	elif clutch:
+		judgement = "CLUTCH"
+		judgement_color = Color("ffb46a")
 		combo += 1
 		flow = minf(5.0, 1.0 + float(combo) * 0.18)
 		score += int(12.0 * flow)
@@ -343,7 +365,17 @@ func on_landed(p: Dictionary) -> void:
 		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
 		var ordinary_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
+	var awarded: int = score - score_before_landing
+	var cue_text: String = "%s  +%d" % [judgement, awarded] if awarded > 0 else judgement
+	show_landing_cue(cue_text, judgement_color)
 	Integrations.event("landing", {"perfect": perfect, "clutch": clutch, "combo": combo, "score": score})
+
+func show_landing_cue(message: String, color: Color) -> void:
+	landing_cue_remaining = LANDING_CUE_DURATION
+	ui.landing.text = message
+	ui.landing.add_theme_color_override("font_color", Color("ffffff") if bool(Profile.data.high_contrast) else color)
+	ui.landing.modulate = Color.WHITE
+	ui.landing.visible = true
 
 func collect_coin() -> void:
 	for p: Dictionary in platforms:
@@ -363,6 +395,8 @@ func die() -> void:
 	if state != "PLAYING":
 		return
 	state = "DEAD"
+	landing_cue_remaining = 0.0
+	ui.landing.visible = false
 	Profile.record_run(score, run_coins, perfects, daily_mode)
 	Integrations.leaderboard_submit(score, daily_mode)
 	Integrations.event("run_end", {"score": score, "coins": run_coins, "perfects": perfects, "daily": daily_mode})
