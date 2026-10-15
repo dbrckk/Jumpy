@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "Exact reviewed checkpoint SHA to validate"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -16,6 +22,14 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # immutable SHA
         with:
           persist-credentials: false
+      - name: Verify dispatched checkpoint identity
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "Invalid checkpoint SHA"; exit 1; }
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
       - name: Install Godot 4.7.2 stable
         run: |
           set -euo pipefail
