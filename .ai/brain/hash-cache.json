@@ -5,16 +5,16 @@
       "size": 3826
     },
     "docs/GAME_DESIGN.md": {
-      "sha256": "ea6921d7e76084f66307bd97e7e7994a3ff8169f3c4b1560b70473eb57c6257d",
-      "size": 4796
+      "sha256": "b30f83fdf22e363beedae0955256f206cb5780f159e3cb1fe33e40151511f287",
+      "size": 5313
     },
     "project.godot": {
       "sha256": "1ee5ba332fecf669dd5c45cb7d8dcd3422816c4929c8a0acad99ebb2971dbb12",
       "size": 965
     },
     "scripts/main.gd": {
-      "sha256": "0002ded552ceb9f71caf3eaee436069d7b7bcc05f11bbbe5f1a5b855df10e88d",
-      "size": 20871
+      "sha256": "5a09caaf0b8368d470859598bbf1ac5a1fd476529df9c131d639f36dbc4a6b03",
+      "size": 21345
     }
   },
   "generated_by": "dbrckk/repo-brain-v6",

@@ -454,6 +454,8 @@ func build_ui() -> void:
 
 	ui.score = make_label(root, "0", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.flow = make_label(root, "FLOW x1.0", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.pulse = make_label(root, "", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.pulse.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.landing = make_label(root, "", 44, Vector2(100, 265), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.landing.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.landing.visible = false
@@ -847,6 +849,10 @@ func update_ui() -> void:
 	ui.coins.text = "◇ %d  +%d" % [int(Profile.data.coins), run_coins]
 	ui.score.visible = state != "READY"
 	ui.flow.visible = state == "PLAYING"
+	ui.pulse.visible = state == "PLAYING" and not on_ground
+	if ui.pulse.visible:
+		ui.pulse.text = "AIR PULSE READY" if pulse_available else "AIR PULSE USED"
+		ui.pulse.add_theme_color_override("font_color", Color("ffffff") if bool(Profile.data.high_contrast) else (Color("62f7ff") if pulse_available else Color("9ba5bd")))
 
 func burst(pos: Vector2, color: Color, count: int, power: float) -> void:
 	for _i: int in range(count):

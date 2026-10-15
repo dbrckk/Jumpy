@@ -8,9 +8,10 @@
         "changed-source",
         "entrypoint",
         "impact",
+        "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 500
+      "score": 560
     }
   ],
   "generated_by": "dbrckk/repo-brain-v6",

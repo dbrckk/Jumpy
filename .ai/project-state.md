@@ -28,14 +28,14 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-15T15:55:06Z
+Generated: 2026-10-15T16:06:31Z
 
 ### Git
 - Branch: `main`
-- Head: `bc62b2c0d0a2`
-- Commit date: 2026-10-15T17:54:57+02:00
-- Commit: Add readable landing judgement feedback to Jumpy gameplay (#11)
-- Tracked files: 102
+- Head: `b5b8124247ef`
+- Commit date: 2026-10-15T18:06:20+02:00
+- Commit: Show air pulse availability during jumps (#12)
+- Tracked files: 103
 
 ### Recently changed files
 - `docs/GAME_DESIGN.md`
@@ -44,7 +44,6 @@ Generated: 2026-10-15T15:55:06Z
 - `.github/workflows/validate.yml`
 - `docs/production-os-review-handoff.md`
 - `AGENTS.md`
-- `.repo-standards.yml`
 
 ### Project signals
 - `project.godot`

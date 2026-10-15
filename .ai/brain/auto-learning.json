@@ -2,17 +2,17 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 1,
+    "example_count": 2,
     "rejected_count": 0,
     "terms": [
-      "11",
-      "add",
+      "autonomous",
+      "delivery",
       "feedback",
       "gameplay",
-      "judgement",
-      "jumpy",
       "landing",
-      "readable"
+      "production-os",
+      "qualify",
+      "real"
     ],
     "test_count": 0,
     "useful_count": 1
@@ -20,7 +20,7 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Add readable landing judgement feedback to Jumpy gameplay (#11)",
+  "task": "Qualify real landing feedback gameplay and autonomous Production-OS delivery",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd"

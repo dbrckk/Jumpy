@@ -7,9 +7,10 @@
         "changed-source",
         "entrypoint",
         "impact",
+        "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 500
+      "score": 560
     },
     {
       "path": "docs/GAME_DESIGN.md",
