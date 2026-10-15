@@ -14,7 +14,12 @@ of adding cross-repository PR-write permissions to the source credential.
    It checks the repository identity, branch format, SHA, Git ref, bounded
    comparison against `main`, and rejects GitHub automation or submodule
    configuration changes before trying to create a **draft** PR.
-4. The worker reports delivery only after confirming a real PR with the
+4. The trusted target handler then triggers `Validate Godot Project` with
+   `workflow_dispatch` on the managed branch and passes the exact commit
+   SHA. The separate validation workflow checks the SHA **before running
+   the headless Godot parser**. It has `contents: read` only and does not
+   use Studio credentials. Handoff itself never checks out Studio code.
+5. The worker reports delivery only after confirming a real PR with the
    same head SHA and exact repository identity. Accepted dispatch alone
    cannot be reported as a PR. No automatic merge occurs.
 
@@ -22,9 +27,10 @@ of adding cross-repository PR-write permissions to the source credential.
 
 In `dbrckk/Jumpy` → Settings → Actions → General → Workflow permissions,
 allow GitHub Actions to create pull requests if the repository settings
-currently prohibit it. The workflow explicitly requests the least-privilege
-`contents: read` and `pull-requests: write` job permissions; repository
-settings can still deny PR creation. Never paste tokens into source files.
+currently prohibit it. The handoff workflow requests `contents: read`, `pull-requests: write`
+and `actions: write` (the last permission is required to dispatch the
+specific Godot validation workflow). Repository settings can still deny
+PR creation or workflow dispatch. Never paste tokens into source files.
 
 The `dbrckk/ai-dev-server` credential still needs its existing
 `Contents: write` permission to publish the branch and authorization
@@ -42,3 +48,17 @@ The workflow must never execute untrusted branch code as part of this handoff.
 
 This workflow does not fix Godot errors, failed coding generations,
 provider rate limits, or Android build/physical-device qualification.
+
+
+## Why draft PRs can show "Action required"
+
+GitHub marks `pull_request` workflow runs created using a repository's
+`GITHUB_TOKEN` as requiring human approval. This is a GitHub permission
+boundary, not a failed Godot parse. The separate `workflow_dispatch`
+check runs automatically and verifies the SHA, Godot parse and essential
+production docs. The original approval-required PR check may still show
+"Action required"; a maintainer can approve it on GitHub.
+
+Only merge after reviewing the diff and ensuring the independent
+exact-SHA Godot validation succeeded. Never treat a successful
+`repository_dispatch` or PR creation alone as successful CI.
