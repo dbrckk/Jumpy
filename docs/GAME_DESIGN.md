@@ -17,6 +17,15 @@ Tap while grounded to jump. Timing and landing position are the primary skill.
 ### Air pulse
 One optional mid-air tap gives a smaller corrective impulse. This preserves one-touch controls but creates route correction and advanced mastery.
 
+### Air pulse status HUD
+While airborne, a compact read-only cue above the landing judgement shows
+**AIR PULSE READY** before the optional correction and **AIR PULSE USED**
+after it. It disappears while grounded, on the ready menu, and after death.
+It ignores pointer events so taps still control the jump. High-contrast mode
+uses white text; the indicator introduces no new movement, scoring or
+procedural generation behavior. Validate readability and touch passthrough
+on a portrait Android device before release.
+
 ### Perfect landing
 The center strip of each platform is the perfect zone. Consecutive perfect landings build FLOW.
 
