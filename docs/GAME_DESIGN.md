@@ -20,6 +20,11 @@ One optional mid-air tap gives a smaller corrective impulse. This preserves one-
 ### Perfect landing
 The center strip of each platform is the perfect zone. Consecutive perfect landings build FLOW.
 
+### Landing judgement HUD
+On the first scored landing on a new platform, an in-game cue near the upper playfield labels the result: **PERFECT** (center strip), **CLUTCH** (edge recovery), or **LANDED** (ordinary). Scored judgements also show the points just earned. It fades after 0.72 seconds, without obscuring touch input or changing any score, combo, jump, pulse or procedural generation rule.
+
+Reduced-motion mode shows the cue without a fade animation; high-contrast mode uses white text. Restart and death clear the cue immediately. This is an implementation feature, not evidence of subjective device-level game feel; verify portrait readability and touch handling on Android before release.
+
 ### FLOW
 FLOW increases scoring and feedback intensity. It resets gradually through imperfect play rather than punishing a single minor error too heavily.
 
