@@ -1,21 +1,18 @@
 {
   "files": [
     {
-      "path": ".github/workflows/production-os-review-handoff.yml",
+      "path": "scripts/main.gd",
       "reasons": [
-        "changed"
+        "changed",
+        "changed-source",
+        "entrypoint",
+        "impact",
+        "symbol-indexed"
       ],
-      "score": 100
+      "score": 500
     },
     {
-      "path": ".github/workflows/validate.yml",
-      "reasons": [
-        "changed"
-      ],
-      "score": 100
-    },
-    {
-      "path": "docs/production-os-review-handoff.md",
+      "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "changed"
       ],
@@ -30,13 +27,6 @@
     },
     {
       "path": "project.godot",
-      "reasons": [
-        "entrypoint"
-      ],
-      "score": 40
-    },
-    {
-      "path": "scripts/main.gd",
       "reasons": [
         "entrypoint"
       ],

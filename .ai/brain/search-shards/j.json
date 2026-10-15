@@ -1,1 +1,1 @@
-{"schema_version":1,"tokens":{"json":["scripts/profile.gd"],"jump":["scripts/main.gd"],"jump_v":["scripts/main.gd"],"jumpy":["scripts/integrations.gd","scripts/main.gd","scripts/profile.gd"],"jumpy_save":["scripts/profile.gd"]}}
+{"schema_version":1,"tokens":{"json":["scripts/profile.gd"],"judgement":["scripts/main.gd"],"judgement_color":["scripts/main.gd"],"jump":["scripts/main.gd"],"jump_v":["scripts/main.gd"],"jumpy":["scripts/integrations.gd","scripts/main.gd","scripts/profile.gd"],"jumpy_save":["scripts/profile.gd"]}}

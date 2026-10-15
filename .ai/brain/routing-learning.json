@@ -1,1 +1,51 @@
-{"schema_version":1,"generated_by":"dbrckk/repo-brain-learning-v1","term_file_scores":{},"term_test_scores":{},"examples":[]}
+{
+  "examples": [
+    {
+      "rejected": [],
+      "task": "Add readable landing judgement feedback to Jumpy gameplay (#11)",
+      "terms": [
+        "11",
+        "add",
+        "feedback",
+        "gameplay",
+        "judgement",
+        "jumpy",
+        "landing",
+        "readable"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd"
+      ]
+    }
+  ],
+  "generated_by": "dbrckk/repo-brain-learning-v1",
+  "schema_version": 1,
+  "term_file_scores": {
+    "11": {
+      "scripts/main.gd": 4
+    },
+    "add": {
+      "scripts/main.gd": 4
+    },
+    "feedback": {
+      "scripts/main.gd": 4
+    },
+    "gameplay": {
+      "scripts/main.gd": 4
+    },
+    "judgement": {
+      "scripts/main.gd": 4
+    },
+    "jumpy": {
+      "scripts/main.gd": 4
+    },
+    "landing": {
+      "scripts/main.gd": 4
+    },
+    "readable": {
+      "scripts/main.gd": 4
+    }
+  },
+  "term_test_scores": {}
+}

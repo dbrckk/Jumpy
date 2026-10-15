@@ -1,16 +1,15 @@
 # Change impact
 
-Base: 4831f6109d94dac82525044e3fd074722fed879b
-Head: d1ebf62adcde75c158478c3bdcbba434cfe7a035
+Base: 997cb349c1ec0fba6f9f543e544ec98f660662c6
+Head: bc62b2c0d0a2ef3bc89d820bcfd46774d523a0b6
 
 ## Changed files
-- M .github/workflows/production-os-review-handoff.yml
-- M .github/workflows/validate.yml
-- M docs/production-os-review-handoff.md
+- M docs/GAME_DESIGN.md
+- M scripts/main.gd
 
 ## Affected areas
-- .github
 - docs
+- scripts
 
 ## Related test candidates
 - No direct filename-based test match detected.

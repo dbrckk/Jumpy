@@ -1,28 +1,20 @@
 {
   "files": {
-    ".github/workflows/production-os-review-handoff.yml": {
-      "sha256": "156f3b3df3a282a0660fb17c54059cf8a7ac6430b7558a69aa927dc81fb098a2",
-      "size": 6133
-    },
-    ".github/workflows/validate.yml": {
-      "sha256": "490973355fd6d44c3f25da7361542eef2b78621ebb39e521ac9c60e261d9eea9",
-      "size": 2092
-    },
     "AGENTS.md": {
       "sha256": "007e06bf4a1e8fe42368fc50922ec73df079831b0106725f9096346203088386",
       "size": 3826
     },
-    "docs/production-os-review-handoff.md": {
-      "sha256": "6d79ec21ca09ba9215c6c49d1de1cad780fd45fe62f0ea5d62474f5b40d41e09",
-      "size": 3396
+    "docs/GAME_DESIGN.md": {
+      "sha256": "ea6921d7e76084f66307bd97e7e7994a3ff8169f3c4b1560b70473eb57c6257d",
+      "size": 4796
     },
     "project.godot": {
       "sha256": "1ee5ba332fecf669dd5c45cb7d8dcd3422816c4929c8a0acad99ebb2971dbb12",
       "size": 965
     },
     "scripts/main.gd": {
-      "sha256": "82a219805a8fe8f625ba641192c61056f62cef683f127a6f43c48b8744d73ddb",
-      "size": 19384
+      "sha256": "0002ded552ceb9f71caf3eaee436069d7b7bcc05f11bbbe5f1a5b855df10e88d",
+      "size": 20871
     }
   },
   "generated_by": "dbrckk/repo-brain-v6",

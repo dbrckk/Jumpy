@@ -4,15 +4,15 @@
     "expand_to": 12,
     "max_files": 6,
     "requested_max_files": 12,
-    "score_margin": 14,
+    "score_margin": 4,
     "tier": "bounded",
     "top_score": 17
   },
   "cache": {
-    "fingerprint": "719e2f7521a007350e51c853a25078f87bb3a5e76ddb222f7252feb09951c189",
+    "fingerprint": "2d28a6fd659c5f45d4687ed3040e786f1aa8052489f64fd4ab86a1a6d1dcaf86",
     "hit": false
   },
-  "candidate_count": 4,
+  "candidate_count": 3,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -37,33 +37,47 @@
     },
     {
       "learning_score": 0,
-      "matched_terms": [],
-      "path": ".github/workflows/production-os-review-handoff.yml",
+      "matched_terms": [
+        "game"
+      ],
+      "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "recently-changed"
       ],
-      "score": 3,
+      "score": 13,
       "symbols": []
     },
     {
       "learning_score": 0,
       "matched_terms": [],
-      "path": ".github/workflows/validate.yml",
+      "path": "scripts/main.gd",
       "reasons": [
+        "impact",
         "recently-changed"
       ],
-      "score": 3,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "docs/production-os-review-handoff.md",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 3,
-      "symbols": []
+      "score": 9,
+      "symbols": [
+        "_draw",
+        "_physics_process",
+        "_ready",
+        "_unhandled_input",
+        "animate_particles",
+        "build_ui",
+        "burst",
+        "collect_coin",
+        "cycle_skin",
+        "die",
+        "has_support",
+        "jump",
+        "make_button",
+        "make_label",
+        "make_platform",
+        "move_world",
+        "on_landed",
+        "pulse",
+        "refresh_settings_ui",
+        "reset_run"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-v8",
