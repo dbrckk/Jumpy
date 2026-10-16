@@ -12,7 +12,7 @@ Create a game that is as instantly readable as Flappy Bird but has a much longer
 
 ## 2. Core mechanics
 ### Tap jump
-Tap while grounded to jump. Timing and landing position are the primary skill.
+Tap while grounded to jump. Timing and landing position are the primary skill. From the title screen, DAILY and ENDLESS are one-tap **start** actions, not selectors requiring a second tap. Tapping empty space still launches the default mode. During a run, the FLOW HUD also labels the active mode.
 
 Input routing: the fullscreen CanvasLayer container and read-only HUD labels
 ignore pointer events. Only interactive menu buttons consume clicks/touches.
