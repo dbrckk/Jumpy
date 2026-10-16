@@ -43,10 +43,6 @@ func _run() -> void:
 		_fail("Unexpected HUD content; input smoke coverage is incomplete")
 		return
 
-	# Avoid audio/haptics side effects during the headless integration smoke.
-	Profile.data.sound = false
-	Profile.data.haptics = false
-
 	var emulated_mouse: InputEventMouseButton = InputEventMouseButton.new()
 	emulated_mouse.button_index = MOUSE_BUTTON_LEFT
 	emulated_mouse.pressed = true
