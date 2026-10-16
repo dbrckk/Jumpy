@@ -37,7 +37,7 @@ Jumpy is intentionally not pure hypercasual. The core interaction remains one-se
 
 A debug APK is built automatically by [GitHub Actions](https://github.com/dbrckk/Jumpy/actions/workflows/android-debug-apk.yml) whenever game code, scenes, assets or Android export configuration changes. Open the latest **successful main-branch** run and download the **Jumpy-Android-debug-…** artifact (ZIP containing the APK, SHA-256 checksum and source commit). Manual builds are also available through **Run workflow**.
 
-See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. Debug APK generation is not proof of production-release quality.
+See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. **Before replacing a debug APK**, open **SETTINGS → COPY BACKUP** and paste the code into an external note. After reinstalling, copy the code from the note and tap **SETTINGS → RESTORE SAVE** twice to recover progress. Debug APK generation is not proof of production-release quality.
 
 ## External production setup
 
