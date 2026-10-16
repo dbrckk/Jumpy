@@ -35,13 +35,13 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T15:08:10Z
+Generated: 2026-10-16T15:23:35Z
 
 ### Git
 - Branch: `main`
-- Head: `5e1e3a688b58`
-- Commit date: 2026-10-16T17:08:01+02:00
-- Commit: Ignore secondary finger contacts in mobile gameplay (#17)
+- Head: `cdf1492eaef3`
+- Commit date: 2026-10-16T17:23:25+02:00
+- Commit: Make edge jumps more forgiving with 90 ms coyote time (#18)
 - Tracked files: 105
 
 ### Recently changed files

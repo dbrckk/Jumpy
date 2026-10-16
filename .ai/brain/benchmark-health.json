@@ -11,11 +11,11 @@
   "healthy": true,
   "observed": {
     "avg_selected_files": 3.4,
-    "cached_pass_ms": 161.792,
-    "first_pass_ms": 177.714,
+    "cached_pass_ms": 241.354,
+    "first_pass_ms": 267.156,
     "graph_edge_count": 0,
     "search_file_count": 4,
-    "search_token_count": 615
+    "search_token_count": 642
   },
   "policy": {
     "avg_selected_files_max": 6,
