@@ -203,6 +203,11 @@ func _run() -> void:
 	if int(profile.data.runs) != 17 or int(profile.data.best_score) != 4242:
 		_fail("Backup roundtrip lost player progress")
 		return
+	# Reload the actual user:// file, not just the in-memory dictionary.
+	profile.load_data()
+	if int(profile.data.runs) != 17 or int(profile.data.best_score) != 4242:
+		_fail("Backup restore did not survive a profile reload from disk")
+		return
 	var chunks: PackedStringArray = backup_code.split(":")
 	var changed_hash: String = "0" if not chunks[1].begins_with("0") else "1"
 	var corrupted_code: String = chunks[0] + ":" + changed_hash + chunks[1].substr(1) + ":" + chunks[2]
