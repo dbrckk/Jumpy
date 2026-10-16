@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- Mobile tap input fix #15 merged at b1c62f7a: fullscreen HUD/labels no longer swallow gameplay taps, synthetic pointer duplicates cannot auto-consume air pulse, menu Button handling preserved; Godot scene-level smoke added to validation workflow.
 - Central AI repo-map generation is configured through dbrckk/repo-standards; the Godot search index now passes 6/6 health checks.
 - Trusted Production-OS branch-to-draft-PR handoff and exact-SHA Godot validation are operational (canary #31, PR #10).
 - Landing judgement HUD is merged on main in PR #11 (commit bc62b2c0): PERFECT/CLUTCH/LANDED, actual awarded points, 0.72-second cue, reduced-motion and high-contrast support, reset/death cleanup, unchanged movement and scoring.
@@ -10,20 +11,22 @@ Status: active
 
 ## Broken / blockers
 - Autonomous *gameplay implementation* has not passed: canary #32 (workflow 1b5290ee2ca742b4a50601b995144a82) ended capacity_exhausted/project_envelope_exhausted after two native Godot model stages. Its checkpoint ca2799f on studio/pos-7e4a13159234bb4f6272c89b changed only .studio/state.json, not gameplay code.
-- No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet.
+- No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Conduct physical Android touch + menu button + multi-touch and frame-pacing QA after PR #15, including jump/pulse separation.
 - Reduce native Godot agent context/planning-token consumption or implement a genuinely bounded small-change coding lane; do not simply raise cost limits or repeat exhausted canary #32 unchanged.
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #15 scene-level input smoke and Godot parse: success (run 38913510252). Merged-main Godot parse/smoke: success (run 38913796123); repository standards: success (run 38913797853). No device-level Android QA claimed.
 - Landing-feedback PR #11 exact-head Godot 4.7.2 import/parse and production-document checks: success (run 38764425310).
 - Merged main bc62b2c0 Godot project validation: success (run 38764507391).
 - Merged main Repository standards unified CI: success, including Repo Brain (run 38764508490).
 - Keep gameplay feel and real-device behavior distinct from headless parse confidence.
 
 ## Last verified
-- 2026-10-15
+- 2026-10-16
 
 <!-- AUTO:START -->
 ## Automatic repository state
