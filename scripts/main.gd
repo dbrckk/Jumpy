@@ -194,6 +194,8 @@ func start_run() -> void:
 	state = "PLAYING"
 	show_menu(false)
 	jump()
+	# Display the active mode, pulse status and score immediately on the first frame.
+	update_ui()
 	Integrations.event("run_start", {"daily": daily_mode})
 
 func show_menu(value: bool) -> void:
