@@ -33,6 +33,12 @@ Desktop controls: Space, Enter or left click.
 
 Jumpy is intentionally not pure hypercasual. The core interaction remains one-second-simple, while progression, daily competition, cosmetics, missions and future LiveOps create retention depth. See `docs/GAME_DESIGN.md`.
 
+## Android device build (no PC required)
+
+A debug APK is built automatically by [GitHub Actions](https://github.com/dbrckk/Jumpy/actions/workflows/android-debug-apk.yml) whenever game code, scenes, assets or Android export configuration changes. Open the latest **successful main-branch** run and download the **Jumpy-Android-debug-…** artifact (ZIP containing the APK, SHA-256 checksum and source commit). Manual builds are also available through **Run workflow**.
+
+See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. Debug APK generation is not proof of production-release quality.
+
 ## External production setup
 
 The game runs without external services. Optional production integrations are documented in `SETUP_REQUIRED.txt` so missing credentials never block development.
