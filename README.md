@@ -6,7 +6,7 @@ Jumpy is a portrait-first one-touch hybrid-casual arcade game designed around in
 
 **Tap. Jump. Land perfectly. Keep the FLOW alive.**
 
-The world scrolls continuously. Tap from a platform to jump; tap once in the air to spend a corrective pulse. Perfect landings build FLOW, which raises score gain and feedback intensity. Miss the world and restart instantly.
+From the title screen, tap **DAILY** or **ENDLESS** to start a run immediately, or tap blank space to start the default mode. The active mode stays visible in the FLOW HUD. The world scrolls continuously. Tap from a platform to jump; tap once in the air to spend a corrective pulse. Perfect landings build FLOW, which raises score gain and feedback intensity. Miss the world and restart instantly.
 
 ## Already implemented
 

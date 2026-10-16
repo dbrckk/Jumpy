@@ -109,6 +109,30 @@ func _run() -> void:
 		_fail("Secondary finger must not trigger retry after death")
 		return
 
+	# The two prominent mode buttons must start a run immediately,
+	# not just select a seed and leave the player on the READY screen.
+	game.reset_run(false)
+	game.ui.daily.emit_signal("pressed")
+	if game.state != "PLAYING" or not game.daily_mode or game.player_vy != game.JUMP_V or not game.pulse_available:
+		_fail("DAILY button failed to start a single daily jump")
+		return
+	if not game.ui.flow.text.begins_with("DAILY"):
+		_fail("Active DAILY mode is missing from the run HUD")
+		return
+	game._unhandled_input(emulated_mouse)
+	if not game.pulse_available:
+		_fail("Synthetic event spent the pulse after DAILY start")
+		return
+
+	game.reset_run(false)
+	game.ui.normal.emit_signal("pressed")
+	if game.state != "PLAYING" or game.daily_mode or game.player_vy != game.JUMP_V or not game.pulse_available:
+		_fail("ENDLESS button failed to start a single normal jump")
+		return
+	if not game.ui.flow.text.begins_with("ENDLESS"):
+		_fail("Active ENDLESS mode is missing from the run HUD")
+		return
+
 	game.reset_run(false)
 	var desktop_mouse: InputEventMouseButton = InputEventMouseButton.new()
 	desktop_mouse.button_index = MOUSE_BUTTON_LEFT
@@ -155,7 +179,7 @@ func _run() -> void:
 
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, menu, mobile touches, desktop mouse, ledge jump grace, grace expiry")
+	print("PASS: HUD, direct mode starts, touch input, desktop mouse, ledge jump grace and expiry")
 	quit(0)
 
 

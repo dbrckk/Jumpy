@@ -170,8 +170,9 @@ func reset_run(use_daily: bool) -> void:
 	queue_redraw()
 
 func set_daily(value: bool) -> void:
+	# DAILY and ENDLESS are direct play actions, not hidden mode selectors.
 	reset_run(value)
-	ui.subtitle.text = "DAILY SEED • DAILY BEST %d" % int(Profile.data.daily_best) if value else "TAP • LAND • FLOW"
+	start_run()
 
 func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
@@ -193,6 +194,8 @@ func start_run() -> void:
 	state = "PLAYING"
 	show_menu(false)
 	jump()
+	# Display the active mode, pulse status and score immediately on the first frame.
+	update_ui()
 	Integrations.event("run_start", {"daily": daily_mode})
 
 func show_menu(value: bool) -> void:
@@ -467,7 +470,7 @@ func spawn_platform_after(right_edge: float) -> float:
 
 func update_ui() -> void:
 	ui.score.text = str(score)
-	ui.flow.text = "FLOW x%.2f  •  %d" % [flow, combo]
+	ui.flow.text = "%s  FLOW x%.2f  •  %d" % ["DAILY" if daily_mode else "ENDLESS", flow, combo]
 	ui.best.text = "BEST %d" % int(Profile.data.best_score)
 	ui.coins.text = "◇ %d  +%d" % [int(Profile.data.coins), run_coins]
 	ui.score.visible = state != "READY"
