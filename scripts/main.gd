@@ -224,7 +224,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		tapped = true
 	if not tapped:
 		return
-	if state == "READY":
+	if state == "READY" and not settings_open:
 		start_run()
 	elif state == "PLAYING":
 		if on_ground:
