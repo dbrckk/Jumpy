@@ -1,22 +1,24 @@
 {
   "version": 1,
-  "updated_at": "2026-10-15",
-  "task": "Qualify real landing feedback gameplay and autonomous Production-OS delivery",
+  "updated_at": "2026-10-16",
+  "task": "Fix mobile Godot tap handling and qualify headless scene-level input",
   "branch": "main",
   "last_gameplay_merge": {
-    "pull_request": 11,
-    "commit": "bc62b2c0d0a2ef3bc89d820bcfd46774d523a0b6",
+    "pull_request": 15,
+    "commit": "b1c62f7a6ea650af971ad5a929ea18b715afade0",
     "files": [
       "scripts/main.gd",
+      "tools/smoke_mobile_input.gd",
+      ".github/workflows/validate.yml",
       "docs/GAME_DESIGN.md"
     ],
-    "feature": "0.72s PERFECT/CLUTCH/LANDED HUD with score points, accessible visual behavior"
+    "feature": "Fullscreen HUD labels stop intercepting taps; duplicate synthetic events are filtered; actual menu buttons keep handling input"
   },
   "validation": {
-    "godot_pr_run": 38764425310,
-    "godot_main_run": 38764507391,
-    "repository_standards_run": 38764508490,
-    "results": "all completed success"
+    "godot_pr_run": 38913510252,
+    "godot_main_run": 38913796123,
+    "repository_standards_run": 38913797853,
+    "results": "all completed success; scene-level Godot input smoke PASS on main; no physical Android device QA"
   },
   "production_os": {
     "canary_sequence": 31,
@@ -28,11 +30,14 @@
     "blocker": "project_envelope_exhausted",
     "checkpoint_sha": "ca2799f10df3f023554719f0d87f25113ded6792",
     "source_diff": false,
-    "model_calls": 2
+    "model_calls": 2,
+    "latest_verified_canary_sequence": 33,
+    "latest_verified_canary_pr": 13,
+    "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Optimize Godot small-change inference budget/context so native agent can create real code without increasing paid usage",
-    "Verify actual Android touch, landing cue positioning, accessibility and animation behavior",
-    "Do not confuse successful headless import with player-tested game feel"
+    "Qualify physical Android portrait touch, GUI buttons, multi-touch and frame pacing",
+    "Address Production-OS native small-change model budget exhaustion without paid-token assumptions",
+    "Run Godot runtime/device gameplay acceptance before any release claim"
   ]
 }
