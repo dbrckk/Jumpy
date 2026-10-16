@@ -18,11 +18,13 @@ Input routing: the fullscreen CanvasLayer container and read-only HUD labels
 ignore pointer events. Only interactive menu buttons consume clicks/touches.
 Gameplay processes the physical touch or desktop mouse event once, ignoring
 Godot's synthetic mouse/touch emulation events to avoid a single mobile tap
-accidentally triggering both jump and air pulse.
+accidentally triggering both jump and air pulse. Only the primary finger
+(touch index 0) controls gameplay; additional simultaneous fingers cannot
+start a run, consume the air pulse, or trigger retry.
 
 The existing Godot CI now runs a headless **scene-level input integration
-smoke** covering root/label/button mouse filters, a physical touch, a synthetic
-duplicate, a second touch, and a genuine desktop click. This is not physical
+smoke** covering root/label/button mouse filters, primary and secondary
+physical touches, a synthetic duplicate, menu handling and a genuine desktop click. This is not physical
 Android qualification; separately verify real touch, UI buttons, multi-touch
 behavior and frame pacing before release.
 

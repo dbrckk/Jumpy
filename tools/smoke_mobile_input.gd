@@ -63,6 +63,14 @@ func _run() -> void:
 	physical_touch.pressed = true
 	physical_touch.index = 0
 	physical_touch.device = 0
+	var secondary_touch: InputEventScreenTouch = InputEventScreenTouch.new()
+	secondary_touch.pressed = true
+	secondary_touch.index = 1
+	secondary_touch.device = 0
+	game._unhandled_input(secondary_touch)
+	if game.state != "READY":
+		_fail("Secondary finger must not start a run")
+		return
 	# Regression from canary #37: touching blank space while Settings is open
 	# must not start a run, while BACK must still restore normal tap-to-start.
 	game.settings_pressed()
@@ -82,6 +90,10 @@ func _run() -> void:
 		_fail("One physical touch must start a run with a single jump")
 		return
 
+	game._unhandled_input(secondary_touch)
+	if not game.pulse_available or game.player_vy != game.JUMP_V:
+		_fail("Secondary finger unexpectedly consumed the air pulse")
+		return
 	game._unhandled_input(emulated_mouse)
 	if not game.pulse_available or game.player_vy != game.JUMP_V:
 		_fail("Emulated duplicate incorrectly consumed the air pulse")
@@ -89,6 +101,12 @@ func _run() -> void:
 	game._unhandled_input(physical_touch)
 	if game.pulse_available:
 		_fail("A second real touch must use the single available air pulse")
+		return
+
+	game.state = "DEAD"
+	game._unhandled_input(secondary_touch)
+	if game.state != "DEAD":
+		_fail("Secondary finger must not trigger retry after death")
 		return
 
 	game.reset_run(false)
@@ -103,7 +121,7 @@ func _run() -> void:
 
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, settings tap guard, BACK, physical touch, duplicate suppression, desktop mouse")
+	print("PASS: HUD, settings tap guard, BACK, primary and secondary touches, duplicate suppression, desktop mouse")
 	quit(0)
 
 

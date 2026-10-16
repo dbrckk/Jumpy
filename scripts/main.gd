@@ -217,6 +217,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Handle the real event once; never turn a single tap into jump + air pulse.
 	if event.device == InputEvent.DEVICE_ID_EMULATION:
 		return
+	# Only the primary finger controls gameplay; additional simultaneous fingers
+	# must not accidentally start a run, spend an air pulse or trigger retry.
+	var touch: InputEventScreenTouch = event as InputEventScreenTouch
+	if touch != null and touch.index != 0:
+		return
 	var tapped: bool = false
 	if event.is_action_pressed("tap"):
 		tapped = true
