@@ -2,6 +2,9 @@ extends Node
 
 const SAVE_PATH: String = "user://jumpy_save.json"
 const SAVE_VERSION: int = 1
+const SAVE_TMP_PATH: String = "user://jumpy_save.json.tmp"
+const BACKUP_PREFIX: String = "JUMPY1"
+const MAX_BACKUP_LENGTH: int = 8192
 
 const DEFAULT_DATA: Dictionary = {
 	"version": SAVE_VERSION,
@@ -93,16 +96,69 @@ func load_data() -> void:
 		return
 	data = _validated_save(parser.data)
 
-func save() -> void:
-	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+func save() -> bool:
+	# Write to a sibling file first; never truncate the previous valid save.
+	var file: FileAccess = FileAccess.open(SAVE_TMP_PATH, FileAccess.WRITE)
 	if file == null:
-		push_warning("Jumpy: unable to open save file for writing. Error %s" % FileAccess.get_open_error())
-		return
+		push_warning("Jumpy: unable to open temporary save. Error %s" % FileAccess.get_open_error())
+		return false
 	file.store_string(JSON.stringify(data))
 	file.flush()
 	var error: Error = file.get_error()
+	file.close()
 	if error != OK:
-		push_warning("Jumpy: save write failed with error %s" % error)
+		push_warning("Jumpy: temporary save write failed with error %s" % error)
+		return false
+	error = DirAccess.rename_absolute(SAVE_TMP_PATH, SAVE_PATH)
+	if error != OK:
+		push_warning("Jumpy: failed to commit save, error %s" % error)
+		return false
+	return true
+
+
+func export_backup_code() -> String:
+	# Portable text backup; no device key, Google account or storage permission.
+	var payload: String = JSON.stringify(_validated_save(data))
+	return "%s:%s:%s" % [BACKUP_PREFIX, payload.sha256_text(), Marshalls.utf8_to_base64(payload)]
+
+
+func _decode_backup_code(code: String) -> Dictionary:
+	var cleaned: String = code.strip_edges()
+	if cleaned.length() < 80 or cleaned.length() > MAX_BACKUP_LENGTH:
+		return {}
+	var fields: PackedStringArray = cleaned.split(":", false)
+	if fields.size() != 3 or fields[0] != BACKUP_PREFIX or fields[1].length() != 64:
+		return {}
+	var payload: String = Marshalls.base64_to_utf8(fields[2])
+	if payload.is_empty() or payload.length() > 4096 or payload.sha256_text() != fields[1]:
+		return {}
+	var parser: JSON = JSON.new()
+	if parser.parse(payload) != OK or not parser.data is Dictionary:
+		return {}
+	var parsed: Dictionary = parser.data
+	if _save_integer(parsed.get("version"), -1, SAVE_VERSION) != SAVE_VERSION:
+		return {}
+	for key: String in DEFAULT_DATA.keys():
+		if not parsed.has(key):
+			return {}
+	return _validated_save(parsed)
+
+
+func is_valid_backup_code(code: String) -> bool:
+	return not _decode_backup_code(code).is_empty()
+
+
+func restore_backup_code(code: String) -> bool:
+	var restored: Dictionary = _decode_backup_code(code)
+	if restored.is_empty():
+		return false
+	var previous: Dictionary = data.duplicate(true)
+	data = restored
+	if not save():
+		data = previous
+		return false
+	_refresh_daily()
+	return true
 
 func set_preference(key: String, value: bool) -> void:
 	if key not in ["sound", "haptics", "reduced_motion", "high_contrast"]:

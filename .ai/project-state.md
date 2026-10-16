@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- PR #23 portable save recovery implemented: Settings COPY BACKUP / RESTORE SAVE (double confirmation), SHA-256-verified versioned text, validated profile data and atomic temporary-file save. Godot scene smoke success 38940339891; signed Android QA APK export success 38940339814. Still requires physical Android clipboard + reinstall acceptance.
 - Android QA APK pipeline is active: #19 adds export; #20 triggers builds on gameplay/source/asset/preset changes and verifies APK signature, package identity, ARM64 native libraries, SHA256 and source SHA. Main APK build run 38933014477 succeeded, artifact 12058629507 (7-day retention).
 - One-tap mode onboarding #21 merged at 4ff41a8d: DAILY and ENDLESS buttons immediately begin their runs and mode appears in FLOW HUD; scene-level input smoke plus main Android export succeeded.
 - 90 ms coyote jump grace after walking off ledges in PR #18: preserves the single air pulse, auto-clears on jump/landing/death/retry; Godot 4.7.2 scene input smoke PASS (run 38923324910). Physical Android play-feel remains unverified.
@@ -14,11 +15,12 @@ Status: active
 - Repository agent instructions follow the pinned 88-rule policy.
 
 ## Broken / blockers
-- Android debug export regenerates a signing keystore on every build, so updates can require uninstalling the prior debug app and losing its local saves; before broad mobile playtesting, solve signing continuity or add save export/import. Release signing and physical Android QA remain outstanding.
+- Android debug export still regenerates its signing key on every build; the PR #23 manual text-backup/restore provides a phone-only preservation path but requires external Notes storage **before uninstall**. A persistent signing identity, Play release signing and physical Android QA are still outstanding.
 - Autonomous *gameplay implementation* has not passed: canary #32 (workflow 1b5290ee2ca742b4a50601b995144a82) ended capacity_exhausted/project_envelope_exhausted after two native Godot model stages. Its checkpoint ca2799f on studio/pos-7e4a13159234bb4f6272c89b changed only .studio/state.json, not gameplay code.
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Verify backup export to Notes and restore after Android reinstall on real hardware; confirm best score, coins, skins, daily reset, clipboard persistence and accessibility.
 - Test the latest verified main APK (run 38933014477) on a physical Android phone following docs/ANDROID_DEVICE_QA.md; check one-tap mode start, HUD, collision feedback, reduced-motion/contrast and frame pacing.
 - Measure whether 90 ms edge grace improves accidental missed jumps on physical Android; tune window only after gameplay feedback.
 - Conduct physical Android touch + menu button + multi-touch and frame-pacing QA after PR #15, including jump/pulse separation.
@@ -26,6 +28,7 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #23 verified: 38940339891 (Godot parse + real-scene save smoke); 38940339814 (signed ARM64 APK export). Human Android clipboard test remains outstanding.
 - #21 main Godot validation succeeded (38933014631), Repository standards succeeded (38933016305), Android APK export succeeded (38933014477), and PR checks succeeded (38932900546, 38932900548). No claim of hardware Android performance.
 - PR #18 gameplay parse/smoke success, run 38923324910. Scene smoke covers ledge grace activation, consumption, expiration, existing pulse and mobile input; not a device test.
 - PR #15 scene-level input smoke and Godot parse: success (run 38913510252). Merged-main Godot parse/smoke: success (run 38913796123); repository standards: success (run 38913797853). No device-level Android QA claimed.

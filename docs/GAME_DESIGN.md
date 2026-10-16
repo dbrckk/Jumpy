@@ -67,6 +67,17 @@ FLOW increases scoring and feedback intensity. It resets gradually through imper
 - Vertical variation forces pulse decisions.
 - Daily mode uses a deterministic seed so every player can compete on the same sequence.
 
+### Mobile save recovery
+Settings offers **COPY BACKUP** and **RESTORE SAVE** to preserve local progress
+across Android debug APK reinstalls signed with different temporary keys.
+The user must paste the exported text into a separate notes application before
+uninstalling. On the new install, copying the text back and tapping RESTORE
+twice replaces progress only after integrity, version and schema validation.
+The backup is checksum-protected but not encrypted; a restored daily best is
+refreshed for the current date. Atomic temporary-file replacement reduces
+the risk of a truncated save. Godot scene-level CI covers roundtrip,
+tampering and incomplete backup rejection, not Android clipboard behavior.
+
 ## 4. Retention meta
 Already represented in profile data:
 - Lifetime score.

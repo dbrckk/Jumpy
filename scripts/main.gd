@@ -41,6 +41,7 @@ var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
 var settings_open: bool = false
+var pending_restore_code: String = ""
 
 func _ready() -> void:
 	fx_rng.randomize()
@@ -78,6 +79,9 @@ func build_ui() -> void:
 	ui.setting_haptics = make_button(root, "", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference("haptics"))
 	ui.setting_motion = make_button(root, "", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference("reduced_motion"))
 	ui.setting_contrast = make_button(root, "", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference("high_contrast"))
+	ui.backup = make_button(root, "COPY BACKUP", Vector2(120, 1660), Vector2(390, 82), copy_save_backup)
+	ui.restore = make_button(root, "RESTORE SAVE", Vector2(570, 1660), Vector2(390, 82), restore_save_backup)
+	ui.backup_notice = make_label(root, "", 23, Vector2(120, 1760), Vector2(840, 96), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.gameover = make_label(root, "", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.retry = make_button(root, "RETRY", Vector2(280, 940), Vector2(520, 110), restart_pressed)
 	ui.share = make_button(root, "SHARE", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))
@@ -111,7 +115,46 @@ func settings_pressed() -> void:
 	if state != "READY":
 		return
 	settings_open = not settings_open
+	pending_restore_code = ""
+	ui.backup_notice.text = ""
 	show_menu(true)
+
+
+func copy_save_backup() -> void:
+	if state != "READY" or not settings_open:
+		return
+	pending_restore_code = ""
+	if not DisplayServer.has_feature(DisplayServer.FEATURE_CLIPBOARD):
+		ui.backup_notice.text = "CLIPBOARD UNAVAILABLE ON THIS DEVICE"
+		return
+	DisplayServer.clipboard_set(Profile.export_backup_code())
+	ui.backup_notice.text = "COPIED. PASTE INTO NOTES BEFORE UNINSTALLING."
+
+
+func restore_save_backup() -> void:
+	if state != "READY" or not settings_open:
+		return
+	if not DisplayServer.has_feature(DisplayServer.FEATURE_CLIPBOARD):
+		ui.backup_notice.text = "CLIPBOARD UNAVAILABLE ON THIS DEVICE"
+		return
+	var code: String = DisplayServer.clipboard_get().strip_edges()
+	if not Profile.is_valid_backup_code(code):
+		pending_restore_code = ""
+		ui.backup_notice.text = "INVALID BACKUP. YOUR SAVE IS UNCHANGED."
+		return
+	if code != pending_restore_code:
+		pending_restore_code = code
+		ui.backup_notice.text = "TAP RESTORE AGAIN TO REPLACE CURRENT PROGRESS."
+		return
+	pending_restore_code = ""
+	if not Profile.restore_backup_code(code):
+		ui.backup_notice.text = "RESTORE FAILED. YOUR SAVE IS UNCHANGED."
+		return
+	show_menu(true)
+	update_ui()
+	queue_redraw()
+	ui.backup_notice.text = "SAVE RESTORED. PROGRESS AND SETTINGS UPDATED."
+
 
 func toggle_preference(key: String) -> void:
 	if state != "READY":
@@ -129,6 +172,9 @@ func refresh_settings_ui() -> void:
 	ui.setting_haptics.visible = show_settings
 	ui.setting_motion.visible = show_settings
 	ui.setting_contrast.visible = show_settings
+	ui.backup.visible = show_settings
+	ui.restore.visible = show_settings
+	ui.backup_notice.visible = show_settings
 	ui.setting_sound.text = "SOUND  %s" % ("ON" if bool(Profile.data.sound) else "OFF")
 	ui.setting_haptics.text = "HAPTICS  %s" % ("ON" if bool(Profile.data.haptics) else "OFF")
 	ui.setting_motion.text = "REDUCED MOTION  %s" % ("ON" if bool(Profile.data.reduced_motion) else "OFF")

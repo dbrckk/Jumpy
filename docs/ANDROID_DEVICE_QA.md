@@ -7,7 +7,18 @@
 3. The archive contains `Jumpy-debug.apk`, its `Jumpy-debug.apk.sha256` checksum and `SOURCE_COMMIT.txt` (the exact Git commit used). The CI also checks that the APK has a valid signature, the expected package name and ARM64 libraries. Optionally compare the APK checksum with a trusted local SHA-256 tool before installing.
 4. Install `Jumpy-debug.apk` only if you trust the repository build. Android may request permission to install apps from your browser or file manager. Open Jumpy in portrait. No PC, Play Store publication, API key, or paid signing account is required for this *debug* build.
 
-**Important:** A new temporary debug signing key is generated for each workflow run. An APK from a later run usually **cannot update the previous installation**. Uninstall the old debug app first if Android reports a signing conflict. Uninstalling removes the app's local save data. Debug APKs are **not** signed for Google Play release; do not publish them as production apps.
+**Important:** A new temporary debug signing key is generated for each workflow run. An APK from a later run usually **cannot update the previous installation**. Uninstall the old debug app first if Android reports a signing conflict. Uninstalling removes the app's local save data **unless you exported it first**. Debug APKs are **not** signed for Google Play release; do not publish them as production apps.
+
+### Preserve your save between debug builds (phone only)
+
+1. **Before uninstalling**, open Jumpy → **SETTINGS** → **COPY BACKUP**. The game places a versioned, checksum-verified text code on the clipboard.
+2. **Paste the complete code into a note outside Jumpy**, and confirm the entire code was saved there. Clipboard contents alone are temporary and will not survive reliably.
+3. Uninstall the previous debug app if the next APK has a different signing certificate, then install the new APK.
+4. Copy the saved code from the note. Open the new Jumpy → **SETTINGS** → **RESTORE SAVE**. Tap **RESTORE SAVE again** to confirm replacing the current progress.
+5. Verify coins, best score, unlocked skins, and preferences after import. Daily progress is refreshed for the current local date.
+
+The backup is portable text, **not encrypted cloud storage**. Only restore codes from sources you trust. Invalid, incomplete, corrupted, or incompatible codes are rejected without replacing the existing save; backups must be made **before** uninstalling. The save is now written via a temporary file and moved into place to reduce corruption from interrupted writes. The two-button confirmation prevents one accidental tap from replacing existing progress. Both clipboard actions still require a physical Android QA check.
+
 
 The workflow downloads and verifies the official Godot 4.7.2 Linux editor and matching Android export templates, configures the Android SDK and Java 17, exports the existing ARM64 Android preset, and attaches the resulting APK for **seven days**. Normal documentation and AI-context-only commits do not trigger a costly new build. Its success proves package construction and static APK checks, **not** device rendering, FPS, touch quality or accessibility.
 
@@ -19,6 +30,7 @@ The workflow downloads and verifies the official Godot 4.7.2 Linux editor and ma
 - **Ledge grace:** just after leaving an edge, a quick tap should still jump; after roughly 90 ms, the same airborne tap should use the optional pulse instead.
 - **Landing:** PERFECT, CLUTCH and LANDED cues remain readable; no overlap with AIR PULSE status or top score labels.
 - **Accessibility:** test reduced motion and high contrast, then retry after dying.
+- **Save continuity:** export to a note, restore from that note after reinstall, verify progress and settings; reject a truncated code without data loss.
 - **Performance:** play for several minutes; check frame pacing, stutters and input delay, especially after repeated deaths and particle bursts.
 
 Report the phone model, Android version, the tested workflow run URL, and a screenshot/video of any visual or touch defect. **Do not call the game Android-qualified until this physical-device checklist passes.**
