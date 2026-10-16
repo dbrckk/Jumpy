@@ -9,6 +9,7 @@ const JUMP_V: float = -1080.0
 const PULSE_V: float = -620.0
 const FLOOR_LIMIT: float = 1820.0
 const LANDING_CUE_DURATION: float = 0.72
+const COYOTE_TIME: float = 0.09
 
 const SKINS: Array[Color] = [
 	Color("62f7ff"), Color("ff5fd2"), Color("ffe66d"),
@@ -35,6 +36,7 @@ var elapsed: float = 0.0
 var camera_kick: float = 0.0
 var flash: float = 0.0
 var landing_cue_remaining: float = 0.0
+var coyote_remaining: float = 0.0
 var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
@@ -147,6 +149,7 @@ func reset_run(use_daily: bool) -> void:
 	on_ground = true
 	pulse_available = true
 	landing_cue_remaining = 0.0
+	coyote_remaining = 0.0
 	camera_kick = 0.0
 	flash = 0.0
 	ui.landing.visible = false
@@ -232,7 +235,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if state == "READY" and not settings_open:
 		start_run()
 	elif state == "PLAYING":
-		if on_ground:
+		if on_ground or coyote_remaining > 0.0:
 			jump()
 		elif pulse_available:
 			pulse()
@@ -240,6 +243,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		restart_pressed()
 
 func jump() -> void:
+	coyote_remaining = 0.0
 	player_vy = JUMP_V
 	on_ground = false
 	pulse_available = true
@@ -269,6 +273,8 @@ func _physics_process(delta: float) -> void:
 		queue_redraw()
 		return
 	elapsed += delta
+	# Retain a short jump window after stepping off a ledge; not after a jump.
+	coyote_remaining = maxf(0.0, coyote_remaining - delta)
 	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
@@ -310,6 +316,7 @@ func update_player(delta: float) -> void:
 	elif not has_support():
 		on_ground = false
 		player_vy = 40.0
+		coyote_remaining = COYOTE_TIME
 	collect_coin()
 	if player_y - PLAYER_R > FLOOR_LIMIT:
 		die()
@@ -328,6 +335,7 @@ func try_land(old_y: float) -> void:
 			player_vy = 0.0
 			on_ground = true
 			pulse_available = true
+			coyote_remaining = 0.0
 			on_landed(p)
 			return
 
@@ -410,6 +418,7 @@ func die() -> void:
 	if state != "PLAYING":
 		return
 	state = "DEAD"
+	coyote_remaining = 0.0
 	landing_cue_remaining = 0.0
 	ui.landing.visible = false
 	Profile.record_run(score, run_coins, perfects, daily_mode)
