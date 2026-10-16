@@ -2,30 +2,32 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 8,
+    "example_count": 9,
     "rejected_count": 0,
     "terms": [
-      "edge",
-      "forgiveness",
-      "gameplay",
-      "godot",
-      "improve",
-      "jump",
-      "one-thumb",
-      "scene-level",
-      "smoke",
-      "validated"
+      "android",
+      "apk",
+      "backups",
+      "debug",
+      "deliver",
+      "pc",
+      "portable",
+      "progress",
+      "requiring",
+      "resilient",
+      "without"
     ],
     "test_count": 0,
-    "useful_count": 2
+    "useful_count": 3
   },
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Improve one-thumb edge jump forgiveness with validated Godot scene-level gameplay smoke",
+  "task": "Deliver resilient portable Android debug APK progress backups without requiring a PC",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd",
+    "scripts/profile.gd",
     "tools/smoke_mobile_input.gd"
   ]
 }

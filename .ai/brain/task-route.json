@@ -9,10 +9,10 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "680b9fe7540fe7f808ea8e07ac51fddc01b543fc6ae9be9b9a1a63b4966a6497",
+    "fingerprint": "bcafc1b232b492fbdbdbc83c617642e246159d31c45672f9382ade02da893d25",
     "hit": false
   },
-  "candidate_count": 5,
+  "candidate_count": 7,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -83,6 +83,7 @@
         "build_ui",
         "burst",
         "collect_coin",
+        "copy_save_backup",
         "cycle_skin",
         "die",
         "has_support",
@@ -93,8 +94,38 @@
         "move_world",
         "on_landed",
         "pulse",
-        "refresh_settings_ui",
-        "reset_run"
+        "refresh_settings_ui"
+      ]
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "scripts/profile.gd",
+      "reasons": [
+        "impact",
+        "recently-changed"
+      ],
+      "score": 9,
+      "symbols": [
+        "_decode_backup_code",
+        "_ready",
+        "_refresh_daily",
+        "_save_date",
+        "_save_integer",
+        "_unlock_earned_skins",
+        "_update_streak",
+        "_validated_save",
+        "daily_seed",
+        "export_backup_code",
+        "get_mission_progress",
+        "is_valid_backup_code",
+        "load_data",
+        "record_run",
+        "restore_backup_code",
+        "save",
+        "select_skin",
+        "set_preference",
+        "spend_coins"
       ]
     },
     {

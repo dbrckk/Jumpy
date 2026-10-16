@@ -593,6 +593,7 @@ var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
 var settings_open: bool = false
+var pending_restore_code: String = ""
 
 func _ready() -> void:
 	fx_rng.randomize()
@@ -630,6 +631,9 @@ func build_ui() -> void:
 	ui.setting_haptics = make_button(root, "", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference("haptics"))
 	ui.setting_motion = make_button(root, "", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference("reduced_motion"))
 	ui.setting_contrast = make_button(root, "", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference("high_contrast"))
+	ui.backup = make_button(root, "COPY BACKUP", Vector2(120, 1660), Vector2(390, 82), copy_save_backup)
+	ui.restore = make_button(root, "RESTORE SAVE", Vector2(570, 1660), Vector2(390, 82), restore_save_backup)
+	ui.backup_notice = make_label(root, "", 23, Vector2(120, 1760), Vector2(840, 96), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.gameover = make_label(root, "", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.retry = make_button(root, "RETRY", Vector2(280, 940), Vector2(520, 110), restart_pressed)
 	ui.share = make_button(root, "SHARE", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))
@@ -663,7 +667,46 @@ func settings_pressed() -> void:
 	if state != "READY":
 		return
 	settings_open = not settings_open
+	pending_restore_code = ""
+	ui.backup_notice.text = ""
 	show_menu(true)
+
+
+func copy_save_backup() -> void:
+	if state != "READY" or not settings_open:
+		return
+	pending_restore_code = ""
+	if not DisplayServer.has_feature(DisplayServer.FEATURE_CLIPBOARD):
+		ui.backup_notice.text = "CLIPBOARD UNAVAILABLE ON THIS DEVICE"
+		return
+	DisplayServer.clipboard_set(Profile.export_backup_code())
+	ui.backup_notice.text = "COPIED. PASTE INTO NOTES BEFORE UNINSTALLING."
+
+
+func restore_save_backup() -> void:
+	if state != "READY" or not settings_open:
+		return
+	if not DisplayServer.has_feature(DisplayServer.FEATURE_CLIPBOARD):
+		ui.backup_notice.text = "CLIPBOARD UNAVAILABLE ON THIS DEVICE"
+		return
+	var code: String = DisplayServer.clipboard_get().strip_edges()
+	if not Profile.is_valid_backup_code(code):
+		pending_restore_code = ""
+		ui.backup_notice.text = "INVALID BACKUP. YOUR SAVE IS UNCHANGED."
+		return
+	if code != pending_restore_code:
+		pending_restore_code = code
+		ui.backup_notice.text = "TAP RESTORE AGAIN TO REPLACE CURRENT PROGRESS."
+		return
+	pending_restore_code = ""
+	if not Profile.restore_backup_code(code):
+		ui.backup_notice.text = "RESTORE FAILED. YOUR SAVE IS UNCHANGED."
+		return
+	show_menu(true)
+	update_ui()
+	queue_redraw()
+	ui.backup_notice.text = "SAVE RESTORED. PROGRESS AND SETTINGS UPDATED."
+
 
 func toggle_preference(key: String) -> void:
 	if state != "READY":
@@ -681,6 +724,9 @@ func refresh_settings_ui() -> void:
 	ui.setting_haptics.visible = show_settings
 	ui.setting_motion.visible = show_settings
 	ui.setting_contrast.visible = show_settings
+	ui.backup.visible = show_settings
+	ui.restore.visible = show_settings
+	ui.backup_notice.visible = show_settings
 	ui.setting_sound.text = "SOUND  %s" % ("ON" if bool(Profile.data.sound) else "OFF")
 	ui.setting_haptics.text = "HAPTICS  %s" % ("ON" if bool(Profile.data.haptics) else "OFF")
 	ui.setting_motion.text = "REDUCED MOTION  %s" % ("ON" if bool(Profile.data.reduced_motion) else "OFF")
@@ -1098,6 +1144,9 @@ extends Node
 
 const SAVE_PATH: String = "user://jumpy_save.json"
 const SAVE_VERSION: int = 1
+const SAVE_TMP_PATH: String = "user://jumpy_save.json.tmp"
+const BACKUP_PREFIX: String = "JUMPY1"
+const MAX_BACKUP_LENGTH: int = 8192
 
 const DEFAULT_DATA: Dictionary = {
 	"version": SAVE_VERSION,
@@ -1189,16 +1238,69 @@ func load_data() -> void:
 		return
 	data = _validated_save(parser.data)
 
-func save() -> void:
-	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+func save() -> bool:
+	# Write to a sibling file first; never truncate the previous valid save.
+	var file: FileAccess = FileAccess.open(SAVE_TMP_PATH, FileAccess.WRITE)
 	if file == null:
-		push_warning("Jumpy: unable to open save file for writing. Error %s" % FileAccess.get_open_error())
-		return
+		push_warning("Jumpy: unable to open temporary save. Error %s" % FileAccess.get_open_error())
+		return false
 	file.store_string(JSON.stringify(data))
 	file.flush()
 	var error: Error = file.get_error()
+	file.close()
 	if error != OK:
-		push_warning("Jumpy: save write failed with error %s" % error)
+		push_warning("Jumpy: temporary save write failed with error %s" % error)
+		return false
+	error = DirAccess.rename_absolute(SAVE_TMP_PATH, SAVE_PATH)
+	if error != OK:
+		push_warning("Jumpy: failed to commit save, error %s" % error)
+		return false
+	return true
+
+
+func export_backup_code() -> String:
+	# Portable text backup; no device key, Google account or storage permission.
+	var payload: String = JSON.stringify(_validated_save(data))
+	return "%s:%s:%s" % [BACKUP_PREFIX, payload.sha256_text(), Marshalls.utf8_to_base64(payload)]
+
+
+func _decode_backup_code(code: String) -> Dictionary:
+	var cleaned: String = code.strip_edges()
+	if cleaned.length() < 80 or cleaned.length() > MAX_BACKUP_LENGTH:
+		return {}
+	var fields: PackedStringArray = cleaned.split(":", false)
+	if fields.size() != 3 or fields[0] != BACKUP_PREFIX or fields[1].length() != 64:
+		return {}
+	var payload: String = Marshalls.base64_to_utf8(fields[2])
+	if payload.is_empty() or payload.length() > 4096 or payload.sha256_text() != fields[1]:
+		return {}
+	var parser: JSON = JSON.new()
+	if parser.parse(payload) != OK or not parser.data is Dictionary:
+		return {}
+	var parsed: Dictionary = parser.data
+	if _save_integer(parsed.get("version"), -1, SAVE_VERSION) != SAVE_VERSION:
+		return {}
+	for key: String in DEFAULT_DATA.keys():
+		if not parsed.has(key):
+			return {}
+	return _validated_save(parsed)
+
+
+func is_valid_backup_code(code: String) -> bool:
+	return not _decode_backup_code(code).is_empty()
+
+
+func restore_backup_code(code: String) -> bool:
+	var restored: Dictionary = _decode_backup_code(code)
+	if restored.is_empty():
+		return false
+	var previous: Dictionary = data.duplicate(true)
+	data = restored
+	if not save():
+		data = previous
+		return false
+	_refresh_daily()
+	return true
 
 func set_preference(key: String, value: bool) -> void:
 	if key not in ["sound", "haptics", "reduced_motion", "high_contrast"]:
@@ -1358,6 +1460,9 @@ func _run() -> void:
 	if not game.settings_open or game.state != "READY":
 		_fail("Settings did not open from the READY menu")
 		return
+	if not game.ui.backup.visible or not game.ui.restore.visible:
+		_fail("Settings must expose mobile backup and restore actions")
+		return
 	game._unhandled_input(physical_touch)
 	if game.state != "READY" or not game.settings_open:
 		_fail("Touch outside Settings started a run")
@@ -1365,6 +1470,9 @@ func _run() -> void:
 	game.settings_pressed()
 	if game.settings_open or game.state != "READY":
 		_fail("Settings BACK did not return to the READY menu")
+		return
+	if game.ui.backup.visible or game.ui.restore.visible:
+		_fail("Backup controls must not cover gameplay outside Settings")
 		return
 	game._unhandled_input(physical_touch)
 	if game.state != "PLAYING" or not game.pulse_available or game.player_vy != game.JUMP_V:
@@ -1458,9 +1566,53 @@ func _run() -> void:
 		_fail("An expired-grace touch must use the air pulse, not a second jump")
 		return
 
+	# Check real Profile serialization, persistent restore and invalid input
+	# without relying on a system clipboard in headless CI.
+	if profile == null:
+		_fail("Profile autoload missing for backup integration smoke")
+		return
+	var previous_save: Dictionary = profile.data.duplicate(true)
+	profile.data.runs = 17
+	profile.data.best_score = 4242
+	var backup_code: String = profile.export_backup_code()
+	if not profile.is_valid_backup_code(backup_code):
+		_fail("Exported progress must pass integrity and schema validation")
+		return
+	profile.data.runs = 0
+	profile.data.best_score = 0
+	if not profile.restore_backup_code(backup_code):
+		_fail("Valid backup must be restored and saved")
+		return
+	if int(profile.data.runs) != 17 or int(profile.data.best_score) != 4242:
+		_fail("Backup roundtrip lost player progress")
+		return
+	# Reload the actual user:// file, not just the in-memory dictionary.
+	profile.load_data()
+	if int(profile.data.runs) != 17 or int(profile.data.best_score) != 4242:
+		_fail("Backup restore did not survive a profile reload from disk")
+		return
+	var chunks: PackedStringArray = backup_code.split(":")
+	var changed_hash: String = "0" if not chunks[1].begins_with("0") else "1"
+	var corrupted_code: String = chunks[0] + ":" + changed_hash + chunks[1].substr(1) + ":" + chunks[2]
+	if profile.restore_backup_code(corrupted_code):
+		_fail("Corrupted backup digest must be rejected")
+		return
+	if int(profile.data.runs) != 17:
+		_fail("Invalid import must not destroy previous progress")
+		return
+	var insufficient_payload: String = JSON.stringify({"version": 1, "runs": 22})
+	var partial_code: String = "JUMPY1:" + insufficient_payload.sha256_text() + ":" + Marshalls.utf8_to_base64(insufficient_payload)
+	if profile.restore_backup_code(partial_code):
+		_fail("A partial save document must not overwrite player progress")
+		return
+	profile.data = previous_save
+	if not profile.save():
+		_fail("Unable to restore original profile after integration smoke")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, direct mode starts, touch input, desktop mouse, ledge jump grace and expiry")
+	print("PASS: HUD, direct modes, mobile input, coyote grace, backup roundtrip and validation")
 	quit(0)
 
 
@@ -1632,7 +1784,7 @@ Jumpy is intentionally not pure hypercasual. The core interaction remains one-se
 
 A debug APK is built automatically by [GitHub Actions](https://github.com/dbrckk/Jumpy/actions/workflows/android-debug-apk.yml) whenever game code, scenes, assets or Android export configuration changes. Open the latest **successful main-branch** run and download the **Jumpy-Android-debug-…** artifact (ZIP containing the APK, SHA-256 checksum and source commit). Manual builds are also available through **Run workflow**.
 
-See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. Debug APK generation is not proof of production-release quality.
+See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. **Before replacing a debug APK**, open **SETTINGS → COPY BACKUP** and paste the code into an external note. After reinstalling, copy the code from the note and tap **SETTINGS → RESTORE SAVE** twice to recover progress. Debug APK generation is not proof of production-release quality.
 
 ## External production setup
 

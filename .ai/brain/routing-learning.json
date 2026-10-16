@@ -152,6 +152,29 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Deliver resilient portable Android debug APK progress backups without requiring a PC",
+      "terms": [
+        "android",
+        "apk",
+        "backups",
+        "debug",
+        "deliver",
+        "pc",
+        "portable",
+        "progress",
+        "requiring",
+        "resilient",
+        "without"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "scripts/profile.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -163,8 +186,33 @@
     "add": {
       "scripts/main.gd": 4
     },
+    "android": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "apk": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "autonomous": {
       "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "backups": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "debug": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "deliver": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "delivery": {
@@ -229,8 +277,23 @@
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
+    "pc": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "portable": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "production-os": {
       "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "progress": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "qualify": {
@@ -242,6 +305,16 @@
     },
     "real": {
       "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "requiring": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "resilient": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "scene-level": {
@@ -259,6 +332,11 @@
     "validated": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "without": {
+      "scripts/main.gd": 4,
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     }
   },
   "term_test_scores": {}

@@ -43,22 +43,23 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T16:34:32Z
+Generated: 2026-10-16T17:34:31Z
 
 ### Git
 - Branch: `main`
-- Head: `4ff41a8d182c`
-- Commit date: 2026-10-16T18:34:23+02:00
-- Commit: Start Daily and Endless modes instantly with one tap (#21)
+- Head: `b53209339c82`
+- Commit date: 2026-10-16T19:34:21+02:00
+- Commit: Preserve Jumpy progress between Android debug APK reinstalls (#23)
 - Tracked files: 109
 
 ### Recently changed files
 - `README.md`
+- `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
+- `scripts/profile.gd`
 - `tools/smoke_mobile_input.gd`
 - `.github/workflows/android-debug-apk.yml`
-- `docs/ANDROID_DEVICE_QA.md`
 - `SETUP_REQUIRED.txt`
 - `project.godot`
 

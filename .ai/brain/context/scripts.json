@@ -11,7 +11,17 @@
         "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 560
+      "score": 570
+    },
+    {
+      "path": "scripts/profile.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "impact",
+        "symbol-indexed"
+      ],
+      "score": 395
     }
   ],
   "generated_by": "dbrckk/repo-brain-v6",
