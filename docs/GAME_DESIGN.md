@@ -14,6 +14,18 @@ Create a game that is as instantly readable as Flappy Bird but has a much longer
 ### Tap jump
 Tap while grounded to jump. Timing and landing position are the primary skill.
 
+Input routing: the fullscreen CanvasLayer container and read-only HUD labels
+ignore pointer events. Only interactive menu buttons consume clicks/touches.
+Gameplay processes the physical touch or desktop mouse event once, ignoring
+Godot's synthetic mouse/touch emulation events to avoid a single mobile tap
+accidentally triggering both jump and air pulse.
+
+The existing Godot CI now runs a headless **scene-level input integration
+smoke** covering root/label/button mouse filters, a physical touch, a synthetic
+duplicate, a second touch, and a genuine desktop click. This is not physical
+Android qualification; separately verify real touch, UI buttons, multi-touch
+behavior and frame pacing before release.
+
 ### Air pulse
 One optional mid-air tap gives a smaller corrective impulse. This preserves one-touch controls but creates route correction and advanced mastery.
 
