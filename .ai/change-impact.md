@@ -1,17 +1,18 @@
 # Change impact
 
-Base: e97d091fe1e7d190a976bcbdc2be39ab27ba82cb
-Head: cdf1492eaef3b36564f984e736617e786e7626e8
+Base: 6e5a24cd39d5b4093bc0eeb7cb54dde8fae95a7e
+Head: 7cd45bea5dc0bbb44c77b5c6c03418f02b06bab7
 
 ## Changed files
-- M docs/GAME_DESIGN.md
-- M scripts/main.gd
-- M tools/smoke_mobile_input.gd
+- A .github/workflows/android-debug-apk.yml
+- M SETUP_REQUIRED.txt
+- A docs/ANDROID_DEVICE_QA.md
+- M project.godot
 
 ## Affected areas
+- .github
+- (root)
 - docs
-- scripts
-- tools
 
 ## Related test candidates
 - No direct filename-based test match detected.

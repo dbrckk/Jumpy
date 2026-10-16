@@ -1,41 +1,48 @@
 {
   "files": [
     {
-      "path": "scripts/main.gd",
+      "path": "project.godot",
       "reasons": [
         "changed",
-        "changed-source",
-        "entrypoint",
-        "impact",
-        "recent-project-state",
-        "symbol-indexed"
+        "entrypoint"
       ],
-      "score": 560
+      "score": 140
     },
     {
-      "path": "tools/smoke_mobile_input.gd",
-      "reasons": [
-        "changed",
-        "changed-source",
-        "impact",
-        "recent-project-state",
-        "symbol-indexed"
-      ],
-      "score": 375
-    },
-    {
-      "path": "docs/GAME_DESIGN.md",
+      "path": ".github/workflows/android-debug-apk.yml",
       "reasons": [
         "changed"
       ],
       "score": 100
     },
     {
-      "path": "project.godot",
+      "path": "SETUP_REQUIRED.txt",
       "reasons": [
-        "entrypoint"
+        "changed"
       ],
-      "score": 40
+      "score": 100
+    },
+    {
+      "path": "docs/ANDROID_DEVICE_QA.md",
+      "reasons": [
+        "changed"
+      ],
+      "score": 100
+    },
+    {
+      "path": "scripts/main.gd",
+      "reasons": [
+        "entrypoint",
+        "recent-project-state"
+      ],
+      "score": 100
+    },
+    {
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "recent-project-state"
+      ],
+      "score": 60
     }
   ],
   "generated_by": "dbrckk/repo-brain-v6",

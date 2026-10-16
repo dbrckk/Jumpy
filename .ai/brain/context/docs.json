@@ -2,7 +2,7 @@
   "area": "docs",
   "files": [
     {
-      "path": "docs/GAME_DESIGN.md",
+      "path": "docs/ANDROID_DEVICE_QA.md",
       "reasons": [
         "changed"
       ],

@@ -4,35 +4,17 @@
     "expand_to": 12,
     "max_files": 6,
     "requested_max_files": 12,
-    "score_margin": 9,
+    "score_margin": 0,
     "tier": "bounded",
-    "top_score": 26
+    "top_score": 17
   },
   "cache": {
-    "fingerprint": "3d23ce6ad6d5c0a068462f5cc5b846322c63fc65091e76196d78d5ee35b01839",
+    "fingerprint": "7d005be778b921a5a14ae3dad6b1482056d700b6c92fb9e85d020adcaa000ba0",
     "hit": false
   },
-  "candidate_count": 4,
+  "candidate_count": 6,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
-    {
-      "learning_score": 0,
-      "matched_terms": [
-        "game"
-      ],
-      "path": "tools/smoke_mobile_input.gd",
-      "reasons": [
-        "impact",
-        "recently-changed",
-        "search-index"
-      ],
-      "score": 26,
-      "symbols": [
-        "_fail",
-        "_initialize",
-        "_run"
-      ]
-    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -58,44 +40,56 @@
       "matched_terms": [
         "game"
       ],
-      "path": "docs/GAME_DESIGN.md",
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "search-index"
+      ],
+      "score": 17,
+      "symbols": [
+        "_fail",
+        "_initialize",
+        "_run"
+      ]
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": ".github/workflows/android-debug-apk.yml",
       "reasons": [
         "recently-changed"
       ],
-      "score": 13,
+      "score": 3,
       "symbols": []
     },
     {
       "learning_score": 0,
       "matched_terms": [],
-      "path": "scripts/main.gd",
+      "path": "SETUP_REQUIRED.txt",
       "reasons": [
-        "impact",
         "recently-changed"
       ],
-      "score": 9,
-      "symbols": [
-        "_draw",
-        "_physics_process",
-        "_ready",
-        "_unhandled_input",
-        "animate_particles",
-        "build_ui",
-        "burst",
-        "collect_coin",
-        "cycle_skin",
-        "die",
-        "has_support",
-        "jump",
-        "make_button",
-        "make_label",
-        "make_platform",
-        "move_world",
-        "on_landed",
-        "pulse",
-        "refresh_settings_ui",
-        "reset_run"
-      ]
+      "score": 3,
+      "symbols": []
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "docs/ANDROID_DEVICE_QA.md",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 3,
+      "symbols": []
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "project.godot",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 3,
+      "symbols": []
     }
   ],
   "generated_by": "dbrckk/repo-brain-v8",

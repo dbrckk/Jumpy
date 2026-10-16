@@ -35,16 +35,20 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T15:23:35Z
+Generated: 2026-10-16T15:29:20Z
 
 ### Git
 - Branch: `main`
-- Head: `cdf1492eaef3`
-- Commit date: 2026-10-16T17:23:25+02:00
-- Commit: Make edge jumps more forgiving with 90 ms coyote time (#18)
-- Tracked files: 105
+- Head: `7cd45bea5dc0`
+- Commit date: 2026-10-16T17:29:10+02:00
+- Commit: Build downloadable Android debug APK in GitHub Actions (#19)
+- Tracked files: 107
 
 ### Recently changed files
+- `.github/workflows/android-debug-apk.yml`
+- `SETUP_REQUIRED.txt`
+- `docs/ANDROID_DEVICE_QA.md`
+- `project.godot`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`

@@ -2,7 +2,7 @@
   "area": "github",
   "files": [
     {
-      "path": ".github/workflows/validate.yml",
+      "path": ".github/workflows/android-debug-apk.yml",
       "reasons": [
         "changed"
       ],

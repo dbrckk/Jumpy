@@ -41,6 +41,7 @@ The content is organized as follows:
 .github/
   workflows/
     ai-repo-map.yml
+    android-debug-apk.yml
     production-os-review-handoff.yml
     semantic-refresh.yml
     validate.yml
@@ -81,6 +82,123 @@ concurrency:
 jobs:
   repository-standards:
     uses: dbrckk/repo-standards/.github/workflows/reusable-unified.yml@main
+```
+
+## File: .github/workflows/android-debug-apk.yml
+```yaml
+name: Android debug APK (device QA)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/android-debug-apk.yml
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/android-debug-apk.yml
+
+permissions:
+  contents: read
+
+jobs:
+  android-debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Set up Java 17
+        uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Prepare Android SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          : "${ANDROID_HOME:?Android SDK missing from runner}"
+          test -x "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+            --sdk_root="$ANDROID_HOME" \
+            'platform-tools' 'platforms;android-36' 'build-tools;36.1.0'
+          test -x "$ANDROID_HOME/platform-tools/adb"
+      - name: Install pinned Godot 4.7.2 editor
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-all-errors --retry-delay 3 \
+            --connect-timeout 15 --max-time 180 \
+            -o godot.zip \
+            https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip
+          echo 'cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4  godot.zip' | sha256sum -c -
+          mkdir -p .godot-ci
+          unzip -q godot.zip -d .godot-ci
+          mv .godot-ci/Godot_v4.7.2-stable_linux.x86_64 .godot-ci/godot
+          chmod +x .godot-ci/godot
+          rm godot.zip
+      - name: Cache pinned Android export templates
+        id: templates-cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: ~/.local/share/godot/export_templates/4.7.2.stable
+          key: godot-4.7.2-stable-android-templates-v1
+      - name: Fetch verified Android templates on cache miss
+        if: steps.templates-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-all-errors --retry-delay 3 \
+            --connect-timeout 15 --max-time 900 \
+            -o templates.tpz \
+            https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz
+          echo 'f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011  templates.tpz' | sha256sum -c -
+          target="$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          mkdir -p "$target"
+          unzip -jo templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' -d "$target"
+          printf '4.7.2.stable\n' > "$target/version.txt"
+          rm templates.tpz
+      - name: Configure Godot Android SDK and ephemeral debug signing
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s "$HOME/.local/share/godot/export_templates/4.7.2.stable/android_debug.apk"
+          test -s "$HOME/.local/share/godot/export_templates/4.7.2.stable/android_release.apk"
+          mkdir -p "$HOME/.config/godot"
+          cat > "$HOME/.config/godot/editor_settings-4.tres" <<EOF
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/android_sdk_path = "$ANDROID_HOME"
+          export/android/java_sdk_path = "$JAVA_HOME"
+          EOF
+          keytool -genkeypair -noprompt -keystore "$RUNNER_TEMP/jumpy-debug.keystore" \
+            -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 365 \
+            -storepass android -keypass android \
+            -dname 'CN=Jumpy Debug,O=Device QA,C=FR'
+      - name: Import Godot project and export installable APK
+        shell: bash
+        env:
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: ${{ runner.temp }}/jumpy-debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
+          GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          .godot-ci/godot --headless --path . --editor --quit 2>&1 | tee android-import.log
+          .godot-ci/godot --headless --path . --export-debug 'Android' build/Jumpy-debug.apk 2>&1 | tee android-export.log
+          test -s build/Jumpy-debug.apk
+          unzip -tq build/Jumpy-debug.apk >/dev/null
+          echo "Debug APK is a valid ZIP archive; no Android device execution was performed."
+      - name: Upload APK for Android device testing
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Jumpy-Android-debug-${{ github.sha }}
+          path: build/Jumpy-debug.apk
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
 ```
 
 ## File: .github/workflows/production-os-review-handoff.yml

@@ -7,6 +7,11 @@
       "path": ".ai/brain/context/docs.json"
     },
     {
+      "area": "github",
+      "file_count": 1,
+      "path": ".ai/brain/context/github.json"
+    },
+    {
       "area": "project.godot",
       "file_count": 1,
       "path": ".ai/brain/context/project.godot.json"
@@ -15,6 +20,11 @@
       "area": "scripts",
       "file_count": 1,
       "path": ".ai/brain/context/scripts.json"
+    },
+    {
+      "area": "setup-required.txt",
+      "file_count": 1,
+      "path": ".ai/brain/context/setup-required.txt.json"
     },
     {
       "area": "tools",

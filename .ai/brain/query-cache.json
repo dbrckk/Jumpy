@@ -363,6 +363,71 @@
       },
       "task": "privacy consent"
     },
+    "230a365e8f125d63a61f154f8bd9ffebe073f7023e5f4ff9f0c0ea063005d36d": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 3
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/android-debug-apk.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "SETUP_REQUIRED.txt",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/ANDROID_DEVICE_QA.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "project.godot",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "privacy consent",
+        "terms": [
+          "privacy",
+          "consent"
+        ]
+      },
+      "task": "privacy consent"
+    },
     "2610367d4edad4c41e8032ec22dc3cb8c1f474cee7d147ccf39adf9a5dc40db0": {
       "route": {
         "budget": {
@@ -444,6 +509,71 @@
         ]
       },
       "task": "privacy consent"
+    },
+    "29c5095823c8d4ed7c47ea5f17f7bd78eb3f14967374f4522c06e481b2627fa0": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 3
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/android-debug-apk.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "SETUP_REQUIRED.txt",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/ANDROID_DEVICE_QA.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "project.godot",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "purchase billing",
+        "terms": [
+          "purchase",
+          "billing"
+        ]
+      },
+      "task": "purchase billing"
     },
     "2d28a6fd659c5f45d4687ed3040e786f1aa8052489f64fd4ab86a1a6d1dcaf86": {
       "route": {
@@ -1553,6 +1683,107 @@
       },
       "task": "offline progress"
     },
+    "7d005be778b921a5a14ae3dad6b1482056d700b6c92fb9e85d020adcaa000ba0": {
+      "route": {
+        "budget": {
+          "confidence": "medium",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "bounded",
+          "top_score": 17
+        },
+        "candidate_count": 6,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "game"
+            ],
+            "path": "scripts/integrations.gd",
+            "reasons": [
+              "search-index"
+            ],
+            "score": 17,
+            "symbols": [
+              "event",
+              "haptic",
+              "leaderboard_submit",
+              "play_tone",
+              "rewarded_available",
+              "share_score",
+              "show_rewarded"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "game"
+            ],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "search-index"
+            ],
+            "score": 17,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/android-debug-apk.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "SETUP_REQUIRED.txt",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/ANDROID_DEVICE_QA.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "project.godot",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "game engine",
+        "terms": [
+          "game",
+          "engine"
+        ]
+      },
+      "task": "game engine"
+    },
     "7e9e2f26ca8b130c776cae329eb0b47df84e32a35d2ec191730c48632fae24e8": {
       "route": {
         "budget": {
@@ -2164,6 +2395,71 @@
       },
       "task": "game engine"
     },
+    "a369cd4f977e553701f66255f3d4a6a8d00d5875e755ab4f81b7957091c9d90b": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 3
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/android-debug-apk.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "SETUP_REQUIRED.txt",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/ANDROID_DEVICE_QA.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "project.godot",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "income progression",
+        "terms": [
+          "income",
+          "progression"
+        ]
+      },
+      "task": "income progression"
+    },
     "a8cea67dcfb8b16d3063520c582f5b8e56558b80cffc7b72a368da46b8c612e4": {
       "route": {
         "budget": {
@@ -2235,6 +2531,97 @@
         ]
       },
       "task": "privacy consent"
+    },
+    "b46e63ce2a48ee2c3cfe53df0770a4a48e4341d99c774845b7bdc48730a651c2": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 1,
+          "tier": "broad",
+          "top_score": 4
+        },
+        "candidate_count": 5,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "progress"
+            ],
+            "path": "scripts/profile.gd",
+            "reasons": [],
+            "score": 4,
+            "symbols": [
+              "_ready",
+              "_refresh_daily",
+              "_save_date",
+              "_save_integer",
+              "_unlock_earned_skins",
+              "_update_streak",
+              "_validated_save",
+              "daily_seed",
+              "get_mission_progress",
+              "load_data",
+              "record_run",
+              "save",
+              "select_skin",
+              "set_preference",
+              "spend_coins"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/android-debug-apk.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "SETUP_REQUIRED.txt",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/ANDROID_DEVICE_QA.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "project.godot",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "offline progress",
+        "terms": [
+          "offline",
+          "progress"
+        ]
+      },
+      "task": "offline progress"
     },
     "ba9cf470e95b0131278e7f6e4f507b253255c2649c3d08e2b4aac14edb7a6df7": {
       "route": {
@@ -3354,7 +3741,12 @@
     "943c1f8768293c56aa62c187883cbf7a1d531136390850bb3f59aa1dc0a2205f",
     "2610367d4edad4c41e8032ec22dc3cb8c1f474cee7d147ccf39adf9a5dc40db0",
     "ef48a4b910de53b4c9adec6ba8b960f6bb48f07b0f97a3ab5d0e623c2b82a67c",
-    "3d23ce6ad6d5c0a068462f5cc5b846322c63fc65091e76196d78d5ee35b01839"
+    "3d23ce6ad6d5c0a068462f5cc5b846322c63fc65091e76196d78d5ee35b01839",
+    "29c5095823c8d4ed7c47ea5f17f7bd78eb3f14967374f4522c06e481b2627fa0",
+    "a369cd4f977e553701f66255f3d4a6a8d00d5875e755ab4f81b7957091c9d90b",
+    "230a365e8f125d63a61f154f8bd9ffebe073f7023e5f4ff9f0c0ea063005d36d",
+    "b46e63ce2a48ee2c3cfe53df0770a4a48e4341d99c774845b7bdc48730a651c2",
+    "7d005be778b921a5a14ae3dad6b1482056d700b6c92fb9e85d020adcaa000ba0"
   ],
   "schema_version": 1
 }
