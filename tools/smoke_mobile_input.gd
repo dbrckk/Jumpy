@@ -43,6 +43,13 @@ func _run() -> void:
 		_fail("Unexpected HUD content; input smoke coverage is incomplete")
 		return
 
+	# Keep the integration smoke silent; the real autoload is discovered at runtime.
+	var profile: Node = root.get_node_or_null("Profile")
+	if profile != null:
+		var prefs: Dictionary = profile.get("data")
+		prefs["sound"] = false
+		prefs["haptics"] = false
+
 	var emulated_mouse: InputEventMouseButton = InputEventMouseButton.new()
 	emulated_mouse.button_index = MOUSE_BUTTON_LEFT
 	emulated_mouse.pressed = true
@@ -80,6 +87,8 @@ func _run() -> void:
 		_fail("Genuine desktop mouse input must still start the game")
 		return
 
+	game.queue_free()
+	await process_frame
 	print("PASS: fullscreen HUD, menu buttons, physical touch, duplicate suppression, desktop mouse")
 	quit(0)
 
