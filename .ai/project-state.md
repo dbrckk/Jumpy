@@ -28,13 +28,13 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-15T16:06:31Z
+Generated: 2026-10-16T13:59:08Z
 
 ### Git
 - Branch: `main`
-- Head: `b5b8124247ef`
-- Commit date: 2026-10-15T18:06:20+02:00
-- Commit: Show air pulse availability during jumps (#12)
+- Head: `6eb87359f4ee`
+- Commit date: 2026-10-16T15:58:56+02:00
+- Commit: Prevent pulse and landing HUD text overlap (#14)
 - Tracked files: 103
 
 ### Recently changed files
@@ -43,7 +43,6 @@ Generated: 2026-10-15T16:06:31Z
 - `.github/workflows/production-os-review-handoff.yml`
 - `.github/workflows/validate.yml`
 - `docs/production-os-review-handoff.md`
-- `AGENTS.md`
 
 ### Project signals
 - `project.godot`

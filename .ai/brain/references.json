@@ -80,7 +80,7 @@
         {
           "file": "scripts/main.gd",
           "line": 60,
-          "preview": "ui.landing = make_label(root, \"\", 44, Vector2(100, 265), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)",
+          "preview": "ui.landing = make_label(root, \"\", 44, Vector2(100, 295), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {

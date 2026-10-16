@@ -456,7 +456,7 @@ func build_ui() -> void:
 	ui.flow = make_label(root, "FLOW x1.0", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.pulse = make_label(root, "", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.pulse.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	ui.landing = make_label(root, "", 44, Vector2(100, 265), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)
+	ui.landing = make_label(root, "", 44, Vector2(100, 295), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.landing.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.landing.visible = false
 	ui.best = make_label(root, "BEST 0", 28, Vector2(42, 44), Vector2(360, 50))

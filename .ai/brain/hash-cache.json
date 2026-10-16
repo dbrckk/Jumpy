@@ -5,15 +5,15 @@
       "size": 3826
     },
     "docs/GAME_DESIGN.md": {
-      "sha256": "b30f83fdf22e363beedae0955256f206cb5780f159e3cb1fe33e40151511f287",
-      "size": 5313
+      "sha256": "e7312509b653028703fd441e25d9367ad5208027c6637c3ebfcc22b539cca94f",
+      "size": 5426
     },
     "project.godot": {
       "sha256": "1ee5ba332fecf669dd5c45cb7d8dcd3422816c4929c8a0acad99ebb2971dbb12",
       "size": 965
     },
     "scripts/main.gd": {
-      "sha256": "5a09caaf0b8368d470859598bbf1ac5a1fd476529df9c131d639f36dbc4a6b03",
+      "sha256": "a1d6d19037352874a4675bc2aca16333c01817c74b779f24ee1a23fe8c250ec6",
       "size": 21345
     }
   },
