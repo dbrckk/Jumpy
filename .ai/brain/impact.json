@@ -2,9 +2,13 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "0784ccc2fcab92fc71cee87c8d2e0d53992bc212",
+  "head": "5e1e3a688b58c8b3fd081e54e730979ac4e30c52",
   "index_mode": "full",
   "changed_files": [
+    {
+      "path": "docs/GAME_DESIGN.md",
+      "status": "M"
+    },
     {
       "path": "scripts/main.gd",
       "status": "M"
@@ -111,109 +115,109 @@
       "name": "jump",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 236
+      "line": 241
     },
     {
       "name": "pulse",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 248
+      "line": 253
     },
     {
       "name": "_physics_process",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 260
+      "line": 265
     },
     {
       "name": "move_world",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 281
+      "line": 286
     },
     {
       "name": "update_player",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 297
+      "line": 302
     },
     {
       "name": "try_land",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 311
+      "line": 316
     },
     {
       "name": "has_support",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 328
+      "line": 333
     },
     {
       "name": "on_landed",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 337
+      "line": 342
     },
     {
       "name": "show_landing_cue",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 382
+      "line": 387
     },
     {
       "name": "collect_coin",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 389
+      "line": 394
     },
     {
       "name": "die",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 403
+      "line": 408
     },
     {
       "name": "make_platform",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 431
+      "line": 436
     },
     {
       "name": "spawn_platform_after",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 438
+      "line": 443
     },
     {
       "name": "update_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 453
+      "line": 458
     },
     {
       "name": "burst",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 465
+      "line": 470
     },
     {
       "name": "animate_particles",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 471
+      "line": 476
     },
     {
       "name": "skin_color",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 480
+      "line": 485
     },
     {
       "name": "_draw",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 483
+      "line": 488
     },
     {
       "name": "_initialize",
@@ -231,7 +235,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 108
+      "line": 126
     }
   ],
   "selected_tests": []

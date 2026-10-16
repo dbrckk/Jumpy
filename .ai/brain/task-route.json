@@ -9,10 +9,10 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "50e19330bd0bee3e10940a4847d9df09921ef8b85234c5efe2703c73a08de102",
+    "fingerprint": "d3c505d66c9d3d2bf1d4268d66788205fe4361e66d4f97d0b613ec34331330d5",
     "hit": false
   },
-  "candidate_count": 3,
+  "candidate_count": 4,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -52,6 +52,18 @@
         "share_score",
         "show_rewarded"
       ]
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "game"
+      ],
+      "path": "docs/GAME_DESIGN.md",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 13,
+      "symbols": []
     },
     {
       "learning_score": 0,

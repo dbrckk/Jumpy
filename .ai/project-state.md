@@ -31,20 +31,20 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T14:36:28Z
+Generated: 2026-10-16T15:08:10Z
 
 ### Git
 - Branch: `main`
-- Head: `0784ccc2fcab`
-- Commit date: 2026-10-16T16:36:18+02:00
-- Commit: fix(jumpy): guard Settings overlay touch from starting a run (#16)
+- Head: `5e1e3a688b58`
+- Commit date: 2026-10-16T17:08:01+02:00
+- Commit: Ignore secondary finger contacts in mobile gameplay (#17)
 - Tracked files: 105
 
 ### Recently changed files
+- `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
 - `.github/workflows/validate.yml`
-- `docs/GAME_DESIGN.md`
 
 ### Project signals
 - `project.godot`

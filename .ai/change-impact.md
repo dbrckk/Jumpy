@@ -1,13 +1,15 @@
 # Change impact
 
-Base: a7dbfc955624f3708808b2520a74a45fbba6f7da
-Head: 0784ccc2fcab92fc71cee87c8d2e0d53992bc212
+Base: 922651c5cfc78e563bf5c6ca2d5c045ee92c49b2
+Head: 5e1e3a688b58c8b3fd081e54e730979ac4e30c52
 
 ## Changed files
+- M docs/GAME_DESIGN.md
 - M scripts/main.gd
 - M tools/smoke_mobile_input.gd
 
 ## Affected areas
+- docs
 - scripts
 - tools
 

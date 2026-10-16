@@ -233,13 +233,13 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 68,
+          "line": 76,
           "preview": "game.settings_pressed()",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 76,
+          "line": 84,
           "preview": "game.settings_pressed()",
           "definition_candidate": false
         }
@@ -315,7 +315,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 425,
+          "line": 430,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         }
@@ -356,7 +356,7 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 94,
+          "line": 112,
           "preview": "game.reset_run(false)",
           "definition_candidate": false
         }
@@ -437,7 +437,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 235,
+          "line": 240,
           "preview": "restart_pressed()",
           "definition_candidate": false
         }
@@ -466,7 +466,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 228,
+          "line": 233,
           "preview": "start_run()",
           "definition_candidate": false
         }
@@ -530,8 +530,8 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 72,
-          "preview": "game._unhandled_input(physical_touch)",
+          "line": 70,
+          "preview": "game._unhandled_input(secondary_touch)",
           "definition_candidate": false
         },
         {
@@ -542,29 +542,47 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 85,
-          "preview": "game._unhandled_input(emulated_mouse)",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 89,
+          "line": 88,
           "preview": "game._unhandled_input(physical_touch)",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 99,
+          "line": 93,
+          "preview": "game._unhandled_input(secondary_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 97,
+          "preview": "game._unhandled_input(emulated_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 101,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 107,
+          "preview": "game._unhandled_input(secondary_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 117,
           "preview": "game._unhandled_input(desktop_mouse)",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 7
+      "occurrence_count": 10
     },
     "jump": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 236,
+        "line": 241,
         "kind": "function",
         "language": "gdscript"
       },
@@ -583,19 +601,19 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 231,
+          "line": 236,
           "preview": "jump()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 237,
+          "line": 242,
           "preview": "func jump() -> void:",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 82,
+          "line": 90,
           "preview": "_fail(\"One physical touch must start a run with a single jump\")",
           "definition_candidate": false
         }
@@ -605,7 +623,7 @@
     "pulse": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 248,
+        "line": 253,
         "kind": "function",
         "language": "gdscript"
       },
@@ -630,66 +648,78 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 233,
+          "line": 221,
+          "preview": "# must not accidentally start a run, spend an air pulse or trigger retry.",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 238,
           "preview": "pulse()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 249,
+          "line": 254,
           "preview": "func pulse() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 461,
+          "line": 466,
           "preview": "ui.pulse.visible = state == \"PLAYING\" and not on_ground",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 462,
+          "line": 467,
           "preview": "if ui.pulse.visible:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 463,
+          "line": 468,
           "preview": "ui.pulse.text = \"AIR PULSE READY\" if pulse_available else \"AIR PULSE USED\"",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 464,
+          "line": 469,
           "preview": "ui.pulse.add_theme_color_override(\"font_color\", Color(\"ffffff\") if bool(Profile.data.high_contrast) else (Color(\"62f7ff\") if pulse_available else Color(\"9ba5bd\")))",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 87,
+          "line": 95,
+          "preview": "_fail(\"Secondary finger unexpectedly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 99,
           "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 91,
+          "line": 103,
           "preview": "_fail(\"A second real touch must use the single available air pulse\")",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 11
+      "occurrence_count": 13
     },
     "_physics_process": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 260,
+        "line": 265,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 261,
+          "line": 266,
           "preview": "func _physics_process(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -699,20 +729,20 @@
     "move_world": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 281,
+        "line": 286,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 268,
+          "line": 273,
           "preview": "move_world(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 282,
+          "line": 287,
           "preview": "func move_world(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -722,20 +752,20 @@
     "update_player": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 297,
+        "line": 302,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 269,
+          "line": 274,
           "preview": "update_player(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 298,
+          "line": 303,
           "preview": "func update_player(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -745,20 +775,20 @@
     "try_land": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 311,
+        "line": 316,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 304,
+          "line": 309,
           "preview": "try_land(old_y)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 312,
+          "line": 317,
           "preview": "func try_land(old_y: float) -> void:",
           "definition_candidate": false
         }
@@ -768,20 +798,20 @@
     "has_support": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 328,
+        "line": 333,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 305,
+          "line": 310,
           "preview": "elif not has_support():",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 329,
+          "line": 334,
           "preview": "func has_support() -> bool:",
           "definition_candidate": false
         }
@@ -791,20 +821,20 @@
     "on_landed": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 337,
+        "line": 342,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 326,
+          "line": 331,
           "preview": "on_landed(p)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 338,
+          "line": 343,
           "preview": "func on_landed(p: Dictionary) -> void:",
           "definition_candidate": false
         }
@@ -814,20 +844,20 @@
     "show_landing_cue": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 382,
+        "line": 387,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 380,
+          "line": 385,
           "preview": "show_landing_cue(cue_text, judgement_color)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 383,
+          "line": 388,
           "preview": "func show_landing_cue(message: String, color: Color) -> void:",
           "definition_candidate": false
         }
@@ -837,20 +867,20 @@
     "collect_coin": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 389,
+        "line": 394,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 308,
+          "line": 313,
           "preview": "collect_coin()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 390,
+          "line": 395,
           "preview": "func collect_coin() -> void:",
           "definition_candidate": false
         }
@@ -860,20 +890,20 @@
     "die": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 403,
+        "line": 408,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 310,
+          "line": 315,
           "preview": "die()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 404,
+          "line": 409,
           "preview": "func die() -> void:",
           "definition_candidate": false
         }
@@ -883,7 +913,7 @@
     "make_platform": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 431,
+        "line": 436,
         "kind": "function",
         "language": "gdscript"
       },
@@ -896,13 +926,13 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 432,
+          "line": 437,
           "preview": "func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 449,
+          "line": 454,
           "preview": "var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)",
           "definition_candidate": false
         }
@@ -912,7 +942,7 @@
     "spawn_platform_after": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 438,
+        "line": 443,
         "kind": "function",
         "language": "gdscript"
       },
@@ -925,13 +955,13 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 296,
+          "line": 301,
           "preview": "rightmost = spawn_platform_after(rightmost)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 439,
+          "line": 444,
           "preview": "func spawn_platform_after(right_edge: float) -> float:",
           "definition_candidate": false
         }
@@ -941,7 +971,7 @@
     "update_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 453,
+        "line": 458,
         "kind": "function",
         "language": "gdscript"
       },
@@ -954,13 +984,13 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 279,
+          "line": 284,
           "preview": "update_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 454,
+          "line": 459,
           "preview": "func update_ui() -> void:",
           "definition_candidate": false
         }
@@ -970,56 +1000,56 @@
     "burst": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 465,
+        "line": 470,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 246,
+          "line": 251,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 258,
+          "line": 263,
           "preview": "burst(Vector2(PLAYER_X, player_y), Color(\"ffffff\"), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 362,
+          "line": 367,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffffff\"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 371,
+          "line": 376,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffe66d\"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 377,
+          "line": 382,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 401,
+          "line": 406,
           "preview": "burst(Vector2(cx, cy), Color(\"ffe66d\"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 429,
+          "line": 434,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 466,
+          "line": 471,
           "preview": "func burst(pos: Vector2, color: Color, count: int, power: float) -> void:",
           "definition_candidate": false
         }
@@ -1029,26 +1059,26 @@
     "animate_particles": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 471,
+        "line": 476,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 263,
+          "line": 268,
           "preview": "animate_particles(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 276,
+          "line": 281,
           "preview": "animate_particles(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 472,
+          "line": 477,
           "preview": "func animate_particles(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -1058,44 +1088,44 @@
     "skin_color": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 480,
+        "line": 485,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 246,
+          "line": 251,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 352,
+          "line": 357,
           "preview": "var judgement_color: Color = skin_color()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 377,
+          "line": 382,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 429,
+          "line": 434,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 481,
+          "line": 486,
           "preview": "func skin_color() -> Color:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 508,
+          "line": 513,
           "preview": "var player_color: Color = skin_color()",
           "definition_candidate": false
         }
@@ -1105,14 +1135,14 @@
     "_draw": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 483,
+        "line": 488,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 484,
+          "line": 489,
           "preview": "func _draw() -> void:",
           "definition_candidate": false
         }
@@ -1162,7 +1192,7 @@
     "_fail": {
       "definition": {
         "file": "tools/smoke_mobile_input.gd",
-        "line": 108,
+        "line": 126,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1217,54 +1247,72 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 70,
-          "preview": "_fail(\"Settings did not open from the READY menu\")",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 74,
-          "preview": "_fail(\"Touch outside Settings started a run\")",
+          "line": 72,
+          "preview": "_fail(\"Secondary finger must not start a run\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
           "line": 78,
-          "preview": "_fail(\"Settings BACK did not return to the READY menu\")",
+          "preview": "_fail(\"Settings did not open from the READY menu\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
           "line": 82,
+          "preview": "_fail(\"Touch outside Settings started a run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 86,
+          "preview": "_fail(\"Settings BACK did not return to the READY menu\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 90,
           "preview": "_fail(\"One physical touch must start a run with a single jump\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 87,
+          "line": 95,
+          "preview": "_fail(\"Secondary finger unexpectedly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 99,
           "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 91,
+          "line": 103,
           "preview": "_fail(\"A second real touch must use the single available air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 101,
+          "line": 109,
+          "preview": "_fail(\"Secondary finger must not trigger retry after death\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 119,
           "preview": "_fail(\"Genuine desktop mouse input must still start the game\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 110,
+          "line": 128,
           "preview": "func _fail(message: String) -> void:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 16
+      "occurrence_count": 19
     }
   }
 }

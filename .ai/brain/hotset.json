@@ -24,6 +24,13 @@
       "score": 375
     },
     {
+      "path": "docs/GAME_DESIGN.md",
+      "reasons": [
+        "changed"
+      ],
+      "score": 100
+    },
+    {
       "path": "project.godot",
       "reasons": [
         "entrypoint"
