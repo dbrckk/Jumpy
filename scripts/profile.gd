@@ -136,7 +136,7 @@ func _decode_backup_code(code: String) -> Dictionary:
 	if parser.parse(payload) != OK or not parser.data is Dictionary:
 		return {}
 	var parsed: Dictionary = parser.data
-	if typeof(parsed.get("version")) != TYPE_INT or int(parsed.version) != SAVE_VERSION:
+	if _save_integer(parsed.get("version"), -1, SAVE_VERSION) != SAVE_VERSION:
 		return {}
 	for key: String in DEFAULT_DATA.keys():
 		if not parsed.has(key):
