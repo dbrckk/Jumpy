@@ -77,6 +77,9 @@ func _run() -> void:
 	if not game.settings_open or game.state != "READY":
 		_fail("Settings did not open from the READY menu")
 		return
+	if not game.ui.backup.visible or not game.ui.restore.visible:
+		_fail("Settings must expose mobile backup and restore actions")
+		return
 	game._unhandled_input(physical_touch)
 	if game.state != "READY" or not game.settings_open:
 		_fail("Touch outside Settings started a run")
@@ -84,6 +87,9 @@ func _run() -> void:
 	game.settings_pressed()
 	if game.settings_open or game.state != "READY":
 		_fail("Settings BACK did not return to the READY menu")
+		return
+	if game.ui.backup.visible or game.ui.restore.visible:
+		_fail("Backup controls must not cover gameplay outside Settings")
 		return
 	game._unhandled_input(physical_touch)
 	if game.state != "PLAYING" or not game.pulse_available or game.player_vy != game.JUMP_V:
@@ -177,9 +183,48 @@ func _run() -> void:
 		_fail("An expired-grace touch must use the air pulse, not a second jump")
 		return
 
+	# Check real Profile serialization, persistent restore and invalid input
+	# without relying on a system clipboard in headless CI.
+	if profile == null:
+		_fail("Profile autoload missing for backup integration smoke")
+		return
+	var previous_save: Dictionary = profile.data.duplicate(true)
+	profile.data.runs = 17
+	profile.data.best_score = 4242
+	var backup_code: String = profile.export_backup_code()
+	if not profile.is_valid_backup_code(backup_code):
+		_fail("Exported progress must pass integrity and schema validation")
+		return
+	profile.data.runs = 0
+	profile.data.best_score = 0
+	if not profile.restore_backup_code(backup_code):
+		_fail("Valid backup must be restored and saved")
+		return
+	if int(profile.data.runs) != 17 or int(profile.data.best_score) != 4242:
+		_fail("Backup roundtrip lost player progress")
+		return
+	var chunks: PackedStringArray = backup_code.split(":")
+	var changed_hash: String = "0" if not chunks[1].begins_with("0") else "1"
+	var corrupted_code: String = chunks[0] + ":" + changed_hash + chunks[1].substr(1) + ":" + chunks[2]
+	if profile.restore_backup_code(corrupted_code):
+		_fail("Corrupted backup digest must be rejected")
+		return
+	if int(profile.data.runs) != 17:
+		_fail("Invalid import must not destroy previous progress")
+		return
+	var insufficient_payload: String = JSON.stringify({"version": 1, "runs": 22})
+	var partial_code: String = "JUMPY1:" + insufficient_payload.sha256_text() + ":" + Marshalls.utf8_to_base64(insufficient_payload)
+	if profile.restore_backup_code(partial_code):
+		_fail("A partial save document must not overwrite player progress")
+		return
+	profile.data = previous_save
+	if not profile.save():
+		_fail("Unable to restore original profile after integration smoke")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, direct mode starts, touch input, desktop mouse, ledge jump grace and expiry")
+	print("PASS: HUD, direct modes, mobile input, coyote grace, backup roundtrip and validation")
 	quit(0)
 
 
