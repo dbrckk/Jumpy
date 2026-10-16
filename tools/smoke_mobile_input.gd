@@ -119,9 +119,43 @@ func _run() -> void:
 		_fail("Genuine desktop mouse input must still start the game")
 		return
 
+	# Real scene-level gameplay acceptance: stepping off a ledge still permits
+	# a short jump, but the grace ends once used or after the timer expires.
+	game.reset_run(false)
+	game.start_run()
+	game.platforms.clear()
+	game.on_ground = true
+	game.update_player(1.0 / 60.0)
+	if game.on_ground or game.coyote_remaining <= 0.0:
+		_fail("Walking off a platform must open the jump grace window")
+		return
+	game._unhandled_input(physical_touch)
+	if game.player_vy != game.JUMP_V or not game.pulse_available or game.coyote_remaining != 0.0:
+		_fail("Grace tap must jump without spending the air pulse")
+		return
+	game._unhandled_input(physical_touch)
+	if game.pulse_available:
+		_fail("A subsequent airborne tap must still consume the pulse")
+		return
+
+	game.reset_run(false)
+	game.start_run()
+	game.platforms.clear()
+	game.on_ground = true
+	game.update_player(1.0 / 60.0)
+	game.player_y = 300.0  # Avoid unintended landings during elapsed-time simulation.
+	game._physics_process(game.COYOTE_TIME + 0.02)
+	if game.coyote_remaining > 0.0 or game.on_ground:
+		_fail("Expired ledge grace must no longer permit a ground jump")
+		return
+	game._unhandled_input(physical_touch)
+	if game.pulse_available:
+		_fail("An expired-grace touch must use the air pulse, not a second jump")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, settings tap guard, BACK, primary and secondary touches, duplicate suppression, desktop mouse")
+	print("PASS: HUD, menu, mobile touches, desktop mouse, ledge jump grace, grace expiry")
 	quit(0)
 
 

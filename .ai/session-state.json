@@ -1,18 +1,17 @@
 {
   "version": 1,
   "updated_at": "2026-10-16",
-  "task": "Fix mobile Godot tap handling and qualify headless scene-level input",
+  "task": "Improve one-thumb edge jump forgiveness with validated Godot scene-level gameplay smoke",
   "branch": "main",
   "last_gameplay_merge": {
-    "pull_request": 15,
-    "commit": "b1c62f7a6ea650af971ad5a929ea18b715afade0",
+    "pull_request": 17,
+    "commit": "5e1e3a688b58c8b3fd081e54e730979ac4e30c52",
     "files": [
       "scripts/main.gd",
       "tools/smoke_mobile_input.gd",
-      ".github/workflows/validate.yml",
       "docs/GAME_DESIGN.md"
     ],
-    "feature": "Fullscreen HUD labels stop intercepting taps; duplicate synthetic events are filtered; actual menu buttons keep handling input"
+    "feature": "Secondary fingers no longer spend air pulse, start run or retry"
   },
   "validation": {
     "godot_pr_run": 38913510252,
@@ -36,8 +35,15 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Qualify physical Android portrait touch, GUI buttons, multi-touch and frame pacing",
-    "Address Production-OS native small-change model budget exhaustion without paid-token assumptions",
-    "Run Godot runtime/device gameplay acceptance before any release claim"
-  ]
+    "Verify portrait Android edge jumps, multitouch, landing cue placement and frame pacing on hardware",
+    "Investigate frame-time variability and collision fairness after device playtesting",
+    "Optimize Production-OS native small-change model budget exhaustion without paid-token assumptions"
+  ],
+  "latest_validated_feature": {
+    "pull_request": 18,
+    "branch": "feat/coyote-jump-grace-20261016",
+    "feature": "90 ms coyote jump grace after walking off ledges; air pulse preserved",
+    "godot_pr_run": 38923324910,
+    "validation": "Godot 4.7.2 import/parse and existing scene integration smoke passed; physical Android QA not performed"
+  }
 }

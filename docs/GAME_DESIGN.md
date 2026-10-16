@@ -28,6 +28,15 @@ physical touches, a synthetic duplicate, menu handling and a genuine desktop cli
 Android qualification; separately verify real touch, UI buttons, multi-touch
 behavior and frame pacing before release.
 
+### Ledge jump grace
+Walking off the edge of a platform starts a 0.09-second jump grace window. A
+tap during this window makes a full jump without using the optional air pulse,
+making near-edge mobile taps more forgiving. The grace is cleared immediately
+after jumping or landing, on retry and on death. Once expired, the airborne tap
+still uses the normal single air pulse. The existing scene-level Godot smoke
+covers grace activation, jump behavior, pulse preservation and expiry. This
+mechanical improvement does not replace human Android feel and latency testing.
+
 ### Air pulse
 One optional mid-air tap gives a smaller corrective impulse. This preserves one-touch controls but creates route correction and advanced mastery.
 
