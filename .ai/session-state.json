@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated_at": "2026-10-16",
-  "task": "Deliver reproducible Android debug APKs for every gameplay change and improve one-tap onboarding",
+  "task": "Deliver resilient portable Android debug APK progress backups without requiring a PC",
   "branch": "main",
   "last_gameplay_merge": {
     "pull_request": 21,
@@ -38,15 +38,18 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Qualify main-branch APK on a physical Android phone: mode start, single jump, secondary touch, coyote time, accessibility and FPS",
-    "Address debug signing continuity or add save backup/import before encouraging repeated reinstall/uninstall cycles",
-    "Optimize game feel/performance using measured mobile profiling and feedback",
-    "Optimize Production-OS agent token envelope without assuming paid tokens"
+    "On actual Android phone, test Settings backup -> paste into Notes -> uninstall/reinstall -> restore two taps -> verify data and accessibility",
+    "Continue providing per-change downloadable ARM64 APK artifacts with source and checksum; ephemeral debug signing remains",
+    "Investigate Production-OS agent budget exhaustion without paid-token assumptions",
+    "Profile frame pacing and input responsiveness on real Android hardware"
   ],
   "latest_validated_feature": {
-    "pull_request": 21,
-    "feature": "One-tap DAILY/ENDLESS onboarding and immediate mode-labelled HUD",
-    "validation": "Godot 4.7.2 scene/input smoke and Android debug export succeeded on PR and main"
+    "pull_request": 23,
+    "branch": "feat/mobile-save-backup-20261016",
+    "feature": "In-game COPY BACKUP and two-tap RESTORE SAVE; checksum/schema/version guard, atomic save replacement",
+    "godot_pr_run": 38940339891,
+    "android_pr_run": 38940339814,
+    "validation": "Godot 4.7.2 scene smoke and signed arm64 APK checks success; Android clipboard and reinstall not yet tested on a physical phone"
   },
   "android_build": {
     "initial_pull_request": 19,
