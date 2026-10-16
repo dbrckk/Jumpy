@@ -4,17 +4,35 @@
     "expand_to": 12,
     "max_files": 6,
     "requested_max_files": 12,
-    "score_margin": 4,
+    "score_margin": 9,
     "tier": "bounded",
-    "top_score": 17
+    "top_score": 26
   },
   "cache": {
-    "fingerprint": "3960b8df7c77b4d41337421446ad99b51ea0392f4230e9aa7d44fc11a30dd1e0",
+    "fingerprint": "a05640ac87566f8531df87adde491eed1b556755d58ce02f5be460b1e3c71775",
     "hit": false
   },
-  "candidate_count": 3,
+  "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "game"
+      ],
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 26,
+      "symbols": [
+        "_fail",
+        "_initialize",
+        "_run"
+      ]
+    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -78,6 +96,16 @@
         "refresh_settings_ui",
         "reset_run"
       ]
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": ".github/workflows/validate.yml",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 3,
+      "symbols": []
     }
   ],
   "generated_by": "dbrckk/repo-brain-v8",

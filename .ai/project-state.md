@@ -28,20 +28,21 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T13:59:08Z
+Generated: 2026-10-16T14:11:51Z
 
 ### Git
 - Branch: `main`
-- Head: `6eb87359f4ee`
-- Commit date: 2026-10-16T15:58:56+02:00
-- Commit: Prevent pulse and landing HUD text overlap (#14)
-- Tracked files: 103
+- Head: `b1c62f7a6ea6`
+- Commit date: 2026-10-16T16:11:41+02:00
+- Commit: Fix mobile tap input swallowed by HUD and emulated double taps (#15)
+- Tracked files: 104
 
 ### Recently changed files
+- `.github/workflows/validate.yml`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
+- `tools/smoke_mobile_input.gd`
 - `.github/workflows/production-os-review-handoff.yml`
-- `.github/workflows/validate.yml`
 - `docs/production-os-review-handoff.md`
 
 ### Project signals

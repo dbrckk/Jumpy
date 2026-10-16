@@ -1,1 +1,1 @@
-{"schema_version":1,"tokens":{"queue_free":["scripts/integrations.gd"],"queue_redraw":["scripts/main.gd"]}}
+{"schema_version":1,"tokens":{"queue_free":["scripts/integrations.gd","tools/smoke_mobile_input.gd"],"queue_redraw":["scripts/main.gd"],"quit":["tools/smoke_mobile_input.gd"]}}

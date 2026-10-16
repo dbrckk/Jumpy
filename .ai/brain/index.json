@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
   "generated_by": "dbrckk/repo-brain",
-  "files_indexed": 3,
-  "symbol_count": 54,
+  "files_indexed": 4,
+  "symbol_count": 57,
   "edge_count": 0,
   "languages": {
-    "gdscript": 3
+    "gdscript": 4
   },
   "index_mode": "full",
-  "reparsed_files": 3,
+  "reparsed_files": 4,
   "top_symbol_files": [
     {
       "file": "scripts/main.gd",
@@ -21,6 +21,10 @@
     {
       "file": "scripts/integrations.gd",
       "symbols": 7
+    },
+    {
+      "file": "tools/smoke_mobile_input.gd",
+      "symbols": 3
     }
   ]
 }

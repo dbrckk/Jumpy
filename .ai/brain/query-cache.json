@@ -608,6 +608,124 @@
       },
       "task": "game engine"
     },
+    "4e775209d046aeeb63ddcf36effc59f55eb1591056cc3669b3fcdb82e1dec5c6": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 9
+        },
+        "candidate_count": 5,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "scripts/main.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_draw",
+              "_physics_process",
+              "_ready",
+              "_unhandled_input",
+              "animate_particles",
+              "build_ui",
+              "burst",
+              "collect_coin",
+              "cycle_skin",
+              "die",
+              "has_support",
+              "jump",
+              "make_button",
+              "make_label",
+              "make_platform",
+              "move_world",
+              "on_landed",
+              "pulse",
+              "refresh_settings_ui",
+              "reset_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "progress"
+            ],
+            "path": "scripts/profile.gd",
+            "reasons": [],
+            "score": 4,
+            "symbols": [
+              "_ready",
+              "_refresh_daily",
+              "_save_date",
+              "_save_integer",
+              "_unlock_earned_skins",
+              "_update_streak",
+              "_validated_save",
+              "daily_seed",
+              "get_mission_progress",
+              "load_data",
+              "record_run",
+              "save",
+              "select_skin",
+              "set_preference",
+              "spend_coins"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/validate.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/GAME_DESIGN.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "offline progress",
+        "terms": [
+          "offline",
+          "progress"
+        ]
+      },
+      "task": "offline progress"
+    },
     "662d724b706395d2ea4bb9e5f4b5698c06d0694582c57ad936042ef4e0f50b00": {
       "route": {
         "budget": {
@@ -910,6 +1028,98 @@
       },
       "task": "purchase billing"
     },
+    "911a2ffa0d612df36473fba9df3154088e80dcc3981f9a182446af909ffc56d8": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 9
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "scripts/main.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_draw",
+              "_physics_process",
+              "_ready",
+              "_unhandled_input",
+              "animate_particles",
+              "build_ui",
+              "burst",
+              "collect_coin",
+              "cycle_skin",
+              "die",
+              "has_support",
+              "jump",
+              "make_button",
+              "make_label",
+              "make_platform",
+              "move_world",
+              "on_landed",
+              "pulse",
+              "refresh_settings_ui",
+              "reset_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/validate.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/GAME_DESIGN.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "purchase billing",
+        "terms": [
+          "purchase",
+          "billing"
+        ]
+      },
+      "task": "purchase billing"
+    },
     "911bbac9184fc93d026fc36557defe7b462fe9f6f418eb721648c48c4fda6b33": {
       "route": {
         "budget": {
@@ -987,6 +1197,123 @@
               "refresh_settings_ui",
               "reset_run"
             ]
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "game engine",
+        "terms": [
+          "game",
+          "engine"
+        ]
+      },
+      "task": "game engine"
+    },
+    "a05640ac87566f8531df87adde491eed1b556755d58ce02f5be460b1e3c71775": {
+      "route": {
+        "budget": {
+          "confidence": "medium",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 9,
+          "tier": "bounded",
+          "top_score": 26
+        },
+        "candidate_count": 5,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "game"
+            ],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "impact",
+              "recently-changed",
+              "search-index"
+            ],
+            "score": 26,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "game"
+            ],
+            "path": "scripts/integrations.gd",
+            "reasons": [
+              "search-index"
+            ],
+            "score": 17,
+            "symbols": [
+              "event",
+              "haptic",
+              "leaderboard_submit",
+              "play_tone",
+              "rewarded_available",
+              "share_score",
+              "show_rewarded"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [
+              "game"
+            ],
+            "path": "docs/GAME_DESIGN.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 13,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "scripts/main.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_draw",
+              "_physics_process",
+              "_ready",
+              "_unhandled_input",
+              "animate_particles",
+              "build_ui",
+              "burst",
+              "collect_coin",
+              "cycle_skin",
+              "die",
+              "has_support",
+              "jump",
+              "make_button",
+              "make_label",
+              "make_platform",
+              "move_world",
+              "on_landed",
+              "pulse",
+              "refresh_settings_ui",
+              "reset_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/validate.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
           }
         ],
         "generated_by": "dbrckk/repo-brain-v8",
@@ -1132,6 +1459,98 @@
         ]
       },
       "task": "purchase billing"
+    },
+    "d44e5a7f23246b58749e741272227ccf4ffc91c4e095d26c6936e012d534ce72": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 9
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "scripts/main.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_draw",
+              "_physics_process",
+              "_ready",
+              "_unhandled_input",
+              "animate_particles",
+              "build_ui",
+              "burst",
+              "collect_coin",
+              "cycle_skin",
+              "die",
+              "has_support",
+              "jump",
+              "make_button",
+              "make_label",
+              "make_platform",
+              "move_world",
+              "on_landed",
+              "pulse",
+              "refresh_settings_ui",
+              "reset_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/validate.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/GAME_DESIGN.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "privacy consent",
+        "terms": [
+          "privacy",
+          "consent"
+        ]
+      },
+      "task": "privacy consent"
     },
     "d900ec6f0b11d73bd8873016dddd3abb52984723a6a34e2cd53c0499358bfad3": {
       "route": {
@@ -1469,6 +1888,98 @@
         ]
       },
       "task": "offline progress"
+    },
+    "fa8999d42d47641b0c7590c916ce7951157ec3a2addb1d273b9b09dc173c7b29": {
+      "route": {
+        "budget": {
+          "confidence": "low",
+          "expand_to": 12,
+          "max_files": 6,
+          "requested_max_files": 12,
+          "score_margin": 0,
+          "tier": "broad",
+          "top_score": 9
+        },
+        "candidate_count": 4,
+        "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
+        "files": [
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "scripts/main.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_draw",
+              "_physics_process",
+              "_ready",
+              "_unhandled_input",
+              "animate_particles",
+              "build_ui",
+              "burst",
+              "collect_coin",
+              "cycle_skin",
+              "die",
+              "has_support",
+              "jump",
+              "make_button",
+              "make_label",
+              "make_platform",
+              "move_world",
+              "on_landed",
+              "pulse",
+              "refresh_settings_ui",
+              "reset_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "tools/smoke_mobile_input.gd",
+            "reasons": [
+              "impact",
+              "recently-changed"
+            ],
+            "score": 9,
+            "symbols": [
+              "_fail",
+              "_initialize",
+              "_run"
+            ]
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": ".github/workflows/validate.yml",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          },
+          {
+            "learning_score": 0,
+            "matched_terms": [],
+            "path": "docs/GAME_DESIGN.md",
+            "reasons": [
+              "recently-changed"
+            ],
+            "score": 3,
+            "symbols": []
+          }
+        ],
+        "generated_by": "dbrckk/repo-brain-v8",
+        "schema_version": 1,
+        "task": "income progression",
+        "terms": [
+          "income",
+          "progression"
+        ]
+      },
+      "task": "income progression"
     }
   },
   "generated_by": "dbrckk/repo-brain-query-cache-v2",
@@ -1492,7 +2003,12 @@
     "34b0c1195e7eabc9843f1a77272051f441b7cf8fb8dfea321f9f386e33712839",
     "16268d7027791210a3b23aa1ac570c814978f0560536a8bfdeda9277df370abb",
     "02eb9e7d042d73898453a832ecf838cec5c45b7c704d104010629b558934c733",
-    "3960b8df7c77b4d41337421446ad99b51ea0392f4230e9aa7d44fc11a30dd1e0"
+    "3960b8df7c77b4d41337421446ad99b51ea0392f4230e9aa7d44fc11a30dd1e0",
+    "911a2ffa0d612df36473fba9df3154088e80dcc3981f9a182446af909ffc56d8",
+    "fa8999d42d47641b0c7590c916ce7951157ec3a2addb1d273b9b09dc173c7b29",
+    "d44e5a7f23246b58749e741272227ccf4ffc91c4e095d26c6936e012d534ce72",
+    "4e775209d046aeeb63ddcf36effc59f55eb1591056cc3669b3fcdb82e1dec5c6",
+    "a05640ac87566f8531df87adde491eed1b556755d58ce02f5be460b1e3c71775"
   ],
   "schema_version": 1
 }

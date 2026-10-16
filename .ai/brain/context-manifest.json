@@ -2,14 +2,14 @@
   "generated_by": "dbrckk/repo-brain-v6",
   "packets": [
     {
-      "area": "agents.md",
-      "file_count": 1,
-      "path": ".ai/brain/context/agents.md.json"
-    },
-    {
       "area": "docs",
       "file_count": 1,
       "path": ".ai/brain/context/docs.json"
+    },
+    {
+      "area": "github",
+      "file_count": 1,
+      "path": ".ai/brain/context/github.json"
     },
     {
       "area": "project.godot",
@@ -20,6 +20,11 @@
       "area": "scripts",
       "file_count": 1,
       "path": ".ai/brain/context/scripts.json"
+    },
+    {
+      "area": "tools",
+      "file_count": 1,
+      "path": ".ai/brain/context/tools.json"
     }
   ],
   "schema_version": 1

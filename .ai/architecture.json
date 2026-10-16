@@ -23,7 +23,7 @@
     },
     {
       "extension": ".gd",
-      "count": 3
+      "count": 4
     },
     {
       "extension": ".uid",
@@ -59,10 +59,12 @@
     "assets",
     "docs",
     "scenes",
-    "scripts"
+    "scripts",
+    "tools"
   ],
   "source_roots": [
-    "scripts"
+    "scripts",
+    "tools"
   ],
   "test_roots": [],
   "entrypoint_candidates": [

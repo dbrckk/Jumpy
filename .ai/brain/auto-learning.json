@@ -2,7 +2,7 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 3,
+    "example_count": 4,
     "rejected_count": 0,
     "terms": [
       "autonomous",
@@ -15,7 +15,7 @@
       "real"
     ],
     "test_count": 0,
-    "useful_count": 1
+    "useful_count": 2
   },
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
@@ -23,6 +23,7 @@
   "task": "Qualify real landing feedback gameplay and autonomous Production-OS delivery",
   "tests_selected": [],
   "useful": [
-    "scripts/main.gd"
+    "scripts/main.gd",
+    "tools/smoke_mobile_input.gd"
   ]
 }

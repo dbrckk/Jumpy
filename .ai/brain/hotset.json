@@ -13,18 +13,28 @@
       "score": 560
     },
     {
-      "path": "docs/GAME_DESIGN.md",
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "impact",
+        "symbol-indexed"
+      ],
+      "score": 315
+    },
+    {
+      "path": ".github/workflows/validate.yml",
       "reasons": [
         "changed"
       ],
       "score": 100
     },
     {
-      "path": "AGENTS.md",
+      "path": "docs/GAME_DESIGN.md",
       "reasons": [
-        "recent-project-state"
+        "changed"
       ],
-      "score": 60
+      "score": 100
     },
     {
       "path": "project.godot",

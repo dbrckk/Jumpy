@@ -1,0 +1,17 @@
+{
+  "area": "tools",
+  "files": [
+    {
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "impact",
+        "symbol-indexed"
+      ],
+      "score": 315
+    }
+  ],
+  "generated_by": "dbrckk/repo-brain-v6",
+  "schema_version": 1
+}

@@ -53,6 +53,25 @@
       "useful": [
         "scripts/main.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Qualify real landing feedback gameplay and autonomous Production-OS delivery",
+      "terms": [
+        "autonomous",
+        "delivery",
+        "feedback",
+        "gameplay",
+        "landing",
+        "production-os",
+        "qualify",
+        "real"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -65,16 +84,20 @@
       "scripts/main.gd": 4
     },
     "autonomous": {
-      "scripts/main.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
     },
     "delivery": {
-      "scripts/main.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
     },
     "feedback": {
-      "scripts/main.gd": 12
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 4
     },
     "gameplay": {
-      "scripts/main.gd": 12
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 4
     },
     "judgement": {
       "scripts/main.gd": 4
@@ -83,19 +106,23 @@
       "scripts/main.gd": 4
     },
     "landing": {
-      "scripts/main.gd": 12
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 4
     },
     "production-os": {
-      "scripts/main.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
     },
     "qualify": {
-      "scripts/main.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
     },
     "readable": {
       "scripts/main.gd": 4
     },
     "real": {
-      "scripts/main.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
     }
   },
   "term_test_scores": {}

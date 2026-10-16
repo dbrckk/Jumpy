@@ -1,15 +1,19 @@
 # Change impact
 
-Base: 8a8fd37d19e6a618cf2f3c9b8c41f595987aa8b6
-Head: 6eb87359f4ee7435f7d377e2fc24ab788580ed9f
+Base: b0b3e1ed026a140f4973a3a1a50efdaaebdab720
+Head: b1c62f7a6ea650af971ad5a929ea18b715afade0
 
 ## Changed files
+- M .github/workflows/validate.yml
 - M docs/GAME_DESIGN.md
 - M scripts/main.gd
+- A tools/smoke_mobile_input.gd
 
 ## Affected areas
+- .github
 - docs
 - scripts
+- tools
 
 ## Related test candidates
 - No direct filename-based test match detected.
