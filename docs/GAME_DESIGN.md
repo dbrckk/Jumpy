@@ -21,7 +21,7 @@ One optional mid-air tap gives a smaller corrective impulse. This preserves one-
 While airborne, a compact read-only cue above the landing judgement shows
 **AIR PULSE READY** before the optional correction and **AIR PULSE USED**
 after it. It disappears while grounded, on the ready menu, and after death.
-It ignores pointer events so taps still control the jump. High-contrast mode
+It ignores pointer events so taps still control the jump. The pulse status and landing judgement occupy separate vertical bands to avoid text overlap on the portrait HUD. High-contrast mode
 uses white text; the indicator introduces no new movement, scoring or
 procedural generation behavior. Validate readability and touch passthrough
 on a portrait Android device before release.
