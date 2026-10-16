@@ -1,23 +1,26 @@
 {
   "version": 1,
   "updated_at": "2026-10-16",
-  "task": "Improve one-thumb edge jump forgiveness with validated Godot scene-level gameplay smoke",
+  "task": "Deliver reproducible Android debug APKs for every gameplay change and improve one-tap onboarding",
   "branch": "main",
   "last_gameplay_merge": {
-    "pull_request": 17,
-    "commit": "5e1e3a688b58c8b3fd081e54e730979ac4e30c52",
+    "pull_request": 21,
+    "commit": "4ff41a8d182cd7691a8d7b443399a92946088e8e",
     "files": [
       "scripts/main.gd",
       "tools/smoke_mobile_input.gd",
-      "docs/GAME_DESIGN.md"
+      "docs/GAME_DESIGN.md",
+      "README.md"
     ],
-    "feature": "Secondary fingers no longer spend air pulse, start run or retry"
+    "feature": "DAILY and ENDLESS start immediately; active mode visible in FLOW HUD; tap-to-start preserved"
   },
   "validation": {
-    "godot_pr_run": 38913510252,
-    "godot_main_run": 38913796123,
-    "repository_standards_run": 38913797853,
-    "results": "all completed success; scene-level Godot input smoke PASS on main; no physical Android device QA"
+    "godot_pr_run": 38932900546,
+    "godot_main_run": 38933014631,
+    "repository_standards_run": 38933016305,
+    "android_apk_pr_run": 38932900548,
+    "android_apk_main_run": 38933014477,
+    "results": "All completed success. Installable Android debug APK and SHA256 provenance artifact produced on main; physical Android tests still outstanding"
   },
   "production_os": {
     "canary_sequence": 31,
@@ -35,15 +38,28 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Verify portrait Android edge jumps, multitouch, landing cue placement and frame pacing on hardware",
-    "Investigate frame-time variability and collision fairness after device playtesting",
-    "Optimize Production-OS native small-change model budget exhaustion without paid-token assumptions"
+    "Qualify main-branch APK on a physical Android phone: mode start, single jump, secondary touch, coyote time, accessibility and FPS",
+    "Address debug signing continuity or add save backup/import before encouraging repeated reinstall/uninstall cycles",
+    "Optimize game feel/performance using measured mobile profiling and feedback",
+    "Optimize Production-OS agent token envelope without assuming paid tokens"
   ],
   "latest_validated_feature": {
-    "pull_request": 18,
-    "branch": "feat/coyote-jump-grace-20261016",
-    "feature": "90 ms coyote jump grace after walking off ledges; air pulse preserved",
-    "godot_pr_run": 38923324910,
-    "validation": "Godot 4.7.2 import/parse and existing scene integration smoke passed; physical Android QA not performed"
+    "pull_request": 21,
+    "feature": "One-tap DAILY/ENDLESS onboarding and immediate mode-labelled HUD",
+    "validation": "Godot 4.7.2 scene/input smoke and Android debug export succeeded on PR and main"
+  },
+  "android_build": {
+    "initial_pull_request": 19,
+    "automatic_trigger_pull_request": 20,
+    "latest_main_commit": "4ff41a8d182cd7691a8d7b443399a92946088e8e",
+    "main_run_id": 38933014477,
+    "apk_artifact_id": 12058629507,
+    "artifact_retention_days": 7,
+    "contents": [
+      "Jumpy-debug.apk",
+      "Jumpy-debug.apk.sha256",
+      "SOURCE_COMMIT.txt"
+    ],
+    "note": "Debug signing keystore is new on each run. Reinstall can require uninstall, losing device-local save data. Not release-signed."
   }
 }

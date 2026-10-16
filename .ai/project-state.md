@@ -3,6 +3,8 @@
 Status: active
 
 ## Working
+- Android QA APK pipeline is active: #19 adds export; #20 triggers builds on gameplay/source/asset/preset changes and verifies APK signature, package identity, ARM64 native libraries, SHA256 and source SHA. Main APK build run 38933014477 succeeded, artifact 12058629507 (7-day retention).
+- One-tap mode onboarding #21 merged at 4ff41a8d: DAILY and ENDLESS buttons immediately begin their runs and mode appears in FLOW HUD; scene-level input smoke plus main Android export succeeded.
 - 90 ms coyote jump grace after walking off ledges in PR #18: preserves the single air pulse, auto-clears on jump/landing/death/retry; Godot 4.7.2 scene input smoke PASS (run 38923324910). Physical Android play-feel remains unverified.
 - PR #17 secondary-finger input guard merged at 5e1e3a688b58; Godot + repository standards on main succeeded (runs 38921435757, 38921437647).
 - Mobile tap input fix #15 merged at b1c62f7a: fullscreen HUD/labels no longer swallow gameplay taps, synthetic pointer duplicates cannot auto-consume air pulse, menu Button handling preserved; Godot scene-level smoke added to validation workflow.
@@ -12,16 +14,19 @@ Status: active
 - Repository agent instructions follow the pinned 88-rule policy.
 
 ## Broken / blockers
+- Android debug export regenerates a signing keystore on every build, so updates can require uninstalling the prior debug app and losing its local saves; before broad mobile playtesting, solve signing continuity or add save export/import. Release signing and physical Android QA remain outstanding.
 - Autonomous *gameplay implementation* has not passed: canary #32 (workflow 1b5290ee2ca742b4a50601b995144a82) ended capacity_exhausted/project_envelope_exhausted after two native Godot model stages. Its checkpoint ca2799f on studio/pos-7e4a13159234bb4f6272c89b changed only .studio/state.json, not gameplay code.
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Test the latest verified main APK (run 38933014477) on a physical Android phone following docs/ANDROID_DEVICE_QA.md; check one-tap mode start, HUD, collision feedback, reduced-motion/contrast and frame pacing.
 - Measure whether 90 ms edge grace improves accidental missed jumps on physical Android; tune window only after gameplay feedback.
 - Conduct physical Android touch + menu button + multi-touch and frame-pacing QA after PR #15, including jump/pulse separation.
 - Reduce native Godot agent context/planning-token consumption or implement a genuinely bounded small-change coding lane; do not simply raise cost limits or repeat exhausted canary #32 unchanged.
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- #21 main Godot validation succeeded (38933014631), Repository standards succeeded (38933016305), Android APK export succeeded (38933014477), and PR checks succeeded (38932900546, 38932900548). No claim of hardware Android performance.
 - PR #18 gameplay parse/smoke success, run 38923324910. Scene smoke covers ledge grace activation, consumption, expiration, existing pulse and mobile input; not a device test.
 - PR #15 scene-level input smoke and Godot parse: success (run 38913510252). Merged-main Godot parse/smoke: success (run 38913796123); repository standards: success (run 38913797853). No device-level Android QA claimed.
 - Landing-feedback PR #11 exact-head Godot 4.7.2 import/parse and production-document checks: success (run 38764425310).
