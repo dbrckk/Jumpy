@@ -219,7 +219,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	# Only the primary finger controls gameplay; additional simultaneous fingers
 	# must not accidentally start a run, spend an air pulse or trigger retry.
-	if event is InputEventScreenTouch and event.index != 0:
+	var touch: InputEventScreenTouch = event as InputEventScreenTouch
+	if touch != null and touch.index != 0:
 		return
 	var tapped: bool = false
 	if event.is_action_pressed("tap"):
