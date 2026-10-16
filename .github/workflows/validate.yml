@@ -52,6 +52,14 @@ jobs:
             echo "Godot reported a blocking parse/load error"
             exit 1
           fi
+      - name: Smoke-test touch routing and HUD input passthrough
+        run: |
+          set -euo pipefail
+          .godot-ci/godot --headless --path . --script res://tools/smoke_mobile_input.gd 2>&1 | tee input-smoke.log
+          if grep -E "SCRIPT ERROR|Parse Error|Cannot parse|Failed loading resource" input-smoke.log; then
+            echo "Godot reported a blocking runtime error during input smoke"
+            exit 1
+          fi
       - name: Verify required production docs
         run: |
           set -euo pipefail
