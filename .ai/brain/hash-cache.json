@@ -1,32 +1,28 @@
 {
   "files": {
-    ".github/workflows/android-debug-apk.yml": {
-      "sha256": "3b0045bb325bec0904504d30c0e0ca17ae9cbaf36897599955ecbcd4fe35309d",
-      "size": 6031
-    },
     "README.md": {
-      "sha256": "e1c5ef7c3a0d1d91d50e0fa5cdba48a1cf4d860e2467c3f7e720310b61a8a58c",
-      "size": 2351
+      "sha256": "cae32d1546f208053f2358b113f8b3bb107bdca3f1998af45a8ed9be362e95dd",
+      "size": 2524
     },
     "SETUP_REQUIRED.txt": {
       "sha256": "8a5e804ac520a5c8e0de5dbc5e9664441fe07da834df3235797fe9a74692d78c",
       "size": 5411
     },
-    "docs/ANDROID_DEVICE_QA.md": {
-      "sha256": "c740b4dc8a3dfdb7189323e99f884b6d9b2b30907ab19e62ae4c426025fcb7c4",
-      "size": 3233
+    "docs/GAME_DESIGN.md": {
+      "sha256": "075da733ec7dee0653689598e80421386d9ca56af9316a9a685402b737986f3c",
+      "size": 7093
     },
     "project.godot": {
       "sha256": "e579a6c2f5ae1ea1e9cf7da3313a0130a0752454f958a28acfa69ea2129b6955",
       "size": 1013
     },
     "scripts/main.gd": {
-      "sha256": "4e49ac80f741f1839570fc77b9125fd094e586116e9b7f9122d3f27acaf0369d",
-      "size": 22456
+      "sha256": "882e44ad8a24cb18d9fe8c5bcb14fe5a0bef485351a2467205cd3192e6da345c",
+      "size": 22560
     },
     "tools/smoke_mobile_input.gd": {
-      "sha256": "7c8a48e4ac57a8262bf79b3a1d0f005c7df2a672b258a81cc6248aab9ef3e6c8",
-      "size": 5801
+      "sha256": "d9f32287aeb4e7b9726bf9387e57ae5c4ebb317e49ef026157e72ed3196abd27",
+      "size": 6800
     }
   },
   "generated_by": "dbrckk/repo-brain-v6",

@@ -1,21 +1,38 @@
 {
   "files": [
     {
-      "path": ".github/workflows/android-debug-apk.yml",
+      "path": "scripts/main.gd",
       "reasons": [
-        "changed"
+        "changed",
+        "changed-source",
+        "entrypoint",
+        "impact",
+        "recent-project-state",
+        "symbol-indexed"
       ],
-      "score": 100
+      "score": 560
+    },
+    {
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "impact",
+        "recent-project-state",
+        "symbol-indexed"
+      ],
+      "score": 375
     },
     {
       "path": "README.md",
       "reasons": [
-        "changed"
+        "changed",
+        "recent-project-state"
       ],
-      "score": 100
+      "score": 160
     },
     {
-      "path": "docs/ANDROID_DEVICE_QA.md",
+      "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "changed"
       ],
@@ -30,22 +47,7 @@
       "score": 100
     },
     {
-      "path": "scripts/main.gd",
-      "reasons": [
-        "entrypoint",
-        "recent-project-state"
-      ],
-      "score": 100
-    },
-    {
       "path": "SETUP_REQUIRED.txt",
-      "reasons": [
-        "recent-project-state"
-      ],
-      "score": 60
-    },
-    {
-      "path": "tools/smoke_mobile_input.gd",
       "reasons": [
         "recent-project-state"
       ],

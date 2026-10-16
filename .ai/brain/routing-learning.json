@@ -131,6 +131,27 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Improve one-thumb edge jump forgiveness with validated Godot scene-level gameplay smoke",
+      "terms": [
+        "edge",
+        "forgiveness",
+        "gameplay",
+        "godot",
+        "improve",
+        "jump",
+        "one-thumb",
+        "scene-level",
+        "smoke",
+        "validated"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -151,24 +172,24 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "edge": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     },
     "feedback": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 4
     },
     "forgiveness": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
-    },
-    "gameplay": {
-      "scripts/main.gd": 20,
+      "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
-    "godot": {
-      "scripts/main.gd": 12,
+    "gameplay": {
+      "scripts/main.gd": 24,
       "tools/smoke_mobile_input.gd": 12
+    },
+    "godot": {
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 16
     },
     "handling": {
       "scripts/main.gd": 8,
@@ -179,8 +200,8 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "improve": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     },
     "input": {
       "scripts/main.gd": 8,
@@ -190,8 +211,8 @@
       "scripts/main.gd": 4
     },
     "jump": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     },
     "jumpy": {
       "scripts/main.gd": 4
@@ -205,8 +226,8 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "one-thumb": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     },
     "production-os": {
       "scripts/main.gd": 12,
@@ -224,20 +245,20 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "scene-level": {
-      "scripts/main.gd": 12,
-      "tools/smoke_mobile_input.gd": 12
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 16
     },
     "smoke": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     },
     "tap": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
     "validated": {
-      "scripts/main.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 8
     }
   },
   "term_test_scores": {}

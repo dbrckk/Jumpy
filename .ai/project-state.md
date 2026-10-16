@@ -35,24 +35,24 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T16:31:56Z
+Generated: 2026-10-16T16:34:32Z
 
 ### Git
 - Branch: `main`
-- Head: `cd68112f806e`
-- Commit date: 2026-10-16T18:31:46+02:00
-- Commit: Automatically rebuild Android debug APK after gameplay changes and verify export (#20)
-- Tracked files: 108
+- Head: `4ff41a8d182c`
+- Commit date: 2026-10-16T18:34:23+02:00
+- Commit: Start Daily and Endless modes instantly with one tap (#21)
+- Tracked files: 109
 
 ### Recently changed files
-- `.github/workflows/android-debug-apk.yml`
 - `README.md`
-- `docs/ANDROID_DEVICE_QA.md`
-- `SETUP_REQUIRED.txt`
-- `project.godot`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
+- `.github/workflows/android-debug-apk.yml`
+- `docs/ANDROID_DEVICE_QA.md`
+- `SETUP_REQUIRED.txt`
+- `project.godot`
 
 ### Project signals
 - `project.godot`

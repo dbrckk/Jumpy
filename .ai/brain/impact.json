@@ -2,24 +2,245 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "cd68112f806e985f4fae66dfe93e5859db016fc8",
+  "head": "4ff41a8d182cd7691a8d7b443399a92946088e8e",
   "index_mode": "full",
   "changed_files": [
-    {
-      "path": ".github/workflows/android-debug-apk.yml",
-      "status": "M"
-    },
     {
       "path": "README.md",
       "status": "M"
     },
     {
-      "path": "docs/ANDROID_DEVICE_QA.md",
+      "path": "docs/GAME_DESIGN.md",
+      "status": "M"
+    },
+    {
+      "path": "scripts/main.gd",
+      "status": "M"
+    },
+    {
+      "path": "tools/smoke_mobile_input.gd",
       "status": "M"
     }
   ],
-  "changed_source_files": [],
-  "impacted_files": [],
-  "impacted_symbols": [],
+  "changed_source_files": [
+    "scripts/main.gd",
+    "tools/smoke_mobile_input.gd"
+  ],
+  "impacted_files": [
+    "scripts/main.gd",
+    "tools/smoke_mobile_input.gd"
+  ],
+  "impacted_symbols": [
+    {
+      "name": "_ready",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 44
+    },
+    {
+      "name": "build_ui",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 50
+    },
+    {
+      "name": "make_label",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 84
+    },
+    {
+      "name": "make_button",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 98
+    },
+    {
+      "name": "settings_pressed",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 109
+    },
+    {
+      "name": "toggle_preference",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 115
+    },
+    {
+      "name": "refresh_settings_ui",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 122
+    },
+    {
+      "name": "reset_run",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 136
+    },
+    {
+      "name": "set_daily",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 171
+    },
+    {
+      "name": "cycle_skin",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 176
+    },
+    {
+      "name": "restart_pressed",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 186
+    },
+    {
+      "name": "start_run",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 190
+    },
+    {
+      "name": "show_menu",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 200
+    },
+    {
+      "name": "_unhandled_input",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 220
+    },
+    {
+      "name": "jump",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 247
+    },
+    {
+      "name": "pulse",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 260
+    },
+    {
+      "name": "_physics_process",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 272
+    },
+    {
+      "name": "move_world",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 295
+    },
+    {
+      "name": "update_player",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 311
+    },
+    {
+      "name": "try_land",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 326
+    },
+    {
+      "name": "has_support",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 344
+    },
+    {
+      "name": "on_landed",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 353
+    },
+    {
+      "name": "show_landing_cue",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 398
+    },
+    {
+      "name": "collect_coin",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 405
+    },
+    {
+      "name": "die",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 419
+    },
+    {
+      "name": "make_platform",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 448
+    },
+    {
+      "name": "spawn_platform_after",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 455
+    },
+    {
+      "name": "update_ui",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 470
+    },
+    {
+      "name": "burst",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 482
+    },
+    {
+      "name": "animate_particles",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 488
+    },
+    {
+      "name": "skin_color",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 497
+    },
+    {
+      "name": "_draw",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 500
+    },
+    {
+      "name": "_initialize",
+      "kind": "function",
+      "file": "tools/smoke_mobile_input.gd",
+      "line": 5
+    },
+    {
+      "name": "_run",
+      "kind": "function",
+      "file": "tools/smoke_mobile_input.gd",
+      "line": 8
+    },
+    {
+      "name": "_fail",
+      "kind": "function",
+      "file": "tools/smoke_mobile_input.gd",
+      "line": 184
+    }
+  ],
   "selected_tests": []
 }

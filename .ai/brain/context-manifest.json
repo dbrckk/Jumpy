@@ -7,11 +7,6 @@
       "path": ".ai/brain/context/docs.json"
     },
     {
-      "area": "github",
-      "file_count": 1,
-      "path": ".ai/brain/context/github.json"
-    },
-    {
       "area": "project.godot",
       "file_count": 1,
       "path": ".ai/brain/context/project.godot.json"

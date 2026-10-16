@@ -4,17 +4,35 @@
     "expand_to": 12,
     "max_files": 6,
     "requested_max_files": 12,
-    "score_margin": 0,
+    "score_margin": 9,
     "tier": "bounded",
-    "top_score": 17
+    "top_score": 26
   },
   "cache": {
-    "fingerprint": "2ff1fd42c5ecd76b822ea8112dd22399aaa527c7e7b4bb71b275a20d605a0ff3",
+    "fingerprint": "680b9fe7540fe7f808ea8e07ac51fddc01b543fc6ae9be9b9a1a63b4966a6497",
     "hit": false
   },
   "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "game"
+      ],
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 26,
+      "symbols": [
+        "_fail",
+        "_initialize",
+        "_run"
+      ]
+    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -40,41 +58,49 @@
       "matched_terms": [
         "game"
       ],
-      "path": "tools/smoke_mobile_input.gd",
+      "path": "docs/GAME_DESIGN.md",
       "reasons": [
-        "search-index"
+        "recently-changed"
       ],
-      "score": 17,
+      "score": 13,
+      "symbols": []
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "scripts/main.gd",
+      "reasons": [
+        "impact",
+        "recently-changed"
+      ],
+      "score": 9,
       "symbols": [
-        "_fail",
-        "_initialize",
-        "_run"
+        "_draw",
+        "_physics_process",
+        "_ready",
+        "_unhandled_input",
+        "animate_particles",
+        "build_ui",
+        "burst",
+        "collect_coin",
+        "cycle_skin",
+        "die",
+        "has_support",
+        "jump",
+        "make_button",
+        "make_label",
+        "make_platform",
+        "move_world",
+        "on_landed",
+        "pulse",
+        "refresh_settings_ui",
+        "reset_run"
       ]
     },
     {
       "learning_score": 0,
       "matched_terms": [],
-      "path": ".github/workflows/android-debug-apk.yml",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 3,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
       "path": "README.md",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 3,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "docs/ANDROID_DEVICE_QA.md",
       "reasons": [
         "recently-changed"
       ],

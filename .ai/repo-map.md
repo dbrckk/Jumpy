@@ -722,8 +722,9 @@ func reset_run(use_daily: bool) -> void:
 	queue_redraw()
 
 func set_daily(value: bool) -> void:
+	# DAILY and ENDLESS are direct play actions, not hidden mode selectors.
 	reset_run(value)
-	ui.subtitle.text = "DAILY SEED • DAILY BEST %d" % int(Profile.data.daily_best) if value else "TAP • LAND • FLOW"
+	start_run()
 
 func cycle_skin() -> void:
 	var unlocked: Array = Profile.data.unlocked_skins
@@ -745,6 +746,8 @@ func start_run() -> void:
 	state = "PLAYING"
 	show_menu(false)
 	jump()
+	# Display the active mode, pulse status and score immediately on the first frame.
+	update_ui()
 	Integrations.event("run_start", {"daily": daily_mode})
 
 func show_menu(value: bool) -> void:
@@ -1019,7 +1022,7 @@ func spawn_platform_after(right_edge: float) -> float:
 
 func update_ui() -> void:
 	ui.score.text = str(score)
-	ui.flow.text = "FLOW x%.2f  •  %d" % [flow, combo]
+	ui.flow.text = "%s  FLOW x%.2f  •  %d" % ["DAILY" if daily_mode else "ENDLESS", flow, combo]
 	ui.best.text = "BEST %d" % int(Profile.data.best_score)
 	ui.coins.text = "◇ %d  +%d" % [int(Profile.data.coins), run_coins]
 	ui.score.visible = state != "READY"
@@ -1387,6 +1390,30 @@ func _run() -> void:
 		_fail("Secondary finger must not trigger retry after death")
 		return
 
+	# The two prominent mode buttons must start a run immediately,
+	# not just select a seed and leave the player on the READY screen.
+	game.reset_run(false)
+	game.ui.daily.emit_signal("pressed")
+	if game.state != "PLAYING" or not game.daily_mode or game.player_vy != game.JUMP_V or not game.pulse_available:
+		_fail("DAILY button failed to start a single daily jump")
+		return
+	if not game.ui.flow.text.begins_with("DAILY"):
+		_fail("Active DAILY mode is missing from the run HUD")
+		return
+	game._unhandled_input(emulated_mouse)
+	if not game.pulse_available:
+		_fail("Synthetic event spent the pulse after DAILY start")
+		return
+
+	game.reset_run(false)
+	game.ui.normal.emit_signal("pressed")
+	if game.state != "PLAYING" or game.daily_mode or game.player_vy != game.JUMP_V or not game.pulse_available:
+		_fail("ENDLESS button failed to start a single normal jump")
+		return
+	if not game.ui.flow.text.begins_with("ENDLESS"):
+		_fail("Active ENDLESS mode is missing from the run HUD")
+		return
+
 	game.reset_run(false)
 	var desktop_mouse: InputEventMouseButton = InputEventMouseButton.new()
 	desktop_mouse.button_index = MOUSE_BUTTON_LEFT
@@ -1433,7 +1460,7 @@ func _run() -> void:
 
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, menu, mobile touches, desktop mouse, ledge jump grace, grace expiry")
+	print("PASS: HUD, direct mode starts, touch input, desktop mouse, ledge jump grace and expiry")
 	quit(0)
 
 
@@ -1574,7 +1601,7 @@ Jumpy is a portrait-first one-touch hybrid-casual arcade game designed around in
 
 **Tap. Jump. Land perfectly. Keep the FLOW alive.**
 
-The world scrolls continuously. Tap from a platform to jump; tap once in the air to spend a corrective pulse. Perfect landings build FLOW, which raises score gain and feedback intensity. Miss the world and restart instantly.
+From the title screen, tap **DAILY** or **ENDLESS** to start a run immediately, or tap blank space to start the default mode. The active mode stays visible in the FLOW HUD. The world scrolls continuously. Tap from a platform to jump; tap once in the air to spend a corrective pulse. Perfect landings build FLOW, which raises score gain and feedback intensity. Miss the world and restart instantly.
 
 ## Already implemented
 

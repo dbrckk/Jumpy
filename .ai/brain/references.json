@@ -4,5 +4,1549 @@
   "scope": "symbols defined in changed source files",
   "semantic": false,
   "note": "Occurrences are lexical word matches; verify source/LSP/compiler data before relying on them.",
-  "symbols": {}
+  "symbols": {
+    "_ready": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 44,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 45,
+          "preview": "func _ready() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/profile.gd",
+          "line": 75,
+          "preview": "func _ready() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "build_ui": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 50,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 47,
+          "preview": "build_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 51,
+          "preview": "func build_ui() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "make_label": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 84,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 60,
+          "preview": "ui.score = make_label(root, \"0\", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 61,
+          "preview": "ui.flow = make_label(root, \"FLOW x1.0\", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 62,
+          "preview": "ui.pulse = make_label(root, \"\", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 64,
+          "preview": "ui.landing = make_label(root, \"\", 44, Vector2(100, 295), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 67,
+          "preview": "ui.best = make_label(root, \"BEST 0\", 28, Vector2(42, 44), Vector2(360, 50))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 68,
+          "preview": "ui.coins = make_label(root, \"\u25c7 0\", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 69,
+          "preview": "ui.title = make_label(root, \"JUMPY\", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 70,
+          "preview": "ui.subtitle = make_label(root, \"TAP \u2022 LAND \u2022 FLOW\", 34, Vector2(0, 545), Vector2(W, 70), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 71,
+          "preview": "ui.hint = make_label(root, \"TAP TO JUMP\\nTAP ONCE IN AIR TO PULSE\", 30, Vector2(120, 690), Vector2(840, 120), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 72,
+          "preview": "ui.mission = make_label(root, \"\", 25, Vector2(90, 900), Vector2(900, 120), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 81,
+          "preview": "ui.gameover = make_label(root, \"\", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 85,
+          "preview": "func make_label(parent: Control, text: String, size: int, pos: Vector2, dim: Vector2, align: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT) -> Label:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 12
+    },
+    "make_button": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 98,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 73,
+          "preview": "ui.daily = make_button(root, \"DAILY\", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 74,
+          "preview": "ui.normal = make_button(root, \"ENDLESS\", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 75,
+          "preview": "ui.skin = make_button(root, \"SKIN\", Vector2(375, 1240), Vector2(330, 82), cycle_skin)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 76,
+          "preview": "ui.settings = make_button(root, \"SETTINGS\", Vector2(375, 1340), Vector2(330, 82), settings_pressed)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 77,
+          "preview": "ui.setting_sound = make_button(root, \"\", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"sound\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 78,
+          "preview": "ui.setting_haptics = make_button(root, \"\", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"haptics\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 79,
+          "preview": "ui.setting_motion = make_button(root, \"\", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"reduced_motion\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 80,
+          "preview": "ui.setting_contrast = make_button(root, \"\", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"high_contrast\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 82,
+          "preview": "ui.retry = make_button(root, \"RETRY\", Vector2(280, 940), Vector2(520, 110), restart_pressed)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 83,
+          "preview": "ui.share = make_button(root, \"SHARE\", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 99,
+          "preview": "func make_button(parent: Control, text: String, pos: Vector2, dim: Vector2, pressed: Callable) -> Button:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 11
+    },
+    "settings_pressed": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 109,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 76,
+          "preview": "ui.settings = make_button(root, \"SETTINGS\", Vector2(375, 1340), Vector2(330, 82), settings_pressed)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 110,
+          "preview": "func settings_pressed() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 76,
+          "preview": "game.settings_pressed()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 84,
+          "preview": "game.settings_pressed()",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "toggle_preference": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 115,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 77,
+          "preview": "ui.setting_sound = make_button(root, \"\", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"sound\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 78,
+          "preview": "ui.setting_haptics = make_button(root, \"\", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"haptics\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 79,
+          "preview": "ui.setting_motion = make_button(root, \"\", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"reduced_motion\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 80,
+          "preview": "ui.setting_contrast = make_button(root, \"\", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"high_contrast\"))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 116,
+          "preview": "func toggle_preference(key: String) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 5
+    },
+    "refresh_settings_ui": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 122,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 120,
+          "preview": "refresh_settings_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 123,
+          "preview": "func refresh_settings_ui() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 213,
+          "preview": "refresh_settings_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 442,
+          "preview": "refresh_settings_ui()",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "reset_run": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 136,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 48,
+          "preview": "reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 137,
+          "preview": "func reset_run(use_daily: bool) -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 174,
+          "preview": "reset_run(value)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 188,
+          "preview": "reset_run(daily_mode)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 114,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 127,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 136,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 148,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 165,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 9
+    },
+    "set_daily": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 171,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 73,
+          "preview": "ui.daily = make_button(root, \"DAILY\", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 74,
+          "preview": "ui.normal = make_button(root, \"ENDLESS\", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 172,
+          "preview": "func set_daily(value: bool) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 3
+    },
+    "cycle_skin": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 176,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 75,
+          "preview": "ui.skin = make_button(root, \"SKIN\", Vector2(375, 1240), Vector2(330, 82), cycle_skin)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 177,
+          "preview": "func cycle_skin() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "restart_pressed": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 186,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 82,
+          "preview": "ui.retry = make_button(root, \"RETRY\", Vector2(280, 940), Vector2(520, 110), restart_pressed)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 187,
+          "preview": "func restart_pressed() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 246,
+          "preview": "restart_pressed()",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 3
+    },
+    "start_run": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 190,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 175,
+          "preview": "start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 189,
+          "preview": "start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 191,
+          "preview": "func start_run() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 239,
+          "preview": "start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 149,
+          "preview": "game.start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 166,
+          "preview": "game.start_run()",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 6
+    },
+    "show_menu": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 200,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 114,
+          "preview": "show_menu(true)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 168,
+          "preview": "show_menu(true)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 195,
+          "preview": "show_menu(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 201,
+          "preview": "func show_menu(value: bool) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "_unhandled_input": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 220,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 221,
+          "preview": "func _unhandled_input(event: InputEvent) -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 57,
+          "preview": "game._unhandled_input(emulated_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 70,
+          "preview": "game._unhandled_input(secondary_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 80,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 88,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 93,
+          "preview": "game._unhandled_input(secondary_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 97,
+          "preview": "game._unhandled_input(emulated_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 101,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 107,
+          "preview": "game._unhandled_input(secondary_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 122,
+          "preview": "game._unhandled_input(emulated_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 141,
+          "preview": "game._unhandled_input(desktop_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 156,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 160,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 175,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 14
+    },
+    "jump": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 247,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 196,
+          "preview": "jump()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 223,
+          "preview": "# Handle the real event once; never turn a single tap into jump + air pulse.",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 242,
+          "preview": "jump()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 248,
+          "preview": "func jump() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 279,
+          "preview": "# Retain a short jump window after stepping off a ledge; not after a jump.",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 90,
+          "preview": "_fail(\"One physical touch must start a run with a single jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 117,
+          "preview": "_fail(\"DAILY button failed to start a single daily jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 130,
+          "preview": "_fail(\"ENDLESS button failed to start a single normal jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 147,
+          "preview": "# a short jump, but the grace ends once used or after the timer expires.",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 154,
+          "preview": "_fail(\"Walking off a platform must open the jump grace window\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 158,
+          "preview": "_fail(\"Grace tap must jump without spending the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 173,
+          "preview": "_fail(\"Expired ledge grace must no longer permit a ground jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 177,
+          "preview": "_fail(\"An expired-grace touch must use the air pulse, not a second jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 182,
+          "preview": "print(\"PASS: HUD, direct mode starts, touch input, desktop mouse, ledge jump grace and expiry\")",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 14
+    },
+    "pulse": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 260,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 62,
+          "preview": "ui.pulse = make_label(root, \"\", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 63,
+          "preview": "ui.pulse.mouse_filter = Control.MOUSE_FILTER_IGNORE",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 197,
+          "preview": "# Display the active mode, pulse status and score immediately on the first frame.",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 223,
+          "preview": "# Handle the real event once; never turn a single tap into jump + air pulse.",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 227,
+          "preview": "# must not accidentally start a run, spend an air pulse or trigger retry.",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 244,
+          "preview": "pulse()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 261,
+          "preview": "func pulse() -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 478,
+          "preview": "ui.pulse.visible = state == \"PLAYING\" and not on_ground",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 479,
+          "preview": "if ui.pulse.visible:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 480,
+          "preview": "ui.pulse.text = \"AIR PULSE READY\" if pulse_available else \"AIR PULSE USED\"",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 481,
+          "preview": "ui.pulse.add_theme_color_override(\"font_color\", Color(\"ffffff\") if bool(Profile.data.high_contrast) else (Color(\"62f7ff\") if pulse_available else Color(\"9ba5bd\")))",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 95,
+          "preview": "_fail(\"Secondary finger unexpectedly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 99,
+          "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 103,
+          "preview": "_fail(\"A second real touch must use the single available air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 124,
+          "preview": "_fail(\"Synthetic event spent the pulse after DAILY start\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 158,
+          "preview": "_fail(\"Grace tap must jump without spending the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 162,
+          "preview": "_fail(\"A subsequent airborne tap must still consume the pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 177,
+          "preview": "_fail(\"An expired-grace touch must use the air pulse, not a second jump\")",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 18
+    },
+    "_physics_process": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 272,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 273,
+          "preview": "func _physics_process(delta: float) -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 171,
+          "preview": "game._physics_process(game.COYOTE_TIME + 0.02)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "move_world": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 295,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 282,
+          "preview": "move_world(delta)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 296,
+          "preview": "func move_world(delta: float) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "update_player": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 311,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 283,
+          "preview": "update_player(delta)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 312,
+          "preview": "func update_player(delta: float) -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 152,
+          "preview": "game.update_player(1.0 / 60.0)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 169,
+          "preview": "game.update_player(1.0 / 60.0)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "try_land": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 326,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 318,
+          "preview": "try_land(old_y)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 327,
+          "preview": "func try_land(old_y: float) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "has_support": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 344,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 319,
+          "preview": "elif not has_support():",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 345,
+          "preview": "func has_support() -> bool:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "on_landed": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 353,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 342,
+          "preview": "on_landed(p)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 354,
+          "preview": "func on_landed(p: Dictionary) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "show_landing_cue": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 398,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 396,
+          "preview": "show_landing_cue(cue_text, judgement_color)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 399,
+          "preview": "func show_landing_cue(message: String, color: Color) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "collect_coin": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 405,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 323,
+          "preview": "collect_coin()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 406,
+          "preview": "func collect_coin() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "die": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 419,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 325,
+          "preview": "die()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 420,
+          "preview": "func die() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "make_platform": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 448,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 164,
+          "preview": "platforms.append(make_platform(0.0, 1490.0, 560.0, 0))",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 449,
+          "preview": "func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 466,
+          "preview": "var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 3
+    },
+    "spawn_platform_after": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 455,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 167,
+          "preview": "x = spawn_platform_after(x)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 310,
+          "preview": "rightmost = spawn_platform_after(rightmost)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 456,
+          "preview": "func spawn_platform_after(right_edge: float) -> float:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 3
+    },
+    "update_ui": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 470,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 169,
+          "preview": "update_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 198,
+          "preview": "update_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 293,
+          "preview": "update_ui()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 471,
+          "preview": "func update_ui() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "burst": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 482,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 258,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 270,
+          "preview": "burst(Vector2(PLAYER_X, player_y), Color(\"ffffff\"), burst_count, burst_power)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 378,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffffff\"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 387,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffe66d\"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 393,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 417,
+          "preview": "burst(Vector2(cx, cy), Color(\"ffe66d\"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 446,
+          "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 483,
+          "preview": "func burst(pos: Vector2, color: Color, count: int, power: float) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 8
+    },
+    "animate_particles": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 488,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 275,
+          "preview": "animate_particles(delta)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 290,
+          "preview": "animate_particles(delta)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 489,
+          "preview": "func animate_particles(delta: float) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 3
+    },
+    "skin_color": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 497,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 258,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 368,
+          "preview": "var judgement_color: Color = skin_color()",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 393,
+          "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 446,
+          "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 498,
+          "preview": "func skin_color() -> Color:",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 525,
+          "preview": "var player_color: Color = skin_color()",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 6
+    },
+    "_draw": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 500,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 501,
+          "preview": "func _draw() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 1
+    },
+    "_initialize": {
+      "definition": {
+        "file": "tools/smoke_mobile_input.gd",
+        "line": 5,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 6,
+          "preview": "func _initialize() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 1
+    },
+    "_run": {
+      "definition": {
+        "file": "tools/smoke_mobile_input.gd",
+        "line": 8,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 7,
+          "preview": "call_deferred(\"_run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 10,
+          "preview": "func _run() -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 2
+    },
+    "_fail": {
+      "definition": {
+        "file": "tools/smoke_mobile_input.gd",
+        "line": 184,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 13,
+          "preview": "_fail(\"Main scene could not be loaded\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 19,
+          "preview": "_fail(\"Main scene was not instantiated\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 23,
+          "preview": "_fail(\"HUD CanvasLayer missing\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 27,
+          "preview": "_fail(\"Fullscreen HUD intercepts gameplay taps\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 35,
+          "preview": "_fail(\"Noninteractive HUD label blocks gameplay taps: \" + child.name)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 40,
+          "preview": "_fail(\"Interactive menu button must consume its own taps: \" + child.name)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 43,
+          "preview": "_fail(\"Unexpected HUD content; input smoke coverage is incomplete\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 59,
+          "preview": "_fail(\"Emulated mouse event started a run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 72,
+          "preview": "_fail(\"Secondary finger must not start a run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 78,
+          "preview": "_fail(\"Settings did not open from the READY menu\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 82,
+          "preview": "_fail(\"Touch outside Settings started a run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 86,
+          "preview": "_fail(\"Settings BACK did not return to the READY menu\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 90,
+          "preview": "_fail(\"One physical touch must start a run with a single jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 95,
+          "preview": "_fail(\"Secondary finger unexpectedly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 99,
+          "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 103,
+          "preview": "_fail(\"A second real touch must use the single available air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 109,
+          "preview": "_fail(\"Secondary finger must not trigger retry after death\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 117,
+          "preview": "_fail(\"DAILY button failed to start a single daily jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 120,
+          "preview": "_fail(\"Active DAILY mode is missing from the run HUD\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 124,
+          "preview": "_fail(\"Synthetic event spent the pulse after DAILY start\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 130,
+          "preview": "_fail(\"ENDLESS button failed to start a single normal jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 133,
+          "preview": "_fail(\"Active ENDLESS mode is missing from the run HUD\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 143,
+          "preview": "_fail(\"Genuine desktop mouse input must still start the game\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 154,
+          "preview": "_fail(\"Walking off a platform must open the jump grace window\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 158,
+          "preview": "_fail(\"Grace tap must jump without spending the air pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 162,
+          "preview": "_fail(\"A subsequent airborne tap must still consume the pulse\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 173,
+          "preview": "_fail(\"Expired ledge grace must no longer permit a ground jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 177,
+          "preview": "_fail(\"An expired-grace touch must use the air pulse, not a second jump\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 186,
+          "preview": "func _fail(message: String) -> void:",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 29
+    }
+  }
 }

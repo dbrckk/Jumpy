@@ -1,17 +1,19 @@
 # Change impact
 
-Base: 3d0b34d04cd1c4a901f2f52811c143da9e6c7600
-Head: cd68112f806e985f4fae66dfe93e5859db016fc8
+Base: 7b954797302aa63d456380100d608b13d3ed0c77
+Head: 4ff41a8d182cd7691a8d7b443399a92946088e8e
 
 ## Changed files
-- M .github/workflows/android-debug-apk.yml
 - M README.md
-- M docs/ANDROID_DEVICE_QA.md
+- M docs/GAME_DESIGN.md
+- M scripts/main.gd
+- M tools/smoke_mobile_input.gd
 
 ## Affected areas
-- .github
 - (root)
 - docs
+- scripts
+- tools
 
 ## Related test candidates
 - No direct filename-based test match detected.
