@@ -51,6 +51,8 @@ func build_ui() -> void:
 	add_child(layer)
 	var root: Control = Control.new()
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	# The fullscreen HUD must not swallow gameplay taps outside actual buttons.
+	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	layer.add_child(root)
 
 	ui.score = make_label(root, "0", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)
@@ -85,6 +87,8 @@ func make_label(parent: Control, text: String, size: int, pos: Vector2, dim: Vec
 	label.size = dim
 	label.horizontal_alignment = align
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	# Read-only labels never consume tap / mouse input on top of the playfield.
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.add_theme_font_size_override("font_size", size)
 	label.add_theme_color_override("font_color", Color("f4f7ff"))
 	parent.add_child(label)
@@ -209,6 +213,10 @@ func show_menu(value: bool) -> void:
 		ui.mission.text = "STREAK %d  •  MISSIONS  •  RUNS %d/%d  •  PERFECT %d/%d\nTOTAL SCORE %d/%d" % [int(Profile.data.streak_days), mission_data.runs, mission_data.runs_goal, mission_data.perfects, mission_data.perfects_goal, mission_data.score, mission_data.score_goal]
 
 func _unhandled_input(event: InputEvent) -> void:
+	# One physical touch may also produce a synthetic mouse click in Godot.
+	# Handle the real event once; never turn a single tap into jump + air pulse.
+	if event.device == InputEvent.DEVICE_ID_EMULATION:
+		return
 	var tapped: bool = false
 	if event.is_action_pressed("tap"):
 		tapped = true
