@@ -35,24 +35,24 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T15:29:20Z
+Generated: 2026-10-16T16:31:56Z
 
 ### Git
 - Branch: `main`
-- Head: `7cd45bea5dc0`
-- Commit date: 2026-10-16T17:29:10+02:00
-- Commit: Build downloadable Android debug APK in GitHub Actions (#19)
-- Tracked files: 107
+- Head: `cd68112f806e`
+- Commit date: 2026-10-16T18:31:46+02:00
+- Commit: Automatically rebuild Android debug APK after gameplay changes and verify export (#20)
+- Tracked files: 108
 
 ### Recently changed files
 - `.github/workflows/android-debug-apk.yml`
-- `SETUP_REQUIRED.txt`
+- `README.md`
 - `docs/ANDROID_DEVICE_QA.md`
+- `SETUP_REQUIRED.txt`
 - `project.godot`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
-- `.github/workflows/validate.yml`
 
 ### Project signals
 - `project.godot`

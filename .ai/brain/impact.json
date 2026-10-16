@@ -2,23 +2,19 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "7cd45bea5dc0bbb44c77b5c6c03418f02b06bab7",
+  "head": "cd68112f806e985f4fae66dfe93e5859db016fc8",
   "index_mode": "full",
   "changed_files": [
     {
       "path": ".github/workflows/android-debug-apk.yml",
-      "status": "A"
+      "status": "M"
     },
     {
-      "path": "SETUP_REQUIRED.txt",
+      "path": "README.md",
       "status": "M"
     },
     {
       "path": "docs/ANDROID_DEVICE_QA.md",
-      "status": "A"
-    },
-    {
-      "path": "project.godot",
       "status": "M"
     }
   ],

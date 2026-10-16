@@ -93,10 +93,22 @@ on:
   pull_request:
     paths:
       - .github/workflows/android-debug-apk.yml
+      - 'scripts/**'
+      - 'scenes/**'
+      - 'assets/**'
+      - 'addons/**'
+      - project.godot
+      - export_presets.cfg
   push:
     branches: [main]
     paths:
       - .github/workflows/android-debug-apk.yml
+      - 'scripts/**'
+      - 'scenes/**'
+      - 'assets/**'
+      - 'addons/**'
+      - project.godot
+      - export_presets.cfg
 
 permissions:
   contents: read
@@ -191,11 +203,24 @@ jobs:
           test -s build/Jumpy-debug.apk
           unzip -tq build/Jumpy-debug.apk >/dev/null
           echo "Debug APK is a valid ZIP archive; no Android device execution was performed."
+      - name: Verify signed APK package and attach provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Verify Android signature and app identity (a valid ZIP alone is insufficient).
+          "$ANDROID_HOME/build-tools/36.1.0/apksigner" verify --verbose build/Jumpy-debug.apk
+          "$ANDROID_HOME/build-tools/36.1.0/aapt" dump badging build/Jumpy-debug.apk > apk-badging.log
+          grep -F "package: name='com.dbrckk.jumpy'" apk-badging.log
+          unzip -Z1 build/Jumpy-debug.apk > apk-files.txt
+          grep -Eq '^lib/arm64-v8a/[^/]+[.]so$' apk-files.txt
+          (cd build && sha256sum Jumpy-debug.apk > Jumpy-debug.apk.sha256)
+          git rev-parse HEAD > build/SOURCE_COMMIT.txt
+          echo "APK signature, application ID and native architecture verified; physical Android QA still required."
       - name: Upload APK for Android device testing
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: Jumpy-Android-debug-${{ github.sha }}
-          path: build/Jumpy-debug.apk
+          path: build/
           if-no-files-found: error
           retention-days: 7
           compression-level: 0
@@ -1575,6 +1600,12 @@ Desktop controls: Space, Enter or left click.
 ## Product strategy
 
 Jumpy is intentionally not pure hypercasual. The core interaction remains one-second-simple, while progression, daily competition, cosmetics, missions and future LiveOps create retention depth. See `docs/GAME_DESIGN.md`.
+
+## Android device build (no PC required)
+
+A debug APK is built automatically by [GitHub Actions](https://github.com/dbrckk/Jumpy/actions/workflows/android-debug-apk.yml) whenever game code, scenes, assets or Android export configuration changes. Open the latest **successful main-branch** run and download the **Jumpy-Android-debug-…** artifact (ZIP containing the APK, SHA-256 checksum and source commit). Manual builds are also available through **Run workflow**.
+
+See [Android device QA](docs/ANDROID_DEVICE_QA.md) for phone installation, signing caveats and the on-device acceptance checklist. Debug APK generation is not proof of production-release quality.
 
 ## External production setup
 

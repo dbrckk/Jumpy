@@ -1,16 +1,20 @@
 {
   "files": {
     ".github/workflows/android-debug-apk.yml": {
-      "sha256": "39f672a8e397c34881bc29a9a07ce2af792e5e95d6883a5ff6702747af31da19",
-      "size": 4937
+      "sha256": "3b0045bb325bec0904504d30c0e0ca17ae9cbaf36897599955ecbcd4fe35309d",
+      "size": 6031
+    },
+    "README.md": {
+      "sha256": "e1c5ef7c3a0d1d91d50e0fa5cdba48a1cf4d860e2467c3f7e720310b61a8a58c",
+      "size": 2351
     },
     "SETUP_REQUIRED.txt": {
       "sha256": "8a5e804ac520a5c8e0de5dbc5e9664441fe07da834df3235797fe9a74692d78c",
       "size": 5411
     },
     "docs/ANDROID_DEVICE_QA.md": {
-      "sha256": "a732ef20e5f920c5e111f055007cdc3902949f7ceefd6309be0b982200bedb47",
-      "size": 2579
+      "sha256": "c740b4dc8a3dfdb7189323e99f884b6d9b2b30907ab19e62ae4c426025fcb7c4",
+      "size": 3233
     },
     "project.godot": {
       "sha256": "e579a6c2f5ae1ea1e9cf7da3313a0130a0752454f958a28acfa69ea2129b6955",

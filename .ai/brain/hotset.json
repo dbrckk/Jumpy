@@ -1,14 +1,6 @@
 {
   "files": [
     {
-      "path": "project.godot",
-      "reasons": [
-        "changed",
-        "entrypoint"
-      ],
-      "score": 140
-    },
-    {
       "path": ".github/workflows/android-debug-apk.yml",
       "reasons": [
         "changed"
@@ -16,7 +8,7 @@
       "score": 100
     },
     {
-      "path": "SETUP_REQUIRED.txt",
+      "path": "README.md",
       "reasons": [
         "changed"
       ],
@@ -30,12 +22,27 @@
       "score": 100
     },
     {
+      "path": "project.godot",
+      "reasons": [
+        "entrypoint",
+        "recent-project-state"
+      ],
+      "score": 100
+    },
+    {
       "path": "scripts/main.gd",
       "reasons": [
         "entrypoint",
         "recent-project-state"
       ],
       "score": 100
+    },
+    {
+      "path": "SETUP_REQUIRED.txt",
+      "reasons": [
+        "recent-project-state"
+      ],
+      "score": 60
     },
     {
       "path": "tools/smoke_mobile_input.gd",

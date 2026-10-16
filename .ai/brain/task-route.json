@@ -9,10 +9,10 @@
     "top_score": 17
   },
   "cache": {
-    "fingerprint": "7d005be778b921a5a14ae3dad6b1482056d700b6c92fb9e85d020adcaa000ba0",
+    "fingerprint": "2ff1fd42c5ecd76b822ea8112dd22399aaa527c7e7b4bb71b275a20d605a0ff3",
     "hit": false
   },
-  "candidate_count": 6,
+  "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -64,7 +64,7 @@
     {
       "learning_score": 0,
       "matched_terms": [],
-      "path": "SETUP_REQUIRED.txt",
+      "path": "README.md",
       "reasons": [
         "recently-changed"
       ],
@@ -75,16 +75,6 @@
       "learning_score": 0,
       "matched_terms": [],
       "path": "docs/ANDROID_DEVICE_QA.md",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 3,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "project.godot",
       "reasons": [
         "recently-changed"
       ],

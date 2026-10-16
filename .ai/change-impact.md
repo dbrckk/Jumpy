@@ -1,13 +1,12 @@
 # Change impact
 
-Base: 6e5a24cd39d5b4093bc0eeb7cb54dde8fae95a7e
-Head: 7cd45bea5dc0bbb44c77b5c6c03418f02b06bab7
+Base: 3d0b34d04cd1c4a901f2f52811c143da9e6c7600
+Head: cd68112f806e985f4fae66dfe93e5859db016fc8
 
 ## Changed files
-- A .github/workflows/android-debug-apk.yml
-- M SETUP_REQUIRED.txt
-- A docs/ANDROID_DEVICE_QA.md
-- M project.godot
+- M .github/workflows/android-debug-apk.yml
+- M README.md
+- M docs/ANDROID_DEVICE_QA.md
 
 ## Affected areas
 - .github
