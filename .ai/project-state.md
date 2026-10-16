@@ -3,6 +3,8 @@
 Status: active
 
 ## Working
+- 90 ms coyote jump grace after walking off ledges in PR #18: preserves the single air pulse, auto-clears on jump/landing/death/retry; Godot 4.7.2 scene input smoke PASS (run 38923324910). Physical Android play-feel remains unverified.
+- PR #17 secondary-finger input guard merged at 5e1e3a688b58; Godot + repository standards on main succeeded (runs 38921435757, 38921437647).
 - Mobile tap input fix #15 merged at b1c62f7a: fullscreen HUD/labels no longer swallow gameplay taps, synthetic pointer duplicates cannot auto-consume air pulse, menu Button handling preserved; Godot scene-level smoke added to validation workflow.
 - Central AI repo-map generation is configured through dbrckk/repo-standards; the Godot search index now passes 6/6 health checks.
 - Trusted Production-OS branch-to-draft-PR handoff and exact-SHA Godot validation are operational (canary #31, PR #10).
@@ -14,11 +16,13 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Measure whether 90 ms edge grace improves accidental missed jumps on physical Android; tune window only after gameplay feedback.
 - Conduct physical Android touch + menu button + multi-touch and frame-pacing QA after PR #15, including jump/pulse separation.
 - Reduce native Godot agent context/planning-token consumption or implement a genuinely bounded small-change coding lane; do not simply raise cost limits or repeat exhausted canary #32 unchanged.
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #18 gameplay parse/smoke success, run 38923324910. Scene smoke covers ledge grace activation, consumption, expiration, existing pulse and mobile input; not a device test.
 - PR #15 scene-level input smoke and Godot parse: success (run 38913510252). Merged-main Godot parse/smoke: success (run 38913796123); repository standards: success (run 38913797853). No device-level Android QA claimed.
 - Landing-feedback PR #11 exact-head Godot 4.7.2 import/parse and production-document checks: success (run 38764425310).
 - Merged main bc62b2c0 Godot project validation: success (run 38764507391).
