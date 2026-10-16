@@ -633,7 +633,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		tapped = true
 	if not tapped:
 		return
-	if state == "READY":
+	if state == "READY" and not settings_open:
 		start_run()
 	elif state == "PLAYING":
 		if on_ground:
@@ -1184,6 +1184,20 @@ func _run() -> void:
 	physical_touch.pressed = true
 	physical_touch.index = 0
 	physical_touch.device = 0
+	# Regression from canary #37: touching blank space while Settings is open
+	# must not start a run, while BACK must still restore normal tap-to-start.
+	game.settings_pressed()
+	if not game.settings_open or game.state != "READY":
+		_fail("Settings did not open from the READY menu")
+		return
+	game._unhandled_input(physical_touch)
+	if game.state != "READY" or not game.settings_open:
+		_fail("Touch outside Settings started a run")
+		return
+	game.settings_pressed()
+	if game.settings_open or game.state != "READY":
+		_fail("Settings BACK did not return to the READY menu")
+		return
 	game._unhandled_input(physical_touch)
 	if game.state != "PLAYING" or not game.pulse_available or game.player_vy != game.JUMP_V:
 		_fail("One physical touch must start a run with a single jump")
@@ -1210,7 +1224,7 @@ func _run() -> void:
 
 	game.queue_free()
 	await process_frame
-	print("PASS: fullscreen HUD, menu buttons, physical touch, duplicate suppression, desktop mouse")
+	print("PASS: HUD, settings tap guard, BACK, physical touch, duplicate suppression, desktop mouse")
 	quit(0)
 
 

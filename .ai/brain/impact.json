@@ -2,24 +2,16 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "b1c62f7a6ea650af971ad5a929ea18b715afade0",
+  "head": "0784ccc2fcab92fc71cee87c8d2e0d53992bc212",
   "index_mode": "full",
   "changed_files": [
-    {
-      "path": ".github/workflows/validate.yml",
-      "status": "M"
-    },
-    {
-      "path": "docs/GAME_DESIGN.md",
-      "status": "M"
-    },
     {
       "path": "scripts/main.gd",
       "status": "M"
     },
     {
       "path": "tools/smoke_mobile_input.gd",
-      "status": "A"
+      "status": "M"
     }
   ],
   "changed_source_files": [
@@ -239,7 +231,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 94
+      "line": 108
     }
   ],
   "selected_tests": []

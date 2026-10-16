@@ -4477,7 +4477,7 @@
           "definitions": [
             {
               "file": "tools/smoke_mobile_input.gd",
-              "line": 94,
+              "line": 108,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4511,7 +4511,7 @@
           "definitions": [
             {
               "file": "tools/smoke_mobile_input.gd",
-              "line": 94,
+              "line": 108,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4524,8 +4524,8 @@
     "_fail": {
       "source": {
         "file": "tools/smoke_mobile_input.gd",
-        "start": 94,
-        "end": 214
+        "start": 108,
+        "end": 228
       },
       "symbol_dependencies": [],
       "dependency_count": 0

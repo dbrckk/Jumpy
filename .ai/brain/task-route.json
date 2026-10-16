@@ -9,10 +9,10 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "a05640ac87566f8531df87adde491eed1b556755d58ce02f5be460b1e3c71775",
+    "fingerprint": "50e19330bd0bee3e10940a4847d9df09921ef8b85234c5efe2703c73a08de102",
     "hit": false
   },
-  "candidate_count": 5,
+  "candidate_count": 3,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -55,18 +55,6 @@
     },
     {
       "learning_score": 0,
-      "matched_terms": [
-        "game"
-      ],
-      "path": "docs/GAME_DESIGN.md",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 13,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
       "matched_terms": [],
       "path": "scripts/main.gd",
       "reasons": [
@@ -96,16 +84,6 @@
         "refresh_settings_ui",
         "reset_run"
       ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": ".github/workflows/validate.yml",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 3,
-      "symbols": []
     }
   ],
   "generated_by": "dbrckk/repo-brain-v8",

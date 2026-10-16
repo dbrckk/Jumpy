@@ -18,23 +18,10 @@
         "changed",
         "changed-source",
         "impact",
+        "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 315
-    },
-    {
-      "path": ".github/workflows/validate.yml",
-      "reasons": [
-        "changed"
-      ],
-      "score": 100
-    },
-    {
-      "path": "docs/GAME_DESIGN.md",
-      "reasons": [
-        "changed"
-      ],
-      "score": 100
+      "score": 375
     },
     {
       "path": "project.godot",

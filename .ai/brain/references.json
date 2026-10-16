@@ -230,9 +230,21 @@
           "line": 108,
           "preview": "func settings_pressed() -> void:",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 68,
+          "preview": "game.settings_pressed()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 76,
+          "preview": "game.settings_pressed()",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 2
+      "occurrence_count": 4
     },
     "toggle_preference": {
       "definition": {
@@ -344,7 +356,7 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 80,
+          "line": 94,
           "preview": "game.reset_run(false)",
           "definition_candidate": false
         }
@@ -518,30 +530,36 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 66,
+          "line": 72,
           "preview": "game._unhandled_input(physical_touch)",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 71,
-          "preview": "game._unhandled_input(emulated_mouse)",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 75,
+          "line": 80,
           "preview": "game._unhandled_input(physical_touch)",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
           "line": 85,
+          "preview": "game._unhandled_input(emulated_mouse)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 89,
+          "preview": "game._unhandled_input(physical_touch)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 99,
           "preview": "game._unhandled_input(desktop_mouse)",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 6
+      "occurrence_count": 7
     },
     "jump": {
       "definition": {
@@ -577,7 +595,7 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 68,
+          "line": 82,
           "preview": "_fail(\"One physical touch must start a run with a single jump\")",
           "definition_candidate": false
         }
@@ -648,13 +666,13 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 73,
+          "line": 87,
           "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 77,
+          "line": 91,
           "preview": "_fail(\"A second real touch must use the single available air pulse\")",
           "definition_candidate": false
         }
@@ -1144,7 +1162,7 @@
     "_fail": {
       "definition": {
         "file": "tools/smoke_mobile_input.gd",
-        "line": 94,
+        "line": 108,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1199,36 +1217,54 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 68,
+          "line": 70,
+          "preview": "_fail(\"Settings did not open from the READY menu\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 74,
+          "preview": "_fail(\"Touch outside Settings started a run\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 78,
+          "preview": "_fail(\"Settings BACK did not return to the READY menu\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 82,
           "preview": "_fail(\"One physical touch must start a run with a single jump\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 73,
+          "line": 87,
           "preview": "_fail(\"Emulated duplicate incorrectly consumed the air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 77,
+          "line": 91,
           "preview": "_fail(\"A second real touch must use the single available air pulse\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 87,
+          "line": 101,
           "preview": "_fail(\"Genuine desktop mouse input must still start the game\")",
           "definition_candidate": false
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 96,
+          "line": 110,
           "preview": "func _fail(message: String) -> void:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 13
+      "occurrence_count": 16
     }
   }
 }

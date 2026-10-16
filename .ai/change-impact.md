@@ -1,17 +1,13 @@
 # Change impact
 
-Base: b0b3e1ed026a140f4973a3a1a50efdaaebdab720
-Head: b1c62f7a6ea650af971ad5a929ea18b715afade0
+Base: a7dbfc955624f3708808b2520a74a45fbba6f7da
+Head: 0784ccc2fcab92fc71cee87c8d2e0d53992bc212
 
 ## Changed files
-- M .github/workflows/validate.yml
-- M docs/GAME_DESIGN.md
 - M scripts/main.gd
-- A tools/smoke_mobile_input.gd
+- M tools/smoke_mobile_input.gd
 
 ## Affected areas
-- .github
-- docs
 - scripts
 - tools
 

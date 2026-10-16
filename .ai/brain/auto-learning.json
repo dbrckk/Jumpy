@@ -2,17 +2,17 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 4,
+    "example_count": 5,
     "rejected_count": 0,
     "terms": [
-      "autonomous",
-      "delivery",
-      "feedback",
-      "gameplay",
-      "landing",
-      "production-os",
+      "godot",
+      "handling",
+      "headless",
+      "input",
+      "mobile",
       "qualify",
-      "real"
+      "scene-level",
+      "tap"
     ],
     "test_count": 0,
     "useful_count": 2
@@ -20,7 +20,7 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Qualify real landing feedback gameplay and autonomous Production-OS delivery",
+  "task": "Fix mobile Godot tap handling and qualify headless scene-level input",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd",

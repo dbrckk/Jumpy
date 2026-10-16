@@ -31,22 +31,20 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T14:11:51Z
+Generated: 2026-10-16T14:36:28Z
 
 ### Git
 - Branch: `main`
-- Head: `b1c62f7a6ea6`
-- Commit date: 2026-10-16T16:11:41+02:00
-- Commit: Fix mobile tap input swallowed by HUD and emulated double taps (#15)
-- Tracked files: 104
+- Head: `0784ccc2fcab`
+- Commit date: 2026-10-16T16:36:18+02:00
+- Commit: fix(jumpy): guard Settings overlay touch from starting a run (#16)
+- Tracked files: 105
 
 ### Recently changed files
-- `.github/workflows/validate.yml`
-- `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
-- `.github/workflows/production-os-review-handoff.yml`
-- `docs/production-os-review-handoff.md`
+- `.github/workflows/validate.yml`
+- `docs/GAME_DESIGN.md`
 
 ### Project signals
 - `project.godot`

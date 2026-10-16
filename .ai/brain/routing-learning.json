@@ -72,6 +72,25 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Fix mobile Godot tap handling and qualify headless scene-level input",
+      "terms": [
+        "godot",
+        "handling",
+        "headless",
+        "input",
+        "mobile",
+        "qualify",
+        "scene-level",
+        "tap"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -99,6 +118,22 @@
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 4
     },
+    "godot": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "handling": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "headless": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "input": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "judgement": {
       "scripts/main.gd": 4
     },
@@ -109,19 +144,31 @@
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 4
     },
+    "mobile": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "production-os": {
       "scripts/main.gd": 12,
       "tools/smoke_mobile_input.gd": 4
     },
     "qualify": {
-      "scripts/main.gd": 12,
-      "tools/smoke_mobile_input.gd": 4
+      "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 8
     },
     "readable": {
       "scripts/main.gd": 4
     },
     "real": {
       "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "scene-level": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "tap": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     }
   },
