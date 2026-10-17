@@ -49,6 +49,14 @@ uses white text; the indicator introduces no new movement, scoring or
 procedural generation behavior. Validate readability and touch passthrough
 on a portrait Android device before release.
 
+### Consistent edge collision
+A landing is awarded only when the player's horizontal overlap is large enough
+for the platform to support the player on the following physics frame. Mere
+visual edge grazes must not trigger a landing cue, score or FLOW bonus and then
+immediately drop the player. The existing Godot scene smoke covers both rejected
+edge grazes and accepted supported edge landings. Physical Android collision
+feel remains a separate QA gate.
+
 ### Perfect landing
 The center strip of each platform is the perfect zone. Consecutive perfect landings build FLOW.
 
