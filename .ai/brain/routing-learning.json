@@ -290,6 +290,25 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Precache arcade audio and validate bounded pooled playback for Android",
+      "terms": [
+        "android",
+        "arcade",
+        "audio",
+        "bounded",
+        "playback",
+        "pooled",
+        "precache",
+        "validate"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/integrations.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -306,13 +325,22 @@
       "scripts/main.gd": 4
     },
     "android": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 24,
       "scripts/profile.gd": 4,
-      "tools/smoke_mobile_input.gd": 24
+      "tools/smoke_mobile_input.gd": 28
     },
     "apk": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "arcade": {
+      "scripts/integrations.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "audio": {
+      "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "autonomous": {
@@ -326,6 +354,10 @@
     "backups": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "bounded": {
+      "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "continuous": {
@@ -442,6 +474,14 @@
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "playback": {
+      "scripts/integrations.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "pooled": {
+      "scripts/integrations.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "portable": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
@@ -449,6 +489,10 @@
     },
     "post-death": {
       "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "precache": {
+      "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "production-os": {
@@ -519,6 +563,10 @@
     },
     "telemetry": {
       "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "validate": {
+      "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "validated": {

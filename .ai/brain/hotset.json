@@ -1,18 +1,6 @@
 {
   "files": [
     {
-      "path": "scripts/main.gd",
-      "reasons": [
-        "changed",
-        "changed-source",
-        "entrypoint",
-        "impact",
-        "recent-project-state",
-        "symbol-indexed"
-      ],
-      "score": 575
-    },
-    {
       "path": "tools/smoke_mobile_input.gd",
       "reasons": [
         "changed",
@@ -24,9 +12,34 @@
       "score": 375
     },
     {
+      "path": "scripts/integrations.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "impact",
+        "symbol-indexed"
+      ],
+      "score": 345
+    },
+    {
+      "path": "docs/ANDROID_DEVICE_QA.md",
+      "reasons": [
+        "changed"
+      ],
+      "score": 100
+    },
+    {
       "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "changed"
+      ],
+      "score": 100
+    },
+    {
+      "path": "scripts/main.gd",
+      "reasons": [
+        "entrypoint",
+        "recent-project-state"
       ],
       "score": 100
     },

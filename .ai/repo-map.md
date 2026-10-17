@@ -485,48 +485,98 @@ extends Node
 # see SETUP_REQUIRED.txt. Audio is synthesized locally so the prototype ships
 # with tactile feedback without third-party assets.
 
+const AUDIO_POOL_SIZE: int = 4
+const TONE_SAMPLE_RATE: int = 22050
+
+# SFX are tiny PCM resources synthesized once, not rebuilt on every tap.
+# A bounded set of players lets nearby jump/landing sounds overlap safely.
+var tone_cache: Dictionary = {}
+var tone_players: Array[AudioStreamPlayer] = []
+var voice_to_steal: int = 0
+
+
+func _ready() -> void:
+	for i: int in range(AUDIO_POOL_SIZE):
+		var player: AudioStreamPlayer = AudioStreamPlayer.new()
+		player.name = "ArcadeSFX%d" % i
+		add_child(player)
+		tone_players.append(player)
+
+	# Warm every shipped sound at startup to keep gameplay free of PCM
+	# generation and node allocations, including the formerly silent CLUTCH.
+	_get_tone(1250.0, 0.07, 0.16) # coin + skin selection
+	_get_tone(560.0, 0.08, 0.18)  # jump
+	_get_tone(760.0, 0.09, 0.15)  # air pulse
+	_get_tone(880.0, 0.12, 0.17)  # clutch landing
+	_get_tone(1040.0, 0.14, 0.18) # perfect landing
+	_get_tone(150.0, 0.24, 0.20)  # death
+
+
 func event(name: String, params: Dictionary = {}) -> void:
 	print("[analytics] ", name, " ", params)
+
 
 func haptic(duration_ms: int = 22) -> void:
 	if bool(Profile.data.haptics) and OS.has_feature("mobile"):
 		Input.vibrate_handheld(duration_ms)
-	if bool(Profile.data.sound):
-		match duration_ms:
-			10, 12:
-				play_tone(1250.0, 0.07, 0.16)
-			14:
-				play_tone(560.0, 0.08, 0.18)
-			20:
-				play_tone(760.0, 0.09, 0.15)
-			32:
-				play_tone(1040.0, 0.14, 0.18)
-			70:
-				play_tone(150.0, 0.24, 0.20)
-			_:
-				pass
+	if not bool(Profile.data.sound):
+		return
+	match duration_ms:
+		10, 12:
+			play_tone(1250.0, 0.07, 0.16)
+		14:
+			play_tone(560.0, 0.08, 0.18)
+		20:
+			play_tone(760.0, 0.09, 0.15)
+		26:
+			play_tone(880.0, 0.12, 0.17)
+		32:
+			play_tone(1040.0, 0.14, 0.18)
+		70:
+			play_tone(150.0, 0.24, 0.20)
 
-func play_tone(frequency: float, duration: float, volume: float) -> void:
-	var mix_rate: int = 22050
-	var sample_count: int = maxi(1, int(duration * float(mix_rate)))
+
+func _get_tone(frequency: float, duration: float, volume: float) -> AudioStreamWAV:
+	var key: Vector3 = Vector3(frequency, duration, volume)
+	if tone_cache.has(key):
+		return tone_cache[key] as AudioStreamWAV
+	var sample_count: int = maxi(1, int(duration * float(TONE_SAMPLE_RATE)))
 	var pcm: PackedByteArray = PackedByteArray()
 	pcm.resize(sample_count * 2)
+	var fade_out_seconds: float = maxf(0.001, minf(0.025, duration * 0.4))
 	for i: int in range(sample_count):
-		var t: float = float(i) / float(mix_rate)
-		var envelope: float = exp(-8.0 * t)
+		var t: float = float(i) / float(TONE_SAMPLE_RATE)
+		# A short attack/release removes hard PCM start/stop clicks.
+		var attack: float = clampf(t / 0.003, 0.0, 1.0)
+		var release: float = clampf((duration - t) / fade_out_seconds, 0.0, 1.0)
+		var envelope: float = exp(-3.2 * t / duration) * attack * release
 		var wave: float = sin(TAU * frequency * t)
 		var sample: int = int(clampf(wave * envelope * volume, -1.0, 1.0) * 32767.0)
 		pcm.encode_s16(i * 2, sample)
 	var wav: AudioStreamWAV = AudioStreamWAV.new()
 	wav.format = AudioStreamWAV.FORMAT_16_BITS
-	wav.mix_rate = mix_rate
+	wav.mix_rate = TONE_SAMPLE_RATE
 	wav.stereo = false
 	wav.data = pcm
-	var player: AudioStreamPlayer = AudioStreamPlayer.new()
-	player.stream = wav
-	add_child(player)
-	player.finished.connect(player.queue_free)
-	player.play()
+	tone_cache[key] = wav
+	return wav
+
+
+func play_tone(frequency: float, duration: float, volume: float) -> void:
+	var wav: AudioStreamWAV = _get_tone(frequency, duration, volume)
+	var selected: AudioStreamPlayer = null
+	for player: AudioStreamPlayer in tone_players:
+		if not player.playing:
+			selected = player
+			break
+	if selected == null:
+		# Bound the voices even when events happen in the same audio frame.
+		selected = tone_players[voice_to_steal]
+		voice_to_steal = (voice_to_steal + 1) % AUDIO_POOL_SIZE
+		selected.stop()
+	selected.stream = wav
+	selected.play()
+
 
 func rewarded_available(_placement: String) -> bool:
 	return false
@@ -1918,9 +1968,54 @@ func _run() -> void:
 		_fail("Ready menu must stay static after idle processing")
 		return
 
+	# Verify the actual sound autoload uses bounded prebuilt audio resources,
+	# not a newly generated PCM buffer and scene node on every jump/landing.
+	var sfx: Node = root.get_node_or_null("Integrations")
+	if sfx == null:
+		_fail("Integrations autoload missing for audio smoke")
+		return
+	var voices: Array = sfx.get("tone_players")
+	var cache: Dictionary = sfx.get("tone_cache")
+	if voices.size() != 4 or cache.size() != 6:
+		_fail("All six arcade SFX must be prebuilt with four pooled voices")
+		return
+	for voice: AudioStreamPlayer in voices:
+		if voice.get_parent() != sfx:
+			_fail("Pooled audio player is missing from the autoload")
+			return
+	var clutch_key: Vector3 = Vector3(880.0, 0.12, 0.17)
+	if not cache.has(clutch_key):
+		_fail("CLUTCH must have its own preloaded sound")
+		return
+	var clutch_tone: AudioStreamWAV = cache[clutch_key] as AudioStreamWAV
+	if clutch_tone == null or clutch_tone.data.size() < 100:
+		_fail("CLUTCH waveform was not synthesized")
+		return
+	if clutch_tone.data.decode_s16(0) != 0 or absi(clutch_tone.data.decode_s16(clutch_tone.data.size() - 2)) > 100:
+		_fail("Tone samples must fade in and out without hard edges")
+		return
+	var initial_player_count: int = sfx.get_child_count()
+	var original_sound_setting: bool = bool(profile.data.sound)
+	profile.data.sound = true
+	sfx.haptic(26)
+	var clutch_played: bool = false
+	for voice: AudioStreamPlayer in voices:
+		if voice.stream == clutch_tone:
+			clutch_played = true
+	if not clutch_played:
+		_fail("CLUTCH haptic must actually route to the new sound")
+		return
+	for _i: int in range(24):
+		for duration_ms: int in [10, 12, 14, 20, 26, 32, 70]:
+			sfx.haptic(duration_ms)
+	profile.data.sound = original_sound_setting
+	if sfx.get_child_count() != initial_player_count or cache.size() != 6:
+		_fail("Repeated SFX must reuse the same voices and cached waveforms")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, stable landings, HUD, jump buffer and settled death FX")
+	print("PASS: input, backups, FLOW, landings, HUD, jump buffer, settled death FX and pooled SFX")
 	quit(0)
 
 

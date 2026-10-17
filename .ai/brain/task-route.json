@@ -9,12 +9,54 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "072d814a7e18246110bb68428816191df94ca78a2389b04417c6f8993cbfdd89",
+    "fingerprint": "41d1edcb027a1badc3050afba30188c30edf6a61dd46bfa812f8265beac32d35",
     "hit": false
   },
-  "candidate_count": 4,
+  "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "game"
+      ],
+      "path": "scripts/integrations.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 26,
+      "symbols": [
+        "_get_tone",
+        "_ready",
+        "event",
+        "haptic",
+        "leaderboard_submit",
+        "play_tone",
+        "rewarded_available",
+        "share_score",
+        "show_rewarded"
+      ]
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "game"
+      ],
+      "path": "tools/smoke_mobile_input.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 26,
+      "symbols": [
+        "_fail",
+        "_initialize",
+        "_run"
+      ]
+    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -22,11 +64,9 @@
       ],
       "path": "scripts/main.gd",
       "reasons": [
-        "impact",
-        "recently-changed",
         "search-index"
       ],
-      "score": 26,
+      "score": 17,
       "symbols": [
         "_draw",
         "_physics_process",
@@ -55,49 +95,21 @@
       "matched_terms": [
         "game"
       ],
-      "path": "tools/smoke_mobile_input.gd",
-      "reasons": [
-        "impact",
-        "recently-changed",
-        "search-index"
-      ],
-      "score": 26,
-      "symbols": [
-        "_fail",
-        "_initialize",
-        "_run"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [
-        "game"
-      ],
-      "path": "scripts/integrations.gd",
-      "reasons": [
-        "search-index"
-      ],
-      "score": 17,
-      "symbols": [
-        "event",
-        "haptic",
-        "leaderboard_submit",
-        "play_tone",
-        "rewarded_available",
-        "share_score",
-        "show_rewarded"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [
-        "game"
-      ],
       "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "recently-changed"
       ],
       "score": 13,
+      "symbols": []
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "docs/ANDROID_DEVICE_QA.md",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 3,
       "symbols": []
     }
   ],

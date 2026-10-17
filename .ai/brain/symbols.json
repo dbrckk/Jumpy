@@ -4,50 +4,64 @@
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
+      "name": "_ready",
+      "line": 16
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
       "name": "event",
-      "line": 7
+      "line": 33
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "haptic",
-      "line": 10
+      "line": 37
+    },
+    {
+      "file": "scripts/integrations.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_get_tone",
+      "line": 57
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "play_tone",
-      "line": 28
+      "line": 83
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "rewarded_available",
-      "line": 50
+      "line": 99
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "show_rewarded",
-      "line": 53
+      "line": 103
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "share_score",
-      "line": 58
+      "line": 108
     },
     {
       "file": "scripts/integrations.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "leaderboard_submit",
-      "line": 65
+      "line": 115
     },
     {
       "file": "scripts/main.gd",
@@ -446,7 +460,7 @@
       "language": "gdscript",
       "kind": "function",
       "name": "_fail",
-      "line": 452
+      "line": 497
     }
   ]
 }

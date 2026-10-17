@@ -2,16 +2,22 @@
   "area": "scripts",
   "files": [
     {
-      "path": "scripts/main.gd",
+      "path": "scripts/integrations.gd",
       "reasons": [
         "changed",
         "changed-source",
-        "entrypoint",
         "impact",
-        "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 575
+      "score": 345
+    },
+    {
+      "path": "scripts/main.gd",
+      "reasons": [
+        "entrypoint",
+        "recent-project-state"
+      ],
+      "score": 100
     }
   ],
   "generated_by": "dbrckk/repo-brain-v6",

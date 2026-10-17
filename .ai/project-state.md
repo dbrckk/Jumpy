@@ -63,20 +63,21 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T12:39:54Z
+Generated: 2026-10-17T12:57:22Z
 
 ### Git
 - Branch: `main`
-- Head: `fcc665892981`
-- Commit date: 2026-10-17T08:39:45-04:00
-- Commit: Finish death effects and avoid continuous redraws while idle (#30)
+- Head: `0bb7343b07b2`
+- Commit date: 2026-10-17T08:57:12-04:00
+- Commit: Cache arcade sound effects and reuse bounded audio voices (#31)
 - Tracked files: 109
 
 ### Recently changed files
-- `docs/GAME_DESIGN.md`
-- `scripts/main.gd`
-- `tools/smoke_mobile_input.gd`
 - `docs/ANDROID_DEVICE_QA.md`
+- `docs/GAME_DESIGN.md`
+- `scripts/integrations.gd`
+- `tools/smoke_mobile_input.gd`
+- `scripts/main.gd`
 
 ### Project signals
 - `project.godot`

@@ -1,11 +1,12 @@
 # Change impact
 
-Base: 66339b949c502c7a955d87ef58e9e8f292867bb7
-Head: fcc6658929814e0b5fc52ca98016221e90b99615
+Base: 7746ba04bc345a65e424478a9d2cf497b18adc12
+Head: 0bb7343b07b21232843a3652d83d6cfcf7d4d3c2
 
 ## Changed files
+- M docs/ANDROID_DEVICE_QA.md
 - M docs/GAME_DESIGN.md
-- M scripts/main.gd
+- M scripts/integrations.gd
 - M tools/smoke_mobile_input.gd
 
 ## Affected areas

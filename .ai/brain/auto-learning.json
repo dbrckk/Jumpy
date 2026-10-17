@@ -2,17 +2,17 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 15,
+    "example_count": 16,
     "rejected_count": 0,
     "terms": [
-      "avoid",
-      "continuous",
-      "finish",
-      "idle",
-      "jumpy",
-      "post-death",
-      "redraws",
-      "vfx"
+      "android",
+      "arcade",
+      "audio",
+      "bounded",
+      "playback",
+      "pooled",
+      "precache",
+      "validate"
     ],
     "test_count": 0,
     "useful_count": 2
@@ -20,10 +20,10 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Finish post-death VFX and avoid continuous idle redraws in Jumpy",
+  "task": "Precache arcade audio and validate bounded pooled playback for Android",
   "tests_selected": [],
   "useful": [
-    "scripts/main.gd",
+    "scripts/integrations.gd",
     "tools/smoke_mobile_input.gd"
   ]
 }
