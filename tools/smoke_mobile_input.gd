@@ -561,9 +561,83 @@ func _run() -> void:
 	profile.data.reduced_motion = saved_motion
 	game.reset_run(false)
 
+	# Reproducible procedural fairness on the actual Main scene: generated
+	# gaps must overlap the descending jump arc at every difficulty/speed,
+	# leaving a material takeoff window on the preceding platform.
+	var wide_late_gap_found: bool = false
+	for generated_speed: float in [470.0, 600.0, 750.0, 900.0, 970.0]:
+		for generator_elapsed: float in [0.0, 70.0]:
+			game.reset_run(false)
+			game.platforms.clear()
+			game.level_rng.seed = 19717
+			game.speed = generated_speed
+			game.elapsed = generator_elapsed
+			game.platforms.append(game.make_platform(0.0, 1250.0, 260.0, 0))
+			var right_edge: float = 260.0
+			for index: int in range(75):
+				right_edge = game.spawn_platform_after(right_edge)
+				var previous_platform: Dictionary = game.platforms[-2]
+				var target_platform: Dictionary = game.platforms[-1]
+				var generated_gap: float = float(target_platform.x) - float(previous_platform.x) - float(previous_platform.w)
+				var height_delta: float = float(target_platform.y) - float(previous_platform.y)
+				var flight_time: float = (-game.JUMP_V + sqrt(game.JUMP_V * game.JUMP_V + 2.0 * game.GRAVITY * height_delta)) / game.GRAVITY
+				var flight_distance: float = flight_time * minf(game.MAX_RUN_SPEED, generated_speed + game.PLATFORM_SPEED_LOOKAHEAD)
+				if generated_gap < 144.99:
+					_fail("Procedural route produced an overlapping or undersized gap")
+					return
+				if flight_distance < generated_gap + game.PLATFORM_TAKEOFF_WINDOW - 0.01:
+					_fail("Procedural gap is too wide to reach on the jump's descent")
+					return
+				if flight_distance > generated_gap + float(previous_platform.w) + float(target_platform.w) - game.PLATFORM_TAKEOFF_WINDOW + 0.01:
+					_fail("Procedural gap is too short: next platform passes before descent")
+					return
+				if generated_speed >= 900.0 and generated_gap > 400.0:
+					wide_late_gap_found = true
+	if not wide_late_gap_found:
+		_fail("Late-game generator did not expand short impossible gaps")
+		return
+
+	# Exercise one fast generated route through the actual player/world
+	# integration, rather than trusting the preceding geometry alone.
+	game.reset_run(false)
+	game.platforms.clear()
+	game.level_rng.seed = 77219
+	game.speed = game.MAX_RUN_SPEED
+	game.elapsed = 70.0
+	game.platforms.append(game.make_platform(0.0, 1300.0, 230.0, 2201))
+	game.spawn_platform_after(230.0)
+	var sample_previous: Dictionary = game.platforms[0]
+	var sample_next: Dictionary = game.platforms[1]
+	var sample_gap: float = float(sample_next.x) - float(sample_previous.x) - float(sample_previous.w)
+	var sample_height_delta: float = float(sample_next.y) - float(sample_previous.y)
+	var sample_flight_time: float = (-game.JUMP_V + sqrt(game.JUMP_V * game.JUMP_V + 2.0 * game.GRAVITY * sample_height_delta)) / game.GRAVITY
+	var travel: float = sample_flight_time * game.MAX_RUN_SPEED
+	var remaining_width: float = clampf(travel - sample_gap - float(sample_next.w) * 0.5, 16.0, float(sample_previous.w) - 16.0)
+	sample_previous.x = game.PLAYER_X + remaining_width - float(sample_previous.w)
+	sample_next.x = game.PLAYER_X + remaining_width + sample_gap
+	sample_previous.coin = false
+	sample_next.coin = false
+	game.state = "PLAYING"
+	game.on_ground = true
+	game.player_y = float(sample_previous.y) - game.PLAYER_R
+	game.player_vy = 0.0
+	game.last_platform_id = int(sample_previous.id)
+	game.jump()
+	for physics_step: int in range(95):
+		game.move_world(1.0 / 60.0)
+		game.update_player(1.0 / 60.0)
+		if game.last_platform_id == int(sample_next.id):
+			break
+		if game.state == "DEAD":
+			break
+	if game.last_platform_id != int(sample_next.id) or not game.on_ground:
+		_fail("A valid late-game generated route must accept a real supported jump landing")
+		return
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, buffered jumps, pooled SFX and neon render variants")
+	print("PASS: input, backups, FLOW, pooled SFX, neon visuals and reachable procedural routes")
 	quit(0)
 
 
