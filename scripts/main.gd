@@ -10,6 +10,7 @@ const PULSE_V: float = -620.0
 const FLOOR_LIMIT: float = 1820.0
 const LANDING_CUE_DURATION: float = 0.72
 const COYOTE_TIME: float = 0.09
+const JUMP_BUFFER_TIME: float = 0.10
 const QA_SAMPLE_INTERVAL: float = 1.0
 
 const SKINS: Array[Color] = [
@@ -38,6 +39,7 @@ var camera_kick: float = 0.0
 var flash: float = 0.0
 var landing_cue_remaining: float = 0.0
 var coyote_remaining: float = 0.0
+var jump_buffer_remaining: float = 0.0
 var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
@@ -213,6 +215,7 @@ func reset_run(use_daily: bool) -> void:
 	pulse_available = true
 	landing_cue_remaining = 0.0
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	qa_sample_elapsed = 0.0
 	qa_worst_frame_ms = 0.0
 	ui.qa_perf.visible = false
@@ -310,11 +313,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			jump()
 		elif pulse_available:
 			pulse()
+		elif player_vy > 0.0:
+			# A late press after spending the pulse can chain into the next landing.
+			jump_buffer_remaining = JUMP_BUFFER_TIME
 	elif state == "DEAD":
 		restart_pressed()
 
 func jump() -> void:
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	player_vy = JUMP_V
 	on_ground = false
 	pulse_available = true
@@ -327,6 +334,7 @@ func jump() -> void:
 	Integrations.haptic(14)
 
 func pulse() -> void:
+	jump_buffer_remaining = 0.0
 	pulse_available = false
 	player_vy = minf(player_vy, PULSE_V)
 	var burst_count = 14
@@ -359,9 +367,14 @@ func _physics_process(delta: float) -> void:
 	elapsed += delta
 	# Retain a short jump window after stepping off a ledge; not after a jump.
 	coyote_remaining = maxf(0.0, coyote_remaining - delta)
+	jump_buffer_remaining = maxf(0.0, jump_buffer_remaining - delta)
 	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
+	# Consume a buffered pre-landing tap only on a real supported landing.
+	# A successful landing is still scored before this new jump begins.
+	if state == "PLAYING" and on_ground and jump_buffer_remaining > 0.0:
+		jump()
 	if landing_cue_remaining > 0.0:
 		landing_cue_remaining = maxf(0.0, landing_cue_remaining - delta)
 		ui.landing.visible = landing_cue_remaining > 0.0
@@ -509,6 +522,7 @@ func die() -> void:
 		return
 	state = "DEAD"
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	landing_cue_remaining = 0.0
 	ui.landing.visible = false
 	Profile.record_run(score, run_coins, perfects, daily_mode)
@@ -584,13 +598,14 @@ func update_ui() -> void:
 		ui.flow.visible = flow_visible
 	var pulse_state: int = 0
 	if flow_visible and not on_ground:
-		pulse_state = 1 if pulse_available else 2
+		pulse_state = 1 if pulse_available else (3 if jump_buffer_remaining > 0.0 else 2)
 	var high_contrast: bool = bool(Profile.data.high_contrast)
 	if pulse_state != hud_pulse_seen or (pulse_state != 0 and high_contrast != hud_contrast_seen):
 		ui.pulse.visible = pulse_state != 0
 		if pulse_state != 0:
-			ui.pulse.text = "AIR PULSE READY" if pulse_state == 1 else "AIR PULSE USED"
-			ui.pulse.add_theme_color_override("font_color", Color("ffffff") if high_contrast else (Color("62f7ff") if pulse_state == 1 else Color("9ba5bd")))
+			ui.pulse.text = "AIR PULSE READY" if pulse_state == 1 else ("JUMP QUEUED" if pulse_state == 3 else "AIR PULSE USED")
+			var cue_color: Color = Color("62f7ff") if pulse_state == 1 else (Color("ffe66d") if pulse_state == 3 else Color("9ba5bd"))
+			ui.pulse.add_theme_color_override("font_color", Color("ffffff") if high_contrast else cue_color)
 		hud_pulse_seen = pulse_state
 		hud_contrast_seen = high_contrast
 
