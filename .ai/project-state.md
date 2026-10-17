@@ -51,13 +51,13 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T07:14:21Z
+Generated: 2026-10-17T07:40:58Z
 
 ### Git
 - Branch: `main`
-- Head: `b7be1ad5ba59`
-- Commit date: 2026-10-17T03:14:11-04:00
-- Commit: Fix FLOW multiplier increasing after an ordinary landing (#25)
+- Head: `1bf59ce3dda6`
+- Commit date: 2026-10-17T03:40:48-04:00
+- Commit: Prevent phantom edge landings with consistent support overlap (#26)
 - Tracked files: 109
 
 ### Recently changed files
@@ -67,7 +67,6 @@ Generated: 2026-10-17T07:14:21Z
 - `docs/ANDROID_DEVICE_QA.md`
 - `README.md`
 - `scripts/profile.gd`
-- `.github/workflows/android-debug-apk.yml`
 
 ### Project signals
 - `project.godot`

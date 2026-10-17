@@ -12,7 +12,7 @@
       },
       "cache_hit": true,
       "candidate_count": 3,
-      "elapsed_ms": 36.436,
+      "elapsed_ms": 44.806,
       "ok": true,
       "selected_files": 3,
       "task": "purchase billing"
@@ -25,11 +25,11 @@
         "requested_max_files": 12,
         "score_margin": 0,
         "tier": "broad",
-        "top_score": 13
+        "top_score": 17
       },
       "cache_hit": true,
       "candidate_count": 3,
-      "elapsed_ms": 38.788,
+      "elapsed_ms": 44.366,
       "ok": true,
       "selected_files": 3,
       "task": "income progression"
@@ -46,7 +46,7 @@
       },
       "cache_hit": true,
       "candidate_count": 3,
-      "elapsed_ms": 41.119,
+      "elapsed_ms": 43.629,
       "ok": true,
       "selected_files": 3,
       "task": "privacy consent"
@@ -63,7 +63,7 @@
       },
       "cache_hit": true,
       "candidate_count": 4,
-      "elapsed_ms": 39.168,
+      "elapsed_ms": 43.759,
       "ok": true,
       "selected_files": 4,
       "task": "offline progress"
@@ -80,7 +80,7 @@
       },
       "cache_hit": true,
       "candidate_count": 4,
-      "elapsed_ms": 39.687,
+      "elapsed_ms": 51.443,
       "ok": true,
       "selected_files": 4,
       "task": "game engine"
@@ -99,7 +99,7 @@
       },
       "cache_hit": false,
       "candidate_count": 3,
-      "elapsed_ms": 42.133,
+      "elapsed_ms": 51.176,
       "ok": true,
       "selected_files": 3,
       "task": "purchase billing"
@@ -112,11 +112,11 @@
         "requested_max_files": 12,
         "score_margin": 0,
         "tier": "broad",
-        "top_score": 13
+        "top_score": 17
       },
       "cache_hit": false,
       "candidate_count": 3,
-      "elapsed_ms": 81.812,
+      "elapsed_ms": 53.337,
       "ok": true,
       "selected_files": 3,
       "task": "income progression"
@@ -133,7 +133,7 @@
       },
       "cache_hit": false,
       "candidate_count": 3,
-      "elapsed_ms": 44.665,
+      "elapsed_ms": 52.061,
       "ok": true,
       "selected_files": 3,
       "task": "privacy consent"
@@ -150,7 +150,7 @@
       },
       "cache_hit": false,
       "candidate_count": 4,
-      "elapsed_ms": 42.147,
+      "elapsed_ms": 54.848,
       "ok": true,
       "selected_files": 4,
       "task": "offline progress"
@@ -167,7 +167,7 @@
       },
       "cache_hit": false,
       "candidate_count": 4,
-      "elapsed_ms": 42.252,
+      "elapsed_ms": 52.159,
       "ok": true,
       "selected_files": 4,
       "task": "game engine"
@@ -177,11 +177,11 @@
   "graph_edge_count": 0,
   "schema_version": 1,
   "search_file_count": 4,
-  "search_token_count": 822,
+  "search_token_count": 844,
   "summary": {
     "all_cached_second_pass": true,
     "avg_selected_files": 3.4,
-    "cached_pass_ms": 195.198,
-    "first_pass_ms": 253.009
+    "cached_pass_ms": 228.003,
+    "first_pass_ms": 263.581
   }
 }

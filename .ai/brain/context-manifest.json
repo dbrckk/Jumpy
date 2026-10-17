@@ -22,11 +22,6 @@
       "path": ".ai/brain/context/scripts.json"
     },
     {
-      "area": "setup-required.txt",
-      "file_count": 1,
-      "path": ".ai/brain/context/setup-required.txt.json"
-    },
-    {
       "area": "tools",
       "file_count": 1,
       "path": ".ai/brain/context/tools.json"

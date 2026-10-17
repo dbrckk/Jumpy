@@ -1,7 +1,7 @@
 # Change impact
 
-Base: e5c464519e12ceb9cc0b62290206ba447a2fbac1
-Head: b7be1ad5ba593fe81a3c5cff2ac72132767b7279
+Base: 562d99a50dbf0fde7f4f3686da5df726c3d1fb11
+Head: 1bf59ce3dda6d88fff914270998128f6a37402d3
 
 ## Changed files
 - M docs/GAME_DESIGN.md

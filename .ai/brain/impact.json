@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "b7be1ad5ba593fe81a3c5cff2ac72132767b7279",
+  "head": "1bf59ce3dda6d88fff914270998128f6a37402d3",
   "index_mode": "full",
   "changed_files": [
     {
@@ -169,73 +169,73 @@
       "name": "has_support",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 414
+      "line": 416
     },
     {
       "name": "on_landed",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 423
+      "line": 425
     },
     {
       "name": "show_landing_cue",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 472
+      "line": 474
     },
     {
       "name": "collect_coin",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 479
+      "line": 481
     },
     {
       "name": "die",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 493
+      "line": 495
     },
     {
       "name": "make_platform",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 522
+      "line": 524
     },
     {
       "name": "spawn_platform_after",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 529
+      "line": 531
     },
     {
       "name": "update_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 544
+      "line": 546
     },
     {
       "name": "burst",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 556
+      "line": 558
     },
     {
       "name": "animate_particles",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 562
+      "line": 564
     },
     {
       "name": "skin_color",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 571
+      "line": 573
     },
     {
       "name": "_draw",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 574
+      "line": 576
     },
     {
       "name": "_initialize",
@@ -253,7 +253,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 285
+      "line": 306
     }
   ],
   "selected_tests": []

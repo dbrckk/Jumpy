@@ -385,7 +385,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 516,
+          "line": 518,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         }
@@ -471,9 +471,15 @@
           "line": 276,
           "preview": "game.reset_run(false)",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 283,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 12
+      "occurrence_count": 13
     },
     "set_daily": {
       "definition": {
@@ -886,25 +892,25 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 552,
+          "line": 554,
           "preview": "ui.pulse.visible = state == \"PLAYING\" and not on_ground",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 553,
+          "line": 555,
           "preview": "if ui.pulse.visible:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 554,
+          "line": 556,
           "preview": "ui.pulse.text = \"AIR PULSE READY\" if pulse_available else \"AIR PULSE USED\"",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 555,
+          "line": 557,
           "preview": "ui.pulse.add_theme_color_override(\"font_color\", Color(\"ffffff\") if bool(Profile.data.high_contrast) else (Color(\"62f7ff\") if pulse_available else Color(\"9ba5bd\")))",
           "definition_candidate": false
         },
@@ -1088,14 +1094,26 @@
           "line": 397,
           "preview": "func try_land(old_y: float) -> void:",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 291,
+          "preview": "game.try_land(1200.0 - game.PLAYER_R - 4.0)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 297,
+          "preview": "game.try_land(1200.0 - game.PLAYER_R - 4.0)",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 2
+      "occurrence_count": 4
     },
     "has_support": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 414,
+        "line": 416,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1108,30 +1126,36 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 415,
+          "line": 417,
           "preview": "func has_support() -> bool:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 298,
+          "preview": "if not game.on_ground or not game.has_support() or game.last_platform_id != 901:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 2
+      "occurrence_count": 3
     },
     "on_landed": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 423,
+        "line": 425,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 412,
+          "line": 414,
           "preview": "on_landed(p)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 424,
+          "line": 426,
           "preview": "func on_landed(p: Dictionary) -> void:",
           "definition_candidate": false
         },
@@ -1165,20 +1189,20 @@
     "show_landing_cue": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 472,
+        "line": 474,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 470,
+          "line": 472,
           "preview": "show_landing_cue(cue_text, judgement_color)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 473,
+          "line": 475,
           "preview": "func show_landing_cue(message: String, color: Color) -> void:",
           "definition_candidate": false
         }
@@ -1188,7 +1212,7 @@
     "collect_coin": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 479,
+        "line": 481,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1201,7 +1225,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 480,
+          "line": 482,
           "preview": "func collect_coin() -> void:",
           "definition_candidate": false
         }
@@ -1211,7 +1235,7 @@
     "die": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 493,
+        "line": 495,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1224,7 +1248,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 494,
+          "line": 496,
           "preview": "func die() -> void:",
           "definition_candidate": false
         }
@@ -1234,7 +1258,7 @@
     "make_platform": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 522,
+        "line": 524,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1247,23 +1271,29 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 523,
+          "line": 525,
           "preview": "func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 540,
+          "line": 542,
           "preview": "var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 286,
+          "preview": "game.platforms.append(game.make_platform(game.PLAYER_X + game.PLAYER_R * 0.6, 1200.0, 200.0, 901))",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 3
+      "occurrence_count": 4
     },
     "spawn_platform_after": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 529,
+        "line": 531,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1282,7 +1312,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 530,
+          "line": 532,
           "preview": "func spawn_platform_after(right_edge: float) -> float:",
           "definition_candidate": false
         }
@@ -1292,7 +1322,7 @@
     "update_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 544,
+        "line": 546,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1323,7 +1353,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 545,
+          "line": 547,
           "preview": "func update_ui() -> void:",
           "definition_candidate": false
         }
@@ -1333,7 +1363,7 @@
     "burst": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 556,
+        "line": 558,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1352,37 +1382,37 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 449,
+          "line": 451,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffffff\"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 459,
+          "line": 461,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffe66d\"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 467,
+          "line": 469,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 491,
+          "line": 493,
           "preview": "burst(Vector2(cx, cy), Color(\"ffe66d\"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 520,
+          "line": 522,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 557,
+          "line": 559,
           "preview": "func burst(pos: Vector2, color: Color, count: int, power: float) -> void:",
           "definition_candidate": false
         }
@@ -1392,7 +1422,7 @@
     "animate_particles": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 562,
+        "line": 564,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1411,7 +1441,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 563,
+          "line": 565,
           "preview": "func animate_particles(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -1421,7 +1451,7 @@
     "skin_color": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 571,
+        "line": 573,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1434,31 +1464,31 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 438,
+          "line": 440,
           "preview": "var judgement_color: Color = skin_color()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 467,
+          "line": 469,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 520,
+          "line": 522,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 572,
+          "line": 574,
           "preview": "func skin_color() -> Color:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 599,
+          "line": 601,
           "preview": "var player_color: Color = skin_color()",
           "definition_candidate": false
         }
@@ -1468,14 +1498,14 @@
     "_draw": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 574,
+        "line": 576,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 575,
+          "line": 577,
           "preview": "func _draw() -> void:",
           "definition_candidate": false
         }
@@ -1525,7 +1555,7 @@
     "_fail": {
       "definition": {
         "file": "tools/smoke_mobile_input.gd",
-        "line": 285,
+        "line": 306,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1820,12 +1850,24 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 287,
+          "line": 293,
+          "preview": "_fail(\"A sprite-edge graze must not count as a supported landing\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 299,
+          "preview": "_fail(\"A genuinely supported edge landing must still be accepted\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 308,
           "preview": "func _fail(message: String) -> void:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 49
+      "occurrence_count": 51
     }
   }
 }
