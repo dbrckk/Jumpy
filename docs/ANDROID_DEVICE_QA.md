@@ -44,6 +44,7 @@ Do not label the game 60-FPS-qualified without measurements on actual devices.
 - **Menus:** DAILY, ENDLESS, SKIN, SETTINGS, all Settings toggles, and BACK work without accidentally starting a run.
 - **Multi-touch:** touch with two fingers; secondary fingers must not spend the air pulse or trigger a retry.
 - **Ledge grace:** just after leaving an edge, a quick tap should still jump; after roughly 90 ms, the same airborne tap should use the optional pulse instead.
+- **Buffered landing jump:** after spending the air pulse, tap while descending just before a platform; **JUMP QUEUED** should briefly appear and one new jump should start on landing. A tap too early should expire without an automatic jump.
 - **Landing:** PERFECT, CLUTCH and LANDED cues remain readable; no overlap with AIR PULSE status or top score labels.
 - **Accessibility:** test reduced motion and high contrast, then retry after dying.
 - **Save continuity:** export to a note, restore from that note after reinstall, verify progress and settings; reject a truncated code without data loss.
