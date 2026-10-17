@@ -40,6 +40,19 @@ mechanical improvement does not replace human Android feel and latency testing.
 ### Air pulse
 One optional mid-air tap gives a smaller corrective impulse. This preserves one-touch controls but creates route correction and advanced mastery.
 
+### Pre-landing jump buffering
+Once the single midair pulse has been used, a tap while descending is no
+longer discarded. It queues one jump for up to 0.10 seconds; if the player
+makes a valid supported landing during that window, the jump starts
+automatically immediately after landing judgement and the air pulse refills.
+The upper HUD briefly says **JUMP QUEUED**. The buffered input expires if
+there is no landing, and is cleared on a jump, pulse, retry or death. Tapping
+during the earlier airborne phase still consumes the normal pulse first.
+This adds forgiveness for near-landing timing without granting an extra
+midair jump or scoring an unsupported edge graze. The existing Godot scene
+smoke covers successful buffering, expiry and reset; the 100 ms window needs
+actual Android touch-latency and gameplay-feel validation.
+
 ### Air pulse status HUD
 While airborne, a compact read-only cue above the landing judgement shows
 **AIR PULSE READY** before the optional correction and **AIR PULSE USED**
