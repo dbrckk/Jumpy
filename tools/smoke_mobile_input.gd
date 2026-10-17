@@ -278,9 +278,30 @@ func _run() -> void:
 		_fail("Reset must clear the debug performance readout")
 		return
 
+	# Edge grazes must not count as landings only to drop the player one
+	# frame later: collision and grounded support share the same tolerance.
+	game.reset_run(false)
+	game.state = "PLAYING"
+	game.platforms.clear()
+	game.platforms.append(game.make_platform(game.PLAYER_X + game.PLAYER_R * 0.6, 1200.0, 200.0, 901))
+	game.platforms[0].coin = false
+	game.on_ground = false
+	game.player_y = 1200.0 - game.PLAYER_R + 4.0
+	game.player_vy = 300.0
+	game.try_land(1200.0 - game.PLAYER_R - 4.0)
+	if game.on_ground or game.last_platform_id == 901:
+		_fail("A sprite-edge graze must not count as a supported landing")
+		return
+	game.platforms[0].x = game.PLAYER_X + game.PLAYER_R * 0.2
+	game.player_y = 1200.0 - game.PLAYER_R + 4.0
+	game.try_land(1200.0 - game.PLAYER_R - 4.0)
+	if not game.on_ground or not game.has_support() or game.last_platform_id != 901:
+		_fail("A genuinely supported edge landing must still be accepted")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: mobile input, coyote grace, backup recovery, FLOW rewards and frame diagnostics")
+	print("PASS: mobile input, coyote grace, backup recovery, FLOW, frame diagnostics and stable edge landings")
 	quit(0)
 
 

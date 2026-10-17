@@ -401,7 +401,9 @@ func try_land(old_y: float) -> void:
 		var px: float = float(p.x)
 		var pw: float = float(p.w)
 		var py: float = float(p.y)
-		if PLAYER_X + PLAYER_R < px or PLAYER_X - PLAYER_R > px + pw:
+		# A landing must have enough horizontal overlap to remain supported
+		# on the next physics tick; a mere sprite-edge graze is not stable.
+		if PLAYER_X <= px - PLAYER_R * 0.3 or PLAYER_X >= px + pw + PLAYER_R * 0.3:
 			continue
 		if old_bottom <= py + 8.0 and new_bottom >= py:
 			player_y = py - PLAYER_R
