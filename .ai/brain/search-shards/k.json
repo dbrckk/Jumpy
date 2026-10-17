@@ -1,1 +1,1 @@
-{"schema_version":1,"tokens":{"keep":["scripts/main.gd","tools/smoke_mobile_input.gd"],"key":["scripts/main.gd","scripts/profile.gd"],"keys":["scripts/profile.gd"]}}
+{"schema_version":1,"tokens":{"keep":["scripts/main.gd","tools/smoke_mobile_input.gd"],"keeps":["scripts/main.gd"],"key":["scripts/main.gd","scripts/profile.gd"],"keys":["scripts/profile.gd"]}}

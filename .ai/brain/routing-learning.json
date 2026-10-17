@@ -195,6 +195,25 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Fix FLOW progression fairness and verify signed Android debug export",
+      "terms": [
+        "android",
+        "debug",
+        "export",
+        "fairness",
+        "flow",
+        "progression",
+        "signed",
+        "verify"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -211,9 +230,9 @@
       "scripts/main.gd": 4
     },
     "android": {
-      "scripts/main.gd": 8,
+      "scripts/main.gd": 12,
       "scripts/profile.gd": 4,
-      "tools/smoke_mobile_input.gd": 8
+      "tools/smoke_mobile_input.gd": 12
     },
     "apk": {
       "scripts/main.gd": 4,
@@ -230,9 +249,9 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "debug": {
-      "scripts/main.gd": 4,
+      "scripts/main.gd": 8,
       "scripts/profile.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "tools/smoke_mobile_input.gd": 8
     },
     "debug-only": {
       "scripts/main.gd": 4,
@@ -251,8 +270,20 @@
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
+    "export": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "fairness": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "feedback": {
       "scripts/main.gd": 16,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "flow": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "forgiveness": {
@@ -332,6 +363,10 @@
       "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "progression": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "qualify": {
       "scripts/main.gd": 20,
       "tools/smoke_mobile_input.gd": 12
@@ -369,6 +404,10 @@
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "signed": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "smoke": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
@@ -384,6 +423,10 @@
     "validated": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "verify": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "without": {
       "scripts/main.gd": 4,

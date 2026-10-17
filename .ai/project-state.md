@@ -51,25 +51,23 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T07:11:04Z
+Generated: 2026-10-17T07:14:21Z
 
 ### Git
 - Branch: `main`
-- Head: `82fb4b57b229`
-- Commit date: 2026-10-17T03:10:56-04:00
-- Commit: Expose debug-only Android frame pacing telemetry in game HUD (#24)
+- Head: `b7be1ad5ba59`
+- Commit date: 2026-10-17T03:14:11-04:00
+- Commit: Fix FLOW multiplier increasing after an ordinary landing (#25)
 - Tracked files: 109
 
 ### Recently changed files
-- `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
+- `docs/ANDROID_DEVICE_QA.md`
 - `README.md`
 - `scripts/profile.gd`
 - `.github/workflows/android-debug-apk.yml`
-- `SETUP_REQUIRED.txt`
-- `project.godot`
 
 ### Project signals
 - `project.godot`

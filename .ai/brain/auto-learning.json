@@ -2,18 +2,17 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 10,
+    "example_count": 11,
     "rejected_count": 0,
     "terms": [
-      "actual",
       "android",
-      "debug-only",
-      "frame",
-      "play",
-      "quality",
-      "quantify",
-      "ship",
-      "telemetry"
+      "debug",
+      "export",
+      "fairness",
+      "flow",
+      "progression",
+      "signed",
+      "verify"
     ],
     "test_count": 0,
     "useful_count": 2
@@ -21,7 +20,7 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Ship debug-only frame telemetry to quantify actual Android play quality",
+  "task": "Fix FLOW progression fairness and verify signed Android debug export",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd",

@@ -2,13 +2,9 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "82fb4b57b22962dd5d5b03eef09ac2093b77ed50",
+  "head": "b7be1ad5ba593fe81a3c5cff2ac72132767b7279",
   "index_mode": "full",
   "changed_files": [
-    {
-      "path": "docs/ANDROID_DEVICE_QA.md",
-      "status": "M"
-    },
     {
       "path": "docs/GAME_DESIGN.md",
       "status": "M"
@@ -185,61 +181,61 @@
       "name": "show_landing_cue",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 468
+      "line": 472
     },
     {
       "name": "collect_coin",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 475
+      "line": 479
     },
     {
       "name": "die",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 489
+      "line": 493
     },
     {
       "name": "make_platform",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 518
+      "line": 522
     },
     {
       "name": "spawn_platform_after",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 525
+      "line": 529
     },
     {
       "name": "update_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 540
+      "line": 544
     },
     {
       "name": "burst",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 552
+      "line": 556
     },
     {
       "name": "animate_particles",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 558
+      "line": 562
     },
     {
       "name": "skin_color",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 567
+      "line": 571
     },
     {
       "name": "_draw",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 570
+      "line": 574
     },
     {
       "name": "_initialize",
@@ -257,7 +253,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 260
+      "line": 285
     }
   ],
   "selected_tests": []

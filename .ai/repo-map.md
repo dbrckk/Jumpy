@@ -993,7 +993,8 @@ func on_landed(p: Dictionary) -> void:
 		judgement_color = Color("ffe66d")
 		combo += 1
 		perfects += 1
-		flow = minf(5.0, 1.0 + float(combo) * 0.25)
+		# A successful landing must never reduce FLOW earned by a prior streak.
+		flow = minf(5.0, maxf(flow, 1.0 + float(combo) * 0.25))
 		score += int(18.0 * flow)
 		camera_kick = 9.0 * feedback_scale
 		flash = 0.24 * feedback_scale
@@ -1003,14 +1004,17 @@ func on_landed(p: Dictionary) -> void:
 		judgement = "CLUTCH"
 		judgement_color = Color("ffb46a")
 		combo += 1
-		flow = minf(5.0, 1.0 + float(combo) * 0.18)
+		# A clutch recovery keeps momentum rather than downgrading a perfect streak.
+		flow = minf(5.0, maxf(flow, 1.0 + float(combo) * 0.18))
 		score += int(12.0 * flow)
 		camera_kick = 12.0 * feedback_scale
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color("ffe66d"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)
 		Integrations.haptic(26)
 	else:
 		combo = maxi(0, combo - 1)
-		flow = maxf(1.0, 1.0 + float(combo) * 0.25)
+		# Do not reconstruct FLOW from a different multiplier: ordinary
+		# landings should never raise the reward after a clutch.
+		flow = maxf(1.0, flow - 0.25)
 		var ordinary_feedback_scale: float = 0.45 if bool(Profile.data.reduced_motion) else 1.0
 		burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)
 	var awarded: int = score - score_before_landing
@@ -1634,6 +1638,31 @@ func _run() -> void:
 		_fail("Unable to restore original profile after integration smoke")
 		return
 
+	# Test full judgement scoring in the actual Main scene: PERFECT -> CLUTCH
+	# must preserve FLOW, while ordinary landings only decrease it.
+	game.reset_run(false)
+	game.combo = 10
+	game.flow = 3.5
+	game.on_landed({"id": 501, "x": 120.0, "w": 300.0})
+	var perfect_flow: float = game.flow
+	if perfect_flow < 3.5 or game.perfects != 1:
+		_fail("Perfect landing must advance FLOW and perfect count")
+		return
+	game.on_landed({"id": 502, "x": 250.0, "w": 300.0})
+	var clutch_flow: float = game.flow
+	if clutch_flow < perfect_flow or game.combo != 12:
+		_fail("Clutch landing must not reduce existing FLOW")
+		return
+	game.on_landed({"id": 503, "x": 50.0, "w": 300.0})
+	if game.combo != 11 or game.flow > clutch_flow or absf(game.flow - (clutch_flow - 0.25)) > 0.001:
+		_fail("Ordinary landing must reduce FLOW smoothly without boosting it")
+		return
+	for landing_id: int in range(504, 524):
+		game.on_landed({"id": landing_id, "x": 50.0, "w": 300.0})
+	if game.flow < 1.0 or game.flow > 1.001 or game.combo != 0:
+		_fail("Repeated ordinary landings must decay toward x1 with no underflow")
+		return
+
 	# Inspect diagnostic UI in the actual scene without inventing a new test suite.
 	# Production templates must hide this readout; debug builds permit manual QA.
 	game.reset_run(false)
@@ -1662,7 +1691,7 @@ func _run() -> void:
 
 	game.queue_free()
 	await process_frame
-	print("PASS: mobile input, coyote grace, backup recovery and debug-only frame diagnostics")
+	print("PASS: mobile input, coyote grace, backup recovery, FLOW rewards and frame diagnostics")
 	quit(0)
 
 

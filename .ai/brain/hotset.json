@@ -24,13 +24,6 @@
       "score": 375
     },
     {
-      "path": "docs/ANDROID_DEVICE_QA.md",
-      "reasons": [
-        "changed"
-      ],
-      "score": 100
-    },
-    {
       "path": "docs/GAME_DESIGN.md",
       "reasons": [
         "changed"
