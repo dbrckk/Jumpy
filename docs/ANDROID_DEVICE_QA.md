@@ -22,6 +22,22 @@ The backup is portable text, **not encrypted cloud storage**. Only restore codes
 
 The workflow downloads and verifies the official Godot 4.7.2 Linux editor and matching Android export templates, configures the Android SDK and Java 17, exports the existing ARM64 Android preset, and attaches the resulting APK for **seven days**. Normal documentation and AI-context-only commits do not trigger a costly new build. Its success proves package construction and static APK checks, **not** device rendering, FPS, touch quality or accessibility.
 
+## Read the debug performance indicator
+
+Debug APKs show a small **QA FPS / WORST ms** label in the upper-right of the
+playfield during a run. The displayed FPS is Godot's rendered-frame rate and
+**WORST** is the largest render-frame interval observed in the last one-second
+sample (milliseconds); values refresh once per second and the final sample
+remains visible at game over. Restarting or returning to the title clears it.
+The display is automatically disabled in release builds.
+
+For a 60 FPS target, average frame intervals are roughly 16.7 ms. An isolated
+frame above 33 ms may indicate a visible hitch, but the readings are diagnostic,
+not a guaranteed representation of GPU latency. Try several minutes of play,
+multiple deaths, high-contrast and reduced-motion modes, then report the FPS
+range, worst-frame spikes, model and Android version with a screenshot or video.
+Do not label the game 60-FPS-qualified without measurements on actual devices.
+
 ## On-device acceptance
 
 - **Start:** launch the game and tap an empty area once. Confirm the first tap performs a single jump, without immediately spending the air pulse.

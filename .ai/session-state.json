@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-10-16",
-  "task": "Deliver resilient portable Android debug APK progress backups without requiring a PC",
+  "updated_at": "2026-10-17",
+  "task": "Ship debug-only frame telemetry to quantify actual Android play quality",
   "branch": "main",
   "last_gameplay_merge": {
     "pull_request": 21,
@@ -38,18 +38,18 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "On actual Android phone, test Settings backup -> paste into Notes -> uninstall/reinstall -> restore two taps -> verify data and accessibility",
-    "Continue providing per-change downloadable ARM64 APK artifacts with source and checksum; ephemeral debug signing remains",
-    "Investigate Production-OS agent budget exhaustion without paid-token assumptions",
-    "Profile frame pacing and input responsiveness on real Android hardware"
+    "Download the current main APK on Android and play-test frame rate (FPS and worst ms), touch latency, HUD visibility, accessibility",
+    "Test backup export to Notes, reinstall and two-tap restore on actual phone before deleting any data",
+    "Use measured mobile profiling to prioritize VFX/drawing or physics optimizations",
+    "Address Production-OS autonomous gameplay token budget exhaustion without paid tokens"
   ],
   "latest_validated_feature": {
-    "pull_request": 23,
-    "branch": "feat/mobile-save-backup-20261016",
-    "feature": "In-game COPY BACKUP and two-tap RESTORE SAVE; checksum/schema/version guard, atomic save replacement",
-    "godot_pr_run": 38940339891,
-    "android_pr_run": 38940339814,
-    "validation": "Godot 4.7.2 scene smoke and signed arm64 APK checks success; Android clipboard and reinstall not yet tested on a physical phone"
+    "pull_request": 24,
+    "branch": "feat/android-qa-frame-metrics-20261017",
+    "feature": "QA FPS + worst observed frame interval in debug build, sample 1 second, hold game-over snapshot, never visible in release",
+    "godot_pr_run": 39012547771,
+    "android_pr_run": 39012547805,
+    "validation": "Godot 4.7.2 scene-level integration and signed arm64 debug APK export both completed success; no physical Android frame-pacing measured"
   },
   "android_build": {
     "initial_pull_request": 19,

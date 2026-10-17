@@ -227,9 +227,35 @@ func _run() -> void:
 		_fail("Unable to restore original profile after integration smoke")
 		return
 
+	# Inspect diagnostic UI in the actual scene without inventing a new test suite.
+	# Production templates must hide this readout; debug builds permit manual QA.
+	game.reset_run(false)
+	if game.ui.qa_perf.visible:
+		_fail("QA HUD must be hidden on the title/settings screens")
+		return
+	game.start_run()
+	if game.ui.qa_perf.visible != OS.is_debug_build():
+		_fail("QA HUD visibility must match the runtime debug build")
+		return
+	if OS.is_debug_build():
+		game._process(0.4)
+		game._process(0.7)
+		if not game.ui.qa_perf.text.begins_with("QA FPS ") or not game.ui.qa_perf.text.contains("WORST "):
+			_fail("QA HUD did not publish the sampled render-frame metrics")
+			return
+		game.state = "DEAD"
+		game._process(0.02)
+		if not game.ui.qa_perf.visible:
+			_fail("QA HUD must retain the final run measurements after death")
+			return
+	game.reset_run(false)
+	if game.ui.qa_perf.visible:
+		_fail("Reset must clear the debug performance readout")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, direct modes, mobile input, coyote grace, backup roundtrip and validation")
+	print("PASS: mobile input, coyote grace, backup recovery and debug-only frame diagnostics")
 	quit(0)
 
 
