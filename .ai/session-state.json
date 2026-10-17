@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated_at": "2026-10-17",
-  "task": "Reduce unnecessary 60 Hz HUD updates and improve near-landing jump input with 100 ms buffer",
+  "task": "Finish post-death VFX and avoid continuous idle redraws in Jumpy",
   "branch": "main",
   "last_gameplay_merge": {
     "pull_request": 28,
@@ -38,19 +38,19 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Install latest successful main-branch Android APK and verify queued tap near landing, coyote jump, touch routing, and UI contrast/readability on a real device",
-    "Compare actual Android debug FPS/worst-frame results between sustained play and heavy particles; avoid unmeasured performance claims",
-    "Preserve progress via COPY BACKUP into external Notes before reinstalling any separately signed debug APK; verify restored score, coins and skins",
-    "Reduce Production-OS native Godot agent token envelope exhaustion without assuming paid services",
-    "Evaluate procedural background/character/platform visual polish after receiving real portrait screenshots and measuring frame pacing"
+    "Verify on real Android that death flash/shake decay and menus remain clear, with no undue battery draw; compare QA worst-frame and FPS under sustained gameplay",
+    "Review profile backup clipboard usability before replacing temporary-key debug APKs",
+    "Compare 100 ms buffered jumps and 90 ms ledge grace to real one-thumb touch latency and level difficulty",
+    "Plan focused original-art upgrades only after portrait screenshots and device frame pacing are measured",
+    "Investigate Production-OS autonomous Godot agent token envelope exhaustion with bounded tasks"
   ],
   "latest_validated_feature": {
-    "pull_request": 28,
-    "feature": "100 ms pre-landing jump buffer with cue and expiration; #27 also replaced 60 Hz redundant HUD label/theme updates with cached state values",
-    "godot_pr_run": 39017528341,
-    "android_pr_run": 39017528352,
-    "godot_main_run": 39017597432,
-    "validation": "Godot 4.7.2 scene integration and signed ARM64 debug APK passed on PR; post-merge Godot (39017597432), Android (39017597418) and standards (39017598183) all completed success. No physical Android device QA."
+    "pull_request": 30,
+    "branch": "fix/death-fx-idle-render-20261017",
+    "feature": "Camera shake, flash and particles finish after death; READY/DEAD static scenes do not request new render frames when settled",
+    "godot_pr_run": 39033283593,
+    "android_apk_pr_run": 39033283598,
+    "validation": "Exact PR head Godot 4.7.2 scene integration smoke and signed ARM64 debug APK export completed successfully; physical Android battery/render measurements still outstanding."
   },
   "android_build": {
     "initial_pull_request": 19,
