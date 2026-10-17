@@ -283,7 +283,8 @@ func _run() -> void:
 	game.reset_run(false)
 	game.state = "PLAYING"
 	game.platforms.clear()
-	game.platforms.append({"id": 901, "x": game.PLAYER_X + game.PLAYER_R * 0.6, "w": 200.0, "y": 1200.0, "passed": false})
+	game.platforms.append(game.make_platform(game.PLAYER_X + game.PLAYER_R * 0.6, 1200.0, 200.0, 901))
+	game.platforms[0].coin = false
 	game.on_ground = false
 	game.player_y = 1200.0 - game.PLAYER_R + 4.0
 	game.player_vy = 300.0
