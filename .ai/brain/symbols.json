@@ -431,15 +431,29 @@
       "file": "scripts/profile.gd",
       "language": "gdscript",
       "kind": "function",
-      "name": "_update_streak",
+      "name": "_calendar_day_difference",
       "line": 216
     },
     {
       "file": "scripts/profile.gd",
       "language": "gdscript",
       "kind": "function",
+      "name": "_apply_streak_for_date",
+      "line": 226
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "_update_streak",
+      "line": 241
+    },
+    {
+      "file": "scripts/profile.gd",
+      "language": "gdscript",
+      "kind": "function",
       "name": "_unlock_earned_skins",
-      "line": 230
+      "line": 245
     },
     {
       "file": "tools/smoke_mobile_input.gd",
@@ -460,7 +474,7 @@
       "language": "gdscript",
       "kind": "function",
       "name": "_fail",
-      "line": 525
+      "line": 568
     }
   ]
 }

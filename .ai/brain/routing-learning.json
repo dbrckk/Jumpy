@@ -331,6 +331,27 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Correct local-calendar streak continuity across midnight, leap days and clock rollback",
+      "terms": [
+        "across",
+        "clock",
+        "continuity",
+        "correct",
+        "days",
+        "leap",
+        "local-calendar",
+        "midnight",
+        "rollback",
+        "streak"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/profile.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -345,6 +366,10 @@
     },
     "accessibility": {
       "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "across": {
+      "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "actual": {
@@ -390,8 +415,24 @@
       "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "clock": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "continuity": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "continuous": {
       "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "correct": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "days": {
+      "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "debug": {
@@ -491,6 +532,18 @@
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 4
     },
+    "leap": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "local-calendar": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "midnight": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "mobile": {
       "scripts/main.gd": 12,
       "tools/smoke_mobile_input.gd": 12
@@ -587,6 +640,10 @@
       "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "rollback": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "scene-level": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
@@ -602,6 +659,10 @@
     "smoke": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "streak": {
+      "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "tap": {
       "scripts/main.gd": 8,

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "generated_by": "dbrckk/repo-brain",
   "files_indexed": 4,
-  "symbol_count": 66,
+  "symbol_count": 68,
   "edge_count": 0,
   "languages": {
     "gdscript": 4
@@ -16,7 +16,7 @@
     },
     {
       "file": "scripts/profile.gd",
-      "symbols": 19
+      "symbols": 21
     },
     {
       "file": "scripts/integrations.gd",

@@ -3,7 +3,7 @@
 - Index mode: full
 - Files indexed: 4
 - Files reparsed this run: 4
-- Symbols: 66
+- Symbols: 68
 - Internal import edges: 0
 - Impacted files: 2
 - Selected tests: 0
@@ -13,7 +13,7 @@
 
 ## Highest-density symbol files
 - scripts/main.gd: 35 symbols
-- scripts/profile.gd: 19 symbols
+- scripts/profile.gd: 21 symbols
 - scripts/integrations.gd: 9 symbols
 - tools/smoke_mobile_input.gd: 3 symbols
 

@@ -2,20 +2,19 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 17,
+    "example_count": 18,
     "rejected_count": 0,
     "terms": [
-      "2d",
-      "accessibility",
-      "fixed-cost",
-      "godot",
-      "mobile",
-      "native",
-      "neon",
-      "rendering",
-      "upgrade",
-      "variants",
-      "visuals"
+      "across",
+      "clock",
+      "continuity",
+      "correct",
+      "days",
+      "leap",
+      "local-calendar",
+      "midnight",
+      "rollback",
+      "streak"
     ],
     "test_count": 0,
     "useful_count": 2
@@ -23,10 +22,10 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Upgrade mobile neon 2D visuals with fixed-cost native Godot rendering and accessibility variants",
+  "task": "Correct local-calendar streak continuity across midnight, leap days and clock rollback",
   "tests_selected": [],
   "useful": [
-    "scripts/main.gd",
+    "scripts/profile.gd",
     "tools/smoke_mobile_input.gd"
   ]
 }

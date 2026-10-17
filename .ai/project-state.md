@@ -70,20 +70,21 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T13:10:56Z
+Generated: 2026-10-17T13:21:47Z
 
 ### Git
 - Branch: `main`
-- Head: `da2d34a72053`
-- Commit date: 2026-10-17T09:10:46-04:00
-- Commit: Upgrade Jumpy's neon 2D art with depth, light and readable collectibles (#32)
+- Head: `94295b9a4403`
+- Commit date: 2026-10-17T09:21:39-04:00
+- Commit: Fix local-calendar play streaks across midnight, gaps and clock rollback (#33)
 - Tracked files: 109
 
 ### Recently changed files
-- `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
-- `scripts/main.gd`
+- `scripts/profile.gd`
 - `tools/smoke_mobile_input.gd`
+- `docs/ANDROID_DEVICE_QA.md`
+- `scripts/main.gd`
 - `scripts/integrations.gd`
 
 ### Project signals
