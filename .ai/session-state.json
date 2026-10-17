@@ -1,26 +1,26 @@
 {
   "version": 1,
   "updated_at": "2026-10-17",
-  "task": "Fix FLOW progression fairness and verify signed Android debug export",
+  "task": "Reduce unnecessary 60 Hz HUD updates and improve near-landing jump input with 100 ms buffer",
   "branch": "main",
   "last_gameplay_merge": {
-    "pull_request": 24,
-    "commit": "82fb4b57b22962dd5d5b03eef09ac2093b77ed50",
+    "pull_request": 28,
+    "commit": "d727f5e8c8fd6e3d07ec1811e4a3648f92aa004f",
     "files": [
       "scripts/main.gd",
       "tools/smoke_mobile_input.gd",
       "docs/GAME_DESIGN.md",
       "docs/ANDROID_DEVICE_QA.md"
     ],
-    "feature": "Debug-only rendered FPS and worst-frame profiler for actual Android QA"
+    "feature": "Late descending taps after using the air pulse queue one jump for 100 ms; a real landing consumes it; expired buffers do not autojump; JUMP QUEUED HUD"
   },
   "validation": {
-    "godot_pr_run": 38932900546,
-    "godot_main_run": 38933014631,
-    "repository_standards_run": 38933016305,
-    "android_apk_pr_run": 38932900548,
-    "android_apk_main_run": 38933014477,
-    "results": "All completed success. Installable Android debug APK and SHA256 provenance artifact produced on main; physical Android tests still outstanding"
+    "godot_pr_run": 39017528341,
+    "android_apk_pr_run": 39017528352,
+    "godot_main_run": 39017597432,
+    "android_apk_main_run": 39017597418,
+    "repository_standards_run": 39017598183,
+    "results": "PR Godot scene smoke and signed ARM64 Android export successful. Post-merge Godot success; main APK and repository standards were still running when recorded. Real Android hardware QA outstanding."
   },
   "production_os": {
     "canary_sequence": 31,
@@ -38,24 +38,25 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Install current main APK on physical Android and measure debug FPS / worst frame time, including high contrast and reduced motion",
-    "Check balance of FLOW across perfect/clutch/ordinary streak transitions during real play",
-    "Verify backup to Notes and two-tap restore after reinstall on real Android phone",
-    "Address Production-OS native agent token budget exhaustion without assuming paid tokens"
+    "Install latest successful main-branch Android APK and verify queued tap near landing, coyote jump, touch routing, and UI contrast/readability on a real device",
+    "Compare actual Android debug FPS/worst-frame results between sustained play and heavy particles; avoid unmeasured performance claims",
+    "Preserve progress via COPY BACKUP into external Notes before reinstalling any separately signed debug APK; verify restored score, coins and skins",
+    "Reduce Production-OS native Godot agent token envelope exhaustion without assuming paid services",
+    "Evaluate procedural background/character/platform visual polish after receiving real portrait screenshots and measuring frame pacing"
   ],
   "latest_validated_feature": {
-    "pull_request": 25,
-    "branch": "fix/flow-reward-consistency-20261017",
-    "feature": "Perfect/clutch landings never lower FLOW; ordinary landing decays x0.25 to x1 floor",
-    "godot_pr_run": 39012770357,
-    "android_pr_run": 39012770361,
-    "validation": "Godot 4.7.2 parser/scene smoke and signed arm64 debug APK both completed success; not real-device gameplay qualification"
+    "pull_request": 28,
+    "feature": "100 ms pre-landing jump buffer with cue and expiration; #27 also replaced 60 Hz redundant HUD label/theme updates with cached state values",
+    "godot_pr_run": 39017528341,
+    "android_pr_run": 39017528352,
+    "godot_main_run": 39017597432,
+    "validation": "Godot 4.7.2 parse/real scene integration + signed ARM64 debug APK succeeded on PR. Post-merge Godot succeeded; main Android and standards checks independently tracked. Real Android touch/FPS not measured."
   },
   "android_build": {
     "initial_pull_request": 19,
     "automatic_trigger_pull_request": 20,
-    "latest_main_commit": "4ff41a8d182cd7691a8d7b443399a92946088e8e",
-    "main_run_id": 38933014477,
+    "latest_main_commit": "d727f5e8c8fd6e3d07ec1811e4a3648f92aa004f",
+    "main_run_id": 39017597418,
     "apk_artifact_id": 12058629507,
     "artifact_retention_days": 7,
     "contents": [
@@ -63,6 +64,6 @@
       "Jumpy-debug.apk.sha256",
       "SOURCE_COMMIT.txt"
     ],
-    "note": "Debug signing keystore is new on each run. Reinstall can require uninstall, losing device-local save data. Not release-signed."
+    "note": "PR signed debug export success; main build checks status pending at recording. Each run uses a new debug key; preserve progress using Settings COPY BACKUP and an external note before uninstalling."
   }
 }
