@@ -598,6 +598,17 @@ var pending_restore_code: String = ""
 var qa_sample_elapsed: float = 0.0
 var qa_worst_frame_ms: float = 0.0
 
+# Keep unchanged HUD labels out of the 60 Hz physics hot path.
+var hud_score_seen: int = -1
+var hud_best_seen: int = -1
+var hud_bank_seen: int = -1
+var hud_run_coins_seen: int = -1
+var hud_flow_seen: float = -1.0
+var hud_combo_seen: int = -1
+var hud_mode_seen: int = -1
+var hud_pulse_seen: int = -1
+var hud_contrast_seen: bool = false
+
 func _ready() -> void:
 	fx_rng.randomize()
 	build_ui()
@@ -1097,16 +1108,43 @@ func spawn_platform_after(right_edge: float) -> float:
 	return float(platform.x) + float(platform.w)
 
 func update_ui() -> void:
-	ui.score.text = str(score)
-	ui.flow.text = "%s  FLOW x%.2f  •  %d" % ["DAILY" if daily_mode else "ENDLESS", flow, combo]
-	ui.best.text = "BEST %d" % int(Profile.data.best_score)
-	ui.coins.text = "◇ %d  +%d" % [int(Profile.data.coins), run_coins]
-	ui.score.visible = state != "READY"
-	ui.flow.visible = state == "PLAYING"
-	ui.pulse.visible = state == "PLAYING" and not on_ground
-	if ui.pulse.visible:
-		ui.pulse.text = "AIR PULSE READY" if pulse_available else "AIR PULSE USED"
-		ui.pulse.add_theme_color_override("font_color", Color("ffffff") if bool(Profile.data.high_contrast) else (Color("62f7ff") if pulse_available else Color("9ba5bd")))
+	# Only assign text/theme when the underlying gameplay values change.
+	# Visibility remains correct on reset, start, landing and death.
+	if score != hud_score_seen:
+		ui.score.text = str(score)
+		hud_score_seen = score
+	var best_score: int = int(Profile.data.best_score)
+	if best_score != hud_best_seen:
+		ui.best.text = "BEST %d" % best_score
+		hud_best_seen = best_score
+	var bank: int = int(Profile.data.coins)
+	if bank != hud_bank_seen or run_coins != hud_run_coins_seen:
+		ui.coins.text = "◇ %d  +%d" % [bank, run_coins]
+		hud_bank_seen = bank
+		hud_run_coins_seen = run_coins
+	var mode_id: int = 1 if daily_mode else 0
+	if flow != hud_flow_seen or combo != hud_combo_seen or mode_id != hud_mode_seen:
+		ui.flow.text = "%s  FLOW x%.2f  •  %d" % ["DAILY" if daily_mode else "ENDLESS", flow, combo]
+		hud_flow_seen = flow
+		hud_combo_seen = combo
+		hud_mode_seen = mode_id
+	var score_visible: bool = state != "READY"
+	if ui.score.visible != score_visible:
+		ui.score.visible = score_visible
+	var flow_visible: bool = state == "PLAYING"
+	if ui.flow.visible != flow_visible:
+		ui.flow.visible = flow_visible
+	var pulse_state: int = 0
+	if flow_visible and not on_ground:
+		pulse_state = 1 if pulse_available else 2
+	var high_contrast: bool = bool(Profile.data.high_contrast)
+	if pulse_state != hud_pulse_seen or (pulse_state != 0 and high_contrast != hud_contrast_seen):
+		ui.pulse.visible = pulse_state != 0
+		if pulse_state != 0:
+			ui.pulse.text = "AIR PULSE READY" if pulse_state == 1 else "AIR PULSE USED"
+			ui.pulse.add_theme_color_override("font_color", Color("ffffff") if high_contrast else (Color("62f7ff") if pulse_state == 1 else Color("9ba5bd")))
+		hud_pulse_seen = pulse_state
+		hud_contrast_seen = high_contrast
 
 func burst(pos: Vector2, color: Color, count: int, power: float) -> void:
 	for _i: int in range(count):
@@ -1712,9 +1750,68 @@ func _run() -> void:
 		_fail("A genuinely supported edge landing must still be accepted")
 		return
 
+	# HUD integration regression: unchanged values must not rewrite label
+	# text each physics frame; score, mode, pulse and contrast transitions must
+	# still refresh immediately (without making a new unit-test suite).
+	game.reset_run(false)
+	game.start_run()
+	var saved_best: int = int(profile.data.best_score)
+	var saved_bank: int = int(profile.data.coins)
+	var saved_contrast: bool = bool(profile.data.high_contrast)
+	profile.data.best_score = 999
+	profile.data.coins = 35
+	profile.data.high_contrast = false
+	game.score = 120
+	game.flow = 2.25
+	game.combo = 5
+	game.run_coins = 3
+	game.on_ground = false
+	game.pulse_available = true
+	game.update_ui()
+	if game.ui.score.text != "120" or game.ui.best.text != "BEST 999":
+		_fail("HUD must refresh changed score and lifetime best")
+		return
+	if game.ui.coins.text != "◇ 35  +3" or not game.ui.flow.text.contains("FLOW x2.25"):
+		_fail("HUD must refresh changed coins and FLOW")
+		return
+	if not game.ui.pulse.visible or game.ui.pulse.text != "AIR PULSE READY":
+		_fail("HUD must show the available pulse during flight")
+		return
+	game.ui.score.text = "CACHE PROBE"
+	game.ui.pulse.text = "PULSE CACHE PROBE"
+	game.update_ui()
+	if game.ui.score.text != "CACHE PROBE" or game.ui.pulse.text != "PULSE CACHE PROBE":
+		_fail("Unchanged HUD data must not reassign read-only labels")
+		return
+	game.score = 121
+	game.pulse_available = false
+	game.update_ui()
+	if game.ui.score.text != "121" or game.ui.pulse.text != "AIR PULSE USED":
+		_fail("Score and pulse changes must invalidate the HUD cache")
+		return
+	profile.data.high_contrast = true
+	game.update_ui()
+	if game.ui.pulse.get_theme_color("font_color") != Color("ffffff"):
+		_fail("High-contrast preference must update pulse color")
+		return
+	game.state = "DEAD"
+	game.update_ui()
+	if game.ui.flow.visible or game.ui.pulse.visible or not game.ui.score.visible:
+		_fail("Death must hide FLOW and pulse while retaining score")
+		return
+	game.reset_run(true)
+	game.start_run()
+	if not game.ui.flow.text.begins_with("DAILY") or game.ui.score.text != "0":
+		_fail("Starting a new daily run must refresh mode and score")
+		return
+	profile.data.best_score = saved_best
+	profile.data.coins = saved_bank
+	profile.data.high_contrast = saved_contrast
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: mobile input, coyote grace, backup recovery, FLOW, frame diagnostics and stable edge landings")
+	print("PASS: input, coyote grace, backups, FLOW, frame QA, stable landings and cached HUD")
 	quit(0)
 
 

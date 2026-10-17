@@ -5,24 +5,24 @@
       "size": 2747
     },
     "docs/GAME_DESIGN.md": {
-      "sha256": "664d8b15b635de049adfbb8aea658d7c39cec05c3482cfacac98ff53dbf9add9",
-      "size": 9253
+      "sha256": "e23b0c7d31d0c099060b8e946d38a51480680345d3cf42ec028505485ad76eea",
+      "size": 9890
     },
     "project.godot": {
       "sha256": "e579a6c2f5ae1ea1e9cf7da3313a0130a0752454f958a28acfa69ea2129b6955",
       "size": 1013
     },
     "scripts/main.gd": {
-      "sha256": "4d1d914452fb42b22c3824aafcb4bc69a204478a8e1f27d7269d542fecd65eb7",
-      "size": 25813
+      "sha256": "bce86752ed6094b600858da10ef8eefe5b473d9b374127352bbfa75dceed0829",
+      "size": 27232
     },
     "scripts/profile.gd": {
       "sha256": "e687bf8b24facc0407610e4b829a0daab6e135c3d1cd81a13f5c996096c256fc",
       "size": 7939
     },
     "tools/smoke_mobile_input.gd": {
-      "sha256": "01b6dea0876ed0215c3d6608209c1dce938a072cbc1d24fc5c4074a47b63d5b8",
-      "size": 12037
+      "sha256": "beae33af4c5c98483d96d533f519e81514d0952df65fedd128a5330d44a7e7e2",
+      "size": 14283
     }
   },
   "generated_by": "dbrckk/repo-brain-v6",
