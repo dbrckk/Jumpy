@@ -12,6 +12,10 @@ const LANDING_CUE_DURATION: float = 0.72
 const COYOTE_TIME: float = 0.09
 const JUMP_BUFFER_TIME: float = 0.10
 const QA_SAMPLE_INTERVAL: float = 1.0
+const MAX_RUN_SPEED: float = 970.0
+const PLATFORM_SPEED_LOOKAHEAD: float = 35.0
+const PLATFORM_TAKEOFF_WINDOW: float = 140.0
+const PLATFORM_GAP_VARIATION: float = 120.0
 
 const SKINS: Array[Color] = [
 	Color("62f7ff"), Color("ff5fd2"), Color("ffe66d"),
@@ -375,7 +379,7 @@ func _physics_process(delta: float) -> void:
 	# Retain a short jump window after stepping off a ledge; not after a jump.
 	coyote_remaining = maxf(0.0, coyote_remaining - delta)
 	jump_buffer_remaining = maxf(0.0, jump_buffer_remaining - delta)
-	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
+	speed = minf(MAX_RUN_SPEED, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
 	# Consume a buffered pre-landing tap only on a real supported landing.
@@ -565,12 +569,31 @@ func spawn_platform_after(right_edge: float) -> float:
 	var difficulty: float = clampf(elapsed / 70.0, 0.0, 1.0)
 	var gap_max: float = lerpf(285.0, 350.0, difficulty)
 	var width_max: float = lerpf(430.0, 290.0, difficulty)
-	var gap: float = level_rng.randf_range(145.0, gap_max)
 	var width: float = level_rng.randf_range(230.0, width_max)
 	var previous_y: float = 1490.0
+	var previous_width: float = 300.0
 	if not platforms.is_empty():
 		previous_y = float(platforms[-1].y)
+		previous_width = float(platforms[-1].w)
 	var y: float = clampf(previous_y + level_rng.randf_range(-165.0, 165.0), 980.0, 1560.0)
+
+	# At high scrolling speeds a fixed short gap can make the next platform
+	# disappear *before* a normal jump descends to its height. Account for
+	# travel during the exact ballistic descent (including elevation change).
+	# Use a small speed lookahead for acceleration while the route approaches.
+	var projected_speed: float = minf(MAX_RUN_SPEED, speed + PLATFORM_SPEED_LOOKAHEAD)
+	var height_delta: float = y - previous_y
+	var descending_time: float = (-JUMP_V + sqrt(JUMP_V * JUMP_V + 2.0 * GRAVITY * height_delta)) / GRAVITY
+	var jump_travel: float = projected_speed * descending_time
+
+	# The takeoff position can vary across the preceding platform. Keeping
+	# 140 world units of timing space at either bound avoids both premature
+	# arrival (too-wide gap) and overshoot (too-short gap). The resulting
+	# wider late-game gaps replace impossible fast, narrow-platform routes.
+	var safe_gap_min: float = maxf(145.0, jump_travel - previous_width - width + PLATFORM_TAKEOFF_WINDOW)
+	var safe_gap_max: float = jump_travel - PLATFORM_TAKEOFF_WINDOW
+	var sampled_gap_max: float = minf(safe_gap_max, maxf(gap_max, safe_gap_min + PLATFORM_GAP_VARIATION))
+	var gap: float = level_rng.randf_range(safe_gap_min, sampled_gap_max)
 	var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)
 	next_platform_id += 1
 	platforms.append(platform)
