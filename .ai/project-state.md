@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- PR #31 precomputes six procedural sound effects and uses a fixed four-player pool instead of rebuilding WAV/audio nodes for every tap; adds previously missing CLUTCH sound and smooth onset/tail. Godot 4.7.2 scene smoke run 39034429206 and Android debug APK 39034429205 both succeeded before merge. Device audio latency/quality and performance remain unmeasured.
 - PR #30 finishes camera-shake, flash and particle decay after death; READY/DEAD static scenes no longer request continuous redraws when settled. Existing scene smoke checks post-death decay and stable READY; Godot PR CI 39033283593 and signed Android APK CI 39033283598 succeeded. Real Android power/FPS measurements remain unverified.
 - PR #28 buffered late descending jumps after the pulse is spent for 100 ms; only a supported landing consumes the buffer. Added JUMP QUEUED indicator, expiry and reset. PR Godot scene smoke 39017528341 and signed Android APK 39017528352 succeeded; merged main d727f5e8 with Godot 39017597432, APK 39017597418 and standards 39017598183 all successful. Real Android tap-latency acceptance remains outstanding.
 - PR #27 avoids regenerating SCORE/BEST/COINS/FLOW labels and pulse font/theme every physics tick when unchanged. Existing scene smoke and debug APK passed on PR (39017380729, 39017380605) and main (39017424987, 39017424990), plus standards 39017425724. No measured hardware frame-rate improvement is claimed.
@@ -26,6 +27,7 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Test cached jump/pulse/coin/PERFECT/CLUTCH/death cues on Android (rapid overlap, no PCM clicks, sound preference), correlating QA FPS/worst ms with repeated actions.
 - Verify on physical Android that the death screen stops shaking/flashing, and compare static-menu battery/CPU impact with debug FPS/worst-frame observations before making performance claims.
 - Assess 100 ms jump buffer against Android touch latency and intended timing: a late tap after pulse use queues one jump only on supported landing; early tap expires. Capture video if it feels overly forgiving or triggers unexpected rebounds.
 - Use debug FPS and worst-frame readout to quantify whether HUD caching reduces frame-time spikes on actual mid-range Android; inspect rendering profiler if stutters persist.
@@ -39,6 +41,7 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #31 pooled SFX integration smoke and Godot parse succeeded (39034429206); signed ARM64 debug APK export succeeded (39034429205). Physical device audio quality unverified.
 - PR #30 Godot parse/scene smoke (39033283593) and signed ARM64 debug APK (39033283598): both succeeded before merge; no hardware Android benchmark.
 - PR #28 pre-landing buffer Godot 39017528341 and Android export 39017528352 both success; merged main Godot 39017597432, Android 39017597418, standards 39017598183 all success. No physical Android test.
 - PR #27 HUD-value caching Godot 39017380729 and Android export 39017380605 successful; merged main Godot 39017424987, Android 39017424990, standards 39017425724 successful.
