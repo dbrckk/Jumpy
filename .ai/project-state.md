@@ -3,6 +3,8 @@
 Status: active
 
 ## Working
+- FLOW fairness correction PR #25: perfect and clutch landings never lower FLOW; ordinary landing subtracts 0.25 to x1 floor instead of sometimes increasing the reward. Real-scene Godot smoke and signed Android APK succeeded (runs 39012770357, 39012770361). Device feel not measured.
+- PR #24 debug-only FPS and worst render-frame telemetry merged at 82fb4b57; main Godot, APK export and standards succeeded (runs 39012676918, 39012676814, 39012677628).
 - PR #24 introduces debug-only in-game rendered FPS and one-second worst frame interval. Godot parse/scene smoke succeeded (39012547771), ARM64 signed debug APK succeeded (39012547805). Release templates hide it. Real Android FPS is not measured yet.
 - PR #23 portable save recovery implemented: Settings COPY BACKUP / RESTORE SAVE (double confirmation), SHA-256-verified versioned text, validated profile data and atomic temporary-file save. Godot scene smoke success 38940339891; signed Android QA APK export success 38940339814. Still requires physical Android clipboard + reinstall acceptance.
 - Android QA APK pipeline is active: #19 adds export; #20 triggers builds on gameplay/source/asset/preset changes and verifies APK signature, package identity, ARM64 native libraries, SHA256 and source SHA. Main APK build run 38933014477 succeeded, artifact 12058629507 (7-day retention).
@@ -21,6 +23,7 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Check player perception of FLOW increases/decreases and streak feedback on a real phone while watching the debug FPS overlay.
 - Use QA FPS and WORST ms display on a physical Android device; record any spikes and compare reduced motion/high contrast, then profile hot paths based on evidence.
 - Verify backup export to Notes and restore after Android reinstall on real hardware; confirm best score, coins, skins, daily reset, clipboard persistence and accessibility.
 - Test the latest verified main APK (run 38933014477) on a physical Android phone following docs/ANDROID_DEVICE_QA.md; check one-tap mode start, HUD, collision feedback, reduced-motion/contrast and frame pacing.
@@ -30,6 +33,8 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #25 Godot parse+scene smoke 39012770357 and signed ARM64 APK 39012770361: both success. Real-device evaluation pending.
+- PR #24 main Godot 39012676918, Android APK 39012676814, standards 39012677628: completed success.
 - PR #24 Godot input/runtime smoke: success (39012547771); debug APK export and Android package checks: success (39012547805). Device behavior not tested.
 - PR #23 verified: 38940339891 (Godot parse + real-scene save smoke); 38940339814 (signed ARM64 APK export). Human Android clipboard test remains outstanding.
 - #21 main Godot validation succeeded (38933014631), Repository standards succeeded (38933016305), Android APK export succeeded (38933014477), and PR checks succeeded (38932900546, 38932900548). No claim of hardware Android performance.
