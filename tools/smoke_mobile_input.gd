@@ -490,9 +490,37 @@ func _run() -> void:
 		_fail("Repeated SFX must reuse the same voices and cached waveforms")
 		return
 
+	# Render-path integration check for the layered neon visuals. Exercise
+	# offscreen culling, collectible highlights, pulse ring and accessibility
+	# variants in the real scene; this cannot judge subjective visual quality.
+	game.reset_run(false)
+	game.start_run()
+	game.platforms.clear()
+	for i: int in range(16):
+		var platform_visual: Dictionary = game.make_platform(-520.0 + float(i) * 195.0, 1200.0 + float(i % 4) * 60.0, 270.0, 1100 + i)
+		platform_visual.coin = true
+		game.platforms.append(platform_visual)
+	var saved_motion: bool = bool(profile.data.reduced_motion)
+	var saved_visual_contrast: bool = bool(profile.data.high_contrast)
+	for contrast_enabled: bool in [false, true]:
+		for motion_enabled: bool in [false, true]:
+			profile.data.high_contrast = contrast_enabled
+			profile.data.reduced_motion = motion_enabled
+			game.on_ground = false
+			game.pulse_available = true
+			game.update_ui()
+			game.queue_redraw()
+			await process_frame
+			if not is_instance_valid(game) or game.state != "PLAYING":
+				_fail("Layered visual pass must retain the active game scene")
+				return
+	profile.data.high_contrast = saved_visual_contrast
+	profile.data.reduced_motion = saved_motion
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, landings, HUD, jump buffer, settled death FX and pooled SFX")
+	print("PASS: input, backups, FLOW, buffered jumps, pooled SFX and neon render variants")
 	quit(0)
 
 

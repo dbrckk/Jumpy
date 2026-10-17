@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated_at": "2026-10-17",
-  "task": "Precache arcade audio and validate bounded pooled playback for Android",
+  "task": "Upgrade mobile neon 2D visuals with fixed-cost native Godot rendering and accessibility variants",
   "branch": "main",
   "last_gameplay_merge": {
     "pull_request": 28,
@@ -38,19 +38,19 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "After PR #31 merge, verify main Godot, signed APK and repository standards workflows",
-    "Qualify jump, pulse, coin, CLUTCH, PERFECT and death audio on a real phone with sound on/off and overlapping effects",
-    "Measure Android QA FPS and worst frames on sustained gameplay before claiming audio performance benefits",
-    "Qualify backup Notes export/import and 90 ms coyote / 100 ms jump buffer on actual Android",
-    "Review and improve procedural visuals with real portrait screenshots and measured GPU/frame times"
+    "On physical Android compare new visual readability and frame pacing at 60 fps, especially contrast/reduced-motion and particles",
+    "Capture portrait screenshots and observe player/coin/perfect-zone distinguishability under sunlight and low brightness",
+    "Verify mixed CLUTCH/PERFECT sounds, latency, multiple audio voices and player sound toggle on Android",
+    "Verify portable save recovery before changing ephemeral debug signing keys",
+    "Investigate Production-OS bounded agent work without relying on paid tokens"
   ],
   "latest_validated_feature": {
-    "pull_request": 31,
-    "branch": "perf/cached-arcade-sfx-20261017",
-    "feature": "Six pre-synthesized PCM tones, four reusable voices and an audible CLUTCH cue with smoothed attack and release",
-    "godot_pr_run": 39034429206,
-    "android_apk_pr_run": 39034429205,
-    "validation": "Godot 4.7.2 scene-level smoke and signed ARM64 Android debug export both completed success on the gameplay PR; physical phone sound/frame-time QA outstanding"
+    "pull_request": 32,
+    "branch": "feat/neon-depth-visuals-20261017",
+    "feature": "Layered nebula/starfield, shaded extruded platforms with luminous perfect zones, gold collectible shimmer and glossy hero with pulse ring, offscreen culling",
+    "godot_pr_run": 39035357927,
+    "android_apk_pr_run": 39035358002,
+    "validation": "Godot 4.7.2 parser + existing scene smoke across high-contrast/reduced-motion/offscreen visuals and signed ARM64 APK export both success. No physical Android visual or FPS qualification."
   },
   "android_build": {
     "initial_pull_request": 19,

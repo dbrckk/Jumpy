@@ -636,41 +636,83 @@ func skin_color() -> Color:
 
 func _draw() -> void:
 	var shake: Vector2 = Vector2(fx_rng.randf_range(-camera_kick, camera_kick), fx_rng.randf_range(-camera_kick, camera_kick)) if camera_kick > 0.2 else Vector2.ZERO
-	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
-	for i: int in range(9):
-		var yy: float = 180.0 + float(i) * 205.0 + fmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
-		draw_line(Vector2(0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
-	for i: int in range(18):
-		var star_x: float = fmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
-		var star_y: float = 240.0 + fmod(float(i * 127), 1180.0)
-		draw_circle(Vector2(star_x, star_y), 2.5 + float(i % 3), Color(0.42, 0.78, 1.0, 0.22))
 	var high_contrast_enabled: bool = bool(Profile.data.high_contrast)
+	var reduced_motion_enabled: bool = bool(Profile.data.reduced_motion)
+
+	# Layered dark-space atmosphere uses a fixed number of cheap canvas draws.
+	# No textures, shaders, new dependencies, or animated full-screen overlays.
+	draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color("070814"))
+	if not high_contrast_enabled:
+		draw_circle(Vector2(930.0, 330.0), 340.0, Color(0.16, 0.22, 0.48, 0.07))
+		draw_circle(Vector2(100.0, 1420.0), 380.0, Color(0.10, 0.32, 0.46, 0.055))
+	for i: int in range(9):
+		var yy: float = 180.0 + float(i) * 205.0 + fposmod(elapsed * speed * (0.015 + float(i) * 0.002), 205.0)
+		draw_line(Vector2(0.0, yy), Vector2(W, yy), Color(0.18, 0.25, 0.42, 0.10), 2.0)
+	for i: int in range(18):
+		# Positive wrapping keeps stars in motion when elapsed increases.
+		var star_x: float = fposmod(float(i * 173) - elapsed * speed * 0.08, W + 220.0) - 110.0
+		var star_y: float = 240.0 + fposmod(float(i * 127), 1180.0)
+		var star_radius: float = 2.3 + float(i % 3)
+		var star_color: Color = Color(0.42, 0.78, 1.0, 0.27) if not high_contrast_enabled else Color(1.0, 1.0, 1.0, 0.38)
+		draw_circle(Vector2(star_x, star_y), star_radius, star_color)
+		if i % 5 == 0:
+			draw_line(Vector2(star_x - 9.0, star_y), Vector2(star_x + 9.0, star_y), Color(star_color.r, star_color.g, star_color.b, 0.17), 1.5)
+			draw_line(Vector2(star_x, star_y - 9.0), Vector2(star_x, star_y + 9.0), Color(star_color.r, star_color.g, star_color.b, 0.17), 1.5)
+
 	var platform_fill_color: Color = Color("2c3d70") if high_contrast_enabled else Color("17213d")
 	var platform_edge_color: Color = Color("ffffff") if high_contrast_enabled else Color("65eaff")
+	var platform_bevel_color: Color = Color("8299d0") if high_contrast_enabled else Color("31517c")
 	var perfect_zone_color: Color = Color("ffe66d") if high_contrast_enabled else Color("ffffff")
 	for p: Dictionary in platforms:
 		var rect: Rect2 = Rect2(Vector2(float(p.x), float(p.y)) + shake, Vector2(float(p.w), float(p.h)))
+		# Avoid drawing platforms that have already left the portrait viewport.
+		if rect.end.x < -50.0 or rect.position.x > W + 50.0:
+			continue
+		# Subtle extrusion and lit beveled lip give flat blocks legible depth,
+		# without moving the physical landing surface or widening collision.
+		draw_rect(Rect2(rect.position + Vector2(0.0, 15.0), rect.size + Vector2(0.0, 20.0)), Color(0.0, 0.0, 0.0, 0.35), true)
 		draw_rect(rect, platform_fill_color, true)
-		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0), platform_edge_color, 9.0 if high_contrast_enabled else 7.0)
+		draw_rect(Rect2(rect.position + Vector2(8.0, 11.0), Vector2(maxf(0.0, rect.size.x - 16.0), 12.0)), platform_bevel_color, true)
+		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0.0), Color(platform_edge_color.r, platform_edge_color.g, platform_edge_color.b, 0.12), 20.0)
+		draw_line(rect.position, rect.position + Vector2(rect.size.x, 0.0), platform_edge_color, 9.0 if high_contrast_enabled else 6.0)
+		draw_line(rect.position + Vector2(0.0, rect.size.y - 3.0), rect.position + Vector2(rect.size.x, rect.size.y - 3.0), Color(0.38, 0.53, 0.8, 0.23), 2.0)
 		var perfect_w: float = minf(160.0, float(p.w) * 0.44)
-		draw_line(Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake, Vector2(float(p.x) + float(p.w) * 0.5 + perfect_w * 0.5, float(p.y) - 2.0) + shake, perfect_zone_color, 5.0 if high_contrast_enabled else 3.0)
+		var zone_start: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5 - perfect_w * 0.5, float(p.y) - 2.0) + shake
+		var zone_end: Vector2 = zone_start + Vector2(perfect_w, 0.0)
+		draw_line(zone_start, zone_end, Color(perfect_zone_color.r, perfect_zone_color.g, perfect_zone_color.b, 0.22), 16.0)
+		draw_line(zone_start, zone_end, perfect_zone_color, 5.0 if high_contrast_enabled else 4.0)
 		if bool(p.coin) and not bool(p.coin_taken):
 			var coin_pos: Vector2 = Vector2(float(p.x) + float(p.w) * 0.5, float(p.y) - 105.0) + shake
-			draw_circle(coin_pos, 25.0, Color("ffe66d"))
-			draw_circle(coin_pos, 11.0, Color("070814"))
+			var coin_width: float = 1.0 if reduced_motion_enabled else 0.82 + 0.18 * absf(cos(elapsed * 4.1 + float(p.id)))
+			# Layered collectible with a solid gold silhouette and inner cutout.
+			draw_circle(coin_pos, 34.0, Color(1.0, 0.81, 0.21, 0.12))
+			draw_circle(coin_pos, 25.0 * coin_width, Color("ffe66d"))
+			draw_circle(coin_pos, 19.0 * coin_width, Color("d7a43f"))
+			draw_circle(coin_pos, 13.0 * coin_width, Color("100f20"))
+			draw_circle(coin_pos + Vector2(-7.0 * coin_width, -9.0), 3.8, Color(1.0, 1.0, 1.0, 0.65))
+
 	var player_color: Color = skin_color()
 	var player_pos: Vector2 = Vector2(PLAYER_X, player_y) + shake
-	var trail_steps: int = 1 if bool(Profile.data.reduced_motion) else 4
+	var trail_steps: int = 1 if reduced_motion_enabled else 4
 	for i: int in range(trail_steps, 0, -1):
-		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
-	draw_circle(player_pos, PLAYER_R + 11.0 if high_contrast_enabled else PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.18))
+		draw_circle(player_pos + Vector2(-float(i) * 22.0, 0.0), PLAYER_R * (0.62 + float(i) * 0.06), Color(player_color.r, player_color.g, player_color.b, 0.035 * float(5 - i)))
+	# The hero remains a high-contrast round silhouette, with glossy material
+	# and rim lighting that does not affect its physical radius.
+	draw_circle(player_pos, PLAYER_R + 20.0, Color(player_color.r, player_color.g, player_color.b, 0.08) if not high_contrast_enabled else Color(1.0, 1.0, 1.0, 0.13))
+	draw_circle(player_pos, PLAYER_R + 9.0, Color("ffffff") if high_contrast_enabled else Color(player_color.r, player_color.g, player_color.b, 0.24))
 	draw_circle(player_pos, PLAYER_R, player_color)
-	draw_circle(player_pos + Vector2(14, -8), 7.0, Color("07101c"))
+	draw_circle(player_pos + Vector2(10.0, 13.0), 22.0, Color(0.04, 0.08, 0.18, 0.16))
+	draw_arc(player_pos, PLAYER_R - 5.0, PI + 0.12, TAU - 0.45, 26, Color(1.0, 1.0, 1.0, 0.20), 3.0)
+	draw_circle(player_pos + Vector2(-12.0, -15.0), 14.0, Color(1.0, 1.0, 1.0, 0.22))
+	draw_circle(player_pos + Vector2(-16.0, -19.0), 4.0, Color(1.0, 1.0, 1.0, 0.42))
+	draw_circle(player_pos + Vector2(14.0, -8.0), 7.0, Color("07101c"))
+	draw_circle(player_pos + Vector2(16.0, -10.0), 2.0, Color("ffffff"))
 	if pulse_available and not on_ground and state == "PLAYING":
+		draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color(0.39, 0.97, 1.0, 0.20), 9.0)
 		draw_arc(player_pos, PLAYER_R + 18.0, 0.0, TAU, 32, Color("ffffff"), 3.0)
 	for item: Dictionary in particles:
 		var alpha: float = clampf(float(item.life) / float(item.max), 0.0, 1.0)
 		var particle_color: Color = Color(item.c)
 		draw_circle(Vector2(item.p) + shake, 5.0 + 6.0 * alpha, Color(particle_color.r, particle_color.g, particle_color.b, alpha))
 	if flash > 0.0:
-		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1, 1, 1, flash * 0.34), true)
+		draw_rect(Rect2(Vector2.ZERO, Vector2(W, H)), Color(1.0, 1.0, 1.0, flash * 0.34), true)
