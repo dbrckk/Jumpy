@@ -361,8 +361,15 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if state != "PLAYING":
-		animate_particles(delta)
-		queue_redraw()
+		# Finish death VFX even after gameplay stops. When idle and settled,
+		# avoid issuing needless 60 Hz redraws on battery-powered devices.
+		var effects_active: bool = not particles.is_empty() or camera_kick > 0.0 or flash > 0.0
+		if not particles.is_empty():
+			animate_particles(delta)
+		camera_kick = move_toward(camera_kick, 0.0, delta * 5.0)
+		flash = move_toward(flash, 0.0, delta * 2.8)
+		if effects_active:
+			queue_redraw()
 		return
 	elapsed += delta
 	# Retain a short jump window after stepping off a ledge; not after a jump.
