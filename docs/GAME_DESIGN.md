@@ -158,6 +158,13 @@ Input response should feel immediate. No gameplay dependency on network availabi
 ### Performance
 Target 60 FPS on mid-range Android hardware. Avoid per-frame allocations in production hot paths and profile before adding heavy VFX.
 
+When a run ends, the death flash, camera shake and existing particles still
+decay to zero, then gameplay background redraws stop while the death screen
+or title menu is idle. This prevents the old permanent death-screen flash/shake
+and eliminates needless continuous scene redraw requests in static menus.
+The existing headless scene smoke validates that effects settle, but device
+battery consumption and render performance still need on-phone measurement.
+
 On debug templates only, the upper-right QA HUD reports measured rendered FPS
 and the worst render-frame interval from the previous one-second window. The
 diagnostic readout uses native Godot frame statistics, samples once per second
