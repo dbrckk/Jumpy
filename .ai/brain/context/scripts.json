@@ -2,25 +2,26 @@
   "area": "scripts",
   "files": [
     {
-      "path": "scripts/profile.gd",
+      "path": "scripts/main.gd",
       "reasons": [
         "changed",
         "changed-source",
+        "entrypoint",
         "impact",
+        "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 405
-    },
-    {
-      "path": "scripts/main.gd",
-      "reasons": [
-        "entrypoint",
-        "recent-project-state"
-      ],
-      "score": 100
+      "score": 575
     },
     {
       "path": "scripts/integrations.gd",
+      "reasons": [
+        "recent-project-state"
+      ],
+      "score": 60
+    },
+    {
+      "path": "scripts/profile.gd",
       "reasons": [
         "recent-project-state"
       ],

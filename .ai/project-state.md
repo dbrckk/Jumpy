@@ -73,21 +73,21 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T13:21:47Z
+Generated: 2026-10-17T13:28:22Z
 
 ### Git
 - Branch: `main`
-- Head: `94295b9a4403`
-- Commit date: 2026-10-17T09:21:39-04:00
-- Commit: Fix local-calendar play streaks across midnight, gaps and clock rollback (#33)
+- Head: `785e8624f3ac`
+- Commit date: 2026-10-17T09:28:13-04:00
+- Commit: Generate speed-aware, reachable jump routes instead of impossible short gaps (#34)
 - Tracked files: 109
 
 ### Recently changed files
-- `docs/GAME_DESIGN.md`
-- `scripts/profile.gd`
-- `tools/smoke_mobile_input.gd`
 - `docs/ANDROID_DEVICE_QA.md`
+- `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
+- `tools/smoke_mobile_input.gd`
+- `scripts/profile.gd`
 - `scripts/integrations.gd`
 
 ### Project signals

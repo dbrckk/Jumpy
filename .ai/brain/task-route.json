@@ -1,20 +1,56 @@
 {
   "budget": {
-    "confidence": "medium",
+    "confidence": "high",
     "expand_to": 12,
-    "max_files": 6,
+    "max_files": 3,
     "requested_max_files": 12,
-    "score_margin": 9,
-    "tier": "bounded",
-    "top_score": 26
+    "score_margin": 12,
+    "tier": "narrow",
+    "top_score": 38
   },
   "cache": {
-    "fingerprint": "9f204a7519e99a347c7d76b4d23605555d5c994c7a52e0f393bf9f7fe18ee5b1",
+    "fingerprint": "926fb72a9dce7181a8fe3f1a7f6356c523b4d360bd239c1b0ac1ed1dcb5abb0e",
     "hit": false
   },
   "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "engine",
+        "game"
+      ],
+      "path": "scripts/main.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 38,
+      "symbols": [
+        "_draw",
+        "_physics_process",
+        "_process",
+        "_ready",
+        "_unhandled_input",
+        "animate_particles",
+        "build_ui",
+        "burst",
+        "collect_coin",
+        "copy_save_backup",
+        "cycle_skin",
+        "die",
+        "has_support",
+        "jump",
+        "make_button",
+        "make_label",
+        "make_platform",
+        "move_world",
+        "on_landed",
+        "pulse"
+      ]
+    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -53,83 +89,6 @@
         "rewarded_available",
         "share_score",
         "show_rewarded"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [
-        "engine"
-      ],
-      "path": "scripts/main.gd",
-      "reasons": [
-        "search-index"
-      ],
-      "score": 17,
-      "symbols": [
-        "_draw",
-        "_physics_process",
-        "_process",
-        "_ready",
-        "_unhandled_input",
-        "animate_particles",
-        "build_ui",
-        "burst",
-        "collect_coin",
-        "copy_save_backup",
-        "cycle_skin",
-        "die",
-        "has_support",
-        "jump",
-        "make_button",
-        "make_label",
-        "make_platform",
-        "move_world",
-        "on_landed",
-        "pulse"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [
-        "game"
-      ],
-      "path": "docs/GAME_DESIGN.md",
-      "reasons": [
-        "recently-changed"
-      ],
-      "score": 13,
-      "symbols": []
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "scripts/profile.gd",
-      "reasons": [
-        "impact",
-        "recently-changed"
-      ],
-      "score": 9,
-      "symbols": [
-        "_apply_streak_for_date",
-        "_calendar_day_difference",
-        "_decode_backup_code",
-        "_ready",
-        "_refresh_daily",
-        "_save_date",
-        "_save_integer",
-        "_unlock_earned_skins",
-        "_update_streak",
-        "_validated_save",
-        "daily_seed",
-        "export_backup_code",
-        "get_mission_progress",
-        "is_valid_backup_code",
-        "load_data",
-        "record_run",
-        "restore_backup_code",
-        "save",
-        "select_skin",
-        "set_preference"
       ]
     }
   ],

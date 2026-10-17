@@ -614,6 +614,10 @@ const LANDING_CUE_DURATION: float = 0.72
 const COYOTE_TIME: float = 0.09
 const JUMP_BUFFER_TIME: float = 0.10
 const QA_SAMPLE_INTERVAL: float = 1.0
+const MAX_RUN_SPEED: float = 970.0
+const PLATFORM_SPEED_LOOKAHEAD: float = 35.0
+const PLATFORM_TAKEOFF_WINDOW: float = 140.0
+const PLATFORM_GAP_VARIATION: float = 120.0
 
 const SKINS: Array[Color] = [
 	Color("62f7ff"), Color("ff5fd2"), Color("ffe66d"),
@@ -977,7 +981,7 @@ func _physics_process(delta: float) -> void:
 	# Retain a short jump window after stepping off a ledge; not after a jump.
 	coyote_remaining = maxf(0.0, coyote_remaining - delta)
 	jump_buffer_remaining = maxf(0.0, jump_buffer_remaining - delta)
-	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
+	speed = minf(MAX_RUN_SPEED, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
 	# Consume a buffered pre-landing tap only on a real supported landing.
@@ -1167,12 +1171,31 @@ func spawn_platform_after(right_edge: float) -> float:
 	var difficulty: float = clampf(elapsed / 70.0, 0.0, 1.0)
 	var gap_max: float = lerpf(285.0, 350.0, difficulty)
 	var width_max: float = lerpf(430.0, 290.0, difficulty)
-	var gap: float = level_rng.randf_range(145.0, gap_max)
 	var width: float = level_rng.randf_range(230.0, width_max)
 	var previous_y: float = 1490.0
+	var previous_width: float = 300.0
 	if not platforms.is_empty():
 		previous_y = float(platforms[-1].y)
+		previous_width = float(platforms[-1].w)
 	var y: float = clampf(previous_y + level_rng.randf_range(-165.0, 165.0), 980.0, 1560.0)
+
+	# At high scrolling speeds a fixed short gap can make the next platform
+	# disappear *before* a normal jump descends to its height. Account for
+	# travel during the exact ballistic descent (including elevation change).
+	# Use a small speed lookahead for acceleration while the route approaches.
+	var projected_speed: float = minf(MAX_RUN_SPEED, speed + PLATFORM_SPEED_LOOKAHEAD)
+	var height_delta: float = y - previous_y
+	var descending_time: float = (-JUMP_V + sqrt(JUMP_V * JUMP_V + 2.0 * GRAVITY * height_delta)) / GRAVITY
+	var jump_travel: float = projected_speed * descending_time
+
+	# The takeoff position can vary across the preceding platform. Keeping
+	# 140 world units of timing space at either bound avoids both premature
+	# arrival (too-wide gap) and overshoot (too-short gap). The resulting
+	# wider late-game gaps replace impossible fast, narrow-platform routes.
+	var safe_gap_min: float = maxf(145.0, jump_travel - previous_width - width + PLATFORM_TAKEOFF_WINDOW)
+	var safe_gap_max: float = jump_travel - PLATFORM_TAKEOFF_WINDOW
+	var sampled_gap_max: float = minf(safe_gap_max, maxf(gap_max, safe_gap_min + PLATFORM_GAP_VARIATION))
+	var gap: float = level_rng.randf_range(safe_gap_min, sampled_gap_max)
 	var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)
 	next_platform_id += 1
 	platforms.append(platform)
@@ -2141,9 +2164,83 @@ func _run() -> void:
 	profile.data.reduced_motion = saved_motion
 	game.reset_run(false)
 
+	# Reproducible procedural fairness on the actual Main scene: generated
+	# gaps must overlap the descending jump arc at every difficulty/speed,
+	# leaving a material takeoff window on the preceding platform.
+	var wide_late_gap_found: bool = false
+	for generated_speed: float in [470.0, 600.0, 750.0, 900.0, 970.0]:
+		for generator_elapsed: float in [0.0, 70.0]:
+			game.reset_run(false)
+			game.platforms.clear()
+			game.level_rng.seed = 19717
+			game.speed = generated_speed
+			game.elapsed = generator_elapsed
+			game.platforms.append(game.make_platform(0.0, 1250.0, 260.0, 0))
+			var right_edge: float = 260.0
+			for index: int in range(75):
+				right_edge = game.spawn_platform_after(right_edge)
+				var previous_platform: Dictionary = game.platforms[-2]
+				var target_platform: Dictionary = game.platforms[-1]
+				var generated_gap: float = float(target_platform.x) - float(previous_platform.x) - float(previous_platform.w)
+				var height_delta: float = float(target_platform.y) - float(previous_platform.y)
+				var flight_time: float = (-game.JUMP_V + sqrt(game.JUMP_V * game.JUMP_V + 2.0 * game.GRAVITY * height_delta)) / game.GRAVITY
+				var flight_distance: float = flight_time * minf(game.MAX_RUN_SPEED, generated_speed + game.PLATFORM_SPEED_LOOKAHEAD)
+				if generated_gap < 144.99:
+					_fail("Procedural route produced an overlapping or undersized gap")
+					return
+				if flight_distance < generated_gap + game.PLATFORM_TAKEOFF_WINDOW - 0.01:
+					_fail("Procedural gap is too wide to reach on the jump's descent")
+					return
+				if flight_distance > generated_gap + float(previous_platform.w) + float(target_platform.w) - game.PLATFORM_TAKEOFF_WINDOW + 0.01:
+					_fail("Procedural gap is too short: next platform passes before descent")
+					return
+				if generated_speed >= 900.0 and generated_gap > 400.0:
+					wide_late_gap_found = true
+	if not wide_late_gap_found:
+		_fail("Late-game generator did not expand short impossible gaps")
+		return
+
+	# Exercise one fast generated route through the actual player/world
+	# integration, rather than trusting the preceding geometry alone.
+	game.reset_run(false)
+	game.platforms.clear()
+	game.level_rng.seed = 77219
+	game.speed = game.MAX_RUN_SPEED
+	game.elapsed = 70.0
+	game.platforms.append(game.make_platform(0.0, 1300.0, 230.0, 2201))
+	game.spawn_platform_after(230.0)
+	var sample_previous: Dictionary = game.platforms[0]
+	var sample_next: Dictionary = game.platforms[1]
+	var sample_gap: float = float(sample_next.x) - float(sample_previous.x) - float(sample_previous.w)
+	var sample_height_delta: float = float(sample_next.y) - float(sample_previous.y)
+	var sample_flight_time: float = (-game.JUMP_V + sqrt(game.JUMP_V * game.JUMP_V + 2.0 * game.GRAVITY * sample_height_delta)) / game.GRAVITY
+	var travel: float = sample_flight_time * game.MAX_RUN_SPEED
+	var remaining_width: float = clampf(travel - sample_gap - float(sample_next.w) * 0.5, 16.0, float(sample_previous.w) - 16.0)
+	sample_previous.x = game.PLAYER_X + remaining_width - float(sample_previous.w)
+	sample_next.x = game.PLAYER_X + remaining_width + sample_gap
+	sample_previous.coin = false
+	sample_next.coin = false
+	game.state = "PLAYING"
+	game.on_ground = true
+	game.player_y = float(sample_previous.y) - game.PLAYER_R
+	game.player_vy = 0.0
+	game.last_platform_id = int(sample_previous.id)
+	game.jump()
+	for physics_step: int in range(95):
+		game.move_world(1.0 / 60.0)
+		game.update_player(1.0 / 60.0)
+		if game.last_platform_id == int(sample_next.id):
+			break
+		if game.state == "DEAD":
+			break
+	if game.last_platform_id != int(sample_next.id) or not game.on_ground:
+		_fail("A valid late-game generated route must accept a real supported jump landing")
+		return
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, buffered jumps, pooled SFX and neon render variants")
+	print("PASS: input, backups, FLOW, pooled SFX, neon visuals and reachable procedural routes")
 	quit(0)
 
 

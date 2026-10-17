@@ -352,6 +352,24 @@
         "scripts/profile.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Eliminate geometrically unreachable high-speed procedural platform gaps",
+      "terms": [
+        "eliminate",
+        "gaps",
+        "geometrically",
+        "high-speed",
+        "platform",
+        "procedural",
+        "unreachable"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -457,6 +475,10 @@
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
+    "eliminate": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "export": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
@@ -493,6 +515,14 @@
       "scripts/main.gd": 24,
       "tools/smoke_mobile_input.gd": 12
     },
+    "gaps": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "geometrically": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "godot": {
       "scripts/main.gd": 20,
       "tools/smoke_mobile_input.gd": 20
@@ -504,6 +534,10 @@
     "headless": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "high-speed": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "idle": {
       "scripts/main.gd": 4,
@@ -565,6 +599,10 @@
       "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "platform": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "play": {
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
@@ -588,6 +626,10 @@
     },
     "precache": {
       "scripts/integrations.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "procedural": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "production-os": {
@@ -669,6 +711,10 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "telemetry": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "unreachable": {
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },

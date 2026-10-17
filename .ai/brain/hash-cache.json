@@ -1,8 +1,12 @@
 {
   "files": {
+    "docs/ANDROID_DEVICE_QA.md": {
+      "sha256": "7629b02065ef6ce5050fa19e91893bcc53e3b38475d87eebd009522191aeb585",
+      "size": 7101
+    },
     "docs/GAME_DESIGN.md": {
-      "sha256": "2e495bbbf507adc411e83e4b2bdec0b8532805e78b9ac4dd8e3169a1715aa85b",
-      "size": 13248
+      "sha256": "d8c4d1a1198683f168e84264f60fdddd4451b7086cb0d30e4dcebb954075fa43",
+      "size": 14685
     },
     "project.godot": {
       "sha256": "e579a6c2f5ae1ea1e9cf7da3313a0130a0752454f958a28acfa69ea2129b6955",
@@ -13,16 +17,16 @@
       "size": 4247
     },
     "scripts/main.gd": {
-      "sha256": "8e8233f77237d02cdf5671c194bb7f9ae8214b6650b20597f69ae0e5669c5945",
-      "size": 31596
+      "sha256": "e788e9607e2d77dad5e392b347970978b42418045a32f25c27456c74f5b106c1",
+      "size": 33014
     },
     "scripts/profile.gd": {
       "sha256": "065cda0e69da30692eab1336c2ee85499b2bebf8caf05f141837a5d264590e86",
       "size": 8711
     },
     "tools/smoke_mobile_input.gd": {
-      "sha256": "6cd5688cb66301dc16a5dcf360145fb524078e56065cf5b02e44e4f283734d81",
-      "size": 22530
+      "sha256": "2627cf462863160a9bb63e5b1c25aab8f0c9ad6898ebbdc9f4969e8400b53a20",
+      "size": 26255
     }
   },
   "generated_by": "dbrckk/repo-brain-v6",
