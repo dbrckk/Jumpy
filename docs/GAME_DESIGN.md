@@ -153,6 +153,16 @@ screenshots, and resets before a new run. It is disabled on release templates.
 Headless integration verifies the instrumentation contract; only an actual
 Android device can establish gameplay frame-pacing acceptance.
 
+### HUD performance
+The in-game HUD runs in the physics loop, but score, best score, coins and
+FLOW labels are now formatted and assigned only when their underlying values
+change. Pulse text and theme color also update only when visibility, readiness
+or high-contrast mode changes. This removes redundant text/layout work during
+uninterrupted play while preserving immediate UI updates on landings, pulse
+consumption, death, retry and Daily/Endless mode switches. The existing Godot
+scene smoke checks value transitions and unchanged-label reuse. No device-level
+FPS gain is claimed without measurements from the Android debug overlay.
+
 ### UX
 Readable at a glance; thumb zones avoid critical HUD obstruction; death-to-retry path is one action.
 
