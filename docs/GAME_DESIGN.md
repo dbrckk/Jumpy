@@ -90,10 +90,29 @@ landings, while the overall difficulty and platform generation remain unchanged.
 
 ## 3. Difficulty
 - Scroll speed rises continuously.
-- Platform gap range expands over time.
-- Platform widths contract with difficulty.
-- Vertical variation forces pulse decisions.
-- Daily mode uses a deterministic seed so every player can compete on the same sequence.
+- Platform gaps adapt to actual jump flight distance at the current/projected scroll speed, rather than ending arbitrarily early at the old 350-unit maximum.
+- Platform widths contract with difficulty, while faster late-game routes use longer gaps where necessary to leave a feasible takeoff/landing window.
+- Vertical variation still forces timing and sometimes air-pulse decisions.
+- Daily mode uses a deterministic seed so every player can compete on the same sequence for the same game build.
+
+### Procedural route feasibility
+At high speed, the previous fixed gap interval of 145–350 world units could
+allow a short platform to scroll entirely behind the player **before** a normal
+jump returned to the target platform's height. The generator now evaluates
+the downward intersection time of the real jump parabola for each platform
+height change, projects the world scroll for that flight, and samples gaps
+inside a geometrically reachable corridor. It preserves a 140-unit window
+for takeoff position, with a 35-unit/s speed lookahead for approaching
+difficulty and 120 units of additional gap variety.
+
+The existing Godot scene smoke checks 750 seeded generated transitions over
+five scrolling speeds and two difficulty states, plus an actual fast-jump
+landing against the generated target. This prevents the specific
+speed/short-gap overshoot failure under modeled constant scroll speed; it
+cannot prove every path is human-playable, account for every possible
+in-flight acceleration, or replace physical Android playtesting. Existing
+daily seeds remain deterministic within each version, but course geometry
+changes compared with older builds.
 
 ### Mobile save recovery
 Settings offers **COPY BACKUP** and **RESTORE SAVE** to preserve local progress
