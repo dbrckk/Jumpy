@@ -130,6 +130,14 @@ Input response should feel immediate. No gameplay dependency on network availabi
 ### Performance
 Target 60 FPS on mid-range Android hardware. Avoid per-frame allocations in production hot paths and profile before adding heavy VFX.
 
+On debug templates only, the upper-right QA HUD reports measured rendered FPS
+and the worst render-frame interval from the previous one-second window. The
+diagnostic readout uses native Godot frame statistics, samples once per second
+instead of allocating UI strings every frame, stays visible after game over for
+screenshots, and resets before a new run. It is disabled on release templates.
+Headless integration verifies the instrumentation contract; only an actual
+Android device can establish gameplay frame-pacing acceptance.
+
 ### UX
 Readable at a glance; thumb zones avoid critical HUD obstruction; death-to-retry path is one action.
 
