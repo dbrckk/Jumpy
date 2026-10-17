@@ -3,7 +3,7 @@
   "packets": [
     {
       "area": "docs",
-      "file_count": 2,
+      "file_count": 1,
       "path": ".ai/brain/context/docs.json"
     },
     {
@@ -12,13 +12,8 @@
       "path": ".ai/brain/context/project.godot.json"
     },
     {
-      "area": "readme.md",
-      "file_count": 1,
-      "path": ".ai/brain/context/readme.md.json"
-    },
-    {
       "area": "scripts",
-      "file_count": 2,
+      "file_count": 1,
       "path": ".ai/brain/context/scripts.json"
     },
     {

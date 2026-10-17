@@ -194,105 +194,105 @@
       "language": "gdscript",
       "kind": "function",
       "name": "move_world",
-      "line": 389
+      "line": 396
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "update_player",
-      "line": 405
+      "line": 412
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "try_land",
-      "line": 420
+      "line": 427
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "has_support",
-      "line": 440
+      "line": 447
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "on_landed",
-      "line": 449
+      "line": 456
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "show_landing_cue",
-      "line": 498
-    },
-    {
-      "file": "scripts/main.gd",
-      "language": "gdscript",
-      "kind": "function",
-      "name": "collect_coin",
       "line": 505
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
+      "name": "collect_coin",
+      "line": 512
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
       "name": "die",
-      "line": 519
+      "line": 526
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "make_platform",
-      "line": 549
-    },
-    {
-      "file": "scripts/main.gd",
-      "language": "gdscript",
-      "kind": "function",
-      "name": "spawn_platform_after",
       "line": 556
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
+      "name": "spawn_platform_after",
+      "line": 563
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
       "name": "update_ui",
-      "line": 571
+      "line": 578
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "burst",
-      "line": 611
+      "line": 618
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "animate_particles",
-      "line": 617
+      "line": 624
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "skin_color",
-      "line": 626
+      "line": 633
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "_draw",
-      "line": 629
+      "line": 636
     },
     {
       "file": "scripts/profile.gd",
@@ -446,7 +446,7 @@
       "language": "gdscript",
       "kind": "function",
       "name": "_fail",
-      "line": 425
+      "line": 452
     }
   ]
 }

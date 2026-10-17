@@ -913,8 +913,15 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if state != "PLAYING":
-		animate_particles(delta)
-		queue_redraw()
+		# Finish death VFX even after gameplay stops. When idle and settled,
+		# avoid issuing needless 60 Hz redraws on battery-powered devices.
+		var effects_active: bool = not particles.is_empty() or camera_kick > 0.0 or flash > 0.0
+		if not particles.is_empty():
+			animate_particles(delta)
+		camera_kick = move_toward(camera_kick, 0.0, delta * 5.0)
+		flash = move_toward(flash, 0.0, delta * 2.8)
+		if effects_active:
+			queue_redraw()
 		return
 	elapsed += delta
 	# Retain a short jump window after stepping off a ledge; not after a jump.
@@ -1884,9 +1891,36 @@ func _run() -> void:
 		_fail("Restart must clear pending buffered jump inputs")
 		return
 
+	# Idle/death rendering contract: post-death effects must finish instead of
+	# leaving a permanent white flash and shaking screen.
+	game.reset_run(false)
+	game.state = "DEAD"
+	game.camera_kick = 18.0
+	game.flash = 0.35
+	game.burst(Vector2(game.PLAYER_X, game.player_y), Color.WHITE, 5, 150.0)
+	if game.particles.is_empty():
+		_fail("Death-style burst must produce transient particles")
+		return
+	game._physics_process(0.05)
+	if game.camera_kick >= 18.0 or game.flash >= 0.35:
+		_fail("Camera shake and flash must decay after gameplay stops")
+		return
+	game._physics_process(5.0)
+	if game.camera_kick != 0.0 or game.flash != 0.0 or not game.particles.is_empty():
+		_fail("Death effects must reach a fully settled idle state")
+		return
+	if game.state != "DEAD":
+		_fail("Finishing death effects must not restart gameplay")
+		return
+	game.reset_run(false)
+	game._physics_process(0.1)
+	if game.camera_kick != 0.0 or game.flash != 0.0 or game.state != "READY":
+		_fail("Ready menu must stay static after idle processing")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, coyote grace, backups, FLOW, QA, stable landings, cached HUD and buffered jumps")
+	print("PASS: input, backups, FLOW, stable landings, HUD, jump buffer and settled death FX")
 	quit(0)
 
 

@@ -10,12 +10,12 @@
   "generated_by": "dbrckk/repo-brain-benchmark-health-v1",
   "healthy": true,
   "observed": {
-    "avg_selected_files": 4.4,
-    "cached_pass_ms": 157.744,
-    "first_pass_ms": 188.734,
+    "avg_selected_files": 3.4,
+    "cached_pass_ms": 228.548,
+    "first_pass_ms": 271.827,
     "graph_edge_count": 0,
     "search_file_count": 4,
-    "search_token_count": 913
+    "search_token_count": 939
   },
   "policy": {
     "avg_selected_files_max": 6,

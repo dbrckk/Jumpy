@@ -271,6 +271,25 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Finish post-death VFX and avoid continuous idle redraws in Jumpy",
+      "terms": [
+        "avoid",
+        "continuous",
+        "finish",
+        "idle",
+        "jumpy",
+        "post-death",
+        "redraws",
+        "vfx"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -300,9 +319,17 @@
       "scripts/main.gd": 12,
       "tools/smoke_mobile_input.gd": 4
     },
+    "avoid": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "backups": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "continuous": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "debug": {
@@ -339,6 +366,10 @@
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 4
     },
+    "finish": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "flow": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
@@ -367,6 +398,10 @@
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
+    "idle": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "improve": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
@@ -383,7 +418,8 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "jumpy": {
-      "scripts/main.gd": 4
+      "scripts/main.gd": 8,
+      "tools/smoke_mobile_input.gd": 4
     },
     "landing": {
       "scripts/main.gd": 16,
@@ -409,6 +445,10 @@
     "portable": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "post-death": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "production-os": {
@@ -441,6 +481,10 @@
     },
     "real": {
       "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "redraws": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "requiring": {
@@ -484,6 +528,10 @@
     "verify": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
+    },
+    "vfx": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "without": {
       "scripts/main.gd": 4,
