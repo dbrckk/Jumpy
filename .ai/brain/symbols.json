@@ -54,245 +54,245 @@
       "language": "gdscript",
       "kind": "function",
       "name": "_ready",
-      "line": 59
+      "line": 61
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "build_ui",
-      "line": 65
+      "line": 67
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "make_label",
-      "line": 105
+      "line": 107
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "make_button",
-      "line": 119
+      "line": 121
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "settings_pressed",
-      "line": 130
+      "line": 132
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "copy_save_backup",
-      "line": 138
+      "line": 140
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "restore_save_backup",
-      "line": 149
+      "line": 151
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "toggle_preference",
-      "line": 174
+      "line": 176
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "refresh_settings_ui",
-      "line": 182
+      "line": 184
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "reset_run",
-      "line": 199
+      "line": 201
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "set_daily",
-      "line": 238
+      "line": 241
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "cycle_skin",
-      "line": 243
+      "line": 246
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "restart_pressed",
-      "line": 253
+      "line": 256
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "start_run",
-      "line": 257
+      "line": 260
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "show_menu",
-      "line": 268
+      "line": 271
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "_unhandled_input",
-      "line": 288
+      "line": 291
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "jump",
-      "line": 315
+      "line": 321
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "pulse",
-      "line": 328
+      "line": 335
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "_process",
-      "line": 340
+      "line": 348
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "_physics_process",
-      "line": 352
+      "line": 360
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "move_world",
-      "line": 376
+      "line": 389
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "update_player",
-      "line": 392
+      "line": 405
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "try_land",
-      "line": 407
+      "line": 420
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "has_support",
-      "line": 427
+      "line": 440
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "on_landed",
-      "line": 436
+      "line": 449
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "show_landing_cue",
-      "line": 485
+      "line": 498
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "collect_coin",
-      "line": 492
+      "line": 505
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "die",
-      "line": 506
+      "line": 519
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "make_platform",
-      "line": 535
+      "line": 549
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "spawn_platform_after",
-      "line": 542
+      "line": 556
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "update_ui",
-      "line": 557
+      "line": 571
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
       "name": "burst",
-      "line": 596
-    },
-    {
-      "file": "scripts/main.gd",
-      "language": "gdscript",
-      "kind": "function",
-      "name": "animate_particles",
-      "line": 602
-    },
-    {
-      "file": "scripts/main.gd",
-      "language": "gdscript",
-      "kind": "function",
-      "name": "skin_color",
       "line": 611
     },
     {
       "file": "scripts/main.gd",
       "language": "gdscript",
       "kind": "function",
+      "name": "animate_particles",
+      "line": 617
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
+      "name": "skin_color",
+      "line": 626
+    },
+    {
+      "file": "scripts/main.gd",
+      "language": "gdscript",
+      "kind": "function",
       "name": "_draw",
-      "line": 614
+      "line": 629
     },
     {
       "file": "scripts/profile.gd",
@@ -446,7 +446,7 @@
       "language": "gdscript",
       "kind": "function",
       "name": "_fail",
-      "line": 365
+      "line": 425
     }
   ]
 }

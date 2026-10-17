@@ -562,6 +562,7 @@ const PULSE_V: float = -620.0
 const FLOOR_LIMIT: float = 1820.0
 const LANDING_CUE_DURATION: float = 0.72
 const COYOTE_TIME: float = 0.09
+const JUMP_BUFFER_TIME: float = 0.10
 const QA_SAMPLE_INTERVAL: float = 1.0
 
 const SKINS: Array[Color] = [
@@ -590,6 +591,7 @@ var camera_kick: float = 0.0
 var flash: float = 0.0
 var landing_cue_remaining: float = 0.0
 var coyote_remaining: float = 0.0
+var jump_buffer_remaining: float = 0.0
 var last_platform_id: int = -1
 var next_platform_id: int = 1
 var ui: Dictionary = {}
@@ -765,6 +767,7 @@ func reset_run(use_daily: bool) -> void:
 	pulse_available = true
 	landing_cue_remaining = 0.0
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	qa_sample_elapsed = 0.0
 	qa_worst_frame_ms = 0.0
 	ui.qa_perf.visible = false
@@ -862,11 +865,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			jump()
 		elif pulse_available:
 			pulse()
+		elif player_vy > 0.0:
+			# A late press after spending the pulse can chain into the next landing.
+			jump_buffer_remaining = JUMP_BUFFER_TIME
 	elif state == "DEAD":
 		restart_pressed()
 
 func jump() -> void:
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	player_vy = JUMP_V
 	on_ground = false
 	pulse_available = true
@@ -879,6 +886,7 @@ func jump() -> void:
 	Integrations.haptic(14)
 
 func pulse() -> void:
+	jump_buffer_remaining = 0.0
 	pulse_available = false
 	player_vy = minf(player_vy, PULSE_V)
 	var burst_count = 14
@@ -911,9 +919,14 @@ func _physics_process(delta: float) -> void:
 	elapsed += delta
 	# Retain a short jump window after stepping off a ledge; not after a jump.
 	coyote_remaining = maxf(0.0, coyote_remaining - delta)
+	jump_buffer_remaining = maxf(0.0, jump_buffer_remaining - delta)
 	speed = minf(970.0, 470.0 + elapsed * 7.5 + float(score) * 0.42)
 	move_world(delta)
 	update_player(delta)
+	# Consume a buffered pre-landing tap only on a real supported landing.
+	# A successful landing is still scored before this new jump begins.
+	if state == "PLAYING" and on_ground and jump_buffer_remaining > 0.0:
+		jump()
 	if landing_cue_remaining > 0.0:
 		landing_cue_remaining = maxf(0.0, landing_cue_remaining - delta)
 		ui.landing.visible = landing_cue_remaining > 0.0
@@ -1061,6 +1074,7 @@ func die() -> void:
 		return
 	state = "DEAD"
 	coyote_remaining = 0.0
+	jump_buffer_remaining = 0.0
 	landing_cue_remaining = 0.0
 	ui.landing.visible = false
 	Profile.record_run(score, run_coins, perfects, daily_mode)
@@ -1136,13 +1150,14 @@ func update_ui() -> void:
 		ui.flow.visible = flow_visible
 	var pulse_state: int = 0
 	if flow_visible and not on_ground:
-		pulse_state = 1 if pulse_available else 2
+		pulse_state = 1 if pulse_available else (3 if jump_buffer_remaining > 0.0 else 2)
 	var high_contrast: bool = bool(Profile.data.high_contrast)
 	if pulse_state != hud_pulse_seen or (pulse_state != 0 and high_contrast != hud_contrast_seen):
 		ui.pulse.visible = pulse_state != 0
 		if pulse_state != 0:
-			ui.pulse.text = "AIR PULSE READY" if pulse_state == 1 else "AIR PULSE USED"
-			ui.pulse.add_theme_color_override("font_color", Color("ffffff") if high_contrast else (Color("62f7ff") if pulse_state == 1 else Color("9ba5bd")))
+			ui.pulse.text = "AIR PULSE READY" if pulse_state == 1 else ("JUMP QUEUED" if pulse_state == 3 else "AIR PULSE USED")
+			var cue_color: Color = Color("62f7ff") if pulse_state == 1 else (Color("ffe66d") if pulse_state == 3 else Color("9ba5bd"))
+			ui.pulse.add_theme_color_override("font_color", Color("ffffff") if high_contrast else cue_color)
 		hud_pulse_seen = pulse_state
 		hud_contrast_seen = high_contrast
 
@@ -1809,9 +1824,69 @@ func _run() -> void:
 	profile.data.high_contrast = saved_contrast
 	game.reset_run(false)
 
+	# Late taps after the one air pulse was spent should queue a jump
+	# only briefly, and only trigger it on an actual supported landing.
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 380.0
+	game.player_y = 1150.0
+	game.platforms.clear()
+	game.platforms.append(game.make_platform(160.0, 1200.0, 260.0, 951))
+	game.platforms[0].coin = false
+	game._unhandled_input(physical_touch)
+	if game.jump_buffer_remaining <= 0.0 or game.pulse_available:
+		_fail("After spending the pulse, a descending tap must queue one jump")
+		return
+	game.update_ui()
+	if game.ui.pulse.text != "JUMP QUEUED":
+		_fail("Queued pre-landing jumps must be visible in the pulse HUD")
+		return
+	game._physics_process(0.02)
+	if game.on_ground or game.player_vy != game.JUMP_V or game.jump_buffer_remaining != 0.0:
+		_fail("Buffered tap must become a single jump after a supported landing")
+		return
+	if not game.pulse_available or game.last_platform_id != 951:
+		_fail("Buffered landing must still score and restore the air pulse")
+		return
+
+	# An early descending tap must expire: it may not jump later on its own.
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 150.0
+	game.player_y = 600.0
+	game._unhandled_input(physical_touch)
+	if game.jump_buffer_remaining <= 0.0:
+		_fail("Descending tap did not queue the buffered jump")
+		return
+	game._physics_process(game.JUMP_BUFFER_TIME + 0.02)
+	if game.jump_buffer_remaining > 0.0 or game.ui.pulse.text != "AIR PULSE USED":
+		_fail("Expired buffered jump must restore the used-pulse HUD")
+		return
+	game.platforms.clear()
+	game.platforms.append(game.make_platform(160.0, 1200.0, 260.0, 952))
+	game.platforms[0].coin = false
+	game.player_y = 1150.0
+	game.player_vy = 380.0
+	game._physics_process(0.02)
+	if not game.on_ground or game.player_vy != 0.0:
+		_fail("An expired buffered jump must not auto-launch on landing")
+		return
+
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 150.0
+	game._unhandled_input(physical_touch)
+	game.reset_run(false)
+	if game.jump_buffer_remaining != 0.0:
+		_fail("Restart must clear pending buffered jump inputs")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, coyote grace, backups, FLOW, frame QA, stable landings and cached HUD")
+	print("PASS: input, coyote grace, backups, FLOW, QA, stable landings, cached HUD and buffered jumps")
 	quit(0)
 
 

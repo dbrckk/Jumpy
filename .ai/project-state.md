@@ -51,22 +51,20 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T08:27:36Z
+Generated: 2026-10-17T08:30:16Z
 
 ### Git
 - Branch: `main`
-- Head: `356a26672cd8`
-- Commit date: 2026-10-17T04:27:20-04:00
-- Commit: Reduce redundant Godot HUD text and theme updates during gameplay (#27)
+- Head: `d727f5e8c8fd`
+- Commit date: 2026-10-17T04:30:08-04:00
+- Commit: Buffer near-landing taps after the air pulse has been used (#28)
 - Tracked files: 109
 
 ### Recently changed files
+- `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
-- `docs/ANDROID_DEVICE_QA.md`
-- `README.md`
-- `scripts/profile.gd`
 
 ### Project signals
 - `project.godot`

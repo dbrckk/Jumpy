@@ -9,10 +9,10 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "6c6c338d196016ee97aa8f7b15eed9ff68baa989ae2f4c666452dfd4a224a245",
+    "fingerprint": "662e16d7c87cc0895887525a00146c9e9ed996c7355f7450da72e8545a6698aa",
     "hit": false
   },
-  "candidate_count": 4,
+  "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
     {
@@ -98,6 +98,16 @@
         "recently-changed"
       ],
       "score": 13,
+      "symbols": []
+    },
+    {
+      "learning_score": 0,
+      "matched_terms": [],
+      "path": "docs/ANDROID_DEVICE_QA.md",
+      "reasons": [
+        "recently-changed"
+      ],
+      "score": 3,
       "symbols": []
     }
   ],
