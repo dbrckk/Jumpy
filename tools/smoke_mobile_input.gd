@@ -358,9 +358,69 @@ func _run() -> void:
 	profile.data.high_contrast = saved_contrast
 	game.reset_run(false)
 
+	# Late taps after the one air pulse was spent should queue a jump
+	# only briefly, and only trigger it on an actual supported landing.
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 380.0
+	game.player_y = 1150.0
+	game.platforms.clear()
+	game.platforms.append(game.make_platform(160.0, 1200.0, 260.0, 951))
+	game.platforms[0].coin = false
+	game._unhandled_input(physical_touch)
+	if game.jump_buffer_remaining <= 0.0 or game.pulse_available:
+		_fail("After spending the pulse, a descending tap must queue one jump")
+		return
+	game.update_ui()
+	if game.ui.pulse.text != "JUMP QUEUED":
+		_fail("Queued pre-landing jumps must be visible in the pulse HUD")
+		return
+	game._physics_process(0.02)
+	if game.on_ground or game.player_vy != game.JUMP_V or game.jump_buffer_remaining != 0.0:
+		_fail("Buffered tap must become a single jump after a supported landing")
+		return
+	if not game.pulse_available or game.last_platform_id != 951:
+		_fail("Buffered landing must still score and restore the air pulse")
+		return
+
+	# An early descending tap must expire: it may not jump later on its own.
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 150.0
+	game.player_y = 600.0
+	game._unhandled_input(physical_touch)
+	if game.jump_buffer_remaining <= 0.0:
+		_fail("Descending tap did not queue the buffered jump")
+		return
+	game._physics_process(game.JUMP_BUFFER_TIME + 0.02)
+	if game.jump_buffer_remaining > 0.0 or game.ui.pulse.text != "AIR PULSE USED":
+		_fail("Expired buffered jump must restore the used-pulse HUD")
+		return
+	game.platforms.clear()
+	game.platforms.append(game.make_platform(160.0, 1200.0, 260.0, 952))
+	game.platforms[0].coin = false
+	game.player_y = 1150.0
+	game.player_vy = 380.0
+	game._physics_process(0.02)
+	if not game.on_ground or game.player_vy != 0.0:
+		_fail("An expired buffered jump must not auto-launch on landing")
+		return
+
+	game.reset_run(false)
+	game.start_run()
+	game.pulse()
+	game.player_vy = 150.0
+	game._unhandled_input(physical_touch)
+	game.reset_run(false)
+	if game.jump_buffer_remaining != 0.0:
+		_fail("Restart must clear pending buffered jump inputs")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, coyote grace, backups, FLOW, frame QA, stable landings and cached HUD")
+	print("PASS: input, coyote grace, backups, FLOW, QA, stable landings, cached HUD and buffered jumps")
 	quit(0)
 
 
