@@ -562,6 +562,7 @@ const PULSE_V: float = -620.0
 const FLOOR_LIMIT: float = 1820.0
 const LANDING_CUE_DURATION: float = 0.72
 const COYOTE_TIME: float = 0.09
+const QA_SAMPLE_INTERVAL: float = 1.0
 
 const SKINS: Array[Color] = [
 	Color("62f7ff"), Color("ff5fd2"), Color("ffe66d"),
@@ -594,6 +595,8 @@ var next_platform_id: int = 1
 var ui: Dictionary = {}
 var settings_open: bool = false
 var pending_restore_code: String = ""
+var qa_sample_elapsed: float = 0.0
+var qa_worst_frame_ms: float = 0.0
 
 func _ready() -> void:
 	fx_rng.randomize()
@@ -617,6 +620,9 @@ func build_ui() -> void:
 	ui.landing = make_label(root, "", 44, Vector2(100, 295), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)
 	ui.landing.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui.landing.visible = false
+	# Diagnostic-only performance readout; never shown in release exports.
+	ui.qa_perf = make_label(root, "QA FPS --  |  WORST -- ms", 24, Vector2(600, 410), Vector2(430, 55), HORIZONTAL_ALIGNMENT_RIGHT)
+	ui.qa_perf.visible = false
 	ui.best = make_label(root, "BEST 0", 28, Vector2(42, 44), Vector2(360, 50))
 	ui.coins = make_label(root, "◇ 0", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)
 	ui.title = make_label(root, "JUMPY", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)
@@ -748,6 +754,10 @@ func reset_run(use_daily: bool) -> void:
 	pulse_available = true
 	landing_cue_remaining = 0.0
 	coyote_remaining = 0.0
+	qa_sample_elapsed = 0.0
+	qa_worst_frame_ms = 0.0
+	ui.qa_perf.visible = false
+	ui.qa_perf.text = "QA FPS --  |  WORST -- ms"
 	camera_kick = 0.0
 	flash = 0.0
 	ui.landing.visible = false
@@ -791,6 +801,7 @@ func start_run() -> void:
 		return
 	state = "PLAYING"
 	show_menu(false)
+	ui.qa_perf.visible = OS.is_debug_build()
 	jump()
 	# Display the active mode, pulse status and score immediately on the first frame.
 	update_ui()
@@ -867,6 +878,19 @@ func pulse() -> void:
 	flash = 0.18 * (0.5 if Profile.data.reduced_motion else 1.0)
 	burst(Vector2(PLAYER_X, player_y), Color("ffffff"), burst_count, burst_power)
 	Integrations.haptic(20)
+
+func _process(delta: float) -> void:
+	# Debug templates only: sample actual rendered-frame spacing instead of
+	# the fixed physics delta. Keep the profiler out of release exports.
+	if not OS.is_debug_build() or state != "PLAYING":
+		return
+	qa_worst_frame_ms = maxf(qa_worst_frame_ms, delta * 1000.0)
+	qa_sample_elapsed += delta
+	if qa_sample_elapsed >= QA_SAMPLE_INTERVAL:
+		ui.qa_perf.text = "QA FPS %d  |  WORST %.0f ms" % [Engine.get_frames_per_second(), qa_worst_frame_ms]
+		qa_sample_elapsed = 0.0
+		qa_worst_frame_ms = 0.0
+
 
 func _physics_process(delta: float) -> void:
 	if state != "PLAYING":
@@ -1610,9 +1634,35 @@ func _run() -> void:
 		_fail("Unable to restore original profile after integration smoke")
 		return
 
+	# Inspect diagnostic UI in the actual scene without inventing a new test suite.
+	# Production templates must hide this readout; debug builds permit manual QA.
+	game.reset_run(false)
+	if game.ui.qa_perf.visible:
+		_fail("QA HUD must be hidden on the title/settings screens")
+		return
+	game.start_run()
+	if game.ui.qa_perf.visible != OS.is_debug_build():
+		_fail("QA HUD visibility must match the runtime debug build")
+		return
+	if OS.is_debug_build():
+		game._process(0.4)
+		game._process(0.7)
+		if not game.ui.qa_perf.text.begins_with("QA FPS ") or not game.ui.qa_perf.text.contains("WORST "):
+			_fail("QA HUD did not publish the sampled render-frame metrics")
+			return
+		game.state = "DEAD"
+		game._process(0.02)
+		if not game.ui.qa_perf.visible:
+			_fail("QA HUD must retain the final run measurements after death")
+			return
+	game.reset_run(false)
+	if game.ui.qa_perf.visible:
+		_fail("Reset must clear the debug performance readout")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: HUD, direct modes, mobile input, coyote grace, backup roundtrip and validation")
+	print("PASS: mobile input, coyote grace, backup recovery and debug-only frame diagnostics")
 	quit(0)
 
 

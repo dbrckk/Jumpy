@@ -10,17 +10,7 @@
         "recent-project-state",
         "symbol-indexed"
       ],
-      "score": 570
-    },
-    {
-      "path": "scripts/profile.gd",
-      "reasons": [
-        "changed",
-        "changed-source",
-        "impact",
-        "symbol-indexed"
-      ],
-      "score": 395
+      "score": 575
     },
     {
       "path": "tools/smoke_mobile_input.gd",
@@ -32,14 +22,6 @@
         "symbol-indexed"
       ],
       "score": 375
-    },
-    {
-      "path": "README.md",
-      "reasons": [
-        "changed",
-        "recent-project-state"
-      ],
-      "score": 160
     },
     {
       "path": "docs/ANDROID_DEVICE_QA.md",
@@ -64,7 +46,21 @@
       "score": 100
     },
     {
+      "path": "README.md",
+      "reasons": [
+        "recent-project-state"
+      ],
+      "score": 60
+    },
+    {
       "path": "SETUP_REQUIRED.txt",
+      "reasons": [
+        "recent-project-state"
+      ],
+      "score": 60
+    },
+    {
+      "path": "scripts/profile.gd",
       "reasons": [
         "recent-project-state"
       ],

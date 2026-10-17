@@ -175,6 +175,26 @@
         "scripts/profile.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Ship debug-only frame telemetry to quantify actual Android play quality",
+      "terms": [
+        "actual",
+        "android",
+        "debug-only",
+        "frame",
+        "play",
+        "quality",
+        "quantify",
+        "ship",
+        "telemetry"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -183,13 +203,17 @@
     "11": {
       "scripts/main.gd": 4
     },
+    "actual": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "add": {
       "scripts/main.gd": 4
     },
     "android": {
-      "scripts/main.gd": 4,
+      "scripts/main.gd": 8,
       "scripts/profile.gd": 4,
-      "tools/smoke_mobile_input.gd": 4
+      "tools/smoke_mobile_input.gd": 8
     },
     "apk": {
       "scripts/main.gd": 4,
@@ -208,6 +232,10 @@
     "debug": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "debug-only": {
+      "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
     "deliver": {
@@ -230,6 +258,10 @@
     "forgiveness": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "frame": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "gameplay": {
       "scripts/main.gd": 24,
@@ -282,6 +314,10 @@
       "scripts/profile.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "play": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "portable": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
@@ -299,6 +335,14 @@
     "qualify": {
       "scripts/main.gd": 20,
       "tools/smoke_mobile_input.gd": 12
+    },
+    "quality": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "quantify": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "readable": {
       "scripts/main.gd": 4
@@ -321,6 +365,10 @@
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
     },
+    "ship": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "smoke": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
@@ -328,6 +376,10 @@
     "tap": {
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
+    },
+    "telemetry": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "validated": {
       "scripts/main.gd": 8,

@@ -2,13 +2,9 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "b53209339c82107ce411a5bc8d6ae6baed337892",
+  "head": "82fb4b57b22962dd5d5b03eef09ac2093b77ed50",
   "index_mode": "full",
   "changed_files": [
-    {
-      "path": "README.md",
-      "status": "M"
-    },
     {
       "path": "docs/ANDROID_DEVICE_QA.md",
       "status": "M"
@@ -22,22 +18,16 @@
       "status": "M"
     },
     {
-      "path": "scripts/profile.gd",
-      "status": "M"
-    },
-    {
       "path": "tools/smoke_mobile_input.gd",
       "status": "M"
     }
   ],
   "changed_source_files": [
     "scripts/main.gd",
-    "scripts/profile.gd",
     "tools/smoke_mobile_input.gd"
   ],
   "impacted_files": [
     "scripts/main.gd",
-    "scripts/profile.gd",
     "tools/smoke_mobile_input.gd"
   ],
   "impacted_symbols": [
@@ -45,319 +35,211 @@
       "name": "_ready",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 45
+      "line": 48
     },
     {
       "name": "build_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 51
+      "line": 54
     },
     {
       "name": "make_label",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 88
+      "line": 94
     },
     {
       "name": "make_button",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 102
+      "line": 108
     },
     {
       "name": "settings_pressed",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 113
+      "line": 119
     },
     {
       "name": "copy_save_backup",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 121
+      "line": 127
     },
     {
       "name": "restore_save_backup",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 132
+      "line": 138
     },
     {
       "name": "toggle_preference",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 157
+      "line": 163
     },
     {
       "name": "refresh_settings_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 165
+      "line": 171
     },
     {
       "name": "reset_run",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 182
+      "line": 188
     },
     {
       "name": "set_daily",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 217
+      "line": 227
     },
     {
       "name": "cycle_skin",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 222
+      "line": 232
     },
     {
       "name": "restart_pressed",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 232
+      "line": 242
     },
     {
       "name": "start_run",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 236
+      "line": 246
     },
     {
       "name": "show_menu",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 246
+      "line": 257
     },
     {
       "name": "_unhandled_input",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 266
+      "line": 277
     },
     {
       "name": "jump",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 293
+      "line": 304
     },
     {
       "name": "pulse",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 306
+      "line": 317
+    },
+    {
+      "name": "_process",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 329
     },
     {
       "name": "_physics_process",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 318
+      "line": 341
     },
     {
       "name": "move_world",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 341
+      "line": 365
     },
     {
       "name": "update_player",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 357
+      "line": 381
     },
     {
       "name": "try_land",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 372
+      "line": 396
     },
     {
       "name": "has_support",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 390
+      "line": 414
     },
     {
       "name": "on_landed",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 399
+      "line": 423
     },
     {
       "name": "show_landing_cue",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 444
+      "line": 468
     },
     {
       "name": "collect_coin",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 451
+      "line": 475
     },
     {
       "name": "die",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 465
+      "line": 489
     },
     {
       "name": "make_platform",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 494
+      "line": 518
     },
     {
       "name": "spawn_platform_after",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 501
+      "line": 525
     },
     {
       "name": "update_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 516
+      "line": 540
     },
     {
       "name": "burst",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 528
+      "line": 552
     },
     {
       "name": "animate_particles",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 534
+      "line": 558
     },
     {
       "name": "skin_color",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 543
+      "line": 567
     },
     {
       "name": "_draw",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 546
-    },
-    {
-      "name": "_save_integer",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 29
-    },
-    {
-      "name": "_save_date",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 37
-    },
-    {
-      "name": "_validated_save",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 56
-    },
-    {
-      "name": "_ready",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 77
-    },
-    {
-      "name": "load_data",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 81
-    },
-    {
-      "name": "save",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 98
-    },
-    {
-      "name": "export_backup_code",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 117
-    },
-    {
-      "name": "_decode_backup_code",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 123
-    },
-    {
-      "name": "is_valid_backup_code",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 145
-    },
-    {
-      "name": "restore_backup_code",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 149
-    },
-    {
-      "name": "set_preference",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 162
-    },
-    {
-      "name": "record_run",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 169
-    },
-    {
-      "name": "spend_coins",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 182
-    },
-    {
-      "name": "select_skin",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 189
-    },
-    {
-      "name": "get_mission_progress",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 194
-    },
-    {
-      "name": "daily_seed",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 204
-    },
-    {
-      "name": "_refresh_daily",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 208
-    },
-    {
-      "name": "_update_streak",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 216
-    },
-    {
-      "name": "_unlock_earned_skins",
-      "kind": "function",
-      "file": "scripts/profile.gd",
-      "line": 230
+      "line": 570
     },
     {
       "name": "_initialize",
@@ -375,7 +257,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 234
+      "line": 260
     }
   ],
   "selected_tests": []

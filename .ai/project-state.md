@@ -46,22 +46,22 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-16T17:34:31Z
+Generated: 2026-10-17T07:11:04Z
 
 ### Git
 - Branch: `main`
-- Head: `b53209339c82`
-- Commit date: 2026-10-16T19:34:21+02:00
-- Commit: Preserve Jumpy progress between Android debug APK reinstalls (#23)
+- Head: `82fb4b57b229`
+- Commit date: 2026-10-17T03:10:56-04:00
+- Commit: Expose debug-only Android frame pacing telemetry in game HUD (#24)
 - Tracked files: 109
 
 ### Recently changed files
-- `README.md`
 - `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
-- `scripts/profile.gd`
 - `tools/smoke_mobile_input.gd`
+- `README.md`
+- `scripts/profile.gd`
 - `.github/workflows/android-debug-apk.yml`
 - `SETUP_REQUIRED.txt`
 - `project.godot`

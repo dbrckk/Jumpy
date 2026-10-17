@@ -8,14 +8,14 @@
     "_ready": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 45,
+        "line": 48,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 46,
+          "line": 49,
           "preview": "func _ready() -> void:",
           "definition_candidate": false
         },
@@ -31,20 +31,20 @@
     "build_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 51,
+        "line": 54,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 48,
+          "line": 51,
           "preview": "build_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 52,
+          "line": 55,
           "preview": "func build_ui() -> void:",
           "definition_candidate": false
         }
@@ -54,175 +54,181 @@
     "make_label": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 88,
+        "line": 94,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 61,
+          "line": 64,
           "preview": "ui.score = make_label(root, \"0\", 80, Vector2(0, 90), Vector2(W, 110), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 62,
+          "line": 65,
           "preview": "ui.flow = make_label(root, \"FLOW x1.0\", 30, Vector2(0, 180), Vector2(W, 50), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 63,
+          "line": 66,
           "preview": "ui.pulse = make_label(root, \"\", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 65,
+          "line": 68,
           "preview": "ui.landing = make_label(root, \"\", 44, Vector2(100, 295), Vector2(880, 88), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 68,
+          "line": 72,
+          "preview": "ui.qa_perf = make_label(root, \"QA FPS --  |  WORST -- ms\", 24, Vector2(600, 410), Vector2(430, 55), HORIZONTAL_ALIGNMENT_RIGHT)",
+          "definition_candidate": false
+        },
+        {
+          "file": "scripts/main.gd",
+          "line": 74,
           "preview": "ui.best = make_label(root, \"BEST 0\", 28, Vector2(42, 44), Vector2(360, 50))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 69,
+          "line": 75,
           "preview": "ui.coins = make_label(root, \"\u25c7 0\", 28, Vector2(700, 44), Vector2(330, 50), HORIZONTAL_ALIGNMENT_RIGHT)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 70,
+          "line": 76,
           "preview": "ui.title = make_label(root, \"JUMPY\", 124, Vector2(0, 390), Vector2(W, 150), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 71,
+          "line": 77,
           "preview": "ui.subtitle = make_label(root, \"TAP \u2022 LAND \u2022 FLOW\", 34, Vector2(0, 545), Vector2(W, 70), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 72,
+          "line": 78,
           "preview": "ui.hint = make_label(root, \"TAP TO JUMP\\nTAP ONCE IN AIR TO PULSE\", 30, Vector2(120, 690), Vector2(840, 120), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 73,
+          "line": 79,
           "preview": "ui.mission = make_label(root, \"\", 25, Vector2(90, 900), Vector2(900, 120), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 84,
+          "line": 90,
           "preview": "ui.backup_notice = make_label(root, \"\", 23, Vector2(120, 1760), Vector2(840, 96), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 85,
+          "line": 91,
           "preview": "ui.gameover = make_label(root, \"\", 58, Vector2(80, 580), Vector2(920, 280), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 89,
+          "line": 95,
           "preview": "func make_label(parent: Control, text: String, size: int, pos: Vector2, dim: Vector2, align: HorizontalAlignment = HORIZONTAL_ALIGNMENT_LEFT) -> Label:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 13
+      "occurrence_count": 14
     },
     "make_button": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 102,
+        "line": 108,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 74,
+          "line": 80,
           "preview": "ui.daily = make_button(root, \"DAILY\", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 75,
+          "line": 81,
           "preview": "ui.normal = make_button(root, \"ENDLESS\", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 76,
+          "line": 82,
           "preview": "ui.skin = make_button(root, \"SKIN\", Vector2(375, 1240), Vector2(330, 82), cycle_skin)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 77,
+          "line": 83,
           "preview": "ui.settings = make_button(root, \"SETTINGS\", Vector2(375, 1340), Vector2(330, 82), settings_pressed)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 78,
+          "line": 84,
           "preview": "ui.setting_sound = make_button(root, \"\", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"sound\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 79,
+          "line": 85,
           "preview": "ui.setting_haptics = make_button(root, \"\", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"haptics\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 80,
+          "line": 86,
           "preview": "ui.setting_motion = make_button(root, \"\", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"reduced_motion\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 81,
+          "line": 87,
           "preview": "ui.setting_contrast = make_button(root, \"\", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"high_contrast\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 82,
+          "line": 88,
           "preview": "ui.backup = make_button(root, \"COPY BACKUP\", Vector2(120, 1660), Vector2(390, 82), copy_save_backup)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 83,
+          "line": 89,
           "preview": "ui.restore = make_button(root, \"RESTORE SAVE\", Vector2(570, 1660), Vector2(390, 82), restore_save_backup)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 86,
+          "line": 92,
           "preview": "ui.retry = make_button(root, \"RETRY\", Vector2(280, 940), Vector2(520, 110), restart_pressed)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 87,
+          "line": 93,
           "preview": "ui.share = make_button(root, \"SHARE\", Vector2(330, 1080), Vector2(420, 86), func() -> void: Integrations.share_score(score, daily_mode))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 103,
+          "line": 109,
           "preview": "func make_button(parent: Control, text: String, pos: Vector2, dim: Vector2, pressed: Callable) -> Button:",
           "definition_candidate": false
         }
@@ -232,20 +238,20 @@
     "settings_pressed": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 113,
+        "line": 119,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 77,
+          "line": 83,
           "preview": "ui.settings = make_button(root, \"SETTINGS\", Vector2(375, 1340), Vector2(330, 82), settings_pressed)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 114,
+          "line": 120,
           "preview": "func settings_pressed() -> void:",
           "definition_candidate": false
         },
@@ -267,20 +273,20 @@
     "copy_save_backup": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 121,
+        "line": 127,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 82,
+          "line": 88,
           "preview": "ui.backup = make_button(root, \"COPY BACKUP\", Vector2(120, 1660), Vector2(390, 82), copy_save_backup)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 123,
+          "line": 129,
           "preview": "func copy_save_backup() -> void:",
           "definition_candidate": false
         }
@@ -290,20 +296,20 @@
     "restore_save_backup": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 132,
+        "line": 138,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 83,
+          "line": 89,
           "preview": "ui.restore = make_button(root, \"RESTORE SAVE\", Vector2(570, 1660), Vector2(390, 82), restore_save_backup)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 134,
+          "line": 140,
           "preview": "func restore_save_backup() -> void:",
           "definition_candidate": false
         }
@@ -313,38 +319,38 @@
     "toggle_preference": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 157,
+        "line": 163,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 78,
+          "line": 84,
           "preview": "ui.setting_sound = make_button(root, \"\", Vector2(120, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"sound\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 79,
+          "line": 85,
           "preview": "ui.setting_haptics = make_button(root, \"\", Vector2(570, 1450), Vector2(390, 82), func() -> void: toggle_preference(\"haptics\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 80,
+          "line": 86,
           "preview": "ui.setting_motion = make_button(root, \"\", Vector2(120, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"reduced_motion\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 81,
+          "line": 87,
           "preview": "ui.setting_contrast = make_button(root, \"\", Vector2(570, 1550), Vector2(390, 82), func() -> void: toggle_preference(\"high_contrast\"))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 159,
+          "line": 165,
           "preview": "func toggle_preference(key: String) -> void:",
           "definition_candidate": false
         }
@@ -354,32 +360,32 @@
     "refresh_settings_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 165,
+        "line": 171,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 163,
+          "line": 169,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 166,
+          "line": 172,
           "preview": "func refresh_settings_ui() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 259,
+          "line": 270,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 488,
+          "line": 512,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         }
@@ -389,32 +395,32 @@
     "reset_run": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 182,
+        "line": 188,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 49,
+          "line": 52,
           "preview": "reset_run(false)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 183,
+          "line": 189,
           "preview": "func reset_run(use_daily: bool) -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 220,
+          "line": 230,
           "preview": "reset_run(value)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 234,
+          "line": 244,
           "preview": "reset_run(daily_mode)",
           "definition_candidate": false
         },
@@ -447,33 +453,45 @@
           "line": 171,
           "preview": "game.reset_run(false)",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 232,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 251,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 9
+      "occurrence_count": 11
     },
     "set_daily": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 217,
+        "line": 227,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 74,
+          "line": 80,
           "preview": "ui.daily = make_button(root, \"DAILY\", Vector2(170, 1110), Vector2(330, 96), func() -> void: set_daily(true))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 75,
+          "line": 81,
           "preview": "ui.normal = make_button(root, \"ENDLESS\", Vector2(580, 1110), Vector2(330, 96), func() -> void: set_daily(false))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 218,
+          "line": 228,
           "preview": "func set_daily(value: bool) -> void:",
           "definition_candidate": false
         }
@@ -483,20 +501,20 @@
     "cycle_skin": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 222,
+        "line": 232,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 76,
+          "line": 82,
           "preview": "ui.skin = make_button(root, \"SKIN\", Vector2(375, 1240), Vector2(330, 82), cycle_skin)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 223,
+          "line": 233,
           "preview": "func cycle_skin() -> void:",
           "definition_candidate": false
         }
@@ -506,26 +524,26 @@
     "restart_pressed": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 232,
+        "line": 242,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 86,
+          "line": 92,
           "preview": "ui.retry = make_button(root, \"RETRY\", Vector2(280, 940), Vector2(520, 110), restart_pressed)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 233,
+          "line": 243,
           "preview": "func restart_pressed() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 292,
+          "line": 303,
           "preview": "restart_pressed()",
           "definition_candidate": false
         }
@@ -535,32 +553,32 @@
     "start_run": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 236,
+        "line": 246,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 221,
+          "line": 231,
           "preview": "start_run()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 235,
+          "line": 245,
           "preview": "start_run()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 237,
+          "line": 247,
           "preview": "func start_run() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 285,
+          "line": 296,
           "preview": "start_run()",
           "definition_candidate": false
         },
@@ -575,45 +593,51 @@
           "line": 172,
           "preview": "game.start_run()",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 236,
+          "preview": "game.start_run()",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 6
+      "occurrence_count": 7
     },
     "show_menu": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 246,
+        "line": 257,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 120,
+          "line": 126,
           "preview": "show_menu(true)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 153,
+          "line": 159,
           "preview": "show_menu(true)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 214,
+          "line": 224,
           "preview": "show_menu(true)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 241,
+          "line": 251,
           "preview": "show_menu(false)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 247,
+          "line": 258,
           "preview": "func show_menu(value: bool) -> void:",
           "definition_candidate": false
         }
@@ -623,14 +647,14 @@
     "_unhandled_input": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 266,
+        "line": 277,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 267,
+          "line": 278,
           "preview": "func _unhandled_input(event: InputEvent) -> void:",
           "definition_candidate": false
         },
@@ -718,38 +742,38 @@
     "jump": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 293,
+        "line": 304,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 242,
+          "line": 253,
           "preview": "jump()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 269,
+          "line": 280,
           "preview": "# Handle the real event once; never turn a single tap into jump + air pulse.",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 288,
+          "line": 299,
           "preview": "jump()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 294,
+          "line": 305,
           "preview": "func jump() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 325,
+          "line": 349,
           "preview": "# Retain a short jump window after stepping off a ledge; not after a jump.",
           "definition_candidate": false
         },
@@ -807,74 +831,74 @@
     "pulse": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 306,
+        "line": 317,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 63,
+          "line": 66,
           "preview": "ui.pulse = make_label(root, \"\", 26, Vector2(0, 235), Vector2(W, 40), HORIZONTAL_ALIGNMENT_CENTER)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 64,
+          "line": 67,
           "preview": "ui.pulse.mouse_filter = Control.MOUSE_FILTER_IGNORE",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 243,
+          "line": 254,
           "preview": "# Display the active mode, pulse status and score immediately on the first frame.",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 269,
+          "line": 280,
           "preview": "# Handle the real event once; never turn a single tap into jump + air pulse.",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 273,
+          "line": 284,
           "preview": "# must not accidentally start a run, spend an air pulse or trigger retry.",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 290,
+          "line": 301,
           "preview": "pulse()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 307,
+          "line": 318,
           "preview": "func pulse() -> void:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 524,
+          "line": 548,
           "preview": "ui.pulse.visible = state == \"PLAYING\" and not on_ground",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 525,
+          "line": 549,
           "preview": "if ui.pulse.visible:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 526,
+          "line": 550,
           "preview": "ui.pulse.text = \"AIR PULSE READY\" if pulse_available else \"AIR PULSE USED\"",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 527,
+          "line": 551,
           "preview": "ui.pulse.add_theme_color_override(\"font_color\", Color(\"ffffff\") if bool(Profile.data.high_contrast) else (Color(\"62f7ff\") if pulse_available else Color(\"9ba5bd\")))",
           "definition_candidate": false
         },
@@ -923,17 +947,52 @@
       ],
       "occurrence_count": 18
     },
-    "_physics_process": {
+    "_process": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 318,
+        "line": 329,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 319,
+          "line": 330,
+          "preview": "func _process(delta: float) -> void:",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 241,
+          "preview": "game._process(0.4)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 242,
+          "preview": "game._process(0.7)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 247,
+          "preview": "game._process(0.02)",
+          "definition_candidate": false
+        }
+      ],
+      "occurrence_count": 4
+    },
+    "_physics_process": {
+      "definition": {
+        "file": "scripts/main.gd",
+        "line": 341,
+        "kind": "function",
+        "language": "gdscript"
+      },
+      "occurrences": [
+        {
+          "file": "scripts/main.gd",
+          "line": 343,
           "preview": "func _physics_process(delta: float) -> void:",
           "definition_candidate": false
         },
@@ -949,20 +1008,20 @@
     "move_world": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 341,
+        "line": 365,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 328,
+          "line": 352,
           "preview": "move_world(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 342,
+          "line": 366,
           "preview": "func move_world(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -972,20 +1031,20 @@
     "update_player": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 357,
+        "line": 381,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 329,
+          "line": 353,
           "preview": "update_player(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 358,
+          "line": 382,
           "preview": "func update_player(delta: float) -> void:",
           "definition_candidate": false
         },
@@ -1007,20 +1066,20 @@
     "try_land": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 372,
+        "line": 396,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 364,
+          "line": 388,
           "preview": "try_land(old_y)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 373,
+          "line": 397,
           "preview": "func try_land(old_y: float) -> void:",
           "definition_candidate": false
         }
@@ -1030,20 +1089,20 @@
     "has_support": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 390,
+        "line": 414,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 365,
+          "line": 389,
           "preview": "elif not has_support():",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 391,
+          "line": 415,
           "preview": "func has_support() -> bool:",
           "definition_candidate": false
         }
@@ -1053,20 +1112,20 @@
     "on_landed": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 399,
+        "line": 423,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 388,
+          "line": 412,
           "preview": "on_landed(p)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 400,
+          "line": 424,
           "preview": "func on_landed(p: Dictionary) -> void:",
           "definition_candidate": false
         }
@@ -1076,20 +1135,20 @@
     "show_landing_cue": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 444,
+        "line": 468,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 442,
+          "line": 466,
           "preview": "show_landing_cue(cue_text, judgement_color)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 445,
+          "line": 469,
           "preview": "func show_landing_cue(message: String, color: Color) -> void:",
           "definition_candidate": false
         }
@@ -1099,20 +1158,20 @@
     "collect_coin": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 451,
+        "line": 475,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 369,
+          "line": 393,
           "preview": "collect_coin()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 452,
+          "line": 476,
           "preview": "func collect_coin() -> void:",
           "definition_candidate": false
         }
@@ -1122,20 +1181,20 @@
     "die": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 465,
+        "line": 489,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 371,
+          "line": 395,
           "preview": "die()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 466,
+          "line": 490,
           "preview": "func die() -> void:",
           "definition_candidate": false
         }
@@ -1145,26 +1204,26 @@
     "make_platform": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 494,
+        "line": 518,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 210,
+          "line": 220,
           "preview": "platforms.append(make_platform(0.0, 1490.0, 560.0, 0))",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 495,
+          "line": 519,
           "preview": "func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 512,
+          "line": 536,
           "preview": "var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)",
           "definition_candidate": false
         }
@@ -1174,26 +1233,26 @@
     "spawn_platform_after": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 501,
+        "line": 525,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 213,
+          "line": 223,
           "preview": "x = spawn_platform_after(x)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 356,
+          "line": 380,
           "preview": "rightmost = spawn_platform_after(rightmost)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 502,
+          "line": 526,
           "preview": "func spawn_platform_after(right_edge: float) -> float:",
           "definition_candidate": false
         }
@@ -1203,38 +1262,38 @@
     "update_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 516,
+        "line": 540,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 154,
+          "line": 160,
           "preview": "update_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 215,
+          "line": 225,
           "preview": "update_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 244,
+          "line": 255,
           "preview": "update_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 339,
+          "line": 363,
           "preview": "update_ui()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 517,
+          "line": 541,
           "preview": "func update_ui() -> void:",
           "definition_candidate": false
         }
@@ -1244,56 +1303,56 @@
     "burst": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 528,
+        "line": 552,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 304,
+          "line": 315,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 316,
+          "line": 327,
           "preview": "burst(Vector2(PLAYER_X, player_y), Color(\"ffffff\"), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 424,
+          "line": 448,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffffff\"), maxi(4, int(22.0 * feedback_scale)), 420.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 433,
+          "line": 457,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), Color(\"ffe66d\"), maxi(4, int(18.0 * feedback_scale)), 360.0 * feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 439,
+          "line": 463,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 463,
+          "line": 487,
           "preview": "burst(Vector2(cx, cy), Color(\"ffe66d\"), maxi(4, int(14.0 * coin_feedback_scale)), 300.0 * coin_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 492,
+          "line": 516,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 529,
+          "line": 553,
           "preview": "func burst(pos: Vector2, color: Color, count: int, power: float) -> void:",
           "definition_candidate": false
         }
@@ -1303,26 +1362,26 @@
     "animate_particles": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 534,
+        "line": 558,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 321,
+          "line": 345,
           "preview": "animate_particles(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 336,
+          "line": 360,
           "preview": "animate_particles(delta)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 535,
+          "line": 559,
           "preview": "func animate_particles(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -1332,44 +1391,44 @@
     "skin_color": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 543,
+        "line": 567,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 304,
+          "line": 315,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), burst_count, burst_power)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 414,
+          "line": 438,
           "preview": "var judgement_color: Color = skin_color()",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 439,
+          "line": 463,
           "preview": "burst(Vector2(PLAYER_X, player_y + PLAYER_R), skin_color(), maxi(3, int(6.0 * ordinary_feedback_scale)), 180.0 * ordinary_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 492,
+          "line": 516,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 544,
+          "line": 568,
           "preview": "func skin_color() -> Color:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 571,
+          "line": 595,
           "preview": "var player_color: Color = skin_color()",
           "definition_candidate": false
         }
@@ -1379,601 +1438,19 @@
     "_draw": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 546,
+        "line": 570,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 547,
+          "line": 571,
           "preview": "func _draw() -> void:",
           "definition_candidate": false
         }
       ],
       "occurrence_count": 1
-    },
-    "_save_integer": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 29,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 30,
-          "preview": "func _save_integer(value: Variant, fallback: int = 0, maximum: int = 2147483647) -> int:",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 60,
-          "preview": "clean[key] = _save_integer(parsed.get(key, 0))",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 70,
-          "preview": "var index: int = _save_integer(item, -1, 5)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 74,
-          "preview": "var selected: int = _save_integer(parsed.get(\"selected_skin\", 0), 0, 5)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 139,
-          "preview": "if _save_integer(parsed.get(\"version\"), -1, SAVE_VERSION) != SAVE_VERSION:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 5
-    },
-    "_save_date": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 37,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 38,
-          "preview": "func _save_date(value: Variant) -> String:",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 65,
-          "preview": "clean[key] = _save_date(parsed.get(key))",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "_validated_save": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 56,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 57,
-          "preview": "func _validated_save(parsed: Dictionary) -> Dictionary:",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 97,
-          "preview": "data = _validated_save(parser.data)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 121,
-          "preview": "var payload: String = JSON.stringify(_validated_save(data))",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 144,
-          "preview": "return _validated_save(parsed)",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 4
-    },
-    "load_data": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 81,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 79,
-          "preview": "load_data()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 82,
-          "preview": "func load_data() -> void:",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 207,
-          "preview": "profile.load_data()",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 3
-    },
-    "save": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 98,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 88,
-          "preview": "push_warning(\"Jumpy: unable to open save file; defaults preserved.\")",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 91,
-          "preview": "push_warning(\"Jumpy: save file too large; defaults preserved.\")",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 95,
-          "preview": "push_warning(\"Jumpy: save file is invalid; defaults preserved.\")",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 99,
-          "preview": "func save() -> bool:",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 100,
-          "preview": "# Write to a sibling file first; never truncate the previous valid save.",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 103,
-          "preview": "push_warning(\"Jumpy: unable to open temporary save. Error %s\" % FileAccess.get_open_error())",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 110,
-          "preview": "push_warning(\"Jumpy: temporary save write failed with error %s\" % error)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 114,
-          "preview": "push_warning(\"Jumpy: failed to commit save, error %s\" % error)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 157,
-          "preview": "if not save():",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 168,
-          "preview": "save()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 180,
-          "preview": "save()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 187,
-          "preview": "save()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 193,
-          "preview": "save()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 215,
-          "preview": "save()",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 223,
-          "preview": "_fail(\"A partial save document must not overwrite player progress\")",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 226,
-          "preview": "if not profile.save():",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 16
-    },
-    "export_backup_code": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 117,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 130,
-          "preview": "DisplayServer.clipboard_set(Profile.export_backup_code())",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 119,
-          "preview": "func export_backup_code() -> String:",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 194,
-          "preview": "var backup_code: String = profile.export_backup_code()",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 3
-    },
-    "_decode_backup_code": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 123,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 125,
-          "preview": "func _decode_backup_code(code: String) -> Dictionary:",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 148,
-          "preview": "return not _decode_backup_code(code).is_empty()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 152,
-          "preview": "var restored: Dictionary = _decode_backup_code(code)",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 3
-    },
-    "is_valid_backup_code": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 145,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 141,
-          "preview": "if not Profile.is_valid_backup_code(code):",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 147,
-          "preview": "func is_valid_backup_code(code: String) -> bool:",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 195,
-          "preview": "if not profile.is_valid_backup_code(backup_code):",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 3
-    },
-    "restore_backup_code": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 149,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 150,
-          "preview": "if not Profile.restore_backup_code(code):",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 151,
-          "preview": "func restore_backup_code(code: String) -> bool:",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 200,
-          "preview": "if not profile.restore_backup_code(backup_code):",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 214,
-          "preview": "if profile.restore_backup_code(corrupted_code):",
-          "definition_candidate": false
-        },
-        {
-          "file": "tools/smoke_mobile_input.gd",
-          "line": 222,
-          "preview": "if profile.restore_backup_code(partial_code):",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 5
-    },
-    "set_preference": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 162,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 162,
-          "preview": "Profile.set_preference(key, not bool(Profile.data.get(key, false)))",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 163,
-          "preview": "func set_preference(key: String, value: bool) -> void:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "record_run": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 169,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 473,
-          "preview": "Profile.record_run(score, run_coins, perfects, daily_mode)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 170,
-          "preview": "func record_run(score: int, run_coins: int, perfects: int, daily: bool) -> Dictionary:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "spend_coins": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 182,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 183,
-          "preview": "func spend_coins(amount: int) -> bool:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 1
-    },
-    "select_skin": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 189,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 229,
-          "preview": "Profile.select_skin(next_skin)",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 190,
-          "preview": "func select_skin(index: int) -> void:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "get_mission_progress": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 194,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 264,
-          "preview": "var mission_data: Dictionary = Profile.get_mission_progress()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 181,
-          "preview": "return get_mission_progress()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 195,
-          "preview": "func get_mission_progress() -> Dictionary:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 3
-    },
-    "daily_seed": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 204,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/main.gd",
-          "line": 207,
-          "preview": "level_rng.seed = Profile.daily_seed()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 205,
-          "preview": "func daily_seed() -> int:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "_refresh_daily": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 208,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 80,
-          "preview": "_refresh_daily()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 160,
-          "preview": "_refresh_daily()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 206,
-          "preview": "_refresh_daily()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 209,
-          "preview": "func _refresh_daily() -> void:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 4
-    },
-    "_update_streak": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 216,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 178,
-          "preview": "_update_streak()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 217,
-          "preview": "func _update_streak() -> void:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
-    },
-    "_unlock_earned_skins": {
-      "definition": {
-        "file": "scripts/profile.gd",
-        "line": 230,
-        "kind": "function",
-        "language": "gdscript"
-      },
-      "occurrences": [
-        {
-          "file": "scripts/profile.gd",
-          "line": 179,
-          "preview": "_unlock_earned_skins()",
-          "definition_candidate": false
-        },
-        {
-          "file": "scripts/profile.gd",
-          "line": 231,
-          "preview": "func _unlock_earned_skins() -> void:",
-          "definition_candidate": false
-        }
-      ],
-      "occurrence_count": 2
     },
     "_initialize": {
       "definition": {
@@ -2018,7 +1495,7 @@
     "_fail": {
       "definition": {
         "file": "tools/smoke_mobile_input.gd",
-        "line": 234,
+        "line": 260,
         "kind": "function",
         "language": "gdscript"
       },
@@ -2259,12 +1736,42 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 236,
+          "line": 234,
+          "preview": "_fail(\"QA HUD must be hidden on the title/settings screens\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 238,
+          "preview": "_fail(\"QA HUD visibility must match the runtime debug build\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 244,
+          "preview": "_fail(\"QA HUD did not publish the sampled render-frame metrics\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 249,
+          "preview": "_fail(\"QA HUD must retain the final run measurements after death\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 253,
+          "preview": "_fail(\"Reset must clear the debug performance readout\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 262,
           "preview": "func _fail(message: String) -> void:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 40
+      "occurrence_count": 45
     }
   }
 }

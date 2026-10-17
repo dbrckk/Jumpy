@@ -2,32 +2,29 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 9,
+    "example_count": 10,
     "rejected_count": 0,
     "terms": [
+      "actual",
       "android",
-      "apk",
-      "backups",
-      "debug",
-      "deliver",
-      "pc",
-      "portable",
-      "progress",
-      "requiring",
-      "resilient",
-      "without"
+      "debug-only",
+      "frame",
+      "play",
+      "quality",
+      "quantify",
+      "ship",
+      "telemetry"
     ],
     "test_count": 0,
-    "useful_count": 3
+    "useful_count": 2
   },
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Deliver resilient portable Android debug APK progress backups without requiring a PC",
+  "task": "Ship debug-only frame telemetry to quantify actual Android play quality",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd",
-    "scripts/profile.gd",
     "tools/smoke_mobile_input.gd"
   ]
 }

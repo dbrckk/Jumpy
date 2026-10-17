@@ -4,17 +4,52 @@
     "expand_to": 12,
     "max_files": 6,
     "requested_max_files": 12,
-    "score_margin": 9,
+    "score_margin": 0,
     "tier": "bounded",
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "bcafc1b232b492fbdbdbc83c617642e246159d31c45672f9382ade02da893d25",
+    "fingerprint": "e7c273e3b77585d9882a34d1f038616e5d81402656a3ece4318222d9ec026162",
     "hit": false
   },
-  "candidate_count": 7,
+  "candidate_count": 5,
   "fallback": "If bounded context is insufficient, expand only to budget.expand_to, then use architecture/segmented maps and targeted source search.",
   "files": [
+    {
+      "learning_score": 0,
+      "matched_terms": [
+        "engine"
+      ],
+      "path": "scripts/main.gd",
+      "reasons": [
+        "impact",
+        "recently-changed",
+        "search-index"
+      ],
+      "score": 26,
+      "symbols": [
+        "_draw",
+        "_physics_process",
+        "_process",
+        "_ready",
+        "_unhandled_input",
+        "animate_particles",
+        "build_ui",
+        "burst",
+        "collect_coin",
+        "copy_save_backup",
+        "cycle_skin",
+        "die",
+        "has_support",
+        "jump",
+        "make_button",
+        "make_label",
+        "make_platform",
+        "move_world",
+        "on_landed",
+        "pulse"
+      ]
+    },
     {
       "learning_score": 0,
       "matched_terms": [
@@ -68,70 +103,7 @@
     {
       "learning_score": 0,
       "matched_terms": [],
-      "path": "scripts/main.gd",
-      "reasons": [
-        "impact",
-        "recently-changed"
-      ],
-      "score": 9,
-      "symbols": [
-        "_draw",
-        "_physics_process",
-        "_ready",
-        "_unhandled_input",
-        "animate_particles",
-        "build_ui",
-        "burst",
-        "collect_coin",
-        "copy_save_backup",
-        "cycle_skin",
-        "die",
-        "has_support",
-        "jump",
-        "make_button",
-        "make_label",
-        "make_platform",
-        "move_world",
-        "on_landed",
-        "pulse",
-        "refresh_settings_ui"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "scripts/profile.gd",
-      "reasons": [
-        "impact",
-        "recently-changed"
-      ],
-      "score": 9,
-      "symbols": [
-        "_decode_backup_code",
-        "_ready",
-        "_refresh_daily",
-        "_save_date",
-        "_save_integer",
-        "_unlock_earned_skins",
-        "_update_streak",
-        "_validated_save",
-        "daily_seed",
-        "export_backup_code",
-        "get_mission_progress",
-        "is_valid_backup_code",
-        "load_data",
-        "record_run",
-        "restore_backup_code",
-        "save",
-        "select_skin",
-        "set_preference",
-        "spend_coins"
-      ]
-    },
-    {
-      "learning_score": 0,
-      "matched_terms": [],
-      "path": "README.md",
+      "path": "docs/ANDROID_DEVICE_QA.md",
       "reasons": [
         "recently-changed"
       ],

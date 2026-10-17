@@ -8,8 +8,8 @@
     "_ready": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 45,
-        "end": 165
+        "start": 48,
+        "end": 168
       },
       "symbol_dependencies": [
         {
@@ -17,7 +17,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 51,
+              "line": 54,
               "kind": "function",
               "language": "gdscript"
             }
@@ -29,7 +29,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 121,
+              "line": 127,
               "kind": "function",
               "language": "gdscript"
             }
@@ -41,7 +41,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -53,7 +53,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 102,
+              "line": 108,
               "kind": "function",
               "language": "gdscript"
             }
@@ -65,7 +65,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 88,
+              "line": 94,
               "kind": "function",
               "language": "gdscript"
             }
@@ -77,19 +77,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "refresh_settings_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 165,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -101,7 +89,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -113,7 +101,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -125,7 +113,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 132,
+              "line": 138,
               "kind": "function",
               "language": "gdscript"
             }
@@ -137,7 +125,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -149,7 +137,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 113,
+              "line": 119,
               "kind": "function",
               "language": "gdscript"
             }
@@ -161,7 +149,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -173,7 +161,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -185,7 +173,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -193,13 +181,13 @@
           "relation": "same_file"
         }
       ],
-      "dependency_count": 15
+      "dependency_count": 14
     },
     "build_ui": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 51,
-        "end": 171
+        "start": 54,
+        "end": 174
       },
       "symbol_dependencies": [
         {
@@ -207,7 +195,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 121,
+              "line": 127,
               "kind": "function",
               "language": "gdscript"
             }
@@ -219,7 +207,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -231,7 +219,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 102,
+              "line": 108,
               "kind": "function",
               "language": "gdscript"
             }
@@ -243,7 +231,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 88,
+              "line": 94,
               "kind": "function",
               "language": "gdscript"
             }
@@ -255,7 +243,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -267,7 +255,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -279,7 +267,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -291,7 +279,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 132,
+              "line": 138,
               "kind": "function",
               "language": "gdscript"
             }
@@ -303,7 +291,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -315,7 +303,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 113,
+              "line": 119,
               "kind": "function",
               "language": "gdscript"
             }
@@ -327,7 +315,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -339,7 +327,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -351,7 +339,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -364,8 +352,8 @@
     "make_label": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 88,
-        "end": 208
+        "start": 94,
+        "end": 214
       },
       "symbol_dependencies": [
         {
@@ -373,7 +361,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 121,
+              "line": 127,
               "kind": "function",
               "language": "gdscript"
             }
@@ -385,7 +373,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 102,
+              "line": 108,
               "kind": "function",
               "language": "gdscript"
             }
@@ -397,7 +385,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -409,7 +397,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -421,7 +409,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 132,
+              "line": 138,
               "kind": "function",
               "language": "gdscript"
             }
@@ -433,7 +421,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 113,
+              "line": 119,
               "kind": "function",
               "language": "gdscript"
             }
@@ -445,7 +433,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -457,7 +445,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -469,7 +457,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -482,8 +470,8 @@
     "make_button": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 102,
-        "end": 222
+        "start": 108,
+        "end": 228
       },
       "symbol_dependencies": [
         {
@@ -491,7 +479,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 121,
+              "line": 127,
               "kind": "function",
               "language": "gdscript"
             }
@@ -503,7 +491,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -515,7 +503,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -527,7 +515,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -539,7 +527,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 132,
+              "line": 138,
               "kind": "function",
               "language": "gdscript"
             }
@@ -551,7 +539,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -563,7 +551,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 113,
+              "line": 119,
               "kind": "function",
               "language": "gdscript"
             }
@@ -575,7 +563,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -587,19 +575,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "start_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 236,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -611,7 +587,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -623,7 +599,161 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        }
+      ],
+      "dependency_count": 11
+    },
+    "settings_pressed": {
+      "source": {
+        "file": "scripts/main.gd",
+        "start": 119,
+        "end": 239
+      },
+      "symbol_dependencies": [
+        {
+          "symbol": "copy_save_backup",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 127,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "cycle_skin",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 232,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "make_platform",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 518,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "refresh_settings_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 171,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "reset_run",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 188,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "restore_save_backup",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 138,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "set_daily",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 227,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "show_menu",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 257,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "spawn_platform_after",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 525,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "start_run",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 246,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "toggle_preference",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 163,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -633,229 +763,15 @@
       ],
       "dependency_count": 12
     },
-    "settings_pressed": {
-      "source": {
-        "file": "scripts/main.gd",
-        "start": 113,
-        "end": 233
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "copy_save_backup",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 121,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "cycle_skin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 222,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "make_platform",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 494,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "refresh_settings_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 165,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "reset_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restart_pressed",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 232,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_save_backup",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 132,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_daily",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 217,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "show_menu",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 246,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spawn_platform_after",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 501,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "start_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 236,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "toggle_preference",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 157,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 516,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 13
-    },
     "copy_save_backup": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 121,
-        "end": 241
+        "start": 127,
+        "end": 247
       },
       "symbol_dependencies": [
         {
           "symbol": "cycle_skin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 222,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "make_platform",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 494,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "refresh_settings_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 165,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "reset_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restart_pressed",
           "definitions": [
             {
               "file": "scripts/main.gd",
@@ -867,11 +783,59 @@
           "relation": "same_file"
         },
         {
+          "symbol": "make_platform",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 518,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "refresh_settings_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 171,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "reset_run",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 188,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "restart_pressed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 242,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
           "symbol": "restore_save_backup",
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 132,
+              "line": 138,
               "kind": "function",
               "language": "gdscript"
             }
@@ -883,7 +847,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -895,7 +859,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -907,7 +871,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -919,7 +883,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -931,7 +895,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -943,7 +907,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -956,84 +920,12 @@
     "restore_save_backup": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 132,
-        "end": 252
+        "start": 138,
+        "end": 258
       },
       "symbol_dependencies": [
         {
           "symbol": "cycle_skin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 222,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "jump",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "make_platform",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 494,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "pulse",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 306,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "refresh_settings_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 165,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "reset_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restart_pressed",
           "definitions": [
             {
               "file": "scripts/main.gd",
@@ -1045,11 +937,83 @@
           "relation": "same_file"
         },
         {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "make_platform",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 518,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "pulse",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 317,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "refresh_settings_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 171,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "reset_run",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 188,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "restart_pressed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 242,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
           "symbol": "set_daily",
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1061,7 +1025,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1073,7 +1037,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1085,7 +1049,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1097,7 +1061,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 157,
+              "line": 163,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1109,7 +1073,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1122,8 +1086,8 @@
     "toggle_preference": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 157,
-        "end": 277
+        "start": 163,
+        "end": 283
       },
       "symbol_dependencies": [
         {
@@ -1131,7 +1095,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1143,7 +1107,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1155,7 +1119,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1167,7 +1131,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1179,7 +1143,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1191,7 +1155,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1203,7 +1167,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1215,7 +1179,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1227,7 +1191,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1239,7 +1203,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1251,7 +1215,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1263,7 +1227,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1275,7 +1239,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1288,8 +1252,8 @@
     "refresh_settings_ui": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 165,
-        "end": 285
+        "start": 171,
+        "end": 291
       },
       "symbol_dependencies": [
         {
@@ -1297,7 +1261,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1309,7 +1273,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1321,7 +1285,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1333,7 +1297,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1345,7 +1309,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1357,7 +1321,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1369,7 +1333,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1381,7 +1345,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1393,7 +1357,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1405,7 +1369,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1417,7 +1381,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1429,7 +1393,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1442,8 +1406,8 @@
     "reset_run": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 182,
-        "end": 302
+        "start": 188,
+        "end": 308
       },
       "symbol_dependencies": [
         {
@@ -1451,7 +1415,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1463,7 +1427,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1475,7 +1439,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1487,7 +1451,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1499,7 +1463,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1511,7 +1475,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1523,7 +1487,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1535,7 +1499,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 217,
+              "line": 227,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1547,7 +1511,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1559,7 +1523,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1571,7 +1535,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1583,7 +1547,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1596,8 +1560,8 @@
     "set_daily": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 217,
-        "end": 337
+        "start": 227,
+        "end": 347
       },
       "symbol_dependencies": [
         {
@@ -1605,7 +1569,19 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 318,
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1617,7 +1593,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1629,7 +1605,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1641,7 +1617,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1653,7 +1629,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 222,
+              "line": 232,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1665,19 +1641,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 341,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1689,7 +1653,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1701,7 +1665,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1713,7 +1677,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1725,7 +1689,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1737,7 +1701,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1749,7 +1713,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1761,19 +1725,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_player",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 357,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1785,7 +1737,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1793,13 +1745,13 @@
           "relation": "same_file"
         }
       ],
-      "dependency_count": 16
+      "dependency_count": 15
     },
     "cycle_skin": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 222,
-        "end": 342
+        "start": 232,
+        "end": 352
       },
       "symbol_dependencies": [
         {
@@ -1807,7 +1759,19 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 318,
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1819,7 +1783,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1831,7 +1795,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1843,7 +1807,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1855,7 +1819,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1867,7 +1831,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 341,
+              "line": 365,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1879,7 +1843,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1891,7 +1855,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1903,7 +1867,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1915,7 +1879,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1927,7 +1891,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1939,7 +1903,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1951,19 +1915,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_player",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 357,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1975,7 +1927,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -1988,72 +1940,12 @@
     "restart_pressed": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 232,
-        "end": 352
+        "start": 242,
+        "end": 362
       },
       "symbol_dependencies": [
         {
           "symbol": "_physics_process",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 318,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unhandled_input",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 266,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "animate_particles",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 534,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "burst",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "jump",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
           "definitions": [
             {
               "file": "scripts/main.gd",
@@ -2065,11 +1957,83 @@
           "relation": "same_file"
         },
         {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_unhandled_input",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 277,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
           "symbol": "pulse",
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2081,7 +2045,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2093,7 +2057,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 182,
+              "line": 188,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2105,7 +2069,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2117,7 +2081,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2129,7 +2093,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2141,7 +2105,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2153,7 +2117,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2161,77 +2125,17 @@
           "relation": "same_file"
         }
       ],
-      "dependency_count": 14
+      "dependency_count": 15
     },
     "start_run": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 236,
-        "end": 356
+        "start": 246,
+        "end": 366
       },
       "symbol_dependencies": [
         {
           "symbol": "_physics_process",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 318,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unhandled_input",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 266,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "animate_particles",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 534,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "burst",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "jump",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
           "definitions": [
             {
               "file": "scripts/main.gd",
@@ -2243,11 +2147,83 @@
           "relation": "same_file"
         },
         {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_unhandled_input",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 277,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
           "symbol": "pulse",
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2259,7 +2235,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2271,7 +2247,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2283,7 +2259,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 246,
+              "line": 257,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2295,19 +2271,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spawn_platform_after",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 501,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2319,7 +2283,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2331,7 +2295,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2344,8 +2308,8 @@
     "show_menu": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 246,
-        "end": 366
+        "start": 257,
+        "end": 377
       },
       "symbol_dependencies": [
         {
@@ -2353,7 +2317,19 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 318,
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2365,7 +2341,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 266,
+              "line": 277,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2377,7 +2353,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2389,19 +2365,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "has_support",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 390,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2413,7 +2377,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2425,7 +2389,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 341,
+              "line": 365,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2437,7 +2401,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2449,7 +2413,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2461,7 +2425,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 232,
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2473,19 +2437,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spawn_platform_after",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 501,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2497,19 +2449,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 236,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "try_land",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 372,
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2521,7 +2461,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2533,387 +2473,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 16
-    },
-    "_unhandled_input": {
-      "source": {
-        "file": "scripts/main.gd",
-        "start": 266,
-        "end": 386
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_physics_process",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 318,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "animate_particles",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 534,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "burst",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "collect_coin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 451,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "die",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 465,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "has_support",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 390,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "jump",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 341,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "pulse",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 306,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restart_pressed",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 232,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "skin_color",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 543,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spawn_platform_after",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 501,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "start_run",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 236,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "try_land",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 372,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_player",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 357,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 516,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 16
-    },
-    "jump": {
-      "source": {
-        "file": "scripts/main.gd",
-        "start": 293,
-        "end": 413
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_physics_process",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 318,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "animate_particles",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 534,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "burst",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "collect_coin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 451,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "die",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 465,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "has_support",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 390,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 341,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "on_landed",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 399,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "pulse",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 306,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "skin_color",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 543,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spawn_platform_after",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 501,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "try_land",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 372,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_player",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 357,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "update_ui",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -2923,99 +2483,15 @@
       ],
       "dependency_count": 14
     },
-    "pulse": {
+    "_unhandled_input": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 306,
-        "end": 426
+        "start": 277,
+        "end": 397
       },
       "symbol_dependencies": [
         {
           "symbol": "_physics_process",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 318,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "animate_particles",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 534,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "burst",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 528,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "collect_coin",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 451,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "die",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 465,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "has_support",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 390,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "jump",
-          "definitions": [
-            {
-              "file": "scripts/main.gd",
-              "line": 293,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "move_world",
           "definitions": [
             {
               "file": "scripts/main.gd",
@@ -3027,11 +2503,119 @@
           "relation": "same_file"
         },
         {
-          "symbol": "on_landed",
+          "symbol": "_process",
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 329,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "collect_coin",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 475,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "die",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 489,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "has_support",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 414,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "pulse",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 317,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "restart_pressed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 242,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3043,7 +2627,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3055,7 +2639,19 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "start_run",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 246,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3067,7 +2663,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 372,
+              "line": 396,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3079,7 +2675,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3091,7 +2687,553 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        }
+      ],
+      "dependency_count": 17
+    },
+    "jump": {
+      "source": {
+        "file": "scripts/main.gd",
+        "start": 304,
+        "end": 424
+      },
+      "symbol_dependencies": [
+        {
+          "symbol": "_physics_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "collect_coin",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 475,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "die",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 489,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "has_support",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 414,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "on_landed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 423,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "pulse",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 317,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "skin_color",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 567,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "spawn_platform_after",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 525,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "try_land",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 396,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_player",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 381,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 540,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        }
+      ],
+      "dependency_count": 15
+    },
+    "pulse": {
+      "source": {
+        "file": "scripts/main.gd",
+        "start": 317,
+        "end": 437
+      },
+      "symbol_dependencies": [
+        {
+          "symbol": "_physics_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 329,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "collect_coin",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 475,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "die",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 489,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "has_support",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 414,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "on_landed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 423,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "spawn_platform_after",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 525,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "try_land",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 396,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_player",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 381,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 540,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        }
+      ],
+      "dependency_count": 14
+    },
+    "_process": {
+      "source": {
+        "file": "scripts/main.gd",
+        "start": 329,
+        "end": 449
+      },
+      "symbol_dependencies": [
+        {
+          "symbol": "_physics_process",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 341,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "animate_particles",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 558,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "burst",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 552,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "collect_coin",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 475,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "die",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 489,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "has_support",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 414,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "jump",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 304,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "move_world",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 365,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "on_landed",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 423,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "skin_color",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 567,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "spawn_platform_after",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 525,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "try_land",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 396,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_player",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 381,
+              "kind": "function",
+              "language": "gdscript"
+            }
+          ],
+          "relation": "same_file"
+        },
+        {
+          "symbol": "update_ui",
+          "definitions": [
+            {
+              "file": "scripts/main.gd",
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3104,8 +3246,8 @@
     "_physics_process": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 318,
-        "end": 438
+        "start": 341,
+        "end": 461
       },
       "symbol_dependencies": [
         {
@@ -3113,7 +3255,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3125,7 +3267,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3137,7 +3279,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3149,7 +3291,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3161,7 +3303,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 390,
+              "line": 414,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3173,7 +3315,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 293,
+              "line": 304,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3185,7 +3327,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 341,
+              "line": 365,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3197,7 +3339,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 423,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3209,7 +3351,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3221,7 +3363,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3233,7 +3375,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 372,
+              "line": 396,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3245,7 +3387,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3257,7 +3399,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3270,8 +3412,8 @@
     "move_world": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 341,
-        "end": 461
+        "start": 365,
+        "end": 485
       },
       "symbol_dependencies": [
         {
@@ -3279,7 +3421,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3291,7 +3433,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3303,7 +3445,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3315,7 +3457,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 390,
+              "line": 414,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3327,7 +3469,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 423,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3339,7 +3481,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 444,
+              "line": 468,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3351,7 +3493,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3363,7 +3505,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3375,7 +3517,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 372,
+              "line": 396,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3387,7 +3529,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 357,
+              "line": 381,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3400,8 +3542,8 @@
     "update_player": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 357,
-        "end": 477
+        "start": 381,
+        "end": 501
       },
       "symbol_dependencies": [
         {
@@ -3409,7 +3551,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3421,7 +3563,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3433,7 +3575,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3445,7 +3587,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 390,
+              "line": 414,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3457,7 +3599,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 423,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3469,7 +3611,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 444,
+              "line": 468,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3481,7 +3623,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3493,7 +3635,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 372,
+              "line": 396,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3506,8 +3648,8 @@
     "try_land": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 372,
-        "end": 492
+        "start": 396,
+        "end": 516
       },
       "symbol_dependencies": [
         {
@@ -3515,7 +3657,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3527,7 +3669,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3539,7 +3681,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3551,7 +3693,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 390,
+              "line": 414,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3563,7 +3705,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 423,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3575,7 +3717,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3587,7 +3729,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 444,
+              "line": 468,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3599,7 +3741,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3612,8 +3754,8 @@
     "has_support": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 390,
-        "end": 510
+        "start": 414,
+        "end": 534
       },
       "symbol_dependencies": [
         {
@@ -3621,7 +3763,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3633,7 +3775,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3645,7 +3787,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3657,7 +3799,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3669,7 +3811,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 399,
+              "line": 423,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3681,7 +3823,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3693,7 +3835,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 444,
+              "line": 468,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3705,7 +3847,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3717,7 +3859,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3730,8 +3872,8 @@
     "on_landed": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 399,
-        "end": 519
+        "start": 423,
+        "end": 543
       },
       "symbol_dependencies": [
         {
@@ -3739,7 +3881,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3751,7 +3893,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3763,7 +3905,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3775,7 +3917,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3787,7 +3929,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3799,7 +3941,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 444,
+              "line": 468,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3811,7 +3953,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3823,7 +3965,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3835,7 +3977,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3848,8 +3990,8 @@
     "show_landing_cue": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 444,
-        "end": 564
+        "start": 468,
+        "end": 588
       },
       "symbol_dependencies": [
         {
@@ -3857,7 +3999,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3869,7 +4011,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3881,7 +4023,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3893,7 +4035,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 451,
+              "line": 475,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3905,7 +4047,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3917,7 +4059,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3929,7 +4071,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3941,7 +4083,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3953,7 +4095,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3965,7 +4107,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3977,7 +4119,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -3990,8 +4132,8 @@
     "collect_coin": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 451,
-        "end": 571
+        "start": 475,
+        "end": 595
       },
       "symbol_dependencies": [
         {
@@ -3999,7 +4141,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4011,7 +4153,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4023,7 +4165,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4035,7 +4177,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 465,
+              "line": 489,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4047,7 +4189,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4059,7 +4201,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4071,7 +4213,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4083,7 +4225,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4095,7 +4237,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4107,7 +4249,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4120,8 +4262,8 @@
     "die": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 465,
-        "end": 585
+        "start": 489,
+        "end": 609
       },
       "symbol_dependencies": [
         {
@@ -4129,7 +4271,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4141,7 +4283,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4153,7 +4295,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4165,7 +4307,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4177,7 +4319,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4189,7 +4331,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 165,
+              "line": 171,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4201,7 +4343,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4213,7 +4355,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4225,7 +4367,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4238,8 +4380,8 @@
     "make_platform": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 494,
-        "end": 614
+        "start": 518,
+        "end": 638
       },
       "symbol_dependencies": [
         {
@@ -4247,7 +4389,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4259,7 +4401,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4271,7 +4413,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4283,7 +4425,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4295,7 +4437,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4307,7 +4449,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 501,
+              "line": 525,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4319,7 +4461,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4332,8 +4474,8 @@
     "spawn_platform_after": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 501,
-        "end": 621
+        "start": 525,
+        "end": 645
       },
       "symbol_dependencies": [
         {
@@ -4341,7 +4483,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4353,7 +4495,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4365,7 +4507,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4377,7 +4519,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 494,
+              "line": 518,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4389,7 +4531,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4401,7 +4543,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4413,7 +4555,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 516,
+              "line": 540,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4426,8 +4568,8 @@
     "update_ui": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 516,
-        "end": 636
+        "start": 540,
+        "end": 660
       },
       "symbol_dependencies": [
         {
@@ -4435,7 +4577,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4447,7 +4589,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4459,7 +4601,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 528,
+              "line": 552,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4471,7 +4613,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 306,
+              "line": 317,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4483,7 +4625,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4496,8 +4638,8 @@
     "burst": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 528,
-        "end": 648
+        "start": 552,
+        "end": 672
       },
       "symbol_dependencies": [
         {
@@ -4505,7 +4647,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4517,7 +4659,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 534,
+              "line": 558,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4529,7 +4671,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4542,8 +4684,8 @@
     "animate_particles": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 534,
-        "end": 654
+        "start": 558,
+        "end": 678
       },
       "symbol_dependencies": [
         {
@@ -4551,7 +4693,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4563,7 +4705,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4576,8 +4718,8 @@
     "skin_color": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 543,
-        "end": 663
+        "start": 567,
+        "end": 687
       },
       "symbol_dependencies": [
         {
@@ -4585,7 +4727,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 546,
+              "line": 570,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4598,8 +4740,8 @@
     "_draw": {
       "source": {
         "file": "scripts/main.gd",
-        "start": 546,
-        "end": 666
+        "start": 570,
+        "end": 690
       },
       "symbol_dependencies": [
         {
@@ -4607,7 +4749,7 @@
           "definitions": [
             {
               "file": "scripts/main.gd",
-              "line": 543,
+              "line": 567,
               "kind": "function",
               "language": "gdscript"
             }
@@ -4616,2057 +4758,6 @@
         }
       ],
       "dependency_count": 1
-    },
-    "_save_integer": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 29,
-        "end": 149
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_ready",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 77,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_date",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 37,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "export_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 117,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "load_data",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 81,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 9
-    },
-    "_save_date": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 37,
-        "end": 157
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_ready",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 77,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "export_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 117,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "load_data",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 81,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 10
-    },
-    "_validated_save": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 56,
-        "end": 176
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_ready",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 77,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_date",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 37,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "export_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 117,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "load_data",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 81,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 12
-    },
-    "load_data": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 81,
-        "end": 201
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "export_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 117,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 15
-    },
-    "save": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 98,
-        "end": 218
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "export_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 117,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 15
-    },
-    "export_backup_code": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 117,
-        "end": 237
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 15
-    },
-    "_decode_backup_code": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 123,
-        "end": 243
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_save_integer",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 29,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_validated_save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 56,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "is_valid_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 145,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 14
-    },
-    "is_valid_backup_code": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 145,
-        "end": 265
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "restore_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 149,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 12
-    },
-    "restore_backup_code": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 149,
-        "end": 269
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_decode_backup_code",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 123,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "set_preference",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 162,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 11
-    },
-    "set_preference": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 162,
-        "end": 282
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "record_run",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 169,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 9
-    },
-    "record_run": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 169,
-        "end": 289
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "spend_coins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 182,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 8
-    },
-    "spend_coins": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 182,
-        "end": 302
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "select_skin",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 189,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 7
-    },
-    "select_skin": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 189,
-        "end": 309
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "get_mission_progress",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 194,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 6
-    },
-    "get_mission_progress": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 194,
-        "end": 314
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "daily_seed",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 204,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 5
-    },
-    "daily_seed": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 204,
-        "end": 324
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_refresh_daily",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 208,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 4
-    },
-    "_refresh_daily": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 208,
-        "end": 328
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "_update_streak",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 216,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        },
-        {
-          "symbol": "save",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 98,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 3
-    },
-    "_update_streak": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 216,
-        "end": 336
-      },
-      "symbol_dependencies": [
-        {
-          "symbol": "_unlock_earned_skins",
-          "definitions": [
-            {
-              "file": "scripts/profile.gd",
-              "line": 230,
-              "kind": "function",
-              "language": "gdscript"
-            }
-          ],
-          "relation": "same_file"
-        }
-      ],
-      "dependency_count": 1
-    },
-    "_unlock_earned_skins": {
-      "source": {
-        "file": "scripts/profile.gd",
-        "start": 230,
-        "end": 350
-      },
-      "symbol_dependencies": [],
-      "dependency_count": 0
     },
     "_initialize": {
       "source": {
@@ -6680,7 +4771,7 @@
           "definitions": [
             {
               "file": "tools/smoke_mobile_input.gd",
-              "line": 234,
+              "line": 260,
               "kind": "function",
               "language": "gdscript"
             }
@@ -6714,7 +4805,7 @@
           "definitions": [
             {
               "file": "tools/smoke_mobile_input.gd",
-              "line": 234,
+              "line": 260,
               "kind": "function",
               "language": "gdscript"
             }
@@ -6727,8 +4818,8 @@
     "_fail": {
       "source": {
         "file": "tools/smoke_mobile_input.gd",
-        "start": 234,
-        "end": 354
+        "start": 260,
+        "end": 380
       },
       "symbol_dependencies": [],
       "dependency_count": 0
