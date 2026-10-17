@@ -1,18 +1,18 @@
 {
   "version": 1,
   "updated_at": "2026-10-17",
-  "task": "Ship debug-only frame telemetry to quantify actual Android play quality",
+  "task": "Fix FLOW progression fairness and verify signed Android debug export",
   "branch": "main",
   "last_gameplay_merge": {
-    "pull_request": 21,
-    "commit": "4ff41a8d182cd7691a8d7b443399a92946088e8e",
+    "pull_request": 24,
+    "commit": "82fb4b57b22962dd5d5b03eef09ac2093b77ed50",
     "files": [
       "scripts/main.gd",
       "tools/smoke_mobile_input.gd",
       "docs/GAME_DESIGN.md",
-      "README.md"
+      "docs/ANDROID_DEVICE_QA.md"
     ],
-    "feature": "DAILY and ENDLESS start immediately; active mode visible in FLOW HUD; tap-to-start preserved"
+    "feature": "Debug-only rendered FPS and worst-frame profiler for actual Android QA"
   },
   "validation": {
     "godot_pr_run": 38932900546,
@@ -38,18 +38,18 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Download the current main APK on Android and play-test frame rate (FPS and worst ms), touch latency, HUD visibility, accessibility",
-    "Test backup export to Notes, reinstall and two-tap restore on actual phone before deleting any data",
-    "Use measured mobile profiling to prioritize VFX/drawing or physics optimizations",
-    "Address Production-OS autonomous gameplay token budget exhaustion without paid tokens"
+    "Install current main APK on physical Android and measure debug FPS / worst frame time, including high contrast and reduced motion",
+    "Check balance of FLOW across perfect/clutch/ordinary streak transitions during real play",
+    "Verify backup to Notes and two-tap restore after reinstall on real Android phone",
+    "Address Production-OS native agent token budget exhaustion without assuming paid tokens"
   ],
   "latest_validated_feature": {
-    "pull_request": 24,
-    "branch": "feat/android-qa-frame-metrics-20261017",
-    "feature": "QA FPS + worst observed frame interval in debug build, sample 1 second, hold game-over snapshot, never visible in release",
-    "godot_pr_run": 39012547771,
-    "android_pr_run": 39012547805,
-    "validation": "Godot 4.7.2 scene-level integration and signed arm64 debug APK export both completed success; no physical Android frame-pacing measured"
+    "pull_request": 25,
+    "branch": "fix/flow-reward-consistency-20261017",
+    "feature": "Perfect/clutch landings never lower FLOW; ordinary landing decays x0.25 to x1 floor",
+    "godot_pr_run": 39012770357,
+    "android_pr_run": 39012770361,
+    "validation": "Godot 4.7.2 parser/scene smoke and signed arm64 debug APK both completed success; not real-device gameplay qualification"
   },
   "android_build": {
     "initial_pull_request": 19,

@@ -58,7 +58,14 @@ On the first scored landing on a new platform, an in-game cue near the upper pla
 Reduced-motion mode shows the cue without a fade animation; high-contrast mode uses white text. Restart and death clear the cue immediately. This is an implementation feature, not evidence of subjective device-level game feel; verify portrait readability and touch handling on Android before release.
 
 ### FLOW
-FLOW increases scoring and feedback intensity. It resets gradually through imperfect play rather than punishing a single minor error too heavily.
+FLOW increases scoring and feedback intensity. Perfect landings and clutch
+recoveries advance the streak without lowering an already earned multiplier.
+Each ordinary landing lowers the streak by one and decays the FLOW multiplier
+by 0.25, never below x1.0. Previously switching the clutch coefficient
+(0.18) to the ordinary-landing coefficient (0.25) could *increase* FLOW on
+an ordinary landing; this inconsistency is corrected. A Godot scene-level
+integration smoke verifies perfect -> clutch -> ordinary and repeated ordinary
+landings, while the overall difficulty and platform generation remain unchanged.
 
 ## 3. Difficulty
 - Scroll speed rises continuously.
