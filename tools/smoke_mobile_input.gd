@@ -418,9 +418,36 @@ func _run() -> void:
 		_fail("Restart must clear pending buffered jump inputs")
 		return
 
+	# Idle/death rendering contract: post-death effects must finish instead of
+	# leaving a permanent white flash and shaking screen.
+	game.reset_run(false)
+	game.state = "DEAD"
+	game.camera_kick = 18.0
+	game.flash = 0.35
+	game.burst(Vector2(game.PLAYER_X, game.player_y), Color.WHITE, 5, 150.0)
+	if game.particles.is_empty():
+		_fail("Death-style burst must produce transient particles")
+		return
+	game._physics_process(0.05)
+	if game.camera_kick >= 18.0 or game.flash >= 0.35:
+		_fail("Camera shake and flash must decay after gameplay stops")
+		return
+	game._physics_process(5.0)
+	if game.camera_kick != 0.0 or game.flash != 0.0 or not game.particles.is_empty():
+		_fail("Death effects must reach a fully settled idle state")
+		return
+	if game.state != "DEAD":
+		_fail("Finishing death effects must not restart gameplay")
+		return
+	game.reset_run(false)
+	game._physics_process(0.1)
+	if game.camera_kick != 0.0 or game.flash != 0.0 or game.state != "READY":
+		_fail("Ready menu must stay static after idle processing")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, coyote grace, backups, FLOW, QA, stable landings, cached HUD and buffered jumps")
+	print("PASS: input, backups, FLOW, stable landings, HUD, jump buffer and settled death FX")
 	quit(0)
 
 
