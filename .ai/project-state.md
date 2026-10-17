@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- PR #24 introduces debug-only in-game rendered FPS and one-second worst frame interval. Godot parse/scene smoke succeeded (39012547771), ARM64 signed debug APK succeeded (39012547805). Release templates hide it. Real Android FPS is not measured yet.
 - PR #23 portable save recovery implemented: Settings COPY BACKUP / RESTORE SAVE (double confirmation), SHA-256-verified versioned text, validated profile data and atomic temporary-file save. Godot scene smoke success 38940339891; signed Android QA APK export success 38940339814. Still requires physical Android clipboard + reinstall acceptance.
 - Android QA APK pipeline is active: #19 adds export; #20 triggers builds on gameplay/source/asset/preset changes and verifies APK signature, package identity, ARM64 native libraries, SHA256 and source SHA. Main APK build run 38933014477 succeeded, artifact 12058629507 (7-day retention).
 - One-tap mode onboarding #21 merged at 4ff41a8d: DAILY and ENDLESS buttons immediately begin their runs and mode appears in FLOW HUD; scene-level input smoke plus main Android export succeeded.
@@ -20,6 +21,7 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Use QA FPS and WORST ms display on a physical Android device; record any spikes and compare reduced motion/high contrast, then profile hot paths based on evidence.
 - Verify backup export to Notes and restore after Android reinstall on real hardware; confirm best score, coins, skins, daily reset, clipboard persistence and accessibility.
 - Test the latest verified main APK (run 38933014477) on a physical Android phone following docs/ANDROID_DEVICE_QA.md; check one-tap mode start, HUD, collision feedback, reduced-motion/contrast and frame pacing.
 - Measure whether 90 ms edge grace improves accidental missed jumps on physical Android; tune window only after gameplay feedback.
@@ -28,6 +30,7 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #24 Godot input/runtime smoke: success (39012547771); debug APK export and Android package checks: success (39012547805). Device behavior not tested.
 - PR #23 verified: 38940339891 (Godot parse + real-scene save smoke); 38940339814 (signed ARM64 APK export). Human Android clipboard test remains outstanding.
 - #21 main Godot validation succeeded (38933014631), Repository standards succeeded (38933016305), Android APK export succeeded (38933014477), and PR checks succeeded (38932900546, 38932900548). No claim of hardware Android performance.
 - PR #18 gameplay parse/smoke success, run 38923324910. Scene smoke covers ledge grace activation, consumption, expiration, existing pulse and mobile input; not a device test.
