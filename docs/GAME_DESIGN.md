@@ -189,6 +189,18 @@ Readable at a glance; thumb zones avoid critical HUD obstruction; death-to-retry
 ### Visual identity
 Dark-space neon, cyan/white perfect zones, strong silhouette, minimal visual noise around landing targets. Cosmetics alter player palette/effects rather than collision readability.
 
+The native Godot 2D renderer now layers subtle space-color fields, star glints,
+beveled/extruded platform silhouettes, luminous perfect-landing guides, shaded
+gold collectibles and a glossy rim-lit player. Platform and coin decoration
+does not modify the landing physics, item pickup radius or scoring. Invisible
+offscreen platforms are culled before detail drawing, while the entire layer
+stays shader-free and asset-independent for modest Android GPU overhead. High
+contrast prioritizes crisp white collision/target outlines; reduced-motion
+settings stop collectible shimmer and limit the player trail. The scene-level
+Godot smoke exercises each accessibility combination and offscreen platforms,
+but visual fidelity and actual frame-time cost still require real Android
+screenshots/profiling.
+
 ### Audio direction
 Short tactile jump transient, bright perfect chime that layers with combo, low death hit, escalating FLOW music stem. Audio assets must be original or properly licensed.
 
