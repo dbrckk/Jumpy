@@ -117,6 +117,14 @@ Already represented in profile data:
 - Skin unlock milestones.
 - Three evergreen missions.
 
+A play streak counts **consecutive local calendar dates**, not elapsed UTC
+hours. Replaying on the same date leaves the count unchanged, playing on the
+next date extends it, and a gap of two or more calendar dates resets it. Invalid
+or future-dated save entries restart at one rather than creating unearned
+streak days. The existing Godot scene integration smoke verifies month/year
+turnover, leap day, a two-day gap, duplicate sessions and clock rollback;
+real-device date/time changes still require manual checks.
+
 Next LiveOps layer after retention validation:
 - 7-day quest tracks.
 - Weekly themed world modifier.
