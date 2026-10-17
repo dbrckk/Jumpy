@@ -453,7 +453,7 @@ func _run() -> void:
 		return
 	var voices: Array = sfx.get("tone_players")
 	var cache: Dictionary = sfx.get("tone_cache")
-	if voices.size() != sfx.AUDIO_POOL_SIZE or cache.size() != 6:
+	if voices.size() != 4 or cache.size() != 6:
 		_fail("All six arcade SFX must be prebuilt with four pooled voices")
 		return
 	for voice: AudioStreamPlayer in voices:
