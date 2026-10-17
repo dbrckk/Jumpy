@@ -214,19 +214,34 @@ func _refresh_daily() -> void:
 		data.daily_best = 0
 		save()
 
-func _update_streak() -> void:
-	var date: Dictionary = Time.get_date_dict_from_system()
-	var today: String = "%04d-%02d-%02d" % [date.year, date.month, date.day]
-	if str(data.last_play_date) == today:
+func _calendar_day_difference(previous_date: String, current_date: String) -> int:
+	# Both inputs represent *local calendar dates*, not absolute UTC times.
+	# Convert both civil midnights on the same scale so time-of-day, UTC
+	# offset and daylight-saving transitions cannot change the day count.
+	if _save_date(previous_date).is_empty() or _save_date(current_date).is_empty():
+		return -1
+	var previous_day: int = int(Time.get_unix_time_from_datetime_string(previous_date + "T00:00:00"))
+	var current_day: int = int(Time.get_unix_time_from_datetime_string(current_date + "T00:00:00"))
+	return int((current_day - previous_day) / 86400)
+
+
+func _apply_streak_for_date(today: String) -> void:
+	# Isolated civil-date progression also lets the existing scene smoke
+	# verify midnight, leap-day and clock-rollback behavior deterministically.
+	if _save_date(today).is_empty():
 		return
-	if str(data.last_play_date).is_empty():
-		data.streak_days = 1
-	else:
-		var now_unix: int = int(Time.get_unix_time_from_system())
-		var last_unix: int = int(Time.get_unix_time_from_datetime_string(str(data.last_play_date) + "T00:00:00"))
-		var days: int = int((now_unix - last_unix) / 86400.0)
-		data.streak_days = int(data.streak_days) + 1 if days <= 1 else 1
+	var last_date: String = str(data.last_play_date)
+	if last_date == today:
+		return
+	var elapsed_calendar_days: int = _calendar_day_difference(last_date, today)
+	# Yesterday continues a streak; gaps of 2+ days, empty/invalid save
+	# dates or a clock moved backwards all restart at day one.
+	data.streak_days = int(data.streak_days) + 1 if elapsed_calendar_days == 1 else 1
 	data.last_play_date = today
+
+
+func _update_streak() -> void:
+	_apply_streak_for_date(Time.get_date_string_from_system())
 
 func _unlock_earned_skins() -> void:
 	var unlocks: Array = data.unlocked_skins

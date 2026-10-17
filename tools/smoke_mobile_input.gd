@@ -222,6 +222,49 @@ func _run() -> void:
 	if profile.restore_backup_code(partial_code):
 		_fail("A partial save document must not overwrite player progress")
 		return
+	# Local-calendar streak regression: the old calculation mixed today's
+	# current UTC clock with the previous *date* at 00:00, accidentally
+	# treating a two-day absence as one day near local midnight.
+	profile.data.last_play_date = "2026-10-16"
+	profile.data.streak_days = 5
+	profile._apply_streak_for_date("2026-10-17")
+	if int(profile.data.streak_days) != 6 or str(profile.data.last_play_date) != "2026-10-17":
+		_fail("Playing on consecutive local dates must extend the streak")
+		return
+	profile._apply_streak_for_date("2026-10-17")
+	if int(profile.data.streak_days) != 6:
+		_fail("Two sessions on the same calendar day must not add another streak day")
+		return
+	profile.data.last_play_date = "2026-10-15"
+	profile.data.streak_days = 9
+	profile._apply_streak_for_date("2026-10-17")
+	if int(profile.data.streak_days) != 1 or profile._calendar_day_difference("2026-10-15", "2026-10-17") != 2:
+		_fail("Skipping a local calendar date must reset the streak regardless of clock hour")
+		return
+	profile.data.last_play_date = "2025-12-31"
+	profile.data.streak_days = 12
+	profile._apply_streak_for_date("2026-01-01")
+	if int(profile.data.streak_days) != 13:
+		_fail("A year boundary must preserve a legitimate consecutive-day streak")
+		return
+	profile.data.last_play_date = "2024-02-28"
+	profile.data.streak_days = 3
+	profile._apply_streak_for_date("2024-02-29")
+	if int(profile.data.streak_days) != 4:
+		_fail("Leap-day transitions must count as one calendar day")
+		return
+	profile.data.last_play_date = "2026-10-19"
+	profile.data.streak_days = 99
+	profile._apply_streak_for_date("2026-10-17")
+	if int(profile.data.streak_days) != 1 or str(profile.data.last_play_date) != "2026-10-17":
+		_fail("A future saved date must not extend a streak after clock rollback")
+		return
+	profile.data.last_play_date = "2026-02-30"
+	profile.data.streak_days = 6
+	profile._apply_streak_for_date("2026-03-01")
+	if int(profile.data.streak_days) != 1:
+		_fail("An invalid saved calendar date must not extend a streak")
+		return
 	profile.data = previous_save
 	if not profile.save():
 		_fail("Unable to restore original profile after integration smoke")

@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- PR #33 fixes unfair daily streak continuity when crossing local midnight: only consecutive civil dates count, two-day gaps and future-dated saves reset, leap/year transitions work. The existing scene smoke now tests duplicate-day, date gap, leap/year changes and clock rollback; exact-head CI pending before merge.
 - PR #32 enriches native Godot neon depth (platform extrusions, luminous landing targets, collectible glints, glossy hero, nebula/stars) with offscreen geometry culling and reduced-motion/high-contrast variants. Godot PR scene/render-path smoke 39035357927 succeeded; ARM64 signed debug APK 39035358002 succeeded. Visual quality and frame pacing on physical Android unverified.
 - PR #31 precomputes six procedural sound effects and uses a fixed four-player pool instead of rebuilding WAV/audio nodes for every tap; adds previously missing CLUTCH sound and smooth onset/tail. Godot 4.7.2 scene smoke run 39034429206 and Android debug APK 39034429205 both succeeded before merge. Device audio latency/quality and performance remain unmeasured.
 - PR #30 finishes camera-shake, flash and particle decay after death; READY/DEAD static scenes no longer request continuous redraws when settled. Existing scene smoke checks post-death decay and stable READY; Godot PR CI 39033283593 and signed Android APK CI 39033283598 succeeded. Real Android power/FPS measurements remain unverified.
@@ -28,6 +29,8 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Review calendar-based streak correction for local timezone and clock rollback on physical Android; unitless midnight comparisons are validated in scene smoke, device time changes still pending.
+- Analyze high-speed generated-platform reachability against fixed jump/pulse trajectories before changing level difficulty.
 - Inspect new 2D neon art on a portrait Android phone, checking platform/coin silhouettes, high-contrast landing cues, reduced-motion coin stillness and QA FPS/worst ms against prior APK.
 - Test cached jump/pulse/coin/PERFECT/CLUTCH/death cues on Android (rapid overlap, no PCM clicks, sound preference), correlating QA FPS/worst ms with repeated actions.
 - Verify on physical Android that the death screen stops shaking/flashing, and compare static-menu battery/CPU impact with debug FPS/worst-frame observations before making performance claims.
@@ -43,6 +46,7 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #33 exact-head Godot and Android CI run IDs 39036093799 and 39036093873; complete result is required before merge, and physical Android clock/date testing remains outstanding.
 - PR #32 Godot 4.7.2 parse + scene render variant smoke success (39035357927); signed ARM64 debug APK export success (39035358002). No claimed physical-device GPU benchmark.
 - PR #31 pooled SFX integration smoke and Godot parse succeeded (39034429206); signed ARM64 debug APK export succeeded (39034429205). Physical device audio quality unverified.
 - PR #30 Godot parse/scene smoke (39033283593) and signed ARM64 debug APK (39033283598): both succeeded before merge; no hardware Android benchmark.
