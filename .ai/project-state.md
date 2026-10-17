@@ -3,6 +3,7 @@
 Status: active
 
 ## Working
+- PR #34 replaces fixed short procedural gaps with projected-speed/height-aware jump-distance corridors; retains 140 world units of takeoff space and 120-unit randomized variation, including wider late-game gaps. Existing Godot scene smoke validates 750 seeded transitions across speeds/difficulties and one actual 60 Hz generated-platform landing. Gameplay-head Godot passed (39036554008); Android build 39036554018 initially in progress. Exact latest-head and real Android feel pending.
 - PR #33 fixes unfair daily streak continuity when crossing local midnight: only consecutive civil dates count, two-day gaps and future-dated saves reset, leap/year transitions work. The existing scene smoke now tests duplicate-day, date gap, leap/year changes and clock rollback; exact-head CI pending before merge.
 - PR #32 enriches native Godot neon depth (platform extrusions, luminous landing targets, collectible glints, glossy hero, nebula/stars) with offscreen geometry culling and reduced-motion/high-contrast variants. Godot PR scene/render-path smoke 39035357927 succeeded; ARM64 signed debug APK 39035358002 succeeded. Visual quality and frame pacing on physical Android unverified.
 - PR #31 precomputes six procedural sound effects and uses a fixed four-player pool instead of rebuilding WAV/audio nodes for every tap; adds previously missing CLUTCH sound and smooth onset/tail. Godot 4.7.2 scene smoke run 39034429206 and Android debug APK 39034429205 both succeeded before merge. Device audio latency/quality and performance remain unmeasured.
@@ -29,6 +30,7 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Test late-game generated-route fairness on physical Android at 900–970 world units/s; geometric reachability cannot establish human reaction success. Compare near-edge flow and coyote/queued taps with long high-speed gaps.
 - Review calendar-based streak correction for local timezone and clock rollback on physical Android; unitless midnight comparisons are validated in scene smoke, device time changes still pending.
 - Analyze high-speed generated-platform reachability against fixed jump/pulse trajectories before changing level difficulty.
 - Inspect new 2D neon art on a portrait Android phone, checking platform/coin silhouettes, high-contrast landing cues, reduced-motion coin stillness and QA FPS/worst ms against prior APK.
@@ -46,6 +48,7 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #34 speed-aware route generation: Godot scene-integration run 39036554008 passed on gameplay head; signed ARM64 APK run 39036554018 must complete success and exact final PR SHA checks precede merge. Real-device playtesting still pending.
 - PR #33 exact-head Godot and Android CI run IDs 39036093799 and 39036093873; complete result is required before merge, and physical Android clock/date testing remains outstanding.
 - PR #32 Godot 4.7.2 parse + scene render variant smoke success (39035357927); signed ARM64 debug APK export success (39035358002). No claimed physical-device GPU benchmark.
 - PR #31 pooled SFX integration smoke and Godot parse succeeded (39034429206); signed ARM64 debug APK export succeeded (39034429205). Physical device audio quality unverified.
