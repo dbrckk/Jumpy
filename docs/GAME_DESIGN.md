@@ -192,6 +192,17 @@ Dark-space neon, cyan/white perfect zones, strong silhouette, minimal visual noi
 ### Audio direction
 Short tactile jump transient, bright perfect chime that layers with combo, low death hit, escalating FLOW music stem. Audio assets must be original or properly licensed.
 
+The six currently shipped arcade sound cues (coin/skin, jump, pulse, clutch,
+perfect, death) are synthesized once when the Integrations autoload starts and
+replayed by four reusable AudioStreamPlayer voices. The CLUTCH recovery now
+receives a distinct audio cue instead of vibration alone. Short attack and
+release envelopes keep the procedural PCM from clicking at either boundary.
+Repeated gameplay feedback reuses the same PCM resources and nodes, without
+per-tap audio allocation. Voice count is bounded under rapid effects; when
+all four voices are busy the pool reuses one voice. Godot headless scene
+integration verifies audio resource reuse, while audible feel, mixing,
+latency and frame-time benefits still require an Android hardware check.
+
 ## 9. Release gates
 Do not spend on user acquisition before these are measured in a meaningful test cohort:
 - Tutorial/first-run start > 90%.
