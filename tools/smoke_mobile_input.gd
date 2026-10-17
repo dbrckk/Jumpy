@@ -299,9 +299,68 @@ func _run() -> void:
 		_fail("A genuinely supported edge landing must still be accepted")
 		return
 
+	# HUD integration regression: unchanged values must not rewrite label
+	# text each physics frame; score, mode, pulse and contrast transitions must
+	# still refresh immediately (without making a new unit-test suite).
+	game.reset_run(false)
+	game.start_run()
+	var saved_best: int = int(profile.data.best_score)
+	var saved_bank: int = int(profile.data.coins)
+	var saved_contrast: bool = bool(profile.data.high_contrast)
+	profile.data.best_score = 999
+	profile.data.coins = 35
+	profile.data.high_contrast = false
+	game.score = 120
+	game.flow = 2.25
+	game.combo = 5
+	game.run_coins = 3
+	game.on_ground = false
+	game.pulse_available = true
+	game.update_ui()
+	if game.ui.score.text != "120" or game.ui.best.text != "BEST 999":
+		_fail("HUD must refresh changed score and lifetime best")
+		return
+	if game.ui.coins.text != "◇ 35  +3" or not game.ui.flow.text.contains("FLOW x2.25"):
+		_fail("HUD must refresh changed coins and FLOW")
+		return
+	if not game.ui.pulse.visible or game.ui.pulse.text != "AIR PULSE READY":
+		_fail("HUD must show the available pulse during flight")
+		return
+	game.ui.score.text = "CACHE PROBE"
+	game.ui.pulse.text = "PULSE CACHE PROBE"
+	game.update_ui()
+	if game.ui.score.text != "CACHE PROBE" or game.ui.pulse.text != "PULSE CACHE PROBE":
+		_fail("Unchanged HUD data must not reassign read-only labels")
+		return
+	game.score = 121
+	game.pulse_available = false
+	game.update_ui()
+	if game.ui.score.text != "121" or game.ui.pulse.text != "AIR PULSE USED":
+		_fail("Score and pulse changes must invalidate the HUD cache")
+		return
+	profile.data.high_contrast = true
+	game.update_ui()
+	if game.ui.pulse.get_theme_color("font_color") != Color("ffffff"):
+		_fail("High-contrast preference must update pulse color")
+		return
+	game.state = "DEAD"
+	game.update_ui()
+	if game.ui.flow.visible or game.ui.pulse.visible or not game.ui.score.visible:
+		_fail("Death must hide FLOW and pulse while retaining score")
+		return
+	game.reset_run(true)
+	game.start_run()
+	if not game.ui.flow.text.begins_with("DAILY") or game.ui.score.text != "0":
+		_fail("Starting a new daily run must refresh mode and score")
+		return
+	profile.data.best_score = saved_best
+	profile.data.coins = saved_bank
+	profile.data.high_contrast = saved_contrast
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: mobile input, coyote grace, backup recovery, FLOW, frame diagnostics and stable edge landings")
+	print("PASS: input, coyote grace, backups, FLOW, frame QA, stable landings and cached HUD")
 	quit(0)
 
 
