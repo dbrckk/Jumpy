@@ -3,6 +3,8 @@
 Status: active
 
 ## Working
+- PR #28 buffered late descending jumps after the pulse is spent for 100 ms; only a supported landing consumes the buffer. Added JUMP QUEUED indicator, expiry and reset. PR Godot scene smoke 39017528341 and signed Android APK 39017528352 succeeded; merged main d727f5e8 with Godot 39017597432, APK 39017597418 and standards 39017598183 all successful. Real Android tap-latency acceptance remains outstanding.
+- PR #27 avoids regenerating SCORE/BEST/COINS/FLOW labels and pulse font/theme every physics tick when unchanged. Existing scene smoke and debug APK passed on PR (39017380729, 39017380605) and main (39017424987, 39017424990), plus standards 39017425724. No measured hardware frame-rate improvement is claimed.
 - FLOW fairness correction PR #25: perfect and clutch landings never lower FLOW; ordinary landing subtracts 0.25 to x1 floor instead of sometimes increasing the reward. Real-scene Godot smoke and signed Android APK succeeded (runs 39012770357, 39012770361). Device feel not measured.
 - PR #24 debug-only FPS and worst render-frame telemetry merged at 82fb4b57; main Godot, APK export and standards succeeded (runs 39012676918, 39012676814, 39012677628).
 - PR #24 introduces debug-only in-game rendered FPS and one-second worst frame interval. Godot parse/scene smoke succeeded (39012547771), ARM64 signed debug APK succeeded (39012547805). Release templates hide it. Real Android FPS is not measured yet.
@@ -23,6 +25,8 @@ Status: active
 - No physical Android visual/touch/frame-pacing qualification or real player comprehension evidence yet; automated headless input smoke does not replace hardware QA.
 
 ## Current priority
+- Assess 100 ms jump buffer against Android touch latency and intended timing: a late tap after pulse use queues one jump only on supported landing; early tap expires. Capture video if it feels overly forgiving or triggers unexpected rebounds.
+- Use debug FPS and worst-frame readout to quantify whether HUD caching reduces frame-time spikes on actual mid-range Android; inspect rendering profiler if stutters persist.
 - Check player perception of FLOW increases/decreases and streak feedback on a real phone while watching the debug FPS overlay.
 - Use QA FPS and WORST ms display on a physical Android device; record any spikes and compare reduced motion/high contrast, then profile hot paths based on evidence.
 - Verify backup export to Notes and restore after Android reinstall on real hardware; confirm best score, coins, skins, daily reset, clipboard persistence and accessibility.
@@ -33,6 +37,8 @@ Status: active
 - Validate the new landing cue on a real portrait Android device, including repeated landing, retry, high contrast, reduced motion, touch passthrough and frame pacing.
 
 ## Validation
+- PR #28 pre-landing buffer Godot 39017528341 and Android export 39017528352 both success; merged main Godot 39017597432, Android 39017597418, standards 39017598183 all success. No physical Android test.
+- PR #27 HUD-value caching Godot 39017380729 and Android export 39017380605 successful; merged main Godot 39017424987, Android 39017424990, standards 39017425724 successful.
 - PR #25 Godot parse+scene smoke 39012770357 and signed ARM64 APK 39012770361: both success. Real-device evaluation pending.
 - PR #24 main Godot 39012676918, Android APK 39012676814, standards 39012677628: completed success.
 - PR #24 Godot input/runtime smoke: success (39012547771); debug APK export and Android package checks: success (39012547805). Device behavior not tested.
@@ -46,7 +52,7 @@ Status: active
 - Keep gameplay feel and real-device behavior distinct from headless parse confidence.
 
 ## Last verified
-- 2026-10-16
+- 2026-10-17
 
 <!-- AUTO:START -->
 ## Automatic repository state
