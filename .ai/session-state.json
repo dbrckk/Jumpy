@@ -20,7 +20,7 @@
     "godot_main_run": 39017597432,
     "android_apk_main_run": 39017597418,
     "repository_standards_run": 39017598183,
-    "results": "PR Godot scene smoke and signed ARM64 Android export successful. Post-merge Godot success; main APK and repository standards were still running when recorded. Real Android hardware QA outstanding."
+    "results": "Exact-head Godot 4.7.2 scene smoke and signed ARM64 debug APK succeeded on PR and merged main; repository standards succeeded on main. No real Android hardware QA."
   },
   "production_os": {
     "canary_sequence": 31,
@@ -50,7 +50,7 @@
     "godot_pr_run": 39017528341,
     "android_pr_run": 39017528352,
     "godot_main_run": 39017597432,
-    "validation": "Godot 4.7.2 parse/real scene integration + signed ARM64 debug APK succeeded on PR. Post-merge Godot succeeded; main Android and standards checks independently tracked. Real Android touch/FPS not measured."
+    "validation": "Godot 4.7.2 scene integration and signed ARM64 debug APK passed on PR; post-merge Godot (39017597432), Android (39017597418) and standards (39017598183) all completed success. No physical Android device QA."
   },
   "android_build": {
     "initial_pull_request": 19,
@@ -64,6 +64,6 @@
       "Jumpy-debug.apk.sha256",
       "SOURCE_COMMIT.txt"
     ],
-    "note": "PR signed debug export success; main build checks status pending at recording. Each run uses a new debug key; preserve progress using Settings COPY BACKUP and an external note before uninstalling."
+    "note": "Signed Android debug APK built successfully on main (run 39017597418). Debug keys change on each build; preserve progress with Settings COPY BACKUP to external Notes before uninstalling."
   }
 }
