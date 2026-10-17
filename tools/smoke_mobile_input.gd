@@ -445,9 +445,54 @@ func _run() -> void:
 		_fail("Ready menu must stay static after idle processing")
 		return
 
+	# Verify the actual sound autoload uses bounded prebuilt audio resources,
+	# not a newly generated PCM buffer and scene node on every jump/landing.
+	var sfx: Node = root.get_node_or_null("Integrations")
+	if sfx == null:
+		_fail("Integrations autoload missing for audio smoke")
+		return
+	var voices: Array = sfx.get("tone_players")
+	var cache: Dictionary = sfx.get("tone_cache")
+	if voices.size() != 4 or cache.size() != 6:
+		_fail("All six arcade SFX must be prebuilt with four pooled voices")
+		return
+	for voice: AudioStreamPlayer in voices:
+		if voice.get_parent() != sfx:
+			_fail("Pooled audio player is missing from the autoload")
+			return
+	var clutch_key: Vector3 = Vector3(880.0, 0.12, 0.17)
+	if not cache.has(clutch_key):
+		_fail("CLUTCH must have its own preloaded sound")
+		return
+	var clutch_tone: AudioStreamWAV = cache[clutch_key] as AudioStreamWAV
+	if clutch_tone == null or clutch_tone.data.size() < 100:
+		_fail("CLUTCH waveform was not synthesized")
+		return
+	if clutch_tone.data.decode_s16(0) != 0 or absi(clutch_tone.data.decode_s16(clutch_tone.data.size() - 2)) > 100:
+		_fail("Tone samples must fade in and out without hard edges")
+		return
+	var initial_player_count: int = sfx.get_child_count()
+	var original_sound_setting: bool = bool(profile.data.sound)
+	profile.data.sound = true
+	sfx.haptic(26)
+	var clutch_played: bool = false
+	for voice: AudioStreamPlayer in voices:
+		if voice.stream == clutch_tone:
+			clutch_played = true
+	if not clutch_played:
+		_fail("CLUTCH haptic must actually route to the new sound")
+		return
+	for _i: int in range(24):
+		for duration_ms: int in [10, 12, 14, 20, 26, 32, 70]:
+			sfx.haptic(duration_ms)
+	profile.data.sound = original_sound_setting
+	if sfx.get_child_count() != initial_player_count or cache.size() != 6:
+		_fail("Repeated SFX must reuse the same voices and cached waveforms")
+		return
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, stable landings, HUD, jump buffer and settled death FX")
+	print("PASS: input, backups, FLOW, landings, HUD, jump buffer, settled death FX and pooled SFX")
 	quit(0)
 
 

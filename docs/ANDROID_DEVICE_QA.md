@@ -46,6 +46,7 @@ Do not label the game 60-FPS-qualified without measurements on actual devices.
 - **Ledge grace:** just after leaving an edge, a quick tap should still jump; after roughly 90 ms, the same airborne tap should use the optional pulse instead.
 - **Buffered landing jump:** after spending the air pulse, tap while descending just before a platform; **JUMP QUEUED** should briefly appear and one new jump should start on landing. A tap too early should expire without an automatic jump.
 - **Landing:** PERFECT, CLUTCH and LANDED cues remain readable; no overlap with AIR PULSE status or top score labels.
+- **Audio feedback:** enable SOUND and compare jump, air pulse, PERFECT, CLUTCH, coin and death tones. Confirm CLUTCH is audible, overlapping events do not crackle or cut out excessively, and switching SOUND OFF silences new cues. Note any worst-frame spikes during rapid inputs; synthesized SFX caching is CI-verified but mobile latency is not yet measured.
 - **Accessibility:** test reduced motion and high contrast, then retry after dying.
 - **Save continuity:** export to a note, restore from that note after reinstall, verify progress and settings; reject a truncated code without data loss.
 - **Performance:** play for several minutes; check frame pacing, stutters and input delay, especially after repeated deaths and particle bursts.
