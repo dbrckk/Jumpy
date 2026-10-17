@@ -9,7 +9,7 @@
     "top_score": 26
   },
   "cache": {
-    "fingerprint": "41d1edcb027a1badc3050afba30188c30edf6a61dd46bfa812f8265beac32d35",
+    "fingerprint": "3775110e21d3e6c0ece42161a4598da4df267097e700607dd87c196b25857b47",
     "hit": false
   },
   "candidate_count": 5,
@@ -18,9 +18,9 @@
     {
       "learning_score": 0,
       "matched_terms": [
-        "game"
+        "engine"
       ],
-      "path": "scripts/integrations.gd",
+      "path": "scripts/main.gd",
       "reasons": [
         "impact",
         "recently-changed",
@@ -28,15 +28,26 @@
       ],
       "score": 26,
       "symbols": [
-        "_get_tone",
+        "_draw",
+        "_physics_process",
+        "_process",
         "_ready",
-        "event",
-        "haptic",
-        "leaderboard_submit",
-        "play_tone",
-        "rewarded_available",
-        "share_score",
-        "show_rewarded"
+        "_unhandled_input",
+        "animate_particles",
+        "build_ui",
+        "burst",
+        "collect_coin",
+        "copy_save_backup",
+        "cycle_skin",
+        "die",
+        "has_support",
+        "jump",
+        "make_button",
+        "make_label",
+        "make_platform",
+        "move_world",
+        "on_landed",
+        "pulse"
       ]
     },
     {
@@ -60,34 +71,23 @@
     {
       "learning_score": 0,
       "matched_terms": [
-        "engine"
+        "game"
       ],
-      "path": "scripts/main.gd",
+      "path": "scripts/integrations.gd",
       "reasons": [
         "search-index"
       ],
       "score": 17,
       "symbols": [
-        "_draw",
-        "_physics_process",
-        "_process",
+        "_get_tone",
         "_ready",
-        "_unhandled_input",
-        "animate_particles",
-        "build_ui",
-        "burst",
-        "collect_coin",
-        "copy_save_backup",
-        "cycle_skin",
-        "die",
-        "has_support",
-        "jump",
-        "make_button",
-        "make_label",
-        "make_platform",
-        "move_world",
-        "on_landed",
-        "pulse"
+        "event",
+        "haptic",
+        "leaderboard_submit",
+        "play_tone",
+        "rewarded_available",
+        "share_score",
+        "show_rewarded"
       ]
     },
     {

@@ -1,6 +1,18 @@
 {
   "files": [
     {
+      "path": "scripts/main.gd",
+      "reasons": [
+        "changed",
+        "changed-source",
+        "entrypoint",
+        "impact",
+        "recent-project-state",
+        "symbol-indexed"
+      ],
+      "score": 575
+    },
+    {
       "path": "tools/smoke_mobile_input.gd",
       "reasons": [
         "changed",
@@ -10,16 +22,6 @@
         "symbol-indexed"
       ],
       "score": 375
-    },
-    {
-      "path": "scripts/integrations.gd",
-      "reasons": [
-        "changed",
-        "changed-source",
-        "impact",
-        "symbol-indexed"
-      ],
-      "score": 345
     },
     {
       "path": "docs/ANDROID_DEVICE_QA.md",
@@ -36,12 +38,11 @@
       "score": 100
     },
     {
-      "path": "scripts/main.gd",
+      "path": "scripts/integrations.gd",
       "reasons": [
-        "entrypoint",
         "recent-project-state"
       ],
-      "score": 100
+      "score": 60
     },
     {
       "path": "project.godot",

@@ -309,6 +309,28 @@
         "scripts/integrations.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Upgrade mobile neon 2D visuals with fixed-cost native Godot rendering and accessibility variants",
+      "terms": [
+        "2d",
+        "accessibility",
+        "fixed-cost",
+        "godot",
+        "mobile",
+        "native",
+        "neon",
+        "rendering",
+        "upgrade",
+        "variants",
+        "visuals"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/main.gd",
+        "tools/smoke_mobile_input.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -316,6 +338,14 @@
   "term_file_scores": {
     "11": {
       "scripts/main.gd": 4
+    },
+    "2d": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "accessibility": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "actual": {
       "scripts/main.gd": 4,
@@ -402,6 +432,10 @@
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "fixed-cost": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "flow": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
@@ -419,8 +453,8 @@
       "tools/smoke_mobile_input.gd": 12
     },
     "godot": {
-      "scripts/main.gd": 16,
-      "tools/smoke_mobile_input.gd": 16
+      "scripts/main.gd": 20,
+      "tools/smoke_mobile_input.gd": 20
     },
     "handling": {
       "scripts/main.gd": 8,
@@ -458,8 +492,16 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "mobile": {
-      "scripts/main.gd": 8,
-      "tools/smoke_mobile_input.gd": 8
+      "scripts/main.gd": 12,
+      "tools/smoke_mobile_input.gd": 12
+    },
+    "native": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "neon": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
     },
     "one-thumb": {
       "scripts/main.gd": 8,
@@ -531,6 +573,10 @@
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "rendering": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "requiring": {
       "scripts/main.gd": 4,
       "scripts/profile.gd": 4,
@@ -565,6 +611,10 @@
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
+    "upgrade": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "validate": {
       "scripts/integrations.gd": 4,
       "tools/smoke_mobile_input.gd": 4
@@ -573,11 +623,19 @@
       "scripts/main.gd": 8,
       "tools/smoke_mobile_input.gd": 8
     },
+    "variants": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
     "verify": {
       "scripts/main.gd": 16,
       "tools/smoke_mobile_input.gd": 16
     },
     "vfx": {
+      "scripts/main.gd": 4,
+      "tools/smoke_mobile_input.gd": 4
+    },
+    "visuals": {
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },

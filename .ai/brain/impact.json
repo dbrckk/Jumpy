@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "0bb7343b07b21232843a3652d83d6cfcf7d4d3c2",
+  "head": "da2d34a720539f5416d4ca3300cc8fffda250057",
   "index_mode": "full",
   "changed_files": [
     {
@@ -14,7 +14,7 @@
       "status": "M"
     },
     {
-      "path": "scripts/integrations.gd",
+      "path": "scripts/main.gd",
       "status": "M"
     },
     {
@@ -23,67 +23,223 @@
     }
   ],
   "changed_source_files": [
-    "scripts/integrations.gd",
+    "scripts/main.gd",
     "tools/smoke_mobile_input.gd"
   ],
   "impacted_files": [
-    "scripts/integrations.gd",
+    "scripts/main.gd",
     "tools/smoke_mobile_input.gd"
   ],
   "impacted_symbols": [
     {
       "name": "_ready",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 16
+      "file": "scripts/main.gd",
+      "line": 61
     },
     {
-      "name": "event",
+      "name": "build_ui",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 33
+      "file": "scripts/main.gd",
+      "line": 67
     },
     {
-      "name": "haptic",
+      "name": "make_label",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 37
+      "file": "scripts/main.gd",
+      "line": 107
     },
     {
-      "name": "_get_tone",
+      "name": "make_button",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 57
+      "file": "scripts/main.gd",
+      "line": 121
     },
     {
-      "name": "play_tone",
+      "name": "settings_pressed",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 83
+      "file": "scripts/main.gd",
+      "line": 132
     },
     {
-      "name": "rewarded_available",
+      "name": "copy_save_backup",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 99
+      "file": "scripts/main.gd",
+      "line": 140
     },
     {
-      "name": "show_rewarded",
+      "name": "restore_save_backup",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 103
+      "file": "scripts/main.gd",
+      "line": 151
     },
     {
-      "name": "share_score",
+      "name": "toggle_preference",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 108
+      "file": "scripts/main.gd",
+      "line": 176
     },
     {
-      "name": "leaderboard_submit",
+      "name": "refresh_settings_ui",
       "kind": "function",
-      "file": "scripts/integrations.gd",
-      "line": 115
+      "file": "scripts/main.gd",
+      "line": 184
+    },
+    {
+      "name": "reset_run",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 201
+    },
+    {
+      "name": "set_daily",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 241
+    },
+    {
+      "name": "cycle_skin",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 246
+    },
+    {
+      "name": "restart_pressed",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 256
+    },
+    {
+      "name": "start_run",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 260
+    },
+    {
+      "name": "show_menu",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 271
+    },
+    {
+      "name": "_unhandled_input",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 291
+    },
+    {
+      "name": "jump",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 321
+    },
+    {
+      "name": "pulse",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 335
+    },
+    {
+      "name": "_process",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 348
+    },
+    {
+      "name": "_physics_process",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 360
+    },
+    {
+      "name": "move_world",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 396
+    },
+    {
+      "name": "update_player",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 412
+    },
+    {
+      "name": "try_land",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 427
+    },
+    {
+      "name": "has_support",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 447
+    },
+    {
+      "name": "on_landed",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 456
+    },
+    {
+      "name": "show_landing_cue",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 505
+    },
+    {
+      "name": "collect_coin",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 512
+    },
+    {
+      "name": "die",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 526
+    },
+    {
+      "name": "make_platform",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 556
+    },
+    {
+      "name": "spawn_platform_after",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 563
+    },
+    {
+      "name": "update_ui",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 578
+    },
+    {
+      "name": "burst",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 618
+    },
+    {
+      "name": "animate_particles",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 624
+    },
+    {
+      "name": "skin_color",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 633
+    },
+    {
+      "name": "_draw",
+      "kind": "function",
+      "file": "scripts/main.gd",
+      "line": 636
     },
     {
       "name": "_initialize",
@@ -101,7 +257,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 497
+      "line": 525
     }
   ],
   "selected_tests": []
