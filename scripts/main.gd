@@ -536,10 +536,19 @@ func die() -> void:
 	jump_buffer_remaining = 0.0
 	landing_cue_remaining = 0.0
 	ui.landing.visible = false
+	# Compare against records from *before* committing this run. Comparing to
+	# the updated best incorrectly called every tied score a "NEW BEST".
+	var previous_best: int = int(Profile.data.best_score)
+	var previous_daily_best: int = int(Profile.data.daily_best)
 	Profile.record_run(score, run_coins, perfects, daily_mode)
+	var result_label: String = "FLOW BROKEN"
+	if score > previous_best:
+		result_label = "NEW BEST"
+	elif daily_mode and score > previous_daily_best:
+		result_label = "NEW DAILY BEST"
 	Integrations.leaderboard_submit(score, daily_mode)
 	Integrations.event("run_end", {"score": score, "coins": run_coins, "perfects": perfects, "daily": daily_mode})
-	ui.gameover.text = "SCORE %d\nBEST %d\nPERFECT %d  •  COINS %d\n%s" % [score, int(Profile.data.best_score), perfects, run_coins, "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"]
+	ui.gameover.text = "SCORE %d\nBEST %d\nPERFECT %d  •  COINS %d\n%s" % [score, int(Profile.data.best_score), perfects, run_coins, result_label]
 	ui.gameover.visible = true
 	ui.retry.visible = true
 	ui.share.visible = true

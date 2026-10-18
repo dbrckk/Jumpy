@@ -125,6 +125,16 @@ refreshed for the current date. Atomic temporary-file replacement reduces
 the risk of a truncated save. Godot scene-level CI covers roundtrip,
 tampering and incomplete backup rejection, not Android clipboard behavior.
 
+### Honest personal-best feedback
+The game-over screen compares the finished run against the previous stored
+records, **before** the run updates them. Tying a lifetime or daily record
+does not incorrectly announce a new achievement. A score that exceeds the
+lifetime best shows **NEW BEST**; in DAILY mode, an improvement over the
+current day's best below the lifetime record shows **NEW DAILY BEST**.
+These are separate achievements and the winning scores are saved normally.
+The existing Godot scene smoke exercises strict records, ties, the
+daily-only achievement and persistence across a save reload.
+
 ## 4. Retention meta
 Already represented in profile data:
 - Lifetime score.
