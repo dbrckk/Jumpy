@@ -51,6 +51,7 @@ Do not label the game 60-FPS-qualified without measurements on actual devices.
 - **Audio feedback:** enable SOUND and compare jump, air pulse, PERFECT, CLUTCH, coin and death tones. Confirm CLUTCH is audible, overlapping events do not crackle or cut out excessively, and switching SOUND OFF silences new cues. Note any worst-frame spikes during rapid inputs; synthesized SFX caching is CI-verified but mobile latency is not yet measured.
 - **Accessibility:** test reduced motion and high contrast, then retry after dying.
 - **Save continuity:** export to a note, restore from that note after reinstall, verify progress and settings; reject a truncated code without data loss.
+- **Records:** finish with a score equal to an existing lifetime best, then beat it; only the new strictly higher score should show **NEW BEST**. In DAILY, beating today's best but not the lifetime best must show **NEW DAILY BEST**; tying today's best must not repeat the achievement.
 - **Performance:** play for several minutes; check frame pacing, stutters and input delay, especially after repeated deaths and particle bursts.
 
 Report the phone model, Android version, the tested workflow run URL, and a screenshot/video of any visual or touch defect. **Do not call the game Android-qualified until this physical-device checklist passes.**
