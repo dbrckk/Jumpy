@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-10-17",
-  "task": "Eliminate geometrically unreachable high-speed procedural platform gaps",
+  "updated_at": "2026-10-18",
+  "task": "Award strict lifetime and daily personal-best achievements only when a record is actually broken",
   "branch": "main",
   "last_gameplay_merge": {
     "pull_request": 28,
@@ -38,19 +38,19 @@
     "latest_verified_canary_note": "canary only; no autonomous source gameplay feature validated"
   },
   "next_steps": [
-    "Confirm exact-head PR #34 Godot and Android checks, merge and confirm post-merge main CI",
-    "Test faster late-game procedural routes on a real Android phone for reaction time, readability and FLOW feel",
-    "Review streak calendar transitions from PR #33 on a real phone including midnight and clock rollback",
-    "Check neon art readability, FPS and worst-frame telemetry on actual Android hardware",
-    "Ensure external COPY BACKUP before changing ephemeral debug signing identities"
+    "Verify PR #35 exact latest head Godot and Android checks, merge and verify main workflows",
+    "Test lifetime tie/new PB and daily-only PB announcement on real portrait Android device",
+    "Check reachability and play-feel of speed-aware routes on Android, along with FPS/worst-frame telemetry",
+    "Verify backup/restore before changing temporary debug signing identity",
+    "Assess next tangible UI/score feedback improvement after device QA"
   ],
   "latest_validated_feature": {
-    "pull_request": 34,
-    "branch": "fix/reachable-platform-routes-20261017",
-    "feature": "Height- and scroll-speed-aware gap generation with a 140-unit takeoff corridor and 35-unit/s forward speed margin; 750 seeded route smoke cases plus integrated high-speed landing",
-    "godot_pr_run": 39036554008,
-    "android_apk_pr_run": 39036554018,
-    "validation": "First gameplay-head Godot real-scene smoke passed; Android export in progress. Exact latest-head checks and physical Android gameplay still required."
+    "pull_request": 35,
+    "branch": "fix/accurate-record-achievements-20261018",
+    "feature": "Death screen snapshots prior lifetime/daily records; ties no longer show NEW BEST; DAILY mode acknowledges NEW DAILY BEST independently",
+    "godot_pr_run": 39112868678,
+    "android_apk_pr_run": 39112868721,
+    "validation": "Exact gameplay branch Godot 4.7.2 scene integration and signed ARM64 debug APK passed on initial PR head; physical Android game-over UI QA remains pending."
   },
   "android_build": {
     "initial_pull_request": 19,
