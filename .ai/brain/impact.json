@@ -2,7 +2,7 @@
   "schema_version": 1,
   "generated_by": "dbrckk/repo-brain",
   "base": "HEAD~1",
-  "head": "785e8624f3ac92d3a2fcf550804d91a5acbaee68",
+  "head": "4d7d440cff6a1f6655d43f1b9a597025c4b9ddcb",
   "index_mode": "full",
   "changed_files": [
     {
@@ -203,43 +203,43 @@
       "name": "make_platform",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 560
+      "line": 569
     },
     {
       "name": "spawn_platform_after",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 567
+      "line": 576
     },
     {
       "name": "update_ui",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 601
+      "line": 610
     },
     {
       "name": "burst",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 641
+      "line": 650
     },
     {
       "name": "animate_particles",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 647
+      "line": 656
     },
     {
       "name": "skin_color",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 656
+      "line": 665
     },
     {
       "name": "_draw",
       "kind": "function",
       "file": "scripts/main.gd",
-      "line": 659
+      "line": 668
     },
     {
       "name": "_initialize",
@@ -257,7 +257,7 @@
       "name": "_fail",
       "kind": "function",
       "file": "tools/smoke_mobile_input.gd",
-      "line": 642
+      "line": 690
     }
   ],
   "selected_tests": []

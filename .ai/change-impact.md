@@ -1,7 +1,7 @@
 # Change impact
 
-Base: 8b912ca83aff4b610819d21a2e3ce15671249b95
-Head: 785e8624f3ac92d3a2fcf550804d91a5acbaee68
+Base: bb50e73e88f9f7651f2eb8ed75161b826bc946f0
+Head: 4d7d440cff6a1f6655d43f1b9a597025c4b9ddcb
 
 ## Changed files
 - M docs/ANDROID_DEVICE_QA.md

@@ -2,16 +2,21 @@
   "generated_by": "dbrckk/repo-brain-auto-learning-v1",
   "learned": true,
   "learning_result": {
-    "example_count": 19,
+    "example_count": 20,
     "rejected_count": 0,
     "terms": [
-      "eliminate",
-      "gaps",
-      "geometrically",
-      "high-speed",
-      "platform",
-      "procedural",
-      "unreachable"
+      "achievements",
+      "actually",
+      "award",
+      "broken",
+      "daily",
+      "is",
+      "lifetime",
+      "only",
+      "personal-best",
+      "record",
+      "strict",
+      "when"
     ],
     "test_count": 0,
     "useful_count": 2
@@ -19,7 +24,7 @@
   "note": "Selected tests are routing hints; this artifact does not claim they executed successfully.",
   "rejected": [],
   "schema_version": 1,
-  "task": "Eliminate geometrically unreachable high-speed procedural platform gaps",
+  "task": "Award strict lifetime and daily personal-best achievements only when a record is actually broken",
   "tests_selected": [],
   "useful": [
     "scripts/main.gd",

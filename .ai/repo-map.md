@@ -1138,10 +1138,19 @@ func die() -> void:
 	jump_buffer_remaining = 0.0
 	landing_cue_remaining = 0.0
 	ui.landing.visible = false
+	# Compare against records from *before* committing this run. Comparing to
+	# the updated best incorrectly called every tied score a "NEW BEST".
+	var previous_best: int = int(Profile.data.best_score)
+	var previous_daily_best: int = int(Profile.data.daily_best)
 	Profile.record_run(score, run_coins, perfects, daily_mode)
+	var result_label: String = "FLOW BROKEN"
+	if score > previous_best:
+		result_label = "NEW BEST"
+	elif daily_mode and score > previous_daily_best:
+		result_label = "NEW DAILY BEST"
 	Integrations.leaderboard_submit(score, daily_mode)
 	Integrations.event("run_end", {"score": score, "coins": run_coins, "perfects": perfects, "daily": daily_mode})
-	ui.gameover.text = "SCORE %d\nBEST %d\nPERFECT %d  •  COINS %d\n%s" % [score, int(Profile.data.best_score), perfects, run_coins, "NEW BEST" if score >= int(Profile.data.best_score) and score > 0 else "FLOW BROKEN"]
+	ui.gameover.text = "SCORE %d\nBEST %d\nPERFECT %d  •  COINS %d\n%s" % [score, int(Profile.data.best_score), perfects, run_coins, result_label]
 	ui.gameover.visible = true
 	ui.retry.visible = true
 	ui.share.visible = true
@@ -2238,9 +2247,57 @@ func _run() -> void:
 		return
 	game.reset_run(false)
 
+	# Actual death-screen/Profile integration: a tied record is not a PB,
+	# while the day's best is independent of the player's all-time best.
+	# Restore the pre-test profile so this acceptance does not pollute saves.
+	var pre_result_profile: Dictionary = profile.data.duplicate(true)
+	profile.data.best_score = 500
+	profile.data.daily_best = 125
+	profile.data.daily_key = Time.get_date_string_from_system()
+	game.reset_run(false)
+	game.start_run()
+	game.score = 500
+	game.die()
+	if not game.ui.gameover.text.ends_with("FLOW BROKEN") or int(profile.data.best_score) != 500:
+		_fail("Tying the lifetime high score must not claim NEW BEST")
+		return
+
+	game.reset_run(true)
+	game.start_run()
+	game.score = 200
+	game.die()
+	if not game.ui.gameover.text.ends_with("NEW DAILY BEST") or int(profile.data.daily_best) != 200 or int(profile.data.best_score) != 500:
+		_fail("Daily high score must be awarded independently of lifetime best")
+		return
+
+	game.reset_run(true)
+	game.start_run()
+	game.score = 200
+	game.die()
+	if not game.ui.gameover.text.ends_with("FLOW BROKEN"):
+		_fail("Matching today's daily high score must not announce a new record")
+		return
+
+	game.reset_run(false)
+	game.start_run()
+	game.score = 600
+	game.die()
+	if not game.ui.gameover.text.ends_with("NEW BEST") or int(profile.data.best_score) != 600:
+		_fail("Strict lifetime high score must show NEW BEST and persist it")
+		return
+	profile.load_data()
+	if int(profile.data.best_score) != 600 or int(profile.data.daily_best) != 200:
+		_fail("Lifetime and daily best scores must survive save reload")
+		return
+	profile.data = pre_result_profile
+	if not profile.save():
+		_fail("Could not restore profile after end-screen record smoke")
+		return
+	game.reset_run(false)
+
 	game.queue_free()
 	await process_frame
-	print("PASS: input, backups, FLOW, pooled SFX, neon visuals and reachable procedural routes")
+	print("PASS: input, backups, FLOW, pooled SFX, neon visuals, fair routes and honest PB cues")
 	quit(0)
 
 

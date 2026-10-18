@@ -391,7 +391,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 554,
+          "line": 563,
           "preview": "refresh_settings_ui()",
           "definition_candidate": false
         }
@@ -567,9 +567,39 @@
           "line": 636,
           "preview": "game.reset_run(false)",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 645,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 653,
+          "preview": "game.reset_run(true)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 661,
+          "preview": "game.reset_run(true)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 669,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 684,
+          "preview": "game.reset_run(false)",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 27
+      "occurrence_count": 32
     },
     "set_daily": {
       "definition": {
@@ -737,9 +767,33 @@
           "line": 540,
           "preview": "game.start_run()",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 646,
+          "preview": "game.start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 654,
+          "preview": "game.start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 662,
+          "preview": "game.start_run()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 670,
+          "preview": "game.start_run()",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 13
+      "occurrence_count": 17
     },
     "show_menu": {
       "definition": {
@@ -959,7 +1013,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 581,
+          "line": 590,
           "preview": "# disappear *before* a normal jump descends to its height. Account for",
           "definition_candidate": false
         },
@@ -1156,19 +1210,19 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 634,
+          "line": 643,
           "preview": "ui.pulse.visible = pulse_state != 0",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 636,
+          "line": 645,
           "preview": "ui.pulse.text = \"AIR PULSE READY\" if pulse_state == 1 else (\"JUMP QUEUED\" if pulse_state == 3 else \"AIR PULSE USED\")",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 638,
+          "line": 647,
           "preview": "ui.pulse.add_theme_color_override(\"font_color\", Color(\"ffffff\") if high_contrast else cue_color)",
           "definition_candidate": false
         },
@@ -1689,14 +1743,38 @@
           "line": 531,
           "preview": "func die() -> void:",
           "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 648,
+          "preview": "game.die()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 656,
+          "preview": "game.die()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 664,
+          "preview": "game.die()",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 672,
+          "preview": "game.die()",
+          "definition_candidate": false
         }
       ],
-      "occurrence_count": 2
+      "occurrence_count": 6
     },
     "make_platform": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 560,
+        "line": 569,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1709,13 +1787,13 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 561,
+          "line": 570,
           "preview": "func make_platform(x: float, y: float, width: float, id_value: int) -> Dictionary:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 597,
+          "line": 606,
           "preview": "var platform: Dictionary = make_platform(right_edge + gap, y, width, next_platform_id)",
           "definition_candidate": false
         },
@@ -1761,7 +1839,7 @@
     "spawn_platform_after": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 567,
+        "line": 576,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1780,7 +1858,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 568,
+          "line": 577,
           "preview": "func spawn_platform_after(right_edge: float) -> float:",
           "definition_candidate": false
         },
@@ -1802,7 +1880,7 @@
     "update_ui": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 601,
+        "line": 610,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1833,7 +1911,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 602,
+          "line": 611,
           "preview": "func update_ui() -> void:",
           "definition_candidate": false
         },
@@ -1885,7 +1963,7 @@
     "burst": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 641,
+        "line": 650,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1928,13 +2006,13 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 558,
+          "line": 567,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 642,
+          "line": 651,
           "preview": "func burst(pos: Vector2, color: Color, count: int, power: float) -> void:",
           "definition_candidate": false
         },
@@ -1956,7 +2034,7 @@
     "animate_particles": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 647,
+        "line": 656,
         "kind": "function",
         "language": "gdscript"
       },
@@ -1975,7 +2053,7 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 648,
+          "line": 657,
           "preview": "func animate_particles(delta: float) -> void:",
           "definition_candidate": false
         }
@@ -1985,7 +2063,7 @@
     "skin_color": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 656,
+        "line": 665,
         "kind": "function",
         "language": "gdscript"
       },
@@ -2010,19 +2088,19 @@
         },
         {
           "file": "scripts/main.gd",
-          "line": 558,
+          "line": 567,
           "preview": "burst(Vector2(PLAYER_X, player_y), skin_color(), maxi(5, int(35.0 * death_feedback_scale)), 520.0 * death_feedback_scale)",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 657,
+          "line": 666,
           "preview": "func skin_color() -> Color:",
           "definition_candidate": false
         },
         {
           "file": "scripts/main.gd",
-          "line": 717,
+          "line": 726,
           "preview": "var player_color: Color = skin_color()",
           "definition_candidate": false
         }
@@ -2032,14 +2110,14 @@
     "_draw": {
       "definition": {
         "file": "scripts/main.gd",
-        "line": 659,
+        "line": 668,
         "kind": "function",
         "language": "gdscript"
       },
       "occurrences": [
         {
           "file": "scripts/main.gd",
-          "line": 660,
+          "line": 669,
           "preview": "func _draw() -> void:",
           "definition_candidate": false
         }
@@ -2089,7 +2167,7 @@
     "_fail": {
       "definition": {
         "file": "tools/smoke_mobile_input.gd",
-        "line": 642,
+        "line": 690,
         "kind": "function",
         "language": "gdscript"
       },
@@ -2648,12 +2726,48 @@
         },
         {
           "file": "tools/smoke_mobile_input.gd",
-          "line": 644,
+          "line": 650,
+          "preview": "_fail(\"Tying the lifetime high score must not claim NEW BEST\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 658,
+          "preview": "_fail(\"Daily high score must be awarded independently of lifetime best\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 666,
+          "preview": "_fail(\"Matching today's daily high score must not announce a new record\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 674,
+          "preview": "_fail(\"Strict lifetime high score must show NEW BEST and persist it\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 678,
+          "preview": "_fail(\"Lifetime and daily best scores must survive save reload\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 682,
+          "preview": "_fail(\"Could not restore profile after end-screen record smoke\")",
+          "definition_candidate": false
+        },
+        {
+          "file": "tools/smoke_mobile_input.gd",
+          "line": 692,
           "preview": "func _fail(message: String) -> void:",
           "definition_candidate": false
         }
       ],
-      "occurrence_count": 93
+      "occurrence_count": 99
     }
   }
 }

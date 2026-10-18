@@ -76,13 +76,13 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-17T13:28:22Z
+Generated: 2026-10-18T08:50:53Z
 
 ### Git
 - Branch: `main`
-- Head: `785e8624f3ac`
-- Commit date: 2026-10-17T09:28:13-04:00
-- Commit: Generate speed-aware, reachable jump routes instead of impossible short gaps (#34)
+- Head: `4d7d440cff6a`
+- Commit date: 2026-10-18T04:50:45-04:00
+- Commit: Show NEW BEST only for a real record, and acknowledge daily personal bests (#35)
 - Tracked files: 109
 
 ### Recently changed files
