@@ -109,6 +109,9 @@ func show_rewarded(_placement: String, callback: Callable) -> void:
 func share_score(score: int, daily: bool = false) -> void:
 	var mode: String = "DAILY" if daily else "RUN"
 	var text: String = "JUMPY %s — %d. Beat me. #Jumpy" % [mode, score]
+	if not DisplayServer.has_feature(DisplayServer.FEATURE_CLIPBOARD):
+		event("share_unavailable", {"reason": "clipboard_unsupported"})
+		return
 	DisplayServer.clipboard_set(text)
 	# Native Android/iOS share sheet is optional. Clipboard fallback always works.
 	event("share_score", {"score": score, "daily": daily})
