@@ -61,7 +61,7 @@
       "language": "gdscript",
       "kind": "function",
       "name": "leaderboard_submit",
-      "line": 115
+      "line": 118
     },
     {
       "file": "scripts/main.gd",

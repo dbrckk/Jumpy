@@ -1,11 +1,11 @@
 # Repo Brain
 
-- Index mode: full
+- Index mode: incremental
 - Files indexed: 4
-- Files reparsed this run: 4
+- Files reparsed this run: 1
 - Symbols: 68
 - Internal import edges: 0
-- Impacted files: 2
+- Impacted files: 1
 - Selected tests: 0
 
 ## Languages

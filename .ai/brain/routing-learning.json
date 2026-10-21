@@ -393,6 +393,28 @@
         "scripts/main.gd",
         "tools/smoke_mobile_input.gd"
       ]
+    },
+    {
+      "rejected": [],
+      "task": "Award strict lifetime and daily personal-best achievements only when a record is actually broken",
+      "terms": [
+        "achievements",
+        "actually",
+        "award",
+        "broken",
+        "daily",
+        "is",
+        "lifetime",
+        "only",
+        "personal-best",
+        "record",
+        "strict",
+        "when"
+      ],
+      "tests": [],
+      "useful": [
+        "scripts/integrations.gd"
+      ]
     }
   ],
   "generated_by": "dbrckk/repo-brain-learning-v1",
@@ -410,6 +432,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "achievements": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -422,6 +445,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "actually": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -456,6 +480,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "award": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -469,6 +494,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "broken": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -489,6 +515,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "daily": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -595,6 +622,7 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "is": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -618,6 +646,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "lifetime": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -646,6 +675,7 @@
       "tools/smoke_mobile_input.gd": 8
     },
     "only": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -655,6 +685,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "personal-best": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -724,6 +755,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "record": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -770,6 +802,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "strict": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },
@@ -814,6 +847,7 @@
       "tools/smoke_mobile_input.gd": 4
     },
     "when": {
+      "scripts/integrations.gd": 4,
       "scripts/main.gd": 4,
       "tools/smoke_mobile_input.gd": 4
     },

@@ -76,22 +76,22 @@ Status: active
 <!-- AUTO:START -->
 ## Automatic repository state
 
-Generated: 2026-10-18T08:50:53Z
+Generated: 2026-10-21T18:37:40Z
 
 ### Git
 - Branch: `main`
-- Head: `4d7d440cff6a`
-- Commit date: 2026-10-18T04:50:45-04:00
-- Commit: Show NEW BEST only for a real record, and acknowledge daily personal bests (#35)
+- Head: `7ba62fce709f`
+- Commit date: 2026-10-21T14:37:29-04:00
+- Commit: fix(share): gracefully reject unavailable clipboard (#37)
 - Tracked files: 109
 
 ### Recently changed files
+- `scripts/integrations.gd`
 - `docs/ANDROID_DEVICE_QA.md`
 - `docs/GAME_DESIGN.md`
 - `scripts/main.gd`
 - `tools/smoke_mobile_input.gd`
 - `scripts/profile.gd`
-- `scripts/integrations.gd`
 
 ### Project signals
 - `project.godot`

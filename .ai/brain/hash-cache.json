@@ -1,20 +1,12 @@
 {
   "files": {
-    "docs/ANDROID_DEVICE_QA.md": {
-      "sha256": "59eb902724d687335539a9d207ff1b3e1a38ad26abf1b26761b849dbca972c66",
-      "size": 7386
-    },
-    "docs/GAME_DESIGN.md": {
-      "sha256": "532611e754b4e434b8f65d115f47cfba8a0ad67bc6764234761225783a0834fc",
-      "size": 15291
-    },
     "project.godot": {
       "sha256": "e579a6c2f5ae1ea1e9cf7da3313a0130a0752454f958a28acfa69ea2129b6955",
       "size": 1013
     },
     "scripts/integrations.gd": {
-      "sha256": "a7319ea682804b58260481545af3e5f5852592bfc2aadaaca53bba0202d2c3c3",
-      "size": 4247
+      "sha256": "f58f9cf3f6036e5192f588884972808dc606d12e50b45581e0d5872deb948c72",
+      "size": 4390
     },
     "scripts/main.gd": {
       "sha256": "c2ba9a9c1bd789cdf7291ef43bcc3f573ed3fbb809c730d2df6cb0e051ac88f1",
